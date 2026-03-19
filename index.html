@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavin Garg | Portfolio</title>
+<title>Bhavin Garg | AI Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* BACKGROUND */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #020617, #0f172a, #020617);
-  background-size: 300% 300%;
-  animation: bgMove 10s ease infinite;
+  background: #0a0a0a;
   color: white;
 }
 
-@keyframes bgMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+/* AI BACKGROUND */
+#ai-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-/* INTRO */
+/* NETFLIX INTRO */
 #intro {
   position: fixed;
   width: 100%;
@@ -58,99 +58,71 @@ nav a {
   color: white;
   margin-left: 20px;
   text-decoration: none;
-  position: relative;
-}
-nav a::after {
-  content:"";
-  width:0%;
-  height:2px;
-  background:cyan;
-  position:absolute;
-  bottom:-5px;
-  left:0;
-  transition:0.3s;
-}
-nav a:hover::after {
-  width:100%;
 }
 
 /* HERO */
 .hero {
-  text-align:center;
-  padding:80px 20px;
-}
-.image-container {
-  position: relative;
-  display:inline-block;
+  text-align: center;
+  padding: 80px 20px;
 }
 .profile {
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  object-fit:cover;
-  box-shadow:0 0 40px cyan;
-  transition:1s;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  box-shadow: 0 0 40px cyan;
 }
-.profile:hover {
-  transform:scale(1.1);
-  box-shadow:0 0 80px cyan;
-}
-.overlay {
-  position:absolute;
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  background:radial-gradient(circle,transparent 60%, rgba(0,0,0,0.6));
-}
-.zoom { transform:scale(1.15); }
-.fade { opacity:0; }
-
-h1 {
-  background: linear-gradient(90deg, cyan, white);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+.fade { opacity: 0; transition: 0.5s; }
 
 .typing { color: cyan; }
 
-/* SECTIONS */
+/* SECTION */
 .section {
-  max-width:900px;
-  margin:40px auto;
-  padding:30px;
-  border-radius:15px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
   background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(20px);
-  transition:0.3s;
-  transform-style: preserve-3d;
-}
-.section:hover {
-  transform: translateY(-5px);
 }
 
-/* PROJECT */
-.project {
-  padding:20px;
-  margin-top:15px;
-  border-radius:12px;
-  background: rgba(255,255,255,0.08);
+/* CHATBOT */
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
 }
-
-/* SKILLS */
-.bar { height:8px; background:#333; border-radius:10px;}
-.fill { height:100%; background:cyan; }
+#chat-header {
+  background: cyan;
+  color: black;
+  padding: 10px;
+}
+#chat-body {
+  height: 150px;
+  overflow-y: auto;
+  padding: 10px;
+}
+#chat-input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #222;
+  color: white;
+}
 
 /* MOBILE */
 @media(max-width:768px){
   nav {flex-direction:column; align-items:center;}
-  .profile {width:140px; height:140px;}
-  .section {margin:20px 10px;}
+  .profile {width:130px; height:130px;}
 }
-
 </style>
 </head>
 
 <body>
+
+<canvas id="ai-bg"></canvas>
 
 <div id="intro"><h1 class="logo">BHAVIN</h1></div>
 
@@ -164,11 +136,7 @@ h1 {
 </nav>
 
 <section class="hero">
-  <div class="image-container">
-    <img id="profile" src="images/profile1.jpg" class="profile">
-    <div class="overlay"></div>
-  </div>
-
+  <img id="profile" src="images/profile1.jpg" class="profile">
   <h1>Bhavin Garg</h1>
   <h2 id="photoText">Creative Problem Solver 💡</h2>
   <h3>I am <span class="typing"></span></h3>
@@ -176,21 +144,12 @@ h1 {
 
 <section id="about" class="section">
   <h2>About</h2>
-  <p>Computer Science student passionate about building real-world solutions.</p>
-</section>
-
-<section class="section">
-  <h2>Skills</h2>
-  Python<div class="bar"><div class="fill" style="width:80%"></div></div>
-  C<div class="bar"><div class="fill" style="width:70%"></div></div>
+  <p>Computer Science student passionate about building AI-powered solutions.</p>
 </section>
 
 <section id="projects" class="section">
   <h2>Projects</h2>
-  <div class="project">
-    <b>Government Schemes Information Platform (In Progress)</b>
-    <p>Building a platform to simplify access to government schemes.</p>
-  </div>
+  <p>Government Schemes Information Platform (In Progress)</p>
 </section>
 
 <section id="achievements" class="section">
@@ -202,12 +161,19 @@ h1 {
   </ul>
 </section>
 
+<!-- CHATBOT -->
+<div id="chatbot">
+  <div id="chat-header">AI Assistant 🤖</div>
+  <div id="chat-body"></div>
+  <input id="chat-input" placeholder="Ask about me...">
+</div>
+
 <script>
 // intro
 window.onload=()=>setTimeout(()=>document.getElementById("intro").style.display="none",3000);
 
 // typing
-const words=["a Developer","a Problem Solver","a Tech Enthusiast"];
+const words=["a Developer","a Problem Solver","an AI Enthusiast"];
 let i=0,j=0,t="",d=false;
 function type(){
  if(!d && j<=words[i].length) t=words[i].substring(0,j++);
@@ -231,21 +197,85 @@ setInterval(()=>{
   img.src=images[idx];
   document.getElementById("photoText").textContent=texts[idx];
   img.classList.remove("fade");
- },800);
+ },500);
 },3000);
 
-// 3D hover (desktop only)
-if(window.innerWidth>768){
- document.querySelectorAll(".section,.project").forEach(card=>{
-  card.addEventListener("mousemove",e=>{
-    const r=card.getBoundingClientRect();
-    const x=e.clientX-r.left;
-    const y=e.clientY-r.top;
-    card.style.transform=`rotateX(${-(y-r.height/2)/15}deg) rotateY(${(x-r.width/2)/15}deg)`;
-  });
-  card.addEventListener("mouseleave",()=>card.style.transform="rotateX(0) rotateY(0)");
+// chatbot
+const input=document.getElementById("chat-input");
+const body=document.getElementById("chat-body");
+
+input.addEventListener("keypress",e=>{
+ if(e.key==="Enter"){
+  let msg=input.value;
+  add("You: "+msg);
+  let reply=getReply(msg.toLowerCase());
+  setTimeout(()=>add("AI: "+reply),500);
+  input.value="";
+ }
+});
+
+function add(msg){
+ let d=document.createElement("div");
+ d.textContent=msg;
+ body.appendChild(d);
+ body.scrollTop=body.scrollHeight;
+}
+
+function getReply(m){
+ if(m.includes("skill")) return "Python, C, DSA";
+ if(m.includes("project")) return "Government schemes platform project.";
+ if(m.includes("achievement")) return "Student of the Year & district level.";
+ return "Ask about skills, projects, or achievements!";
+}
+
+// AI BACKGROUND
+const c=document.getElementById("ai-bg");
+const ctx=c.getContext("2d");
+c.width=window.innerWidth;
+c.height=window.innerHeight;
+
+let nodes=[];
+for(let i=0;i<70;i++){
+ nodes.push({
+  x:Math.random()*c.width,
+  y:Math.random()*c.height,
+  dx:(Math.random()-0.5),
+  dy:(Math.random()-0.5)
  });
 }
+
+function draw(){
+ ctx.clearRect(0,0,c.width,c.height);
+
+ for(let i=0;i<nodes.length;i++){
+  for(let j=i+1;j<nodes.length;j++){
+   let dx=nodes[i].x-nodes[j].x;
+   let dy=nodes[i].y-nodes[j].y;
+   let dist=Math.sqrt(dx*dx+dy*dy);
+   if(dist<120){
+    ctx.strokeStyle="rgba(0,255,255,"+(1-dist/120)+")";
+    ctx.beginPath();
+    ctx.moveTo(nodes[i].x,nodes[i].y);
+    ctx.lineTo(nodes[j].x,nodes[j].y);
+    ctx.stroke();
+   }
+  }
+ }
+
+ nodes.forEach(n=>{
+  ctx.fillStyle="cyan";
+  ctx.beginPath();
+  ctx.arc(n.x,n.y,2,0,Math.PI*2);
+  ctx.fill();
+  n.x+=n.dx;
+  n.y+=n.dy;
+  if(n.x<0||n.x>c.width)n.dx*=-1;
+  if(n.y<0||n.y>c.height)n.dy*=-1;
+ });
+
+ requestAnimationFrame(draw);
+}
+draw();
 </script>
 
 </body>
