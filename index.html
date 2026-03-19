@@ -2,137 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bhavin Garg - Resume</title>
+  <title>Bhavin Garg - Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #222;
+      background: #eef2f7;
+      color: #333;
     }
+
     .container {
       max-width: 900px;
       margin: 40px auto;
-      background: #ffffff;
+      background: #fff;
       padding: 30px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
+
     header {
       text-align: center;
+      padding-bottom: 20px;
       border-bottom: 2px solid #eee;
-      padding-bottom: 15px;
-      margin-bottom: 20px;
     }
+
     h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 34px;
+      color: #2c3e50;
     }
+
     .subtitle {
-      font-size: 16px;
-      color: #555;
+      color: #7f8c8d;
       margin-top: 5px;
     }
+
     .contact {
       margin-top: 10px;
       font-size: 14px;
-      color: #555;
     }
+
     .contact a {
-      color: #0066cc;
+      color: #3498db;
       text-decoration: none;
     }
+
     .section {
-      margin-bottom: 22px;
+      margin-top: 25px;
     }
+
     .section h2 {
-      font-size: 20px;
-      margin-bottom: 8px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 4px;
+      color: #2c3e50;
+      border-left: 4px solid #3498db;
+      padding-left: 10px;
+      margin-bottom: 10px;
     }
+
     ul {
-      margin: 8px 0 0 18px;
+      padding-left: 18px;
     }
+
     li {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
+
     .item-title {
-      font-weight: bold;
+      font-weight: 600;
+      color: #34495e;
     }
+
+    /* Skills tags */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #3498db;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
     @media (max-width: 600px) {
       .container {
         margin: 10px;
         padding: 20px;
       }
-      h1 {
-        font-size: 26px;
-      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
       <h1>Bhavin Garg</h1>
       <div class="subtitle">Computer Science Engineering Student</div>
+
       <div class="contact">
-        Email: <a href="mailto:bhavingarg121@gmail.com">bhavingarg121@gmail.com</a> |
-        Phone: +91-6006103292 |
-        LinkedIn: <a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank">linkedin.com/in/bhavin-garg-614429384</a>
+        📧 <a href="mailto:bhavingarg121@gmail.com">bhavingarg121@gmail.com</a> |
+        📱 +91-6006103292 |
+        🔗 <a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank">LinkedIn</a>
       </div>
     </header>
 
     <section class="section">
       <h2>Summary</h2>
       <p>
-        I am a Computer Science Engineering student with strong interest in programming, problem solving, and building practical technology solutions.
-        Currently developing skills in C programming, Python, and data structures while working on small projects to understand real‑world applications of technology.
+        Passionate Computer Science student focused on programming, data structures, and solving real-world problems.
+        Actively building projects using Python and continuously improving logical and analytical skills.
       </p>
     </section>
 
     <section class="section">
       <h2>Education</h2>
-      <p class="item-title">B.E. in Computer Science Engineering (First Year)</p>
-      <p>Priyadarshini College of Engineering, Nagpur, India<br />
-         Expected Graduation: 2029
-      </p>
+      <p class="item-title">B.E. in Computer Science Engineering</p>
+      <p>Priyadarshini College of Engineering, Nagpur<br>
+      Expected Graduation: 2029</p>
     </section>
 
     <section class="section">
-      <h2>Technical Skills</h2>
-      <ul>
-        <li>C Programming</li>
-        <li>Python</li>
-        <li>Basic Data Structures</li>
-        <li>Web Scraping</li>
-        <li>Git &amp; GitHub</li>
-        <li>Problem Solving</li>
-      </ul>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">C</span>
+        <span class="skill">Python</span>
+        <span class="skill">Data Structures</span>
+        <span class="skill">Web Scraping</span>
+        <span class="skill">Git</span>
+        <span class="skill">Problem Solving</span>
+      </div>
     </section>
 
     <section class="section">
       <h2>Projects</h2>
-      <p class="item-title">Government Schemes Information Scraper (Python)</p>
+      <p class="item-title">Government Schemes Scraper</p>
       <ul>
-        <li>Developed a Python script using requests and BeautifulSoup to collect information about government schemes from public websites.</li>
-        <li>Organized and displayed scheme data to make it easier for users to access useful information.</li>
+        <li>Built a Python-based scraper using BeautifulSoup.</li>
+        <li>Collected and organized public scheme data efficiently.</li>
       </ul>
     </section>
 
     <section class="section">
       <h2>Achievements</h2>
-      <p class="item-title">Second Prize – Chemistry in Action Event</p>
       <ul>
-        <li>Presented the Blue Bottle Experiment demonstrating oxidation–reduction reactions as part of a team.</li>
+        <li><b>Second Prize</b> – Chemistry in Action Event</li>
       </ul>
     </section>
 
     <section class="section">
       <h2>Interests</h2>
-      <p>Software Development, Programming, Technology Innovation, Problem Solving</p>
+      <p>Software Development, Tech Innovation, Problem Solving</p>
     </section>
   </div>
 </body>
