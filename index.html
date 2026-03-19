@@ -8,15 +8,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* BACKGROUND */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #020617;
+  background: linear-gradient(135deg, #020617, #0f172a, #020617);
+  background-size: 300% 300%;
+  animation: bgMove 10s ease infinite;
   color: white;
-  overflow-x: hidden;
 }
 
-/* NETFLIX INTRO */
+@keyframes bgMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* INTRO */
 #intro {
   position: fixed;
   width: 100%;
@@ -36,24 +45,7 @@ body {
 @keyframes introAnim {
   0% {opacity:0; transform:scale(0.5);}
   50% {opacity:1; transform:scale(1.1); text-shadow:0 0 40px red;}
-  100% {opacity:1; transform:scale(1);}
-}
-
-/* BACKGROUND */
-canvas {
-  position: fixed;
-  z-index: -2;
-}
-
-/* MOUSE GLOW */
-.glow {
-  position: fixed;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(0,255,255,0.3), transparent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
+  100% {opacity:1;}
 }
 
 /* NAV */
@@ -61,93 +53,106 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  background: rgba(0,0,0,0.4);
+}
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  position: relative;
+}
+nav a::after {
+  content:"";
+  width:0%;
+  height:2px;
+  background:cyan;
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  transition:0.3s;
+}
+nav a:hover::after {
+  width:100%;
 }
 
 /* HERO */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
+  text-align:center;
+  padding:80px 20px;
 }
-
 .image-container {
   position: relative;
-  display: inline-block;
+  display:inline-block;
 }
-
 .profile {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 60px cyan;
-  transition: transform 3s ease, opacity 1s ease;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 0 40px cyan;
+  transition:1s;
 }
-
+.profile:hover {
+  transform:scale(1.1);
+  box-shadow:0 0 80px cyan;
+}
 .overlay {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.6));
+  position:absolute;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background:radial-gradient(circle,transparent 60%, rgba(0,0,0,0.6));
 }
+.zoom { transform:scale(1.15); }
+.fade { opacity:0; }
 
-.zoom { transform: scale(1.15); }
-.fade { opacity: 0; }
-
-.text-fade {
-  opacity: 0;
-  transform: translateY(10px);
+h1 {
+  background: linear-gradient(90deg, cyan, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .typing { color: cyan; }
 
 /* SECTIONS */
 .section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 25px;
-  border-radius: 12px;
+  max-width:900px;
+  margin:40px auto;
+  padding:30px;
+  border-radius:15px;
   background: rgba(255,255,255,0.05);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s;
+  backdrop-filter: blur(20px);
+  transition:0.3s;
+  transform-style: preserve-3d;
 }
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.section:hover {
+  transform: translateY(-5px);
 }
-
-/* SKILLS */
-.bar { height: 8px; background: #333; border-radius: 10px; }
-.fill { height: 100%; background: cyan; width: 0; transition: 1.5s; }
 
 /* PROJECT */
 .project {
-  padding: 15px;
-  margin-top: 10px;
+  padding:20px;
+  margin-top:15px;
+  border-radius:12px;
   background: rgba(255,255,255,0.08);
 }
 
-/* SOCIAL */
-.social a {
-  color: cyan;
-  margin: 10px;
+/* SKILLS */
+.bar { height:8px; background:#333; border-radius:10px;}
+.fill { height:100%; background:cyan; }
+
+/* MOBILE */
+@media(max-width:768px){
+  nav {flex-direction:column; align-items:center;}
+  .profile {width:140px; height:140px;}
+  .section {margin:20px 10px;}
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-  <h1 class="logo">BHAVIN</h1>
-</div>
-
-<canvas id="bg"></canvas>
-<div class="glow" id="glow"></div>
+<div id="intro"><h1 class="logo">BHAVIN</h1></div>
 
 <nav>
   <div><b>Bhavin</b></div>
@@ -155,14 +160,12 @@ nav {
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#achievements">Achievements</a>
-    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="image-container">
-    <img id="profile.jpeg" src="images/profile1.jpeg" class="profile2.jpeg">
+    <img id="profile" src="images/profile1.jpg" class="profile">
     <div class="overlay"></div>
   </div>
 
@@ -171,31 +174,25 @@ nav {
   <h3>I am <span class="typing"></span></h3>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section">
   <h2>About</h2>
-  <p>Computer Science student passionate about coding and building real-world projects.</p>
+  <p>Computer Science student passionate about building real-world solutions.</p>
 </section>
 
-<!-- SKILLS -->
 <section class="section">
   <h2>Skills</h2>
-  Python
-  <div class="bar"><div class="fill" style="width:80%"></div></div>
-  C
-  <div class="bar"><div class="fill" style="width:70%"></div></div>
+  Python<div class="bar"><div class="fill" style="width:80%"></div></div>
+  C<div class="bar"><div class="fill" style="width:70%"></div></div>
 </section>
 
-<!-- PROJECT -->
 <section id="projects" class="section">
   <h2>Projects</h2>
   <div class="project">
     <b>Government Schemes Information Platform (In Progress)</b>
-    <p>Building a platform to simplify access to government schemes using Python.</p>
+    <p>Building a platform to simplify access to government schemes.</p>
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements" class="section">
   <h2>Achievements</h2>
   <ul>
@@ -205,101 +202,50 @@ nav {
   </ul>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Email: bhavingarg121@gmail.com</p>
-</section>
-
 <script>
-// INTRO
-window.onload = () => {
-  setTimeout(()=>{
-    document.getElementById("intro").style.display="none";
-  },3000);
-};
+// intro
+window.onload=()=>setTimeout(()=>document.getElementById("intro").style.display="none",3000);
 
-// TYPING
+// typing
 const words=["a Developer","a Problem Solver","a Tech Enthusiast"];
-let i=0,j=0,txt="",del=false;
+let i=0,j=0,t="",d=false;
 function type(){
- if(i<words.length){
-  if(!del && j<=words[i].length) txt=words[i].substring(0,j++);
-  else if(del && j>=0) txt=words[i].substring(0,j--);
-  document.querySelector(".typing").textContent=txt;
-  if(j==words[i].length) del=true;
-  if(j==0){del=false;i=(i+1)%words.length;}
- }
+ if(!d && j<=words[i].length) t=words[i].substring(0,j++);
+ else if(d && j>=0) t=words[i].substring(0,j--);
+ document.querySelector(".typing").textContent=t;
+ if(j==words[i].length)d=true;
+ if(j==0){d=false;i=(i+1)%words.length;}
  setTimeout(type,100);
 }
 type();
 
-// IMAGE SLIDER
+// slider
 const images=["images/profile1.jpg","images/profile2.jpg","images/profile3.jpg"];
 const texts=["Creative Problem Solver 💡","Fast Learner ⚡","Team Player 🤝"];
-
-let index=0;
-const img=document.getElementById("profile");
-const text=document.getElementById("photoText");
-
-function change(){
+let idx=0;
+setInterval(()=>{
+ const img=document.getElementById("profile");
  img.classList.add("fade");
- text.classList.add("text-fade");
-
  setTimeout(()=>{
-  index=(index+1)%images.length;
-  img.src=images[index];
-  text.textContent=texts[index];
-
+  idx=(idx+1)%images.length;
+  img.src=images[idx];
+  document.getElementById("photoText").textContent=texts[idx];
   img.classList.remove("fade");
-  text.classList.remove("text-fade");
-
-  img.classList.add("zoom");
  },800);
-}
-setInterval(change,3000);
+},3000);
 
-// SCROLL
-const sec=document.querySelectorAll('.section');
-const obs=new IntersectionObserver(e=>{
- e.forEach(x=>{
-  if(x.isIntersecting){
-    x.target.classList.add('visible');
-    x.target.querySelectorAll('.fill').forEach(f=>{
-      f.style.width=f.style.width;
-    });
-  }
+// 3D hover (desktop only)
+if(window.innerWidth>768){
+ document.querySelectorAll(".section,.project").forEach(card=>{
+  card.addEventListener("mousemove",e=>{
+    const r=card.getBoundingClientRect();
+    const x=e.clientX-r.left;
+    const y=e.clientY-r.top;
+    card.style.transform=`rotateX(${-(y-r.height/2)/15}deg) rotateY(${(x-r.width/2)/15}deg)`;
+  });
+  card.addEventListener("mouseleave",()=>card.style.transform="rotateX(0) rotateY(0)");
  });
-});
-sec.forEach(s=>obs.observe(s));
-
-// PARTICLES
-const c=document.getElementById("bg");
-const ctx=c.getContext("2d");
-c.width=window.innerWidth;
-c.height=window.innerHeight;
-let p=[];
-for(let i=0;i<80;i++){
- p.push({x:Math.random()*c.width,y:Math.random()*c.height});
 }
-function draw(){
- ctx.clearRect(0,0,c.width,c.height);
- p.forEach(pt=>{
-  ctx.fillStyle="cyan";
-  ctx.fillRect(pt.x,pt.y,2,2);
-  pt.y+=0.5;
-  if(pt.y>c.height) pt.y=0;
- });
- requestAnimationFrame(draw);
-}
-draw();
-
-// MOUSE GLOW
-const glow=document.getElementById("glow");
-document.addEventListener("mousemove",e=>{
- glow.style.left=e.clientX-100+"px";
- glow.style.top=e.clientY-100+"px";
-});
 </script>
 
 </body>
