@@ -1,230 +1,238 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Bhavin Garg - Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhavin Garg | Portfolio</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #eef2f7;
-      color: #333;
-    }
+<style>
+:root {
+  --bg: #eef2f7;
+  --text: #333;
+  --card: #fff;
+}
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
+body.dark {
+  --bg: #121212;
+  --text: #eee;
+  --card: #1e1e1e;
+}
 
-    header {
-      text-align: center;
-      padding-bottom: 20px;
-      border-bottom: 2px solid #eee;
-    }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 34px;
-      color: #2c3e50;
-    }
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
 
-    .subtitle {
-      color: #7f8c8d;
-      margin-top: 5px;
-    }
+nav a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: var(--text);
+  font-weight: 500;
+}
 
-    .contact {
-      margin-top: 10px;
-      font-size: 14px;
-    }
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
 
-    .contact a {
-      color: #3498db;
-      text-decoration: none;
-    }
+.hero h1 {
+  font-size: 40px;
+}
 
-    /* Sections */
-    .section {
-      margin-top: 25px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
+.typing {
+  color: #3498db;
+  font-weight: 600;
+}
 
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-    .section h2 {
-      color: #2c3e50;
-      border-left: 4px solid #3498db;
-      padding-left: 10px;
-      margin-bottom: 10px;
-    }
+.btn:hover {
+  transform: scale(1.1);
+}
 
-    /* Hover effect */
-    .section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      padding: 10px;
-      border-radius: 8px;
-    }
+/* SECTIONS */
+.section {
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--card);
+  padding: 25px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s;
+}
 
-    ul {
-      padding-left: 18px;
-    }
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    li {
-      margin-bottom: 6px;
-    }
+.section:hover {
+  transform: translateY(-5px);
+}
 
-    .item-title {
-      font-weight: 600;
-      color: #34495e;
-    }
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-    /* Skills */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.skill {
+  background: #3498db;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
 
-    .skill {
-      background: #3498db;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      transition: 0.3s;
-    }
+/* PROJECTS */
+.projects {
+  display: grid;
+  gap: 15px;
+}
 
-    .skill:hover {
-      transform: scale(1.1);
-      background: #2c80b4;
-    }
+.project {
+  padding: 15px;
+  border-radius: 8px;
+  background: #f0f0f0;
+  transition: 0.3s;
+}
 
-    /* Button */
-    .btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 18px;
-      background: #3498db;
-      color: white;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.project:hover {
+  transform: scale(1.03);
+}
 
-    .btn:hover {
-      background: #2c80b4;
-      transform: scale(1.05);
-    }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-      .container {
-        margin: 10px;
-        padding: 20px;
-      }
-    }
-  </style>
+/* DARK BUTTON */
+.toggle {
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <header>
-      <h1>Bhavin Garg</h1>
-      <div class="subtitle">Computer Science Engineering Student</div>
-
-      <div class="contact">
-        📧 <a href="mailto:bhavingarg121@gmail.com">bhavingarg121@gmail.com</a> |
-        📱 +91-6006103292 |
-        🔗 <a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank">LinkedIn</a>
-      </div>
-
-      <a href="mailto:bhavingarg121@gmail.com" class="btn">Hire Me</a>
-    </header>
-
-    <section class="section">
-      <h2>Summary</h2>
-      <p>
-        Passionate Computer Science student focused on programming, data structures, and solving real-world problems.
-        Actively building projects using Python and continuously improving logical and analytical skills.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Education</h2>
-      <p class="item-title">B.E. in Computer Science Engineering</p>
-      <p>Priyadarshini College of Engineering, Nagpur<br>
-      Expected Graduation: 2029</p>
-    </section>
-
-    <section class="section">
-      <h2>Skills</h2>
-      <div class="skills">
-        <span class="skill">C</span>
-        <span class="skill">Python</span>
-        <span class="skill">Data Structures</span>
-        <span class="skill">Web Scraping</span>
-        <span class="skill">Git</span>
-        <span class="skill">Problem Solving</span>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Projects</h2>
-      <p class="item-title">Government Schemes Scraper</p>
-      <ul>
-        <li>Built a Python-based scraper using BeautifulSoup.</li>
-        <li>Collected and organized public scheme data efficiently.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Achievements</h2>
-      <ul>
-        <li><b>Second Prize</b> – Chemistry in Action Event</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Interests</h2>
-      <p>Software Development, Tech Innovation, Problem Solving</p>
-    </section>
-
+<!-- NAVBAR -->
+<nav>
+  <div><b>Bhavin</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <span class="toggle" onclick="toggleDark()">🌙</span>
   </div>
+</nav>
 
-  <!-- Scroll Animation Script -->
-  <script>
-    const sections = document.querySelectorAll('.section');
+<!-- HERO -->
+<section class="hero">
+  <h1>Hi, I'm Bhavin 👋</h1>
+  <h2>I am <span class="typing"></span></h2>
+  <a href="mailto:bhavingarg121@gmail.com" class="btn">Hire Me</a>
+</section>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p>
+    Computer Science student passionate about coding, problem solving, and building real-world projects using Python and C.
+  </p>
+</section>
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
+<!-- SKILLS -->
+<section class="section">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span class="skill">C</span>
+    <span class="skill">Python</span>
+    <span class="skill">DSA</span>
+    <span class="skill">Web Scraping</span>
+    <span class="skill">Git</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <b>Government Schemes Scraper</b>
+      <p>Python + BeautifulSoup project to collect scheme data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Email: bhavingarg121@gmail.com</p>
+</section>
+
+<script>
+// Typing effect
+const text = ["a Developer", "a Problem Solver", "a CSE Student"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+  if (i < text.length) {
+    if (!isDeleting && j <= text[i].length) {
+      current = text[i].substring(0, j++);
+    } else if (isDeleting && j >= 0) {
+      current = text[i].substring(0, j--);
+    }
+
+    document.querySelector(".typing").textContent = current;
+
+    if (j == text[i].length) isDeleting = true;
+    if (j == 0) {
+      isDeleting = false;
+      i = (i + 1) % text.length;
+    }
+  }
+  setTimeout(type, 100);
+}
+type();
+
+// Scroll animation
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+});
+sections.forEach(s => observer.observe(s));
+
+// Dark mode
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
