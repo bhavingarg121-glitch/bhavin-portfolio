@@ -3,29 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavin Garg | AI Portfolio</title>
+<title>Bhavin Garg | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #0a0a0a;
-  color: white;
+  background: #0b0f14;
+  color: #e5e7eb;
 }
 
-/* AI BACKGROUND */
-#ai-bg {
+/* GRID BACKGROUND */
+body::before {
+  content: "";
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  background:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
   z-index: -1;
 }
 
-/* NETFLIX INTRO */
+/* INTRO */
 #intro {
   position: fixed;
   width: 100%;
@@ -34,54 +41,60 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 9999;
 }
-.logo {
+
+#nameIntro {
   font-size: 60px;
-  color: #e50914;
+  color: red;
   letter-spacing: 10px;
-  animation: introAnim 2.5s ease forwards;
 }
-@keyframes introAnim {
-  0% {opacity:0; transform:scale(0.5);}
-  50% {opacity:1; transform:scale(1.1); text-shadow:0 0 40px red;}
-  100% {opacity:1;}
+
+/* SPIDERMAN */
+#spiderman {
+  position: absolute;
+  width: 120px;
+  transform-origin: top center;
+}
+
+#rope {
+  position: absolute;
+  width: 2px;
+  background: white;
+  top: 0;
 }
 
 /* NAV */
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
-}
-nav a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
+  padding: 20px 40px;
+  border-bottom: 1px solid #222;
 }
 
 /* HERO */
 .hero {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
   padding: 80px 20px;
 }
-.profile {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  box-shadow: 0 0 40px cyan;
-}
-.fade { opacity: 0; transition: 0.5s; }
 
-.typing { color: cyan; }
+.profile {
+  width: 200px;
+  border-radius: 10px;
+}
 
 /* SECTION */
 .section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 25px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #111827;
   border-radius: 12px;
-  background: rgba(255,255,255,0.05);
+  opacity: 0;
 }
 
 /* CHATBOT */
@@ -92,59 +105,62 @@ nav a {
   width: 260px;
   background: #111;
   border-radius: 10px;
-  overflow: hidden;
 }
-#chat-header {
-  background: cyan;
-  color: black;
-  padding: 10px;
-}
+
 #chat-body {
   height: 150px;
   overflow-y: auto;
   padding: 10px;
 }
+
 #chat-input {
   width: 100%;
   padding: 8px;
-  border: none;
   background: #222;
   color: white;
+  border: none;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  nav {flex-direction:column; align-items:center;}
-  .profile {width:130px; height:130px;}
+#voiceBtn {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="ai-bg"></canvas>
-
-<div id="intro"><h1 class="logo">BHAVIN</h1></div>
+<!-- INTRO -->
+<div id="intro">
+  <h1 id="nameIntro">BHAVIN GARG</h1>
+  <div id="rope"></div>
+  <img src="images/spiderman.png" id="spiderman">
+</div>
 
 <nav>
   <div><b>Bhavin</b></div>
   <div>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <section class="hero">
-  <img id="profile" src="images/profile1.jpg" class="profile">
-  <h1>Bhavin Garg</h1>
-  <h2 id="photoText">Creative Problem Solver 💡</h2>
-  <h3>I am <span class="typing"></span></h3>
+  <img src="images/profile1.jpg" class="profile">
+  <div>
+    <h1>Bhavin Garg</h1>
+    <p>AI Enthusiast | Developer</p>
+  </div>
 </section>
 
 <section id="about" class="section">
   <h2>About</h2>
-  <p>Computer Science student passionate about building AI-powered solutions.</p>
+  <p>Computer Science student passionate about building real-world AI solutions.</p>
 </section>
 
 <section id="projects" class="section">
@@ -152,64 +168,71 @@ nav a {
   <p>Government Schemes Information Platform (In Progress)</p>
 </section>
 
-<section id="achievements" class="section">
-  <h2>Achievements</h2>
-  <ul>
-    <li>🏆 Student of the Year – KP School, Samba J&K</li>
-    <li>🎯 District Level Team Member – SOF</li>
-    <li>🧪 Second Prize – Chemistry Event</li>
-  </ul>
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Email: bhavingarg121@gmail.com</p>
 </section>
 
 <!-- CHATBOT -->
 <div id="chatbot">
-  <div id="chat-header">AI Assistant 🤖</div>
   <div id="chat-body"></div>
-  <input id="chat-input" placeholder="Ask about me...">
+  <input id="chat-input" placeholder="Ask me...">
+  <button id="voiceBtn">🎙️ Talk</button>
 </div>
 
 <script>
-// intro
-window.onload=()=>setTimeout(()=>document.getElementById("intro").style.display="none",3000);
 
-// typing
-const words=["a Developer","a Problem Solver","an AI Enthusiast"];
-let i=0,j=0,t="",d=false;
-function type(){
- if(!d && j<=words[i].length) t=words[i].substring(0,j++);
- else if(d && j>=0) t=words[i].substring(0,j--);
- document.querySelector(".typing").textContent=t;
- if(j==words[i].length)d=true;
- if(j==0){d=false;i=(i+1)%words.length;}
- setTimeout(type,100);
-}
-type();
+// INTRO ANIMATION
+gsap.from("#nameIntro",{scale:0.5,opacity:0,duration:1.5});
 
-// slider
-const images=["images/profile1.jpg","images/profile2.jpg","images/profile3.jpg"];
-const texts=["Creative Problem Solver 💡","Fast Learner ⚡","Team Player 🤝"];
-let idx=0;
-setInterval(()=>{
- const img=document.getElementById("profile");
- img.classList.add("fade");
- setTimeout(()=>{
-  idx=(idx+1)%images.length;
-  img.src=images[idx];
-  document.getElementById("photoText").textContent=texts[idx];
-  img.classList.remove("fade");
- },500);
-},3000);
+let spider=document.getElementById("spiderman");
+let rope=document.getElementById("rope");
 
-// chatbot
+gsap.set(spider,{x:window.innerWidth/2,y:-200});
+gsap.set(rope,{left:window.innerWidth/2});
+
+gsap.to(spider,{y:200,duration:1.5});
+gsap.to(spider,{rotation:30,duration:1,yoyo:true,repeat:3});
+gsap.to(rope,{height:250,duration:1.5});
+
+setTimeout(()=>{
+ gsap.to("#intro",{opacity:0,duration:1});
+ setTimeout(()=>document.getElementById("intro").style.display="none",1000);
+},4000);
+
+// SCROLL ANIMATIONS
+gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray(".section").forEach(sec=>{
+ gsap.to(sec,{
+  opacity:1,
+  y:-30,
+  duration:1,
+  scrollTrigger:{trigger:sec,start:"top 80%"}
+ });
+});
+
+// CHATBOT + VOICE (IMPORTANT: replace URL)
+const API_URL="https://your-app.onrender.com/chat";
+
 const input=document.getElementById("chat-input");
 const body=document.getElementById("chat-body");
 
-input.addEventListener("keypress",e=>{
+input.addEventListener("keypress",async e=>{
  if(e.key==="Enter"){
   let msg=input.value;
   add("You: "+msg);
-  let reply=getReply(msg.toLowerCase());
-  setTimeout(()=>add("AI: "+reply),500);
+
+  const res=await fetch(API_URL,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({message:msg})
+  });
+
+  const data=await res.json();
+  let reply=data.choices[0].message.content;
+
+  add("AI: "+reply);
+  speak(reply);
   input.value="";
  }
 });
@@ -221,61 +244,32 @@ function add(msg){
  body.scrollTop=body.scrollHeight;
 }
 
-function getReply(m){
- if(m.includes("skill")) return "Python, C, DSA";
- if(m.includes("project")) return "Government schemes platform project.";
- if(m.includes("achievement")) return "Student of the Year & district level.";
- return "Ask about skills, projects, or achievements!";
-}
+// VOICE
+const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
+document.getElementById("voiceBtn").onclick=()=>rec.start();
 
-// AI BACKGROUND
-const c=document.getElementById("ai-bg");
-const ctx=c.getContext("2d");
-c.width=window.innerWidth;
-c.height=window.innerHeight;
+rec.onresult=async e=>{
+ let speech=e.results[0][0].transcript;
+ add("You: "+speech);
 
-let nodes=[];
-for(let i=0;i<70;i++){
- nodes.push({
-  x:Math.random()*c.width,
-  y:Math.random()*c.height,
-  dx:(Math.random()-0.5),
-  dy:(Math.random()-0.5)
- });
-}
-
-function draw(){
- ctx.clearRect(0,0,c.width,c.height);
-
- for(let i=0;i<nodes.length;i++){
-  for(let j=i+1;j<nodes.length;j++){
-   let dx=nodes[i].x-nodes[j].x;
-   let dy=nodes[i].y-nodes[j].y;
-   let dist=Math.sqrt(dx*dx+dy*dy);
-   if(dist<120){
-    ctx.strokeStyle="rgba(0,255,255,"+(1-dist/120)+")";
-    ctx.beginPath();
-    ctx.moveTo(nodes[i].x,nodes[i].y);
-    ctx.lineTo(nodes[j].x,nodes[j].y);
-    ctx.stroke();
-   }
-  }
- }
-
- nodes.forEach(n=>{
-  ctx.fillStyle="cyan";
-  ctx.beginPath();
-  ctx.arc(n.x,n.y,2,0,Math.PI*2);
-  ctx.fill();
-  n.x+=n.dx;
-  n.y+=n.dy;
-  if(n.x<0||n.x>c.width)n.dx*=-1;
-  if(n.y<0||n.y>c.height)n.dy*=-1;
+ const res=await fetch(API_URL,{
+  method:"POST",
+  headers:{"Content-Type":"application/json"},
+  body:JSON.stringify({message:speech})
  });
 
- requestAnimationFrame(draw);
+ const data=await res.json();
+ let reply=data.choices[0].message.content;
+
+ add("AI: "+reply);
+ speak(reply);
+};
+
+function speak(t){
+ let s=new SpeechSynthesisUtterance(t);
+ speechSynthesis.speak(s);
 }
-draw();
+
 </script>
 
 </body>
