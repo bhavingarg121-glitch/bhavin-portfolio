@@ -9,57 +9,71 @@
 
 <style>
 :root {
-  --bg: #eef2f7;
-  --text: #333;
-  --card: #fff;
-}
-
-body.dark {
-  --bg: #121212;
-  --text: #eee;
-  --card: #1e1e1e;
+  --bg: #0f172a;
+  --card: rgba(255,255,255,0.05);
+  --text: #e2e8f0;
+  --accent: #38bdf8;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: var(--bg);
+  background: linear-gradient(135deg, #0f172a, #020617);
   color: var(--text);
-  scroll-behavior: smooth;
 }
 
 /* NAVBAR */
 nav {
   position: sticky;
   top: 0;
-  background: var(--card);
-  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  z-index: 100;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
 }
 
 nav a {
-  text-decoration: none;
-  margin: 0 10px;
   color: var(--text);
-  font-weight: 500;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
 /* HERO */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 400px;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 38px;
 }
 
 .typing {
-  color: #3498db;
-  font-weight: 600;
+  color: var(--accent);
+}
+
+/* IMAGE STYLE */
+.profile {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 40px rgba(56,189,248,0.5);
+  transition: 0.4s;
+}
+
+.profile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(56,189,248,0.8);
 }
 
 /* BUTTON */
@@ -67,8 +81,8 @@ nav a {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
-  background: #3498db;
-  color: white;
+  background: var(--accent);
+  color: black;
   border-radius: 25px;
   text-decoration: none;
   transition: 0.3s;
@@ -82,21 +96,18 @@ nav a {
 .section {
   max-width: 900px;
   margin: 40px auto;
-  background: var(--card);
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 12px;
+  background: var(--card);
+  backdrop-filter: blur(12px);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: 0.6s;
 }
 
 .section.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.section:hover {
-  transform: translateY(-5px);
 }
 
 /* SKILLS */
@@ -107,8 +118,8 @@ nav a {
 }
 
 .skill {
-  background: #3498db;
-  color: white;
+  background: var(--accent);
+  color: black;
   padding: 6px 12px;
   border-radius: 20px;
 }
@@ -121,47 +132,59 @@ nav a {
 
 .project {
   padding: 15px;
-  border-radius: 8px;
-  background: #f0f0f0;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
   transition: 0.3s;
 }
 
 .project:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
 }
 
-/* DARK BUTTON */
-.toggle {
-  cursor: pointer;
+.project a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
   <div><b>Bhavin</b></div>
   <div>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-    <span class="toggle" onclick="toggleDark()">🌙</span>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Hi, I'm Bhavin Garg </h1>
-  <h2>I am <span class="typing"></span></h2>
-  <a href="mailto:bhavingarg121@gmail.com" class="btn">Hire Me</a>
+  <img src="profile.jpg" class="profile">
+
+  <div class="hero-text">
+    <h1>Hi, I'm Bhavin 👋</h1>
+    <h2>I am <span class="typing"></span></h2>
+    <p>Passionate CSE student building real-world projects.</p>
+    <a href="mailto:bhavingarg121@gmail.com" class="btn">Hire Me</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
   <h2>About Me</h2>
   <p>
-    Computer Science student passionate about coding, problem solving, and building real-world projects using Python and C.
+    I am a Computer Science student focused on problem solving, DSA, and building impactful tech projects using Python.
   </p>
 </section>
 
@@ -172,8 +195,8 @@ nav a {
     <span class="skill">C</span>
     <span class="skill">Python</span>
     <span class="skill">DSA</span>
-    <span class="skill">Web Scraping</span>
     <span class="skill">Git</span>
+    <span class="skill">Web Scraping</span>
   </div>
 </section>
 
@@ -183,7 +206,8 @@ nav a {
   <div class="projects">
     <div class="project">
       <b>Government Schemes Scraper</b>
-      <p>Python + BeautifulSoup project to collect scheme data.</p>
+      <p>Python project using BeautifulSoup.</p>
+      <a href="#">GitHub Link</a>
     </div>
   </div>
 </section>
@@ -194,44 +218,39 @@ nav a {
   <p>Email: bhavingarg121@gmail.com</p>
 </section>
 
+<footer>
+  © 2026 Bhavin Garg
+</footer>
+
 <script>
-// Typing effect
-const text = ["a Developer", "a Problem Solver", "a CSE Student"];
-let i = 0, j = 0, current = "", isDeleting = false;
+// typing effect
+const words = ["a Developer", "a Problem Solver", "a Tech Enthusiast"];
+let i=0,j=0,current="",del=false;
 
-function type() {
-  if (i < text.length) {
-    if (!isDeleting && j <= text[i].length) {
-      current = text[i].substring(0, j++);
-    } else if (isDeleting && j >= 0) {
-      current = text[i].substring(0, j--);
+function type(){
+  if(i<words.length){
+    if(!del && j<=words[i].length){
+      current=words[i].substring(0,j++);
+    } else if(del && j>=0){
+      current=words[i].substring(0,j--);
     }
+    document.querySelector(".typing").textContent=current;
 
-    document.querySelector(".typing").textContent = current;
-
-    if (j == text[i].length) isDeleting = true;
-    if (j == 0) {
-      isDeleting = false;
-      i = (i + 1) % text.length;
-    }
+    if(j==words[i].length) del=true;
+    if(j==0){ del=false; i=(i+1)%words.length;}
   }
-  setTimeout(type, 100);
+  setTimeout(type,100);
 }
 type();
 
-// Scroll animation
-const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
+// scroll animation
+const sections=document.querySelectorAll('.section');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('visible');
   });
 });
-sections.forEach(s => observer.observe(s));
-
-// Dark mode
-function toggleDark() {
-  document.body.classList.toggle("dark");
-}
+sections.forEach(s=>observer.observe(s));
 </script>
 
 </body>
