@@ -16,13 +16,11 @@ body {
   overflow-x: hidden;
 }
 
-/* BACKGROUND */
 canvas {
   position: fixed;
   z-index: -2;
 }
 
-/* MOUSE GLOW */
 .glow {
   position: fixed;
   width: 200px;
@@ -33,7 +31,6 @@ canvas {
   z-index: -1;
 }
 
-/* NAV */
 nav {
   display: flex;
   justify-content: space-between;
@@ -44,7 +41,6 @@ nav {
   backdrop-filter: blur(10px);
 }
 
-/* HERO */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -66,7 +62,6 @@ nav {
   color: cyan;
 }
 
-/* SECTION */
 .section {
   max-width: 900px;
   margin: 40px auto;
@@ -84,7 +79,6 @@ nav {
   transform: translateY(0);
 }
 
-/* SKILLS */
 .skill-bar {
   margin: 10px 0;
 }
@@ -102,7 +96,6 @@ nav {
   transition: 1.5s;
 }
 
-/* PROJECT */
 .project {
   padding: 15px;
   margin-top: 15px;
@@ -115,10 +108,10 @@ nav {
   transform: scale(1.05);
 }
 
-/* SOCIAL */
 .social a {
   margin: 10px;
   color: cyan;
+  text-decoration: none;
 }
 </style>
 </head>
@@ -138,7 +131,6 @@ nav {
   </div>
 </nav>
 
-<!-- HERO WITH PHOTO SLIDER -->
 <section class="hero">
   <img id="profile" src="profile1.jpg" class="profile">
   <h1>Bhavin Garg</h1>
@@ -146,13 +138,11 @@ nav {
   <h3>I am <span class="typing"></span></h3>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="section">
   <h2>About</h2>
   <p>Passionate Computer Science student focused on coding, problem solving and building real-world projects.</p>
 </section>
 
-<!-- SKILLS -->
 <section class="section">
   <h2>Skills</h2>
 
@@ -170,13 +160,19 @@ nav {
 
 </section>
 
-<!-- PROJECTS -->
 <section id="projects" class="section">
   <h2>Projects</h2>
-  <div class="project">Government Schemes Scraper (Python + BeautifulSoup)</div>
+
+  <div class="project">
+    <b>Government Schemes Information Platform (In Progress)</b>
+    <p>
+      Developing a Python-based system to scrape and structure data on government schemes.
+      Aiming to build a user-friendly platform that simplifies access to important public information.
+    </p>
+  </div>
+
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements" class="section">
   <h2>Achievements</h2>
   <ul>
@@ -186,7 +182,6 @@ nav {
   </ul>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="section">
   <h2>Contact</h2>
   <p>Email: bhavingarg121@gmail.com</p>
@@ -197,7 +192,7 @@ nav {
 </section>
 
 <script>
-// typing effect
+// typing
 const words=["a Developer","a Problem Solver","a Tech Enthusiast"];
 let i=0,j=0,text="",del=false;
 function type(){
@@ -212,7 +207,7 @@ function type(){
 }
 type();
 
-// PHOTO SLIDER
+// photo slider
 const images=["profile1.jpg","profile2.jpg","profile3.jpg"];
 const texts=[
  "Creative Problem Solver 💡",
