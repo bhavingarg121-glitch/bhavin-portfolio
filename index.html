@@ -8,6 +8,12 @@
 <meta name="description" content="Bhavin Garg - CSE student skilled in DSA, Python and development. Creator of Scheme Sathi.">
 <meta name="keywords" content="Bhavin Garg, Portfolio, DSA, Python, Projects">
 <meta name="author" content="Bhavin Garg">
+<meta name="robots" content="index, follow">
+
+<!-- Social Preview -->
+<meta property="og:title" content="Bhavin Garg | Portfolio">
+<meta property="og:description" content="Building real-world solutions using DSA & development.">
+<meta property="og:image" content="images/profile1.jpg">
 
 <title>Bhavin Garg | Portfolio</title>
 
@@ -23,7 +29,7 @@ body{
   color:#e5e7eb;
 }
 
-/* BACKGROUND */
+/* GRID BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -41,9 +47,15 @@ body::before{
   width:300px;height:300px;
   filter:blur(120px);
   z-index:-1;
+  animation:float 6s infinite alternate;
 }
 .blob1{background:#3b82f6;top:10%;left:10%;}
 .blob2{background:#9333ea;bottom:10%;right:10%;}
+
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(30px);}
+}
 
 /* NAV */
 nav{
@@ -55,34 +67,36 @@ nav{
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(10px);
 }
-nav a{
-  margin-left:20px;
-  color:white;
-  text-decoration:none;
-}
+nav a{margin-left:20px;color:white;text-decoration:none;}
 
 /* HERO */
-.hero{
-  text-align:center;
-  padding:80px 20px;
-}
+.hero{text-align:center;padding:80px 20px;}
+
 .profile{
-  width:160px;
-  border-radius:12px;
+  width:160px;height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  position:relative;
+}
+
+.hero h1{
+  background:linear-gradient(90deg,#3b82f6,#9333ea);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 /* CARDS */
-.cards{
-  display:flex;
-  gap:20px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
+.cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+
 .card{
   background:rgba(255,255,255,0.05);
   padding:20px;
   border-radius:12px;
   width:200px;
+  transition:0.4s;
+}
+.card:hover{
+  transform:rotateY(10deg) rotateX(10deg) scale(1.05);
 }
 
 /* SECTION */
@@ -91,31 +105,17 @@ nav a{
   margin:60px auto;
   padding:40px;
   background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(15px);
   border-radius:16px;
 }
 
-/* ABOUT */
+.fade{opacity:0;transform:translateY(40px);transition:1s;}
+.fade.show{opacity:1;transform:translateY(0);}
+
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
 }
-
-/* PROJECT */
-.projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-.project-card{
-  background:rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:12px;
-}
-
-/* LINKS */
-a{color:#3b82f6;}
 
 /* CHATBOT */
 #chatbot{
@@ -130,75 +130,40 @@ a{color:#3b82f6;}
   flex-direction:column;
   transition:0.3s;
 }
-
 #chat-header{
   display:flex;
   justify-content:space-between;
   padding:10px;
   background:#222;
 }
-
-#minBtn{
-  background:none;
-  border:none;
-  color:white;
-  cursor:pointer;
-}
-
+#minBtn{background:none;border:none;color:white;cursor:pointer;}
 #chat-body{
   flex:1;
   padding:10px;
-  overflow-y:auto;
+  overflow:auto;
   display:flex;
   flex-direction:column;
   gap:8px;
 }
-
-.msg{
-  max-width:80%;
-  padding:10px;
-  border-radius:10px;
-}
-
+.msg{max-width:80%;padding:10px;border-radius:10px;}
 .user{align-self:flex-end;background:#2563eb;}
 .ai{align-self:flex-start;background:#333;}
+#chat-input{padding:10px;background:#222;color:white;border:none;}
+#voiceBtn{padding:10px;background:#2563eb;color:white;border:none;}
 
-#chat-input{
-  border:none;
-  padding:10px;
-  background:#222;
-  color:white;
-}
-
-#voiceBtn{
-  border:none;
-  padding:10px;
-  background:#2563eb;
-  color:white;
-}
-
-/* HIDE CHAT */
-.hidden{
-  opacity:0;
-  pointer-events:none;
-  transform:scale(0.9);
-}
-
-/* FLOAT ICON */
+.hidden{opacity:0;pointer-events:none;}
 #chatIcon{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#2563eb;
-  width:55px;
-  height:55px;
+  width:55px;height:55px;
+  border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:50%;
-  font-size:24px;
-  cursor:pointer;
   display:none;
+  cursor:pointer;
 }
 
 /* FOOTER */
@@ -221,7 +186,6 @@ a{color:#3b82f6;}
 <div class="blob2"></div>
 </div>
 
-<!-- NAV -->
 <nav>
 <h2>Bhavin</h2>
 <div>
@@ -231,9 +195,8 @@ a{color:#3b82f6;}
 </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-<img src="profile1.jpeg" class="profile">
+<section class="hero fade">
+<img src="images/profile1.jpg" class="profile">
 <h1>Bhavin Garg</h1>
 <p>Building real-world solutions using DSA & development</p>
 
@@ -244,175 +207,85 @@ a{color:#3b82f6;}
 </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
+<section id="about" class="section fade">
 <h2>About Me</h2>
 <div class="about-grid">
-<p>
-I am a Computer Science Engineering student skilled in Data Structures, Algorithms, and development.
-Currently building <b>Scheme Sathi</b> to help people discover government schemes easily.
-I aim to work in top MNCs.
-</p>
-
+<p>I am a Computer Science student skilled in DSA, Python and development. Building Scheme Sathi.</p>
 <ul>
 <li>✔ DSA</li>
 <li>✔ Python & C</li>
-<li>✔ Problem Solving</li>
-<li>✔ Project Development</li>
+<li>✔ Projects</li>
 </ul>
 </div>
 </section>
 
-<!-- PROJECT -->
-<section id="projects" class="section">
+<section id="projects" class="section fade">
 <h2>Projects</h2>
-<div class="projects">
-<div class="project-card">
-<h3>Scheme Sathi</h3>
-<p>Platform to simplify government schemes access.</p>
-</div>
-</div>
+<div class="card">Scheme Sathi</div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
+<section id="contact" class="section fade">
 <h2>Contact</h2>
-
-<p>📧 Email:
-<a href="mailto:bhavingarg121@gmail.com">bhavingarg121@gmail.com</a>
-</p>
-
-<p>🔗 LinkedIn:
-<a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank">
-View Profile
-</a>
-</p>
-
+<p><a href="mailto:bhavingarg121@gmail.com">Email</a></p>
+<p><a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank">LinkedIn</a></p>
 </section>
 
-<!-- CHATBOT -->
+<!-- CHAT -->
 <div id="chatbot">
-<div id="chat-header">
-🤖 AI Assistant
-<button id="minBtn">➖</button>
-</div>
-
+<div id="chat-header">🤖 AI <button id="minBtn">➖</button></div>
 <div id="chat-body"></div>
-<input id="chat-input" placeholder="Ask something...">
-<button id="voiceBtn">🎙️ Talk</button>
+<input id="chat-input">
+<button id="voiceBtn">🎙️</button>
 </div>
 
 <div id="chatIcon">💬</div>
 
-<!-- FOOTER -->
 <footer class="footer">
-<p>© 2026 Bhavin Garg. All rights reserved.</p>
-<p>
-Built with ❤️ by Bhavin Garg |
-<a href="mailto:bhavingarg121@gmail.com">Email</a> |
-<a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank">LinkedIn</a>
-</p>
+© 2026 Bhavin Garg | Built with ❤️
 </footer>
 
 <script>
+// FADE
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")})});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 
-// AI LOGIC
-function getReply(msg){
- msg=msg.toLowerCase();
-
- if(msg.includes("hi")||msg.includes("hello")) return "Hey! 👋 I'm Bhavin's AI assistant.";
- if(msg.includes("how are you")) return "I'm doing great! 😄";
- if(msg.includes("who are you")) return "I'm Bhavin's AI assistant 🤖";
- if(msg.includes("who built you")) return "I was built by Bhavin Garg 🚀";
- if(msg.includes("skills")) return "Bhavin is skilled in DSA, Python, and C.";
- if(msg.includes("project")) return "He is working on Scheme Sathi.";
- if(msg.includes("goal")) return "His goal is to work in top MNCs.";
- if(msg.includes("contact")) return "Email: bhavingarg121@gmail.com";
-
- return "Ask me about skills, projects, goals, or Bhavin!";
+// AI
+function getReply(m){
+m=m.toLowerCase();
+if(m.includes("hi")) return "Hey 👋";
+if(m.includes("skills")) return "DSA, Python, C";
+if(m.includes("project")) return "Scheme Sathi";
+return "Ask about skills or project!";
 }
 
-// ADD MESSAGE
-function addMessage(text,type){
- let div=document.createElement("div");
- div.className="msg "+type;
- div.innerText=text;
- document.getElementById("chat-body").appendChild(div);
- document.getElementById("chat-body").scrollTop=9999;
+// CHAT
+function add(t,c){
+let d=document.createElement("div");
+d.className="msg "+c;
+d.innerText=t;
+chatBody.appendChild(d);
+chatBody.scrollTop=9999;
 }
 
-// TYPING
-function showTyping(){
- let d=document.createElement("div");
- d.className="msg ai";
- d.id="typing";
- d.innerText="...";
- document.getElementById("chat-body").appendChild(d);
+chatInput.onkeypress=e=>{
+if(e.key==="Enter"){
+add(chatInput.value,"user");
+let msg=chatInput.value;
+chatInput.value="";
+let reply=getReply(msg);
+setTimeout(()=>add(reply,"ai"),500);
 }
-
-function removeTyping(){
- let t=document.getElementById("typing");
- if(t) t.remove();
-}
-
-// TEXT
-document.getElementById("chat-input").addEventListener("keypress",e=>{
- if(e.key==="Enter"){
-  let msg=e.target.value;
-  addMessage(msg,"user");
-
-  showTyping();
-
-  setTimeout(()=>{
-   removeTyping();
-   let reply=getReply(msg);
-   addMessage(reply,"ai");
-   speak(reply);
-  },800);
-
-  e.target.value="";
- }
-});
-
-// VOICE
-const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
-
-document.getElementById("voiceBtn").onclick=()=>rec.start();
-
-rec.onresult=e=>{
- let speech=e.results[0][0].transcript;
- addMessage(speech,"user");
-
- showTyping();
-
- setTimeout(()=>{
-  removeTyping();
-  let reply=getReply(speech);
-  addMessage(reply,"ai");
-  speak(reply);
- },800);
 };
-
-// SPEAK
-function speak(t){
- let s=new SpeechSynthesisUtterance(t);
- speechSynthesis.speak(s);
-}
 
 // MINIMIZE
-const chatbot=document.getElementById("chatbot");
-const chatIcon=document.getElementById("chatIcon");
-
-document.getElementById("minBtn").onclick=()=>{
- chatbot.classList.add("hidden");
- chatIcon.style.display="flex";
+minBtn.onclick=()=>{
+chatbot.classList.add("hidden");
+chatIcon.style.display="flex";
 };
-
 chatIcon.onclick=()=>{
- chatbot.classList.remove("hidden");
- chatIcon.style.display="none";
+chatbot.classList.remove("hidden");
+chatIcon.style.display="none";
 };
-
 </script>
 
 </body>
