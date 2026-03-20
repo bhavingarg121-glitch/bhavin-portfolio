@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavin Garg | Portfolio</title>
+<title>Bhavin Garg | AI Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -16,265 +16,139 @@ body {
   color:#e5e7eb;
 }
 
-/* GRID BACKGROUND */
-body::before{
-  content:"";
-  position:fixed;
-  width:100%;height:100%;
-  background:
-  linear-gradient(rgba(255,255,255,0.05)1px,transparent 1px),
-  linear-gradient(90deg,rgba(255,255,255,0.05)1px,transparent 1px);
-  background-size:50px 50px;
-  z-index:-2;
-}
-
-/* BLOBS */
-.bg-blobs div{
-  position:fixed;
-  width:300px;height:300px;
-  filter:blur(120px);
-  z-index:-1;
-}
-.blob1{background:#3b82f6;top:10%;left:10%;}
-.blob2{background:#9333ea;bottom:10%;right:10%;}
-
-/* INTRO */
-#intro{
-  position:fixed;
-  width:100%;height:100%;
-  z-index:9999;
-}
-#introImg{
-  width:100%;height:100%;
-  object-fit:cover;
-  filter:brightness(0.4) blur(6px);
-}
-.overlay{position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.5);}
-.light{
-  position:absolute;width:200%;height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.2),transparent);
-  transform:translateX(-100%);
-}
-#nameIntro{
-  position:absolute;top:45%;width:100%;
-  text-align:center;font-size:60px;
-  opacity:0;
-  text-shadow:0 0 20px #fff,0 0 40px #3b82f6;
-}
-#tagline{
-  position:absolute;top:60%;width:100%;
-  text-align:center;color:#ccc;
-}
-#enterBtn{
-  position:absolute;
-  bottom:15%;
-  left:50%;
-  transform:translateX(-50%);
-  padding:10px 25px;
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.3);
-  color:white;
-  cursor:pointer;
-}
-
-/* NAV */
-nav{
-  position:sticky;
-  top:0;
-  display:flex;
-  justify-content:space-between;
-  padding:15px 30px;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
-}
-nav a{margin-left:20px;color:white;text-decoration:none;}
-
 /* HERO */
-.hero{
+.hero {
   text-align:center;
   padding:80px 20px;
 }
-.profile{
-  width:160px;
+.profile {
+  width:150px;
   border-radius:10px;
 }
 
-/* BUTTON */
-.btn{
-  padding:10px 20px;
-  margin:10px;
-  background:#2563eb;
-  color:white;
-  border-radius:6px;
-  text-decoration:none;
-}
-
-/* CARDS */
-.cards{
-  display:flex;
-  gap:20px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-.card{
+.section {
+  max-width:900px;
+  margin:40px auto;
+  padding:30px;
   background:rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:10px;
-  width:200px;
-}
-
-/* SECTION */
-.section{
-  max-width:1000px;
-  margin:60px auto;
-  padding:40px;
-  background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(15px);
-  border-radius:16px;
-}
-
-/* ABOUT */
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-/* SKILLS */
-.bar{height:8px;background:#333;border-radius:10px;}
-.bar div{height:100%;background:#3b82f6;}
-
-/* PROJECT */
-.projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-.project-card{
-  background:rgba(255,255,255,0.05);
-  padding:20px;
   border-radius:10px;
 }
 
 /* CHAT */
-#chatbot{
+#chatbot {
   position:fixed;
   bottom:20px;
   right:20px;
-  width:260px;
+  width:280px;
   background:#111;
+  border-radius:10px;
 }
-#chat-body{height:150px;overflow:auto;padding:10px;}
-#chat-input{width:100%;padding:8px;background:#222;color:white;border:none;}
-#voiceBtn{width:100%;padding:10px;background:#2563eb;color:white;border:none;}
-
-@media(max-width:768px){
-  .about-grid{grid-template-columns:1fr;}
+#chat-body {
+  height:200px;
+  overflow:auto;
+  padding:10px;
+}
+#chat-input {
+  width:100%;
+  padding:10px;
+  background:#222;
+  color:white;
+  border:none;
+}
+#voiceBtn {
+  width:100%;
+  padding:10px;
+  background:#2563eb;
+  color:white;
+  border:none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg-blobs">
-  <div class="blob1"></div>
-  <div class="blob2"></div>
-</div>
-
-<!-- INTRO -->
-<div id="intro">
-<img src="images/profile1.jpg" id="introImg">
-<div class="overlay"></div>
-<div class="light"></div>
-<h1 id="nameIntro">BHAVIN GARG</h1>
-<p id="tagline"></p>
-<button id="enterBtn">Enter Portfolio</button>
-</div>
-
-<!-- NAV -->
-<nav>
-<h2>Bhavin</h2>
-<div>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
 <!-- HERO -->
 <section class="hero">
-<img src="images/profile1.jpg" class="profile">
-<h1>Bhavin Garg</h1>
-<p>I build real-world solutions using code and AI.</p>
-
-<div class="cards">
-<div class="card">💻 Developer</div>
-<div class="card">🤖 AI Enthusiast</div>
-<div class="card">⚡ Fast Learner</div>
-</div>
+  <img src="images/profile1.jpg" class="profile">
+  <h1>Bhavin Garg</h1>
+  <p>AI Developer | Problem Solver</p>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
-<h2>About Me</h2>
-<div class="about-grid">
-<p>
-I am a Computer Science student focused on Data Structures, Algorithms and development.
-Currently building <b>Scheme Sathi</b> to help people discover government schemes easily.
-I aim to work in top MNCs in a reputed role.
-</p>
-<ul>
-<li>✔ DSA</li>
-<li>✔ Python & C</li>
-<li>✔ Project Development</li>
-<li>✔ Problem Solving</li>
-</ul>
-</div>
-</section>
-
-<!-- PROJECT -->
-<section id="projects" class="section">
-<h2>Projects</h2>
-<div class="projects">
-<div class="project-card">
-<h3>Scheme Sathi</h3>
-<p>Platform to simplify government schemes access.</p>
-</div>
-</div>
-</section>
-
-<!-- CURRENT -->
 <section class="section">
-<h2>Currently Building</h2>
-<p>🚀 Scheme Sathi — making government schemes accessible to everyone.</p>
+  <h2>About Me</h2>
+  <p>
+    I am a Computer Science Engineering student working on Scheme Sathi, 
+    a platform to help people discover government schemes.
+  </p>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-<h2>Contact</h2>
-<p>Email: bhavingarg121@gmail.com</p>
-</section>
-
-<!-- CHAT -->
+<!-- CHATBOT -->
 <div id="chatbot">
-<div id="chat-body"></div>
-<input id="chat-input">
-<button id="voiceBtn">🎙️ Talk</button>
+  <div id="chat-body"></div>
+  <input id="chat-input" placeholder="Ask me anything...">
+  <button id="voiceBtn">🎙️ Talk</button>
 </div>
 
 <script>
-// INTRO ANIMATION
-let tl=gsap.timeline({repeat:1});
-tl.to("#introImg",{filter:"brightness(0.5) blur(0px)",scale:1.1})
-.to(".light",{x:"100%"})
-.to("#nameIntro",{opacity:1})
-.to("#nameIntro",{opacity:0});
+const API_URL = "http://127.0.0.1:5000/chat"; // local backend
 
-// EXIT
-document.getElementById("enterBtn").onclick=()=>{
- gsap.to("#intro",{opacity:0});
- setTimeout(()=>intro.style.display="none",1000);
+// TEXT CHAT
+document.getElementById("chat-input").addEventListener("keypress", async e => {
+  if (e.key === "Enter") {
+    let msg = e.target.value;
+    add("You: " + msg);
+
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({message: msg})
+    });
+
+    const data = await res.json();
+    let reply = data.reply || "Error";
+
+    add("AI: " + reply);
+    speak(reply);
+
+    e.target.value = "";
+  }
+});
+
+// ADD MESSAGE
+function add(msg){
+  let d = document.createElement("div");
+  d.textContent = msg;
+  document.getElementById("chat-body").appendChild(d);
+}
+
+// VOICE
+const rec = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+document.getElementById("voiceBtn").onclick = () => rec.start();
+
+rec.onresult = async e => {
+  let speech = e.results[0][0].transcript;
+  add("You: " + speech);
+
+  const res = await fetch(API_URL, {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({message:speech})
+  });
+
+  const data = await res.json();
+  let reply = data.reply;
+
+  add("AI: " + reply);
+  speak(reply);
 };
+
+// SPEAK
+function speak(text){
+  let s = new SpeechSynthesisUtterance(text);
+  speechSynthesis.speak(s);
+}
 </script>
 
 </body>
