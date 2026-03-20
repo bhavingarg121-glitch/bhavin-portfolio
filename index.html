@@ -6,7 +6,6 @@
 <title>Bhavin Garg | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
 body {
@@ -28,7 +27,7 @@ body::before{
   z-index:-2;
 }
 
-/* BLOBS */
+/* GLOW BLOBS */
 .bg-blobs div{
   position:fixed;
   width:300px;height:300px;
@@ -38,46 +37,7 @@ body::before{
 .blob1{background:#3b82f6;top:10%;left:10%;}
 .blob2{background:#9333ea;bottom:10%;right:10%;}
 
-/* INTRO */
-#intro{
-  position:fixed;
-  width:100%;height:100%;
-  z-index:9999;
-}
-#introImg{
-  width:100%;height:100%;
-  object-fit:cover;
-  filter:brightness(0.4) blur(6px);
-}
-.overlay{position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.5);}
-.light{
-  position:absolute;width:200%;height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.2),transparent);
-  transform:translateX(-100%);
-}
-#nameIntro{
-  position:absolute;top:45%;width:100%;
-  text-align:center;font-size:60px;
-  opacity:0;
-  text-shadow:0 0 20px #fff,0 0 40px #3b82f6;
-}
-#tagline{
-  position:absolute;top:60%;width:100%;
-  text-align:center;color:#ccc;
-}
-#enterBtn{
-  position:absolute;
-  bottom:15%;
-  left:50%;
-  transform:translateX(-50%);
-  padding:10px 25px;
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.3);
-  color:white;
-  cursor:pointer;
-}
-
-/* NAV */
+/* NAVBAR */
 nav{
   position:sticky;
   top:0;
@@ -87,7 +47,11 @@ nav{
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(10px);
 }
-nav a{margin-left:20px;color:white;text-decoration:none;}
+nav a{
+  margin-left:20px;
+  color:white;
+  text-decoration:none;
+}
 
 /* HERO */
 .hero{
@@ -96,7 +60,7 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 }
 .profile{
   width:160px;
-  border-radius:10px;
+  border-radius:12px;
 }
 
 /* BUTTON */
@@ -119,8 +83,12 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 .card{
   background:rgba(255,255,255,0.05);
   padding:20px;
-  border-radius:10px;
+  border-radius:12px;
   width:200px;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-8px);
 }
 
 /* SECTION */
@@ -141,8 +109,15 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 }
 
 /* SKILLS */
-.bar{height:8px;background:#333;border-radius:10px;}
-.bar div{height:100%;background:#3b82f6;}
+.bar{
+  height:8px;
+  background:#333;
+  border-radius:10px;
+}
+.bar div{
+  height:100%;
+  background:#3b82f6;
+}
 
 /* PROJECT */
 .projects{
@@ -153,20 +128,37 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 .project-card{
   background:rgba(255,255,255,0.05);
   padding:20px;
-  border-radius:10px;
+  border-radius:12px;
 }
 
-/* CHAT */
+/* CHATBOT */
 #chatbot{
   position:fixed;
   bottom:20px;
   right:20px;
-  width:260px;
+  width:280px;
   background:#111;
+  border-radius:12px;
 }
-#chat-body{height:150px;overflow:auto;padding:10px;}
-#chat-input{width:100%;padding:8px;background:#222;color:white;border:none;}
-#voiceBtn{width:100%;padding:10px;background:#2563eb;color:white;border:none;}
+#chat-body{
+  height:200px;
+  overflow:auto;
+  padding:10px;
+}
+#chat-input{
+  width:100%;
+  padding:10px;
+  background:#222;
+  color:white;
+  border:none;
+}
+#voiceBtn{
+  width:100%;
+  padding:10px;
+  background:#2563eb;
+  color:white;
+  border:none;
+}
 
 @media(max-width:768px){
   .about-grid{grid-template-columns:1fr;}
@@ -181,37 +173,27 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
   <div class="blob2"></div>
 </div>
 
-<!-- INTRO -->
-<div id="intro">
-<img src="images/profile1.jpg" id="introImg">
-<div class="overlay"></div>
-<div class="light"></div>
-<h1 id="nameIntro">BHAVIN GARG</h1>
-<p id="tagline"></p>
-<button id="enterBtn">Enter Portfolio</button>
-</div>
-
 <!-- NAV -->
 <nav>
-<h2>Bhavin</h2>
-<div>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
+  <h2>Bhavin</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<img src="images/profile1.jpg" class="profile">
-<h1>Bhavin Garg</h1>
-<p>I build real-world solutions using code and AI.</p>
+  <img src="images/profile1.jpg" class="profile">
+  <h1>Bhavin Garg</h1>
+  <p>Building impactful solutions through DSA and development</p>
 
-<div class="cards">
-<div class="card">💻 Developer</div>
-<div class="card">🤖 AI Enthusiast</div>
-<div class="card">⚡ Fast Learner</div>
-</div>
+  <div class="cards">
+    <div class="card">💻 Developer</div>
+    <div class="card">🤖 AI Enthusiast</div>
+    <div class="card">⚡ Fast Learner</div>
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -219,12 +201,13 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 <h2>About Me</h2>
 <div class="about-grid">
 <p>
-I am a Computer Science student focused on Data Structures, Algorithms and development.
-Currently building <b>Scheme Sathi</b> to help people discover government schemes easily.
-I aim to work in top MNCs in a reputed role.
+I am a Computer Science Engineering student with strong skills in Data Structures, Algorithms, and programming.
+Currently working on <b>Scheme Sathi</b> to help people discover government schemes easily.
+I aim to work in top MNCs in a reputed technical role.
 </p>
+
 <ul>
-<li>✔ DSA</li>
+<li>✔ Data Structures & Algorithms</li>
 <li>✔ Python & C</li>
 <li>✔ Project Development</li>
 <li>✔ Problem Solving</li>
@@ -255,26 +238,68 @@ I aim to work in top MNCs in a reputed role.
 <p>Email: bhavingarg121@gmail.com</p>
 </section>
 
-<!-- CHAT -->
+<!-- CHATBOT -->
 <div id="chatbot">
-<div id="chat-body"></div>
-<input id="chat-input">
-<button id="voiceBtn">🎙️ Talk</button>
+  <div id="chat-body"></div>
+  <input id="chat-input" placeholder="Ask about Bhavin...">
+  <button id="voiceBtn">🎙️ Talk</button>
 </div>
 
 <script>
-// INTRO ANIMATION
-let tl=gsap.timeline({repeat:1});
-tl.to("#introImg",{filter:"brightness(0.5) blur(0px)",scale:1.1})
-.to(".light",{x:"100%"})
-.to("#nameIntro",{opacity:1})
-.to("#nameIntro",{opacity:0});
 
-// EXIT
-document.getElementById("enterBtn").onclick=()=>{
- gsap.to("#intro",{opacity:0});
- setTimeout(()=>intro.style.display="none",1000);
+// 🤖 LOCAL AI
+function getReply(msg){
+ msg = msg.toLowerCase();
+
+ if(msg.includes("skills")) return "Bhavin is skilled in DSA, Python, and C.";
+ if(msg.includes("project")) return "He is working on Scheme Sathi.";
+ if(msg.includes("goal")) return "His goal is to work in top MNCs.";
+ if(msg.includes("hello")||msg.includes("hi")) return "Hello! Ask me anything 👨‍💻";
+
+ return "Ask about skills, projects, or goals!";
+}
+
+// ADD MESSAGE
+function add(msg){
+ let d=document.createElement("div");
+ d.textContent=msg;
+ document.getElementById("chat-body").appendChild(d);
+}
+
+// TEXT CHAT
+document.getElementById("chat-input").addEventListener("keypress", e=>{
+ if(e.key==="Enter"){
+  let msg=e.target.value;
+  add("You: "+msg);
+
+  let reply=getReply(msg);
+  add("AI: "+reply);
+  speak(reply);
+
+  e.target.value="";
+ }
+});
+
+// VOICE
+const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
+
+document.getElementById("voiceBtn").onclick=()=>rec.start();
+
+rec.onresult=e=>{
+ let speech=e.results[0][0].transcript;
+ add("You: "+speech);
+
+ let reply=getReply(speech);
+ add("AI: "+reply);
+ speak(reply);
 };
+
+// SPEAK
+function speak(t){
+ let s=new SpeechSynthesisUtterance(t);
+ speechSynthesis.speak(s);
+}
+
 </script>
 
 </body>
