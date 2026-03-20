@@ -2,165 +2,219 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bhavin Garg | Cinematic Intro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhavin Garg | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: black;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0b0f14;
+  color: #fff;
 }
 
-/* Background City */
-.bg {
+/* INTRO */
+#intro {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url('https://wallpapercave.com/wp/wp9263461.jpg') no-repeat center/cover;
-  animation: zoomBg 6s ease-in-out forwards;
+  background: black;
+  z-index: 9999;
+  overflow: hidden;
 }
 
-/* Zoom Effect */
-@keyframes zoomBg {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.2); }
-}
-
-/* Rope */
-.rope {
+/* SPIDERMAN */
+#spiderman {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 2px;
-  height: 0;
-  background: white;
-  animation: ropeDrop 1s ease-out forwards;
-}
-
-@keyframes ropeDrop {
-  to { height: 280px; }
-}
-
-/* Spider-Man */
-.spiderman {
-  position: absolute;
-  top: -250px;
-  left: 50%;
+  width: 120px;
   transform: translateX(-50%);
-  width: 130px;
-  animation: swing 3s ease-in-out forwards;
 }
 
-@keyframes swing {
-  0% {
-    top: -250px;
-    transform: translateX(-50%) rotate(-25deg);
-  }
-  50% {
-    top: 300px;
-    transform: translateX(-50%) rotate(25deg);
-  }
-  100% {
-    top: 180px;
-    transform: translateX(-50%) rotate(0deg);
-  }
-}
-
-/* Name */
-.name {
+/* ROPE */
+#rope {
   position: absolute;
-  bottom: 100px;
+  width: 2px;
+  height: 150px;
+  background: white;
+  left: 50%;
+}
+
+/* BATMAN */
+#batman {
+  position: absolute;
+  bottom: -200px;
+  left: 10%;
+  width: 140px;
+  opacity: 0;
+}
+
+/* NAME */
+#nameIntro {
+  position: absolute;
+  top: 50%;
   width: 100%;
   text-align: center;
-  font-size: 55px;
-  color: white;
+  font-size: 60px;
+  color: red;
   opacity: 0;
-  letter-spacing: 4px;
-  animation: fadeIn 2s ease forwards;
-  animation-delay: 3s;
 }
 
-/* Subtitle */
-.subtitle {
-  position: absolute;
-  bottom: 50px;
-  width: 100%;
+/* MAIN SITE */
+.hero {
   text-align: center;
-  font-size: 20px;
-  color: #ccc;
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
-  animation-delay: 4s;
+  padding: 100px 20px;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+.profile {
+  width: 180px;
+  border-radius: 10px;
 }
 
-/* Cinematic Fade Overlay */
-.overlay {
+.section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #111827;
+  border-radius: 10px;
+}
+
+/* CHAT */
+#chatbot {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 1;
-  animation: fadeOut 2s ease forwards;
-  animation-delay: 0.5s;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  background: #111;
 }
 
-@keyframes fadeOut {
-  to { opacity: 0; }
-}
+#chat-body {height:150px;overflow:auto;padding:10px;}
+#chat-input {width:100%;padding:8px;background:#222;color:white;border:none;}
+#voiceBtn {width:100%;padding:10px;background:#2563eb;color:white;border:none;}
 
 </style>
 </head>
 
 <body>
 
-<!-- Cinematic Fade -->
-<div class="overlay"></div>
+<!-- INTRO -->
+<div id="intro">
+  <div id="rope"></div>
+  <img src="images/spiderman.png" id="spiderman">
+  <img src="images/batman.png" id="batman">
+  <h1 id="nameIntro">BHAVIN GARG</h1>
+</div>
 
-<!-- Background -->
-<div class="bg"></div>
+<!-- MAIN -->
+<section class="hero">
+  <img src="images/profile1.jpg" class="profile">
+  <h1>Bhavin Garg</h1>
+  <p>AI Developer | Problem Solver</p>
+</section>
 
-<!-- Rope -->
-<div class="rope"></div>
+<section class="section">
+  <h2>About</h2>
+  <p>I build AI-powered and real-world tech solutions.</p>
+</section>
 
-<!-- Spider-Man -->
-<img src="https://i.imgur.com/6RLdC6O.png" class="spiderman">
+<section class="section">
+  <h2>Projects</h2>
+  <p>Government Schemes Platform</p>
+</section>
 
-<!-- Name -->
-<div class="name">BHAVIN GARG</div>
+<section class="section">
+  <h2>Contact</h2>
+  <p>Email: bhavingarg121@gmail.com</p>
+</section>
 
-<!-- Subtitle -->
-<div class="subtitle">Web Developer | CSE Student</div>
-
-<!-- Sounds -->
-<audio id="swingSound" src="https://www.101soundboards.com/sounds/713212-spider-man-web-shot-ringtone"></audio>
-
+<!-- CHAT -->
+<div id="chatbot">
+  <div id="chat-body"></div>
+  <input id="chat-input">
+  <button id="voiceBtn">🎙️ Talk</button>
+</div>
 
 <script>
 
-/* Play Sounds */
-window.onload = () => {
-  const swing = document.getElementById("swingSound");
-  
+/* 🎬 CINEMATIC FLOW */
+let tl = gsap.timeline();
 
-  // slight delay for realism
-  setTimeout(() => {
-    swing.play();
-  }, 800);
+// spider drop + swing
+tl.from("#spiderman", {y:-200, duration:1})
+.to("#spiderman", {rotation:25, repeat:3, yoyo:true});
 
-  setTimeout(() => {
-    boom.play();
-  }, 3000);
+// batman entry
+tl.to("#batman", {bottom:50, opacity:1, duration:1});
+
+// name reveal
+tl.to("#nameIntro", {opacity:1, scale:1.2, duration:1});
+
+// exit intro
+tl.to("#intro", {opacity:0, duration:1, delay:1})
+.set("#intro", {display:"none"});
+
+/* 🤖 AI CHAT (FIXED) */
+const API_URL = "https://your-app.onrender.com/chat";
+
+document.getElementById("chat-input").addEventListener("keypress", async e=>{
+ if(e.key==="Enter"){
+  let msg=e.target.value;
+  add("You: "+msg);
+
+  const res=await fetch(API_URL,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({message:msg})
+  });
+
+  const data=await res.json();
+
+  // 🔥 FIX (important)
+  let reply = data.choices ? data.choices[0].message.content : "Error connecting AI";
+
+  add("AI: "+reply);
+  speak(reply);
+
+  e.target.value="";
+ }
+});
+
+function add(msg){
+ let d=document.createElement("div");
+ d.textContent=msg;
+ document.getElementById("chat-body").appendChild(d);
+}
+
+/* 🎙️ VOICE */
+const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
+document.getElementById("voiceBtn").onclick=()=>rec.start();
+
+rec.onresult=async e=>{
+ let speech=e.results[0][0].transcript;
+ add("You: "+speech);
+
+ const res=await fetch(API_URL,{
+  method:"POST",
+  headers:{"Content-Type":"application/json"},
+  body:JSON.stringify({message:speech})
+ });
+
+ const data=await res.json();
+ let reply = data.choices[0].message.content;
+
+ add("AI: "+reply);
+ speak(reply);
 };
+
+function speak(t){
+ let s=new SpeechSynthesisUtterance(t);
+ speechSynthesis.speak(s);
+}
 
 </script>
 
