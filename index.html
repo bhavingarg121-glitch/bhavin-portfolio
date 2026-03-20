@@ -2,221 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bhavin Garg | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
 <style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0b0f14;
-  color: #fff;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-/* INTRO */
-#intro {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: black;
-  z-index: 9999;
-  overflow: hidden;
-}
+  body {
+    background: black;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
 
-/* SPIDERMAN */
-#spiderman {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 120px;
-  transform: translateX(-50%);
-}
+  /* Intro Section */
+  .intro {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
 
-/* ROPE */
-#rope {
-  position: absolute;
-  width: 2px;
-  height: 150px;
-  background: white;
-  left: 50%;
-}
+  /* Rope */
+  .rope {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 0;
+    background: white;
+    transform-origin: top;
+    animation: ropeDrop 1s ease-out forwards;
+  }
 
-/* BATMAN */
-#batman {
-  position: absolute;
-  bottom: -200px;
-  left: 10%;
-  width: 140px;
-  opacity: 0;
-}
+  @keyframes ropeDrop {
+    to {
+      height: 250px;
+    }
+  }
 
-/* NAME */
-#nameIntro {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  font-size: 60px;
-  color: red;
-  opacity: 0;
-}
+  /* Spider-Man */
+  .spiderman {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    width: 120px;
+    animation: swing 2.5s ease-in-out forwards;
+  }
 
-/* MAIN SITE */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-}
+  @keyframes swing {
+    0% {
+      top: -200px;
+      transform: translateX(-50%) rotate(-20deg);
+    }
+    50% {
+      top: 250px;
+      transform: translateX(-50%) rotate(20deg);
+    }
+    100% {
+      top: 150px;
+      transform: translateX(-50%) rotate(0deg);
+    }
+  }
 
-.profile {
-  width: 180px;
-  border-radius: 10px;
-}
+  /* Name Text */
+  .name {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    opacity: 0;
+    letter-spacing: 3px;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 2.5s;
+  }
 
-.section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: #111827;
-  border-radius: 10px;
-}
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 
-/* CHAT */
-#chatbot {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 260px;
-  background: #111;
-}
-
-#chat-body {height:150px;overflow:auto;padding:10px;}
-#chat-input {width:100%;padding:8px;background:#222;color:white;border:none;}
-#voiceBtn {width:100%;padding:10px;background:#2563eb;color:white;border:none;}
+  /* Subtext */
+  .subtitle {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #aaa;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 3.5s;
+  }
 
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-  <div id="rope"></div>
-  <img src="images/spiderman.png" id="spiderman">
-  <img src="images/batman.png" id="batman">
-  <h1 id="nameIntro">BHAVIN GARG</h1>
+<div class="intro">
+
+  <!-- Rope -->
+  <div class="rope"></div>
+
+  <!-- Spider-Man Image -->
+  <!-- Replace with your own spiderman.png -->
+  <img src="https://i.imgur.com/6RLdC6O.png" class="spiderman">
+
+  <!-- Name -->
+  <div class="name">BHAVIN GARG</div>
+
+  <!-- Subtitle -->
+  <div class="subtitle">Web Developer | CSE Student</div>
+
 </div>
-
-<!-- MAIN -->
-<section class="hero">
-  <img src="images/profile1.jpg" class="profile">
-  <h1>Bhavin Garg</h1>
-  <p>AI Developer | Problem Solver</p>
-</section>
-
-<section class="section">
-  <h2>About</h2>
-  <p>I build AI-powered and real-world tech solutions.</p>
-</section>
-
-<section class="section">
-  <h2>Projects</h2>
-  <p>Government Schemes Platform</p>
-</section>
-
-<section class="section">
-  <h2>Contact</h2>
-  <p>Email: bhavingarg121@gmail.com</p>
-</section>
-
-<!-- CHAT -->
-<div id="chatbot">
-  <div id="chat-body"></div>
-  <input id="chat-input">
-  <button id="voiceBtn">🎙️ Talk</button>
-</div>
-
-<script>
-
-/* 🎬 CINEMATIC FLOW */
-let tl = gsap.timeline();
-
-// spider drop + swing
-tl.from("#spiderman", {y:-200, duration:1})
-.to("#spiderman", {rotation:25, repeat:3, yoyo:true});
-
-// batman entry
-tl.to("#batman", {bottom:50, opacity:1, duration:1});
-
-// name reveal
-tl.to("#nameIntro", {opacity:1, scale:1.2, duration:1});
-
-// exit intro
-tl.to("#intro", {opacity:0, duration:1, delay:1})
-.set("#intro", {display:"none"});
-
-/* 🤖 AI CHAT (FIXED) */
-const API_URL = "https://your-app.onrender.com/chat";
-
-document.getElementById("chat-input").addEventListener("keypress", async e=>{
- if(e.key==="Enter"){
-  let msg=e.target.value;
-  add("You: "+msg);
-
-  const res=await fetch(API_URL,{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({message:msg})
-  });
-
-  const data=await res.json();
-
-  // 🔥 FIX (important)
-  let reply = data.choices ? data.choices[0].message.content : "Error connecting AI";
-
-  add("AI: "+reply);
-  speak(reply);
-
-  e.target.value="";
- }
-});
-
-function add(msg){
- let d=document.createElement("div");
- d.textContent=msg;
- document.getElementById("chat-body").appendChild(d);
-}
-
-/* 🎙️ VOICE */
-const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
-document.getElementById("voiceBtn").onclick=()=>rec.start();
-
-rec.onresult=async e=>{
- let speech=e.results[0][0].transcript;
- add("You: "+speech);
-
- const res=await fetch(API_URL,{
-  method:"POST",
-  headers:{"Content-Type":"application/json"},
-  body:JSON.stringify({message:speech})
- });
-
- const data=await res.json();
- let reply = data.choices[0].message.content;
-
- add("AI: "+reply);
- speak(reply);
-};
-
-function speak(t){
- let s=new SpeechSynthesisUtterance(t);
- speechSynthesis.speak(s);
-}
-
-</script>
 
 </body>
 </html>
