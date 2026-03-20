@@ -6,7 +6,6 @@
 <title>Bhavin Garg | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
@@ -17,7 +16,7 @@ body {
   color: #e5e7eb;
 }
 
-/* GRID BACKGROUND */
+/* BACKGROUND GRID */
 body::before {
   content:"";
   position:fixed;
@@ -27,71 +26,81 @@ body::before {
     linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size:50px 50px;
-  z-index:-1;
+  z-index:-2;
 }
+
+/* GLOW BLOBS */
+.bg-blobs div {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  filter: blur(120px);
+  z-index: -1;
+}
+.blob1 {background:#3b82f6; top:10%; left:10%;}
+.blob2 {background:#9333ea; bottom:10%; right:10%;}
 
 /* INTRO */
 #intro {
   position: fixed;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   z-index: 9999;
 }
-
 #introImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.4) blur(6px);
 }
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}
-
+.overlay {position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.5);}
 .light {
-  position: absolute;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
-  transform: translateX(-100%);
+  position:absolute;
+  width:200%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.2),transparent);
+  transform:translateX(-100%);
 }
-
 #nameIntro {
-  position: absolute;
-  top: 45%;
-  width: 100%;
-  text-align: center;
-  font-size: 60px;
-  letter-spacing: 8px;
-  color: white;
-  opacity: 0;
+  position:absolute;
+  top:45%;
+  width:100%;
+  text-align:center;
+  font-size:60px;
+  color:white;
+  opacity:0;
 }
-
 #tagline {
-  position: absolute;
-  top: 60%;
-  width: 100%;
-  text-align: center;
-  color: #ccc;
+  position:absolute;
+  top:60%;
+  width:100%;
+  text-align:center;
+  color:#ccc;
 }
 
 /* HERO */
 .hero {
   text-align:center;
   padding:100px 20px;
+  position:relative;
 }
-
+.hero::before {
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:#2563eb;
+  filter:blur(120px);
+  left:50%;
+  transform:translateX(-50%);
+  z-index:-1;
+}
 .profile {
   width:180px;
   border-radius:10px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn {
   padding:10px 20px;
   margin:10px;
@@ -108,21 +117,34 @@ body::before {
   justify-content:center;
   flex-wrap:wrap;
 }
-
 .card {
-  background:#1f2937;
+  background:rgba(255,255,255,0.05);
   padding:20px;
   border-radius:10px;
   width:200px;
+  transition:0.3s;
 }
+.card:hover {transform:translateY(-8px);}
 
-/* SECTIONS */
+/* SECTION */
 .section {
   max-width:1000px;
-  margin:40px auto;
-  padding:30px;
-  background:rgba(255,255,255,0.03);
-  border-radius:10px;
+  margin:60px auto;
+  padding:40px;
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(15px);
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* HEADINGS */
+.section h2::after {
+  content:"";
+  width:50px;
+  height:3px;
+  background:#3b82f6;
+  display:block;
+  margin-top:8px;
 }
 
 /* ABOUT */
@@ -136,19 +158,19 @@ body::before {
 .bar {height:8px;background:#333;border-radius:10px;}
 .bar div {height:100%;background:#3b82f6;}
 
-/* PROJECTS */
+/* PROJECT */
 .projects {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
 .project-card {
-  background:#1f2937;
+  background:rgba(255,255,255,0.05);
   padding:20px;
   border-radius:10px;
 }
 
-/* CHATBOT */
+/* CHAT */
 #chatbot {
   position:fixed;
   bottom:20px;
@@ -162,16 +184,20 @@ body::before {
 
 @media(max-width:768px){
   .about-grid {grid-template-columns:1fr;}
-  #nameIntro {font-size:40px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎬 INTRO -->
+<div class="bg-blobs">
+  <div class="blob1"></div>
+  <div class="blob2"></div>
+</div>
+
+<!-- INTRO -->
 <div id="intro">
-  <img src="images/profile1.jpeg" id="introImg">
+  <img src="images/profile1.jpg" id="introImg">
   <div class="overlay"></div>
   <div class="light"></div>
   <h1 id="nameIntro">BHAVIN GARG</h1>
@@ -180,9 +206,9 @@ body::before {
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/profile2.jpeg" class="profile.jpeg">
+  <img src="images/profile1.jpg" class="profile">
   <h1>Bhavin Garg</h1>
-  <p>AI Developer | Problem Solver</p>
+  <p>Building impactful solutions through DSA and development</p>
 
   <a href="#projects" class="btn">View Projects</a>
   <a href="#contact" class="btn">Contact Me</a>
@@ -196,13 +222,26 @@ body::before {
 
 <!-- ABOUT -->
 <section class="section">
-  <h2>About</h2>
+  <h2>About Me</h2>
+
   <div class="about-grid">
-    <p>I build AI-powered solutions and love solving real-world problems.</p>
+    <p>
+      I am a Computer Science Engineering student with a strong foundation in Data Structures, Algorithms, and programming. 
+      I enjoy solving complex problems and building practical software solutions that create real-world impact.
+
+      Currently, I am working on a project called <strong>Scheme Sathi</strong>, which focuses on helping people stay informed 
+      about government schemes that often go unnoticed. The goal is to make important information easily accessible to everyone.
+
+      I am continuously improving my skills in development and problem-solving, with a clear aim of working in top MNCs 
+      in a reputed technical role.
+    </p>
+
     <ul>
-      <li>✔ Python & C</li>
-      <li>✔ Data Structures</li>
-      <li>✔ Web Scraping</li>
+      <li>✔ Data Structures & Algorithms (DSA)</li>
+      <li>✔ Programming: C, Python</li>
+      <li>✔ Project Development</li>
+      <li>✔ Problem Solving & Logical Thinking</li>
+      <li>✔ Focused on Real-World Impact</li>
     </ul>
   </div>
 </section>
@@ -214,13 +253,13 @@ body::before {
   C<div class="bar"><div style="width:70%"></div></div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECT -->
 <section id="projects" class="section">
   <h2>Projects</h2>
   <div class="projects">
     <div class="project-card">
-      <h3>Gov Scheme Platform</h3>
-      <p>Building a platform to simplify access to government schemes.</p>
+      <h3>Scheme Sathi</h3>
+      <p>Helping people discover government schemes easily.</p>
     </div>
   </div>
 </section>
@@ -231,7 +270,7 @@ body::before {
   <p>Email: bhavingarg121@gmail.com</p>
 </section>
 
-<!-- 🤖 CHATBOT -->
+<!-- CHAT -->
 <div id="chatbot">
   <div id="chat-body"></div>
   <input id="chat-input" placeholder="Ask something...">
@@ -239,18 +278,15 @@ body::before {
 </div>
 
 <script>
-
-// 🎬 HOLLYWOOD INTRO
+// INTRO
 let tl = gsap.timeline();
-
 tl.to("#introImg",{filter:"brightness(0.5) blur(0px)",scale:1.1,duration:2})
 .to(".light",{x:"100%",duration:1.5},"-=1.5")
-.to("#nameIntro",{opacity:1,scale:1.1,duration:1})
-.to({}, {duration:1,onComplete:typeText})
-.to("#intro",{opacity:0,duration:1,delay:1})
+.to("#nameIntro",{opacity:1})
+.to({}, {onComplete:typeText})
+.to("#intro",{opacity:0,delay:1})
 .set("#intro",{display:"none"});
 
-// ✍️ typing
 function typeText(){
  let text="AI Developer | Problem Solver";
  let i=0;
@@ -264,7 +300,7 @@ function typeText(){
  t();
 }
 
-// 🤖 AI
+// AI
 const API_URL="https://your-app.onrender.com/chat";
 
 document.getElementById("chat-input").addEventListener("keypress",async e=>{
@@ -293,7 +329,7 @@ function add(msg){
  document.getElementById("chat-body").appendChild(d);
 }
 
-// 🎙️ voice
+// voice
 const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
 document.getElementById("voiceBtn").onclick=()=>rec.start();
 
@@ -318,7 +354,6 @@ function speak(t){
  let s=new SpeechSynthesisUtterance(t);
  speechSynthesis.speak(s);
 }
-
 </script>
 
 </body>
