@@ -6,6 +6,7 @@
 <title>Bhavin Garg | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 <style>
@@ -32,44 +33,51 @@ body::before {
 /* INTRO */
 #intro {
   position: fixed;
-  width:100%;
-  height:100%;
-  background:black;
-  z-index:9999;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 9999;
 }
 
-#spiderman {
-  position:absolute;
-  top:0;
-  left:50%;
-  width:120px;
-  transform:translateX(-50%);
+#introImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) blur(6px);
 }
 
-#rope {
-  position:absolute;
-  width:2px;
-  height:150px;
-  background:white;
-  left:50%;
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
 }
 
-#batman {
-  position:absolute;
-  bottom:-200px;
-  left:10%;
-  width:140px;
-  opacity:0;
+.light {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
 }
 
 #nameIntro {
-  position:absolute;
-  top:50%;
-  width:100%;
-  text-align:center;
-  font-size:60px;
-  color:red;
-  opacity:0;
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  letter-spacing: 8px;
+  color: white;
+  opacity: 0;
+}
+
+#tagline {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+  color: #ccc;
 }
 
 /* HERO */
@@ -83,8 +91,8 @@ body::before {
   border-radius:10px;
 }
 
+/* BUTTONS */
 .btn {
-  display:inline-block;
   padding:10px 20px;
   margin:10px;
   background:#2563eb;
@@ -106,7 +114,6 @@ body::before {
   padding:20px;
   border-radius:10px;
   width:200px;
-  text-align:center;
 }
 
 /* SECTIONS */
@@ -118,7 +125,7 @@ body::before {
   border-radius:10px;
 }
 
-/* ABOUT GRID */
+/* ABOUT */
 .about-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -153,22 +160,27 @@ body::before {
 #chat-input {width:100%;padding:8px;background:#222;color:white;border:none;}
 #voiceBtn {width:100%;padding:10px;background:#2563eb;color:white;border:none;}
 
+@media(max-width:768px){
+  .about-grid {grid-template-columns:1fr;}
+  #nameIntro {font-size:40px;}
+}
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
+<!-- 🎬 INTRO -->
 <div id="intro">
-  <div id="rope"></div>
-  <img src="images/spiderman.png" id="spiderman">
-  <img src="images/batman.png" id="batman">
+  <img src="images/profile1.jpg" id="introImg">
+  <div class="overlay"></div>
+  <div class="light"></div>
   <h1 id="nameIntro">BHAVIN GARG</h1>
+  <p id="tagline"></p>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <img src="profile2.jpeg" class="profile">
+  <img src="images/profile1.jpg" class="profile">
   <h1>Bhavin Garg</h1>
   <p>AI Developer | Problem Solver</p>
 
@@ -208,7 +220,7 @@ body::before {
   <div class="projects">
     <div class="project-card">
       <h3>Gov Scheme Platform</h3>
-      <p>Helping users access government schemes easily.</p>
+      <p>Building a platform to simplify access to government schemes.</p>
     </div>
   </div>
 </section>
@@ -219,25 +231,40 @@ body::before {
   <p>Email: bhavingarg121@gmail.com</p>
 </section>
 
-<!-- CHATBOT -->
+<!-- 🤖 CHATBOT -->
 <div id="chatbot">
   <div id="chat-body"></div>
-  <input id="chat-input">
+  <input id="chat-input" placeholder="Ask something...">
   <button id="voiceBtn">🎙️ Talk</button>
 </div>
 
 <script>
 
-/* 🎬 INTRO */
-let tl=gsap.timeline();
-tl.from("#spiderman",{y:-200,duration:1})
-.to("#spiderman",{rotation:25,repeat:3,yoyo:true})
-.to("#batman",{bottom:50,opacity:1})
-.to("#nameIntro",{opacity:1,scale:1.2})
-.to("#intro",{opacity:0,delay:1})
+// 🎬 HOLLYWOOD INTRO
+let tl = gsap.timeline();
+
+tl.to("#introImg",{filter:"brightness(0.5) blur(0px)",scale:1.1,duration:2})
+.to(".light",{x:"100%",duration:1.5},"-=1.5")
+.to("#nameIntro",{opacity:1,scale:1.1,duration:1})
+.to({}, {duration:1,onComplete:typeText})
+.to("#intro",{opacity:0,duration:1,delay:1})
 .set("#intro",{display:"none"});
 
-/* 🤖 AI */
+// ✍️ typing
+function typeText(){
+ let text="AI Developer | Problem Solver";
+ let i=0;
+ function t(){
+  if(i<text.length){
+   document.getElementById("tagline").innerHTML+=text.charAt(i);
+   i++;
+   setTimeout(t,50);
+  }
+ }
+ t();
+}
+
+// 🤖 AI
 const API_URL="https://your-app.onrender.com/chat";
 
 document.getElementById("chat-input").addEventListener("keypress",async e=>{
@@ -266,7 +293,7 @@ function add(msg){
  document.getElementById("chat-body").appendChild(d);
 }
 
-/* VOICE */
+// 🎙️ voice
 const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
 document.getElementById("voiceBtn").onclick=()=>rec.start();
 
