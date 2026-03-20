@@ -8,14 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+body{
   margin:0;
   font-family:'Poppins',sans-serif;
   background:#0b0f14;
   color:#e5e7eb;
 }
 
-/* GRID BACKGROUND */
+/* BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -37,7 +37,7 @@ body::before{
 .blob1{background:#3b82f6;top:10%;left:10%;}
 .blob2{background:#9333ea;bottom:10%;right:10%;}
 
-/* NAVBAR */
+/* NAV */
 nav{
   position:sticky;
   top:0;
@@ -63,16 +63,6 @@ nav a{
   border-radius:12px;
 }
 
-/* BUTTON */
-.btn{
-  padding:10px 20px;
-  margin:10px;
-  background:#2563eb;
-  color:white;
-  border-radius:6px;
-  text-decoration:none;
-}
-
 /* CARDS */
 .cards{
   display:flex;
@@ -85,10 +75,6 @@ nav a{
   padding:20px;
   border-radius:12px;
   width:200px;
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-8px);
 }
 
 /* SECTION */
@@ -108,17 +94,6 @@ nav a{
   gap:20px;
 }
 
-/* SKILLS */
-.bar{
-  height:8px;
-  background:#333;
-  border-radius:10px;
-}
-.bar div{
-  height:100%;
-  background:#3b82f6;
-}
-
 /* PROJECT */
 .projects{
   display:grid;
@@ -136,28 +111,60 @@ nav a{
   position:fixed;
   bottom:20px;
   right:20px;
-  width:280px;
+  width:300px;
+  height:420px;
   background:#111;
   border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
 }
-#chat-body{
-  height:200px;
-  overflow:auto;
+
+#chat-header{
   padding:10px;
+  background:#222;
+  font-weight:bold;
 }
+
+#chat-body{
+  flex:1;
+  padding:10px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.msg{
+  max-width:80%;
+  padding:10px;
+  border-radius:10px;
+  font-size:14px;
+}
+
+.user{
+  align-self:flex-end;
+  background:#2563eb;
+}
+
+.ai{
+  align-self:flex-start;
+  background:#333;
+}
+
 #chat-input{
-  width:100%;
+  border:none;
   padding:10px;
   background:#222;
   color:white;
-  border:none;
+  outline:none;
 }
+
 #voiceBtn{
-  width:100%;
+  border:none;
   padding:10px;
   background:#2563eb;
   color:white;
-  border:none;
 }
 
 @media(max-width:768px){
@@ -169,31 +176,31 @@ nav a{
 <body>
 
 <div class="bg-blobs">
-  <div class="blob1"></div>
-  <div class="blob2"></div>
+<div class="blob1"></div>
+<div class="blob2"></div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <h2>Bhavin</h2>
-  <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
+<h2>Bhavin</h2>
+<div>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/profile1.jpg" class="profile">
-  <h1>Bhavin Garg</h1>
-  <p>Building impactful solutions through DSA and development</p>
+<img src="images/profile1.jpg" class="profile">
+<h1>Bhavin Garg</h1>
+<p>Building impactful solutions through DSA and development</p>
 
-  <div class="cards">
-    <div class="card">💻 Developer</div>
-    <div class="card">🤖 AI Enthusiast</div>
-    <div class="card">⚡ Fast Learner</div>
-  </div>
+<div class="cards">
+<div class="card">💻 Developer</div>
+<div class="card">🤖 AI Enthusiast</div>
+<div class="card">⚡ Fast Learner</div>
+</div>
 </section>
 
 <!-- ABOUT -->
@@ -201,16 +208,16 @@ nav a{
 <h2>About Me</h2>
 <div class="about-grid">
 <p>
-I am a Computer Science Engineering student with strong skills in Data Structures, Algorithms, and programming.
-Currently working on <b>Scheme Sathi</b> to help people discover government schemes easily.
-I aim to work in top MNCs in a reputed technical role.
+I am a Computer Science Engineering student skilled in Data Structures, Algorithms, and development.
+Currently building <b>Scheme Sathi</b> to help people discover government schemes easily.
+I aim to work in top MNCs.
 </p>
 
 <ul>
-<li>✔ Data Structures & Algorithms</li>
+<li>✔ DSA</li>
 <li>✔ Python & C</li>
-<li>✔ Project Development</li>
 <li>✔ Problem Solving</li>
+<li>✔ Project Development</li>
 </ul>
 </div>
 </section>
@@ -226,12 +233,6 @@ I aim to work in top MNCs in a reputed technical role.
 </div>
 </section>
 
-<!-- CURRENT -->
-<section class="section">
-<h2>Currently Building</h2>
-<p>🚀 Scheme Sathi — making government schemes accessible to everyone.</p>
-</section>
-
 <!-- CONTACT -->
 <section id="contact" class="section">
 <h2>Contact</h2>
@@ -240,41 +241,63 @@ I aim to work in top MNCs in a reputed technical role.
 
 <!-- CHATBOT -->
 <div id="chatbot">
-  <div id="chat-body"></div>
-  <input id="chat-input" placeholder="Ask about Bhavin...">
-  <button id="voiceBtn">🎙️ Talk</button>
+<div id="chat-header">🤖 AI Assistant</div>
+<div id="chat-body"></div>
+<input id="chat-input" placeholder="Ask something...">
+<button id="voiceBtn">🎙️ Talk</button>
 </div>
 
 <script>
 
-// 🤖 LOCAL AI
+// AI LOGIC
 function getReply(msg){
  msg = msg.toLowerCase();
 
- if(msg.includes("skills")) return "Bhavin is skilled in DSA, Python, and C.";
- if(msg.includes("project")) return "He is working on Scheme Sathi.";
- if(msg.includes("goal")) return "His goal is to work in top MNCs.";
- if(msg.includes("hello")||msg.includes("hi")) return "Hello! Ask me anything 👨‍💻";
+ if(msg.includes("skills")) return "I have strong skills in DSA, Python, and C.";
+ if(msg.includes("project")) return "I am building Scheme Sathi.";
+ if(msg.includes("goal")) return "My goal is to work in top MNCs.";
+ if(msg.includes("hello")||msg.includes("hi")) return "Hey! 👋";
 
  return "Ask about skills, projects, or goals!";
 }
 
 // ADD MESSAGE
-function add(msg){
- let d=document.createElement("div");
- d.textContent=msg;
- document.getElementById("chat-body").appendChild(d);
+function addMessage(text,type){
+ let div=document.createElement("div");
+ div.className="msg "+type;
+ div.innerText=text;
+ document.getElementById("chat-body").appendChild(div);
+ document.getElementById("chat-body").scrollTop=9999;
 }
 
-// TEXT CHAT
-document.getElementById("chat-input").addEventListener("keypress", e=>{
+// TYPING
+function showTyping(){
+ let div=document.createElement("div");
+ div.className="msg ai";
+ div.id="typing";
+ div.innerText="...";
+ document.getElementById("chat-body").appendChild(div);
+}
+
+function removeTyping(){
+ let t=document.getElementById("typing");
+ if(t) t.remove();
+}
+
+// TEXT
+document.getElementById("chat-input").addEventListener("keypress",e=>{
  if(e.key==="Enter"){
   let msg=e.target.value;
-  add("You: "+msg);
+  addMessage(msg,"user");
 
-  let reply=getReply(msg);
-  add("AI: "+reply);
-  speak(reply);
+  showTyping();
+
+  setTimeout(()=>{
+   removeTyping();
+   let reply=getReply(msg);
+   addMessage(reply,"ai");
+   speak(reply);
+  },800);
 
   e.target.value="";
  }
@@ -287,11 +310,16 @@ document.getElementById("voiceBtn").onclick=()=>rec.start();
 
 rec.onresult=e=>{
  let speech=e.results[0][0].transcript;
- add("You: "+speech);
+ addMessage(speech,"user");
 
- let reply=getReply(speech);
- add("AI: "+reply);
- speak(reply);
+ showTyping();
+
+ setTimeout(()=>{
+  removeTyping();
+  let reply=getReply(speech);
+  addMessage(reply,"ai");
+  speak(reply);
+ },800);
 };
 
 // SPEAK
