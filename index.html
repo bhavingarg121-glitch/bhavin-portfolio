@@ -3,11 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<meta name="description" content="Bhavin Garg - CSE student skilled in DSA, Python and development. Creator of Scheme Sathi.">
+<meta name="keywords" content="Bhavin Garg, Portfolio, DSA, Python, Projects">
+<meta name="author" content="Bhavin Garg">
+
 <title>Bhavin Garg | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+html{scroll-behavior:smooth;}
+
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
@@ -15,7 +23,7 @@ body{
   color:#e5e7eb;
 }
 
-/* BACKGROUND */
+/* BACKGROUND GRID */
 body::before{
   content:"";
   position:fixed;
@@ -106,6 +114,11 @@ nav a{
   border-radius:12px;
 }
 
+/* CONTACT LINKS */
+a{
+  color:#3b82f6;
+}
+
 /* CHATBOT */
 #chatbot{
   position:fixed;
@@ -117,13 +130,20 @@ nav a{
   border-radius:12px;
   display:flex;
   flex-direction:column;
-  overflow:hidden;
 }
 
 #chat-header{
+  display:flex;
+  justify-content:space-between;
   padding:10px;
   background:#222;
-  font-weight:bold;
+}
+
+#minBtn{
+  background:none;
+  border:none;
+  color:white;
+  cursor:pointer;
 }
 
 #chat-body{
@@ -139,25 +159,16 @@ nav a{
   max-width:80%;
   padding:10px;
   border-radius:10px;
-  font-size:14px;
 }
 
-.user{
-  align-self:flex-end;
-  background:#2563eb;
-}
-
-.ai{
-  align-self:flex-start;
-  background:#333;
-}
+.user{align-self:flex-end;background:#2563eb;}
+.ai{align-self:flex-start;background:#333;}
 
 #chat-input{
   border:none;
   padding:10px;
   background:#222;
   color:white;
-  outline:none;
 }
 
 #voiceBtn{
@@ -165,6 +176,12 @@ nav a{
   padding:10px;
   background:#2563eb;
   color:white;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  opacity:0.7;
 }
 
 @media(max-width:768px){
@@ -194,7 +211,7 @@ nav a{
 <section class="hero">
 <img src="images/profile1.jpg" class="profile">
 <h1>Bhavin Garg</h1>
-<p>Building impactful solutions through DSA and development</p>
+<p>Building real-world solutions using DSA & development</p>
 
 <div class="cards">
 <div class="card">💻 Developer</div>
@@ -236,29 +253,51 @@ I aim to work in top MNCs.
 <!-- CONTACT -->
 <section id="contact" class="section">
 <h2>Contact</h2>
-<p>Email: bhavingarg121@gmail.com</p>
+
+<p>📧 Email:
+<a href="mailto:bhavingarg121@gmail.com">bhavingarg121@gmail.com</a>
+</p>
+
+<p>🔗 LinkedIn:
+<a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank">
+View Profile
+</a>
+</p>
+
 </section>
 
 <!-- CHATBOT -->
 <div id="chatbot">
-<div id="chat-header">🤖 AI Assistant</div>
+<div id="chat-header">
+🤖 AI Assistant
+<button id="minBtn">➖</button>
+</div>
+
 <div id="chat-body"></div>
 <input id="chat-input" placeholder="Ask something...">
 <button id="voiceBtn">🎙️ Talk</button>
 </div>
 
+<footer>
+© 2026 Bhavin Garg. All rights reserved.
+</footer>
+
 <script>
 
 // AI LOGIC
 function getReply(msg){
- msg = msg.toLowerCase();
+ msg=msg.toLowerCase();
 
- if(msg.includes("skills")) return "I have strong skills in DSA, Python, and C.";
- if(msg.includes("project")) return "I am building Scheme Sathi.";
- if(msg.includes("goal")) return "My goal is to work in top MNCs.";
- if(msg.includes("hello")||msg.includes("hi")) return "Hey! 👋";
+ if(msg.includes("hi")||msg.includes("hello")) return "Hey! 👋 I'm Bhavin's AI assistant.";
+ if(msg.includes("how are you")) return "I'm doing great! 😄";
+ if(msg.includes("who are you")) return "I'm Bhavin's AI assistant 🤖";
+ if(msg.includes("who built you")) return "I was built by Bhavin Garg 🚀";
+ if(msg.includes("skills")) return "Bhavin is skilled in DSA, Python, and C.";
+ if(msg.includes("project")) return "He is working on Scheme Sathi.";
+ if(msg.includes("goal")) return "His goal is to work in top MNCs.";
+ if(msg.includes("contact")) return "Email: bhavingarg121@gmail.com";
 
- return "Ask about skills, projects, or goals!";
+ return "Ask me about skills, projects, goals, or Bhavin!";
 }
 
 // ADD MESSAGE
@@ -272,11 +311,11 @@ function addMessage(text,type){
 
 // TYPING
 function showTyping(){
- let div=document.createElement("div");
- div.className="msg ai";
- div.id="typing";
- div.innerText="...";
- document.getElementById("chat-body").appendChild(div);
+ let d=document.createElement("div");
+ d.className="msg ai";
+ d.id="typing";
+ d.innerText="...";
+ document.getElementById("chat-body").appendChild(d);
 }
 
 function removeTyping(){
@@ -284,7 +323,7 @@ function removeTyping(){
  if(t) t.remove();
 }
 
-// TEXT
+// TEXT CHAT
 document.getElementById("chat-input").addEventListener("keypress",e=>{
  if(e.key==="Enter"){
   let msg=e.target.value;
@@ -327,6 +366,16 @@ function speak(t){
  let s=new SpeechSynthesisUtterance(t);
  speechSynthesis.speak(s);
 }
+
+// MINIMIZE
+let minimized=false;
+document.getElementById("minBtn").onclick=()=>{
+ minimized=!minimized;
+
+ document.getElementById("chat-body").style.display=minimized?"none":"flex";
+ document.getElementById("chat-input").style.display=minimized?"none":"block";
+ document.getElementById("voiceBtn").style.display=minimized?"none":"block";
+};
 
 </script>
 
