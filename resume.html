@@ -14,14 +14,6 @@
     .active-link { border-bottom: 2px solid #fff; }
   </style>
 </head>
-  <!-- html2pdf.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-<script>
-  document.getElementById("download-pdf").addEventListener("click", () => {
-    const element = document.getElementById("resume-content");
-    html2pdf().from(element).save("Bhavin_Garg_Resume.pdf");
-  });
-</script>
 <body class="font-sans text-gray-800 bg-gray-100">
 
   <!-- Navbar -->
@@ -58,7 +50,14 @@
   <!-- Resume Section -->
   <section id="resume" class="py-16 px-6 max-w-4xl mx-auto mt-20" data-aos="fade-left">
     <h2 class="text-3xl font-bold mb-6 text-center text-blue-900">Resume</h2>
-    
+
+    <!-- Download Button -->
+    <div class="text-center mb-6">
+      <button id="download-pdf" 
+              class="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2 rounded transition">
+        Download Resume (PDF)
+      </button>
+    </div>
 
     <!-- Resume Content -->
     <div id="resume-content" class="bg-white shadow-lg rounded-lg p-8">
@@ -76,67 +75,44 @@
       <!-- Summary -->
       <h3 class="text-lg font-semibold mb-2 text-blue-800">Summary</h3>
       <p class="mb-6 text-gray-700">
-        I am a Computer Science Engineering student with strong interest in programming, problem solving, and building practical technology solutions. 
-        Currently developing skills in C programming, Python, and Data Structures while working on small projects to understand real‑world applications of technology.
+        Motivated Computer Science Engineering student with strong interest in programming, problem solving, and modern web design. Skilled in building responsive, recruiter‑focused portfolios and practical projects.
       </p>
-      <section id="resume" class="py-16 px-6 max-w-4xl mx-auto bg-gray-100">
-  <h2 class="text-3xl font-bold mb-8 text-center text-blue-900">Resume</h2>
 
+      <!-- Education -->
+      <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+      <p class="mb-6"><strong>B.Tech in Computer Science Engineering</strong><br>
+      Priyadarshini College of Engineering, Nagpur<br>
+      Expected Graduation: 2029</p>
 
-  <!-- Resume Content -->
-  <div id="resume-content" class="bg-white shadow-md rounded-lg p-8">
-    <!-- Summary -->
-    <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-user"></i> Summary</h3>
-    <p class="mb-6">Motivated Computer Science Engineering student with a strong interest in programming, problem solving, and modern web design. Skilled in building responsive, recruiter‑focused portfolios and practical projects.</p>
+      <!-- Skills -->
+      <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-code"></i> Technical Skills</h3>
+      <ul class="list-disc list-inside mb-6 text-gray-700">
+        <li>Programming: C, Python, Data Structures & Algorithms</li>
+        <li>Web Development: HTML, CSS, TailwindCSS, JavaScript (UI interactions)</li>
+        <li>Tools: Git, GitHub</li>
+        <li>Other: Web Scraping, Problem Solving</li>
+      </ul>
 
-    <!-- Education -->
-    <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-    <p class="mb-6"><strong>B.Tech in Computer Science Engineering</strong><br>
-    Priyadarshini College of Engineering, Nagpur<br>
-    Expected Graduation: 2029</p>
+      <!-- Projects -->
+      <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-diagram-project"></i> Projects</h3>
+      <p class="mb-6"><strong>Scheme Sathi 🚧 (In Progress)</strong><br>
+      Python‑based scraper to help users discover government schemes easily.</p>
+      <p class="mb-6"><strong>Personal Portfolio Website ✅</strong><br>
+      Designed and developed a recruiter‑friendly portfolio with sticky header, mobile hamburger menu, clean hero section, and concise resume integration.</p>
 
-    <!-- Skills -->
-    <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-code"></i> Technical Skills</h3>
-    <ul class="list-disc list-inside mb-6 text-gray-700">
-      <li>Programming: C, Python, Data Structures & Algorithms</li>
-      <li>Web Development: HTML, CSS, TailwindCSS, JavaScript (UI interactions)</li>
-      <li>Tools: Git, GitHub</li>
-      <li>Other: Web Scraping, Problem Solving</li>
-    </ul>
+      <!-- Achievements -->
+      <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-trophy"></i> Achievements</h3>
+      <ul class="list-disc list-inside text-gray-700 mb-6">
+        <li> Student of the Year – Awarded for outstanding academic performance and overall contribution during school life in Samba, J&K. Received this honor from higher authorities of police at Kushan Public School.</li>
+        <li> Represented District Samba in SOF Exam – Selected to represent the district in the Science Olympiad Foundation competition, demonstrating strong academic ability and problem-solving skills.</li>
+        <li> Second Prize – Chemistry in Action Event: Presented the Blue Bottle Experiment demonstrating oxidation–reduction reactions as part of a team.</li>
+      </ul>
 
-    <!-- Projects -->
-    <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-diagram-project"></i> Projects</h3>
-    <p class="mb-6"><strong>Scheme Sathi 🚧 (In Progress)</strong><br>
-    Python‑based scraper to help users discover government schemes easily.</p>
-    <p class="mb-6"><strong>Personal Portfolio Website ✅</strong><br>
-    Designed and developed a recruiter‑friendly portfolio with sticky header, mobile hamburger menu, clean hero section, and concise resume integration.</p>
-
-    
-    <!-- Achievements -->
-<div class="bg-white shadow-md rounded-lg p-6 mb-6">
-  <h3 class="text-lg font-semibold text-blue-800 mb-2">
-    <i class="fa-solid fa-trophy"></i> Achievements
-  </h3>
-  <ul class="list-disc list-inside text-gray-700">
-    <li> Student of the Year – Awarded for outstanding academic performance and overall contribution during school life in Samba, J&K. Received this honor from higher authorities of police at Kushan Public School.</li>
-    <li> Represented District Samba in SOF Exam – Selected to represent the district in the Science Olympiad Foundation competition, demonstrating strong academic ability and problem-solving skills.</li>
-    <li> Second Prize – Chemistry in Action Event: Presented the Blue Bottle Experiment demonstrating oxidation–reduction reactions as part of a team.</li>
-  </ul>
-</div>
-
-    <!-- Interests -->
-    <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-lightbulb"></i> Interests</h3>
-    <p>Software Development, Programming, Technology Innovation, Problem Solving</p>
-  </div>
-</section>
-
-      
-
-      
-
-     
-
-    
+      <!-- Interests -->
+      <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fa-solid fa-lightbulb"></i> Interests</h3>
+      <p>Software Development, Programming, Technology Innovation, Problem Solving</p>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="bg-blue-900 text-white text-center py-6 mt-10" data-aos="fade-up">
@@ -154,13 +130,6 @@
     menuBtn.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
     });
-  <!-- Download Button -->
-  <div class="text-center mb-6">
-    <button id="download-pdf" 
-            class="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2 rounded transition">
-      Download Resume (PDF)
-    </button>
-  </div>
 
     // PDF Export
     document.getElementById("download-pdf").addEventListener("click", () => {
