@@ -6,14 +6,9 @@
 
 <!-- SEO -->
 <meta name="description" content="Bhavin Garg - CSE student skilled in DSA, Python and development. Creator of Scheme Sathi.">
-<meta name="keywords" content="Bhavin Garg, Portfolio, DSA, Python, Projects">
+<meta name="keywords" content="Bhavin Garg, Portfolio, DSA, Python">
 <meta name="author" content="Bhavin Garg">
 <meta name="robots" content="index, follow">
-
-<!-- Social Preview -->
-<meta property="og:title" content="Bhavin Garg | Portfolio">
-<meta property="og:description" content="Building real-world solutions using DSA & development.">
-<meta property="og:image" content="images/profile1.jpg">
 
 <title>Bhavin Garg | Portfolio</title>
 
@@ -21,7 +16,6 @@
 
 <style>
 html{scroll-behavior:smooth;}
-
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
@@ -29,7 +23,26 @@ body{
   color:#e5e7eb;
 }
 
-/* GRID BACKGROUND */
+/* LOADER */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#0b0f14;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+#loader h1{
+  animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+  from{opacity:0.5;}
+  to{opacity:1;text-shadow:0 0 20px #3b82f6;}
+}
+
+/* BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -41,44 +54,23 @@ body::before{
   z-index:-2;
 }
 
-/* BLOBS */
-.bg-blobs div{
-  position:fixed;
-  width:300px;height:300px;
-  filter:blur(120px);
-  z-index:-1;
-  animation:float 6s infinite alternate;
-}
-.blob1{background:#3b82f6;top:10%;left:10%;}
-.blob2{background:#9333ea;bottom:10%;right:10%;}
-
-@keyframes float{
-  from{transform:translateY(0);}
-  to{transform:translateY(30px);}
-}
-
 /* NAV */
 nav{
-  position:sticky;
-  top:0;
+  position:sticky;top:0;
   display:flex;
   justify-content:space-between;
   padding:15px 30px;
   background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
 }
-nav a{margin-left:20px;color:white;text-decoration:none;}
 
 /* HERO */
 .hero{text-align:center;padding:80px 20px;}
-
 .profile{
   width:160px;height:160px;
   border-radius:50%;
   object-fit:cover;
-  position:relative;
+  box-shadow:0 0 20px #3b82f6;
 }
-
 .hero h1{
   background:linear-gradient(90deg,#3b82f6,#9333ea);
   -webkit-background-clip:text;
@@ -87,16 +79,14 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 
 /* CARDS */
 .cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
-
 .card{
-  background:rgba(255,255,255,0.05);
   padding:20px;
+  background:rgba(255,255,255,0.05);
   border-radius:12px;
-  width:200px;
   transition:0.4s;
 }
 .card:hover{
-  transform:rotateY(10deg) rotateX(10deg) scale(1.05);
+  transform:scale(1.05) rotateX(5deg);
 }
 
 /* SECTION */
@@ -106,15 +96,6 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
   padding:40px;
   background:rgba(255,255,255,0.04);
   border-radius:16px;
-}
-
-.fade{opacity:0;transform:translateY(40px);transition:1s;}
-.fade.show{opacity:1;transform:translateY(0);}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
 }
 
 /* CHATBOT */
@@ -130,62 +111,54 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
   flex-direction:column;
   transition:0.3s;
 }
+#chatbot.hide{
+  transform:scale(0.8);
+  opacity:0;
+  pointer-events:none;
+}
+
 #chat-header{
   display:flex;
   justify-content:space-between;
   padding:10px;
   background:#222;
 }
-#minBtn{background:none;border:none;color:white;cursor:pointer;}
 #chat-body{
   flex:1;
-  padding:10px;
   overflow:auto;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+  padding:10px;
 }
-.msg{max-width:80%;padding:10px;border-radius:10px;}
-.user{align-self:flex-end;background:#2563eb;}
-.ai{align-self:flex-start;background:#333;}
-#chat-input{padding:10px;background:#222;color:white;border:none;}
-#voiceBtn{padding:10px;background:#2563eb;color:white;border:none;}
+.msg{padding:10px;border-radius:10px;margin:5px;}
+.user{background:#2563eb;text-align:right;}
+.ai{background:#333;}
 
-.hidden{opacity:0;pointer-events:none;}
 #chatIcon{
   position:fixed;
   bottom:20px;
   right:20px;
-  background:#2563eb;
   width:55px;height:55px;
+  background:#2563eb;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
   display:none;
-  cursor:pointer;
 }
 
 /* FOOTER */
 .footer{
   text-align:center;
-  padding:30px;
-  background:rgba(255,255,255,0.03);
-}
-
-@media(max-width:768px){
-  .about-grid{grid-template-columns:1fr;}
+  padding:20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg-blobs">
-<div class="blob1"></div>
-<div class="blob2"></div>
-</div>
+<!-- LOADER -->
+<div id="loader"><h1>Bhavin Garg</h1></div>
 
+<!-- NAV -->
 <nav>
 <h2>Bhavin</h2>
 <div>
@@ -195,10 +168,11 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 </div>
 </nav>
 
-<section class="hero fade">
-<img src="profile1.jpeg" class="profile">
+<!-- HERO -->
+<section class="hero">
+<img src="images/profile1.jpg" class="profile">
 <h1>Bhavin Garg</h1>
-<p>Building real-world solutions using DSA & development</p>
+<p>Building real-world solutions using DSA</p>
 
 <div class="cards">
 <div class="card">💻 Developer</div>
@@ -207,27 +181,20 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 </div>
 </section>
 
-<section id="about" class="section fade">
-<h2>About Me</h2>
-<div class="about-grid">
-<p>I am a Computer Science student skilled in DSA, Python and development. Building Scheme Sathi.</p>
-<ul>
-<li>✔ DSA</li>
-<li>✔ Python & C</li>
-<li>✔ Projects</li>
-</ul>
-</div>
+<section id="about" class="section">
+<h2>About</h2>
+<p>I am working on Scheme Sathi project.</p>
 </section>
 
-<section id="projects" class="section fade">
+<section id="projects" class="section">
 <h2>Projects</h2>
-<div class="card">Scheme Sathi</div>
+<p>Scheme Sathi</p>
 </section>
 
-<section id="contact" class="section fade">
+<section id="contact" class="section">
 <h2>Contact</h2>
 <p><a href="mailto:bhavingarg121@gmail.com">Email</a></p>
-<p><a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank">LinkedIn</a></p>
+<p><a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
 </section>
 
 <!-- CHAT -->
@@ -241,51 +208,44 @@ nav a{margin-left:20px;color:white;text-decoration:none;}
 <div id="chatIcon">💬</div>
 
 <footer class="footer">
-© 2026 Bhavin Garg | Built with ❤️
+© 2026 Bhavin Garg
 </footer>
 
 <script>
-// FADE
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("show")})});
-document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
 
-// AI
-function getReply(m){
+// LOADER
+window.onload=()=>{
+ setTimeout(()=>document.getElementById("loader").style.display="none",1500);
+};
+
+// CHAT AI
+function reply(m){
 m=m.toLowerCase();
 if(m.includes("hi")) return "Hey 👋";
-if(m.includes("skills")) return "DSA, Python, C";
 if(m.includes("project")) return "Scheme Sathi";
-return "Ask about skills or project!";
+return "Ask about skills or projects!";
 }
 
 // CHAT
-function add(t,c){
-let d=document.createElement("div");
-d.className="msg "+c;
-d.innerText=t;
-chatBody.appendChild(d);
-chatBody.scrollTop=9999;
-}
-
 chatInput.onkeypress=e=>{
 if(e.key==="Enter"){
-add(chatInput.value,"user");
-let msg=chatInput.value;
+let m=chatInput.value;
 chatInput.value="";
-let reply=getReply(msg);
-setTimeout(()=>add(reply,"ai"),500);
+chatBody.innerHTML+=`<div class="msg user">${m}</div>`;
+setTimeout(()=>chatBody.innerHTML+=`<div class="msg ai">${reply(m)}</div>`,500);
 }
 };
 
 // MINIMIZE
 minBtn.onclick=()=>{
-chatbot.classList.add("hidden");
+chatbot.classList.add("hide");
 chatIcon.style.display="flex";
 };
 chatIcon.onclick=()=>{
-chatbot.classList.remove("hidden");
+chatbot.classList.remove("hide");
 chatIcon.style.display="none";
 };
+
 </script>
 
 </body>
