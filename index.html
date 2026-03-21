@@ -14,33 +14,35 @@
 <body class="font-sans text-gray-800">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-blue-900 text-white shadow-md z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-xl font-bold">BHAVIN GARG</h1>
+  <nav class="bg-blue-900 text-white shadow-md">
+  <ul class="flex space-x-6 justify-center py-4">
+    <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+    <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
+    <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+    <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+  </ul>
+</nav>
       <!-- Desktop Menu -->
-      <ul class="hidden md:flex space-x-6" id="navbar">
-        <li><a href="#about" class="hover:text-gray-300">About</a></li>
-        <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
-        <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
-        <li><a href="#achievements" class="hover:text-gray-300">Achievements</a></li>
-        <li><a href="#skills" class="hover:text-gray-300">Skills</a></li>
-        <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
-      </ul>
+      <ul class="hidden md:flex space-x-6">
+  <li><a href="index.html" class="hover:text-gray-300">← Home</a></li>
+  <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+  <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
+  <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+  <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+</ul>
       <!-- Mobile Menu Button -->
       <button id="menu-btn" class="md:hidden focus:outline-none">☰</button>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-blue-800 px-6 pb-4 md:hidden">
-      <ul class="flex flex-col space-y-4">
-        <li><a href="#about" class="hover:text-gray-300">About</a></li>
-        <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
-        <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
-        <li><a href="#achievements" class="hover:text-gray-300">Achievements</a></li>
-        <li><a href="#skills" class="hover:text-gray-300">Skills</a></li>
-        <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
+  <ul class="flex flex-col space-y-4">
+    <li><a href="index.html" class="hover:text-gray-300">← Home</a></li>
+    <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+    <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
+    <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+    <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+  </ul>
+</div>
 
   <!-- Hero Section -->
   <header class="bg-blue-900 text-white text-center py-32 mt-20" data-aos="fade-up">
@@ -54,15 +56,6 @@
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-right">
-    <h2 class="text-2xl font-bold mb-6 text-center text-blue-900">About Me</h2>
-    <p class="text-center text-lg leading-relaxed">
-      I’m Bhavin Garg, a Computer Science Engineering student passionate about building scalable solutions, 
-      solving real-world problems, and designing recruiter-friendly portfolios. 
-      My journey is driven by curiosity and powered by code.
-    </p>
-  </section>
 
   <!-- Projects Section -->
   <section id="projects" class="py-16 px-6 bg-gray-100">
