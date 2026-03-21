@@ -2,62 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact - Bhavin Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhavin Contact</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    .active-link { border-bottom: 2px solid #fff; }
+  </style>
 </head>
-<body class="font-sans text-gray-800">
+<body class="font-sans text-gray-800 bg-gray-100">
 
   <!-- Navbar -->
-  <nav class="bg-blue-900 text-white px-6 py-4">
-    <a href="index.html" class="hover:underline">Home</a>
+  <nav class="fixed top-0 left-0 w-full bg-blue-900 text-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+      <h1 class="font-bold text-lg">Bhavin</h1>
+      <ul class="hidden md:flex space-x-6" id="navbar">
+        <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+        <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+        <li><a href="index.html#projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+        <li><a href="contact.html" class="hover:text-gray-300 active-link">Contact</a></li>
+      </ul>
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
+      <ul class="flex flex-col space-y-4">
+        <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+        <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+        <li><a href="index.html#projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+        <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6 text-blue-900">Contact</h2>
-    
-    <div class="space-y-4 text-lg">
-      <p>Email: 
-        <a href="mailto:bhavingarg121@gmail.com" class="text-blue-600 hover:underline">
-          bhavingarg121@gmail.com
-        </a>
-      </p>
-      
-      <p>WhatsApp: 
-        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="text-green-600 hover:underline">
-          +91-XXXXXXXXXX
-        </a>
-      </p>
-      
-      <p>LinkedIn: 
-        <a href="https://www.linkedin.com/in/bhavin-garg" target="_blank" class="text-blue-600 hover:underline">
-          linkedin.com/in/bhavin-garg
-        </a>
-      </p>
-      
-      <p>GitHub: 
-        <a href="https://github.com/bhavin-garg" target="_blank" class="text-gray-800 hover:underline">
-          github.com/bhavin-garg
-        </a>
-      </p>
-      
-      <p>Instagram: 
-        <a href="https://instagram.com/bhavin.garg" target="_blank" class="text-pink-600 hover:underline">
-          @bhavin.garg
-        </a>
-      </p>
-      
-      <p>Contact No: 
-        <span class="text-gray-800">+91-XXXXXXXXXX</span>
-      </p>
+  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto mt-20" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-10 text-center text-blue-900">Get in Touch</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Email -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-lg font-semibold text-blue-800 mb-2">Email</h3>
+        <p><a href="mailto:bhavingarg121@gmail.com" class="text-blue-600 hover:underline">bhavingarg121@gmail.com</a></p>
+        <p><a href="mailto:bhavingarg4@gmail.com" class="text-blue-600 hover:underline">bhavingarg4@gmail.com</a></p>
+      </div>
+
+      <!-- Phone -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-lg font-semibold text-blue-800 mb-2">Phone</h3>
+        <p class="text-gray-700">+91-6006103292</p>
+      </div>
+
+      <!-- Instagram -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-lg font-semibold text-blue-800 mb-2">Instagram</h3>
+        <p><a href="https://www.instagram.com/bhavin_mahajan_0001?igsh=aHlrbXEydmt2bGt0" class="text-blue-600 hover:underline">bhavin_mahajan_0001</a></p>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-lg font-semibold text-blue-800 mb-2">LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/bhavin-garg-614429384" class="text-blue-600 hover:underline">LinkedIn Profile</a></p>
+      </div>
+
+      <!-- GitHub -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-lg font-semibold text-blue-800 mb-2">GitHub</h3>
+        <p><a href="https://github.com/bhavingarg121-glitch" class="text-blue-600 hover:underline">GitHub Profile</a></p>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-lg font-semibold text-blue-800 mb-2">WhatsApp</h3>
+        <p><a href="https://wa.me/916006103292" class="text-blue-600 hover:underline">Chat on WhatsApp</a></p>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center py-6">
+  <footer class="bg-blue-900 text-white text-center py-6 mt-10" data-aos="fade-up">
     <p>© 2026 Bhavin Garg</p>
   </footer>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
 </body>
 </html>
