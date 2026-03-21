@@ -2,236 +2,181 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bhavin Garg Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Bhavin Garg - Computer Science Engineering student, passionate about coding, web development, and building practical projects.">
+  <meta name="keywords" content="Bhavin Garg, Portfolio, Computer Science, Web Development, Python, GitHub, LinkedIn, Projects">
+  <meta name="author" content="Bhavin Garg">
 
-  <!-- CSS must be inside <style> -->
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Bhavin Garg Portfolio">
+  <meta property="og:description" content="Driven by Curiosity, Powered by Code. Explore my projects, skills, and journey in Computer Science.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:image" content="https://yourdomain.com/preview-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
   <style>
-    /* Navbar */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      color: #333;
+    }
+
     header {
-      background-color: #bbdefb;
-      padding: 15px 20px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 1000;
     }
 
-    .logo {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #0d47a1;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
+    header h1 {
+      font-size: 1.5rem;
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255,255,255,0.6);
     }
 
     nav a {
-      color: #0d47a1;
+      margin-left: 20px;
       text-decoration: none;
+      color: #fff;
       font-weight: bold;
+      text-shadow: 0 0 5px rgba(255,255,255,0.5);
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.5rem;
-      color: #0d47a1;
-      cursor: pointer;
+    nav a:hover {
+      color: #000;
     }
 
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background-color: #bbdefb;
-      padding: 10px;
-    }
-
-    .mobile-nav a {
-      padding: 10px 0;
-      border-bottom: 1px solid #90caf9;
-      color: #0d47a1;
-      text-decoration: none;
-    }
-
-    /* Hero Section */
-    .hero {
+    section {
       padding: 60px 20px;
       text-align: center;
-      background-color: #e3f2fd;
-      color: #0d47a1;
     }
 
-    .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
-    .hero p { font-size: 1.1rem; margin-bottom: 30px; max-width: 600px; margin: 0 auto; }
-
-    .hero .cta {
-      background-color: #0d47a1;
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
       color: #fff;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .hero .cta:hover { background-color: #1565c0; }
-
-    /* Sections */
-    section { padding: 40px; }
-    h2 { text-align: center; margin-bottom: 30px; color: #0d47a1; }
-
-    /* Grid Layout */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      text-shadow: 0 0 8px rgba(255,255,255,0.6);
     }
 
-    /* Card Styling */
-    .card {
-      background-color: #bbdefb;
-      color: #000;
-      padding: 20px;
+    section p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      font-size: 1.1rem;
+      color: #fff;
+      text-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: rgba(255,255,255,0.2);
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      backdrop-filter: blur(6px);
+      transition: background 0.3s ease;
     }
 
-    /* Status Labels */
-    .status { font-size: 0.9rem; margin-top: 10px; padding: 4px 8px; border-radius: 4px; display: inline-block; }
-    .status.in-progress { background-color: #e0e0e0; color: #333; }
-    .status.completed { background-color: #c8e6c9; color: #2e7d32; }
-    .status.available { background-color: #90caf9; color: #0d47a1; }
+    .btn:hover {
+      background: rgba(255,255,255,0.4);
+    }
 
-    /* Contact Links */
-    #contact a { color: #0d47a1; font-weight: bold; text-decoration: none; }
-    #contact a:hover { color: #1565c0; text-decoration: underline; }
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2),
+                  0 0 15px rgba(255,255,255,0.3);
+      max-width: 600px;
+      color: #fff;
+      text-shadow: 0 0 6px rgba(255,255,255,0.6);
+    }
 
-    /* Footer */
     footer {
-      background-color: #bbdefb;
-      color: #0d47a1;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       text-align: center;
       padding: 20px;
       margin-top: 40px;
-      font-size: 0.9rem;
+      color: #fff;
+      text-shadow: 0 0 6px rgba(255,255,255,0.6);
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav { display: none; }
-      .menu-toggle { display: block; }
-      .mobile-nav.show { display: flex; }
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      color: #000;
     }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="logo">Bhavin Garg</div>
+    <h1>BHAVIN GARG</h1>
     <nav>
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
+      <a href="#skills">Skills</a>
+      <a href="contact.html" target="_blank">Contact</a>
     </nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </header>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-  <!-- Hero Section -->
   <section class="hero">
-    <h1>Hi, I'm Bhavin Garg</h1>
-    <p>A Computer Science Engineering student passionate about building practical projects, clean UI/UX, and recruiter‑friendly portfolios.</p>
-    <a href="#projects" class="cta">View My Projects</a>
+    <h2>Driven by Curiosity, Powered by Code</h2>
+    <p>Welcome to my portfolio. I’m a Computer Science Engineering student passionate about building practical projects, solving problems, and designing clean, recruiter‑friendly layouts.</p>
+    <a href="contact.html" target="_blank" class="btn">Get in Touch</a>
   </section>
 
-  <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
-      <p>Computer Science Engineering student passionate about building practical projects and clean portfolio designs.</p>
+      <p>I’m Bhavin Garg, currently studying Computer Science Engineering at Priyadarshini College of Engineering, Nagpur. I love programming, web development, and creating projects that solve real‑world problems. My journey is fueled by curiosity and a drive to innovate.</p>
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <p><strong>Scheme Sathi:</strong> A Python‑based web scraping project that makes government schemes accessible.</p>
+      <p><strong>Blue Bottle Experiment:</strong> Award‑winning chemistry project presented at “Chemistry in Action.”</p>
+    </div>
+  </section>
+
   <section id="skills">
     <h2>Skills</h2>
     <div class="card">
-      <ul>
-        <li>Python</li>
-        <li>C Programming</li>
-        <li>Data Structures & Algorithms</li>
-        <li>Web Development (HTML, CSS, TailwindCSS)</li>
-      </ul>
+      <p>Proficient in Python, C, Data Structures & Algorithms, HTML, CSS, TailwindCSS. Experienced in web development, logical problem‑solving, and user‑centric design.</p>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Scheme Sathi</h3>
-        <p>Scheme Sathi makes government schemes accessible by collecting and presenting welfare program info in a simple interface.</p>
-        <p><strong>Tech stack:</strong> Python, HTML, CSS</p>
-        <p class="status in-progress">Status: In Progress</p>
-      </div>
-
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>Personal portfolio showcasing my projects and skills.</p>
-        <p><strong>Tech stack:</strong> HTML, CSS, JavaScript</p>
-        <p class="status completed">Status: Completed</p>
-      </div>
-
-      <div class="card">
-        <h3>Resume</h3>
-        <p>Download my resume for detailed information.</p>
-        <p class="status available">Status: Available</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:bhavingarg121@gmail.com">bhavingarg121@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/bhavin-garg" target="_blank">linkedin.com/in/bhavin-garg</a></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Bhavin Garg. All rights reserved.</p>
     <p>
       <a href="#about">About</a> |
       <a href="#projects">Projects</a> |
-      <a href="#resume">Resume</a> |
-      <a href="#contact">Contact</a>
+      <a href="#skills">Skills</a> |
+      <a href="contact.html" target="_blank">Contact</a>
     </p>
   </footer>
-
-  <!-- Scripts -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("mobileNav").classList.toggle("show");
-    }
-  </script>
 </body>
 </html>
