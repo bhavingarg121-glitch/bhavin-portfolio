@@ -12,75 +12,22 @@
   </style>
 </head>
 <body class="font-sans text-gray-800">
-  body>
-  <!-- Navbar -->
-  <nav> ... </nav>
-
-  <!-- Hero Section -->
-  <header> ... </header>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Write your about content here...</p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Details about your projects...</p>
-  </section>
-
-  <!-- Resume Section -->
-  <section id="resume">
-    <h2>Resume</h2>
-    <p>Education, skills, achievements...</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:bhavingarg121@gmail.com">bhavingarg121@gmail.com</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer> ... </footer>
-</body>
-
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-blue-900 text-white shadow-md z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
-      <h1 class="font-bold text-lg">Bhavin</h1>
-      <ul class="hidden md:flex space-x-6" id="navbar">
-        <li><a href="about.html" class="hover:text-gray-300">About</a></li>
-        <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
-        <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
-        <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
-      </ul>
-      <button id="menu-btn" class="md:hidden focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
-      <ul class="flex flex-col space-y-4">
-        <li><a href="about.html" class="hover:text-gray-300">About</a></li>
-        <li><a href="projects" class="hover:text-gray-300">Projects</a></li>
-        <li><a href="resume" class="hover:text-gray-300">Resume</a></li>
-        <li><a href="contact" class="hover:text-gray-300">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <style>
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* adjust to your navbar height */
-  }
-</style>
+  <ul class="hidden md:flex space-x-6" id="navbar">
+  <li><a href="#about" class="hover:text-gray-300">About</a></li>
+  <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
+  <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
+  <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+</ul>
+  <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
+  <ul class="flex flex-col space-y-4">
+    <li><a href="#about" class="hover:text-gray-300">About</a></li>
+    <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
+    <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
+    <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+  </ul>
+</div>
 
   <!-- Hero Section -->
   <header class="bg-blue-900 text-white text-center py-32 mt-20" data-aos="fade-up">
