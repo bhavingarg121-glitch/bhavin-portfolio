@@ -2,181 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bhavin Garg Portfolio</title>
+  <title>Bhavin Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Bhavin Garg - Computer Science Engineering student, passionate about coding, web development, and building practical projects.">
-  <meta name="keywords" content="Bhavin Garg, Portfolio, Computer Science, Web Development, Python, GitHub, LinkedIn, Projects">
-  <meta name="author" content="Bhavin Garg">
-
-  <!-- Open Graph Meta Tags for Social Sharing -->
-  <meta property="og:title" content="Bhavin Garg Portfolio">
-  <meta property="og:description" content="Driven by Curiosity, Powered by Code. Explore my projects, skills, and journey in Computer Science.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourdomain.com">
-  <meta property="og:image" content="https://yourdomain.com/preview-image.jpg">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-      color: #333;
-    }
-
-    header {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      color: #fff;
-      text-shadow: 0 0 8px rgba(255,255,255,0.6);
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      text-shadow: 0 0 5px rgba(255,255,255,0.5);
-    }
-
-    nav a:hover {
-      color: #000;
-    }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #fff;
-      text-shadow: 0 0 8px rgba(255,255,255,0.6);
-    }
-
-    section p {
-      max-width: 700px;
-      margin: 0 auto 20px;
-      font-size: 1.1rem;
-      color: #fff;
-      text-shadow: 0 0 6px rgba(255,255,255,0.6);
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 8px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      backdrop-filter: blur(6px);
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: rgba(255,255,255,0.4);
-    }
-
-    .card {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2),
-                  0 0 15px rgba(255,255,255,0.3);
-      max-width: 600px;
-      color: #fff;
-      text-shadow: 0 0 6px rgba(255,255,255,0.6);
-    }
-
-    footer {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      color: #fff;
-      text-shadow: 0 0 6px rgba(255,255,255,0.6);
-    }
-
-    footer a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      color: #000;
-    }
+    html { scroll-behavior: smooth; }
+    .active-link { border-bottom: 2px solid #fff; }
   </style>
 </head>
-<body>
-  <header>
-    <h1>BHAVIN GARG</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="contact.html" target="_blank">Contact</a>
-    </nav>
-  </header>
+<body class="font-sans text-gray-800">
 
-  <section class="hero">
-    <h2>Driven by Curiosity, Powered by Code</h2>
-    <p>Welcome to my portfolio. I’m a Computer Science Engineering student passionate about building practical projects, solving problems, and designing clean, recruiter‑friendly layouts.</p>
-    <a href="contact.html" target="_blank" class="btn">Get in Touch</a>
-  </section>
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-blue-900 text-white shadow-md z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+    <h1 class="font-bold text-lg">Bhavin</h1>
+    <ul class="hidden md:flex space-x-6" id="navbar">
+      <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+      <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
+      <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+    </ul>
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
+    <ul class="flex flex-col space-y-4">
+      <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+      <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
+      <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+      <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>I’m Bhavin Garg, currently studying Computer Science Engineering at Priyadarshini College of Engineering, Nagpur. I love programming, web development, and creating projects that solve real‑world problems. My journey is fueled by curiosity and a drive to innovate.</p>
-    </div>
-  </section>
+<!-- Hero Section -->
+<header class="bg-blue-900 text-white text-center py-32 mt-20" data-aos="fade-up">
+  <h1 class="text-4xl font-bold">Hi, I'm Bhavin</h1>
+  <p class="mt-4 text-lg">Building scalable solutions with code</p>
+  <div class="mt-6 space-x-4">
+    <a href="projects.html" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded transition">View Projects</a>
+    <a href="Resume.docx" download class="bg-white text-blue-900 hover:bg-gray-200 px-6 py-2 rounded transition">Download Resume</a>
+  </div>
+</header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <p><strong>Scheme Sathi:</strong> A Python‑based web scraping project that makes government schemes accessible.</p>
-      <p><strong>Blue Bottle Experiment:</strong> Award‑winning chemistry project presented at “Chemistry in Action.”</p>
-    </div>
-  </section>
+<!-- Footer -->
+<footer class="bg-blue-900 text-white text-center py-6" data-aos="fade-up">
+  <p>© 2026 Bhavin Garg</p>
+</footer>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      <p>Proficient in Python, C, Data Structures & Algorithms, HTML, CSS, TailwindCSS. Experienced in web development, logical problem‑solving, and user‑centric design.</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Bhavin Garg. All rights reserved.</p>
-    <p>
-      <a href="#about">About</a> |
-      <a href="#projects">Projects</a> |
-      <a href="#skills">Skills</a> |
-      <a href="contact.html" target="_blank">Contact</a>
-    </p>
-  </footer>
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
 </body>
 </html>
