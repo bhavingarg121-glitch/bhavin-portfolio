@@ -82,13 +82,6 @@
       <section id="resume" class="py-16 px-6 max-w-4xl mx-auto bg-gray-100">
   <h2 class="text-3xl font-bold mb-8 text-center text-blue-900">Resume</h2>
 
-  <!-- Download Button -->
-  <div class="text-center mb-6">
-    <button id="download-pdf" 
-            class="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2 rounded transition">
-      Download Resume (PDF)
-    </button>
-  </div>
 
   <!-- Resume Content -->
   <div id="resume-content" class="bg-white shadow-md rounded-lg p-8">
@@ -161,6 +154,13 @@
     menuBtn.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
     });
+  <!-- Download Button -->
+  <div class="text-center mb-6">
+    <button id="download-pdf" 
+            class="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2 rounded transition">
+      Download Resume (PDF)
+    </button>
+  </div>
 
     // PDF Export
     document.getElementById("download-pdf").addEventListener("click", () => {
