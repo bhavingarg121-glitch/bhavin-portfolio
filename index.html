@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO -->
-<meta name="description" content="Bhavin Garg Portfolio - CSE student, DSA, Python, Projects">
+<meta name="description" content="Bhavin Garg Portfolio - CSE student skilled in DSA, Python and development.">
 <meta name="keywords" content="Bhavin Garg, Portfolio, DSA, Python">
 <meta name="author" content="Bhavin Garg">
 
@@ -41,7 +41,7 @@ body{
   to{opacity:1;text-shadow:0 0 20px #3b82f6;}
 }
 
-/* BACKGROUND GRID */
+/* BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -103,6 +103,9 @@ nav a{color:white;margin-left:20px;text-decoration:none;}
   border-radius:16px;
 }
 
+.fade{opacity:0;transform:translateY(40px);transition:1s;}
+.fade.show{opacity:1;transform:translateY(0);}
+
 /* CHATBOT */
 #chatbot{
   position:fixed;
@@ -134,15 +137,26 @@ nav a{color:white;margin-left:20px;text-decoration:none;}
   flex:1;
   overflow:auto;
   padding:10px;
+  display:flex;
+  flex-direction:column;
 }
 
 .msg{
   padding:10px;
   border-radius:10px;
   margin:5px;
+  max-width:80%;
 }
-.user{background:#2563eb;text-align:right;}
-.ai{background:#333;}
+
+.user{
+  background:#2563eb;
+  align-self:flex-end;
+}
+
+.ai{
+  background:#333;
+  align-self:flex-start;
+}
 
 #chat-input{
   padding:10px;
@@ -151,7 +165,12 @@ nav a{color:white;margin-left:20px;text-decoration:none;}
   color:white;
 }
 
-/* IMAGE VIEWER */
+#chatbot.minimized #chat-body,
+#chatbot.minimized #chat-input{
+  display:none;
+}
+
+/* IMAGE VIEW */
 #imageViewer{
   position:fixed;
   width:100%;
@@ -177,7 +196,6 @@ nav a{color:white;margin-left:20px;text-decoration:none;}
   top:20px;
   right:30px;
   font-size:40px;
-  color:white;
   cursor:pointer;
 }
 
@@ -205,10 +223,10 @@ nav a{color:white;margin-left:20px;text-decoration:none;}
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-<img src="profile1.jepg" id="profileImg" class="profile">
+<section class="hero fade">
+<img src="images/profile1.jpg" id="profileImg" class="profile">
 <h1>Bhavin Garg</h1>
-<p>Building real-world solutions using DSA</p>
+<p>Building real-world solutions using DSA & development</p>
 
 <div class="cards">
 <div class="card">💻 Developer</div>
@@ -217,25 +235,29 @@ nav a{color:white;margin-left:20px;text-decoration:none;}
 </div>
 </section>
 
-<section id="about" class="section">
+<section id="about" class="section fade">
 <h2>About</h2>
-<p>I am working on Scheme Sathi project.</p>
+<p>I am a CSE student skilled in DSA, Python, and development. Working on Scheme Sathi.</p>
 </section>
 
-<section id="projects" class="section">
+<section id="projects" class="section fade">
 <h2>Projects</h2>
-<p>Scheme Sathi</p>
+<p>Scheme Sathi - helping people discover government schemes.</p>
 </section>
 
-<section id="contact" class="section">
+<section id="contact" class="section fade">
 <h2>Contact</h2>
 <p><a href="mailto:bhavingarg121@gmail.com">Email</a></p>
-<p><a href="https://linkedin.com" target="_blank">LinkedIn</a></p>
+<p><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
 </section>
 
 <!-- CHATBOT -->
 <div id="chatbot">
-<div id="chat-header">🤖 AI <button id="minBtn">➖</button></div>
+<div id="chat-header">
+🤖 AI Assistant
+<button id="minBtn">➖</button>
+</div>
+
 <div id="chat-body"></div>
 <input id="chat-input" placeholder="Ask something...">
 </div>
@@ -257,46 +279,84 @@ window.onload=()=>{
  setTimeout(()=>document.getElementById("loader").style.display="none",1500);
 };
 
-// SMART CHATBOT
+// SCROLL ANIMATION
+const obs=new IntersectionObserver(e=>{
+ e.forEach(x=>{
+  if(x.isIntersecting) x.target.classList.add("show");
+ });
+});
+document.querySelectorAll(".fade").forEach(el=>obs.observe(el));
+
+// CHATBOT
+const chatInput=document.getElementById("chat-input");
+const chatBody=document.getElementById("chat-body");
+const chatbot=document.getElementById("chatbot");
+const minBtn=document.getElementById("minBtn");
+
 function getReply(msg){
  msg=msg.toLowerCase();
 
- if(msg.includes("hi")) return "Hey 👋 How are you?";
- if(msg.includes("how are you")) return "I'm doing great! 😊 What about you?";
- if(msg.includes("who are you")) return "I'm Bhavin's AI assistant 🤖";
- if(msg.includes("project")) return "He is working on Scheme Sathi.";
- if(msg.includes("skills")) return "DSA, Python, C programming.";
- if(msg.includes("goal")) return "To work at top MNCs.";
+ if(msg.includes("hi")||msg.includes("hello"))
+  return "Hey 👋 How are you?";
+
+ if(msg.includes("how are you"))
+  return "I'm doing great! 😊 What about you?";
+
+ if(msg.includes("who are you"))
+  return "I'm Bhavin's AI assistant 🤖";
+
+ if(msg.includes("skills"))
+  return "Bhavin is skilled in DSA, Python, and C programming.";
+
+ if(msg.includes("project"))
+  return "He is working on Scheme Sathi.";
+
+ if(msg.includes("goal"))
+  return "His goal is to work in top MNCs.";
 
  return "That's interesting 🤔 Tell me more!";
 }
 
-// CHAT
-chatInput.onkeypress=e=>{
+function addMessage(text,type){
+ let div=document.createElement("div");
+ div.className="msg "+type;
+ div.innerText=text;
+ chatBody.appendChild(div);
+ chatBody.scrollTop=chatBody.scrollHeight;
+}
+
+chatInput.addEventListener("keypress",function(e){
  if(e.key==="Enter"){
-  let m=chatInput.value;
+  let msg=chatInput.value.trim();
+  if(msg==="") return;
+
+  addMessage(msg,"user");
   chatInput.value="";
-  chatBody.innerHTML+=`<div class="msg user">${m}</div>`;
 
   setTimeout(()=>{
-    chatBody.innerHTML+=`<div class="msg ai">${getReply(m)}</div>`;
+   addMessage(getReply(msg),"ai");
   },500);
  }
-};
+});
 
-// MINIMIZE (TRANSPARENT)
+// MINIMIZE
 minBtn.onclick=()=>{
  chatbot.classList.toggle("minimized");
 };
 
 // IMAGE VIEW
+const profileImg=document.getElementById("profileImg");
+const viewer=document.getElementById("imageViewer");
+const fullImg=document.getElementById("fullImg");
+const closeImg=document.getElementById("closeImg");
+
 profileImg.onclick=()=>{
  fullImg.src=profileImg.src;
- imageViewer.classList.add("show");
+ viewer.classList.add("show");
 };
 
 closeImg.onclick=()=>{
- imageViewer.classList.remove("show");
+ viewer.classList.remove("show");
 };
 
 </script>
