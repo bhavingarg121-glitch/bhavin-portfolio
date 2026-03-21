@@ -19,9 +19,9 @@
       <h1 class="font-bold text-lg">Bhavin</h1>
       <ul class="hidden md:flex space-x-6" id="navbar">
         <li><a href="about.html" class="hover:text-gray-300">About</a></li>
-        <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
-        <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
-        <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+        <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
+        <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
       </ul>
       <button id="menu-btn" class="md:hidden focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,12 +33,19 @@
     <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
       <ul class="flex flex-col space-y-4">
         <li><a href="about.html" class="hover:text-gray-300">About</a></li>
-        <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
-        <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
-        <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+        <li><a href="projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="resume" class="hover:text-gray-300">Resume</a></li>
+        <li><a href="contact" class="hover:text-gray-300">Contact</a></li>
       </ul>
     </div>
   </nav>
+
+  <style>
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* adjust to your navbar height */
+  }
+</style>
 
   <!-- Hero Section -->
   <header class="bg-blue-900 text-white text-center py-32 mt-20" data-aos="fade-up">
