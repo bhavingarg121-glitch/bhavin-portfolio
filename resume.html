@@ -1,60 +1,146 @@
-<!-- Resume Section -->
-<section id="resume" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-left">
-  <h2 class="text-2xl font-bold mb-6">Resume</h2>
-  
-  <!-- Header Info -->
-  <div class="mb-6 text-center">
-    <h3 class="text-xl font-semibold">Bhavin Garg</h3>
-    <p>Computer Science Engineering Student</p>
-    <p>Email: <a href="mailto:bhavingarg121@gmail.com" class="text-blue-600 hover:underline">bhavingarg121@gmail.com</a> | 
-       Phone: +91-6006103292 | 
-       <a href="https://www.linkedin.com/in/bhavin-garg-614429384" class="text-blue-600 hover:underline">LinkedIn</a>
-    </p>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhavin Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- html2pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .active-link { border-bottom: 2px solid #fff; }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-100">
 
-  <!-- Summary -->
-  <h3 class="text-lg font-semibold mb-2">Summary</h3>
-  <p class="mb-6">
-    I am a Computer Science Engineering student with strong interest in programming, problem solving, and building practical technology solutions. 
-    Currently developing skills in C programming, Python, and Data Structures while working on small projects to understand real‑world applications of technology.
-  </p>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-blue-900 text-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+      <h1 class="font-bold text-lg">Bhavin</h1>
+      <ul class="hidden md:flex space-x-6" id="navbar">
+        <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+        <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+        <li><a href="index.html#projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="resume.html" class="hover:text-gray-300 active-link">Resume</a></li>
+        <li><a href="index.html#contact" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
+      <ul class="flex flex-col space-y-4">
+        <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+        <li><a href="about.html" class="hover:text-gray-300">About</a></li>
+        <li><a href="index.html#projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
+        <li><a href="index.html#contact" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <!-- Education -->
-  <h3 class="text-lg font-semibold mb-2">Education</h3>
-  <p class="mb-6">
-    <strong>B.E. in Computer Science Engineering (First Year)</strong><br>
-    Priyadarshini College of Engineering, Nagpur, India<br>
-    Expected Graduation: 2029
-  </p>
+  <!-- Resume Section -->
+  <section id="resume" class="py-16 px-6 max-w-4xl mx-auto mt-20" data-aos="fade-left">
+    <h2 class="text-3xl font-bold mb-6 text-center text-blue-900">Resume</h2>
+    
+    <!-- Export Button -->
+    <div class="text-center mb-6">
+      <button id="download-pdf" class="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2 rounded transition">
+        Export Resume as PDF
+      </button>
+    </div>
 
-  <!-- Technical Skills -->
-  <h3 class="text-lg font-semibold mb-2">Technical Skills</h3>
-  <ul class="list-disc list-inside mb-6">
-    <li>C Programming</li>
-    <li>Python</li>
-    <li>Basic Data Structures</li>
-    <li>Web Scraping</li>
-    <li>Git & GitHub</li>
-    <li>Problem Solving</li>
-  </ul>
+    <!-- Resume Content -->
+    <div id="resume-content" class="bg-white shadow-lg rounded-lg p-8">
+      <!-- Header Info -->
+      <div class="mb-6 text-center">
+        <h3 class="text-2xl font-semibold text-gray-900">Bhavin Garg</h3>
+        <p class="text-gray-700">Computer Science Engineering Student</p>
+        <p class="text-gray-600">
+          Email: <a href="mailto:bhavingarg121@gmail.com" class="text-blue-600 hover:underline">bhavingarg121@gmail.com</a> | 
+          Phone: +91-6006103292 | 
+          <a href="https://www.linkedin.com/in/bhavin-garg-614429384" class="text-blue-600 hover:underline">LinkedIn</a>
+        </p>
+      </div>
 
-  <!-- Projects -->
-  <h3 class="text-lg font-semibold mb-2">Projects</h3>
-  <div class="mb-6">
-    <p><strong>Government Schemes Information Scraper (Python)</strong></p>
-    <ul class="list-disc list-inside ml-4">
-      <li>Developed a Python script using requests and BeautifulSoup to collect information about government schemes from public websites.</li>
-      <li>Organized and displayed scheme data to make it easier for users to access useful information.</li>
-    </ul>
-  </div>
+      <!-- Summary -->
+      <h3 class="text-lg font-semibold mb-2 text-blue-800">Summary</h3>
+      <p class="mb-6 text-gray-700">
+        I am a Computer Science Engineering student with strong interest in programming, problem solving, and building practical technology solutions. 
+        Currently developing skills in C programming, Python, and Data Structures while working on small projects to understand real‑world applications of technology.
+      </p>
 
-  <!-- Achievements -->
-  <h3 class="text-lg font-semibold mb-2">Achievements</h3>
-  <ul class="list-disc list-inside mb-6">
-    <li>Second Prize – Chemistry in Action Event: Presented the Blue Bottle Experiment demonstrating oxidation–reduction reactions as part of a team.</li>
-  </ul>
+      <!-- Education -->
+      <h3 class="text-lg font-semibold mb-2 text-blue-800">Education</h3>
+      <p class="mb-6 text-gray-700">
+        <strong>B.E. in Computer Science Engineering (First Year)</strong><br>
+        Priyadarshini College of Engineering, Nagpur, India<br>
+        Expected Graduation: 2029
+      </p>
 
-  <!-- Interests -->
-  <h3 class="text-lg font-semibold mb-2">Interests</h3>
-  <p>Software Development, Programming, Technology Innovation, Problem Solving</p>
-</section>
+      <!-- Technical Skills -->
+      <h3 class="text-lg font-semibold mb-2 text-blue-800">Technical Skills</h3>
+      <ul class="list-disc list-inside mb-6 text-gray-700">
+        <li>C Programming</li>
+        <li>Python</li>
+        <li>Basic Data Structures</li>
+        <li>Web Scraping</li>
+        <li>Git & GitHub</li>
+        <li>Problem Solving</li>
+      </ul>
+
+      <!-- Projects -->
+      <h3 class="text-lg font-semibold mb-2 text-blue-800">Projects</h3>
+      <div class="mb-6 text-gray-700">
+        <p><strong>Government Schemes Information Scraper (Python)</strong></p>
+        <ul class="list-disc list-inside ml-4">
+          <li>Developed a Python script using requests and BeautifulSoup to collect information about government schemes from public websites.</li>
+          <li>Organized and displayed scheme data to make it easier for users to access useful information.</li>
+        </ul>
+      </div>
+
+      <!-- Achievements -->
+      <h3 class="text-lg font-semibold mb-2 text-blue-800">Achievements</h3>
+      <ul class="list-disc list-inside mb-6 text-gray-700">
+        <li>Second Prize – Chemistry in Action Event: Presented the Blue Bottle Experiment demonstrating oxidation–reduction reactions as part of a team.</li>
+      </ul>
+
+      <!-- Interests -->
+      <h3 class="text-lg font-semibold mb-2 text-blue-800">Interests</h3>
+      <p class="text-gray-700">Software Development, Programming, Technology Innovation, Problem Solving</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-6 mt-10" data-aos="fade-up">
+    <p>© 2026 Bhavin Garg</p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // PDF Export
+    document.getElementById("download-pdf").addEventListener("click", () => {
+      const element = document.getElementById("resume-content");
+      html2pdf().from(element).save("Bhavin_Garg_Resume.pdf");
+    });
+  </script>
+</body>
+</html>
