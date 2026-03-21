@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bhavin Garg Portfolio</title>
-</style>
+
+  <!-- CSS must be inside <style> -->
+  <style>
     /* Navbar */
     header {
-      background-color: #bbdefb; /* secondary theme light blue */
+      background-color: #bbdefb;
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
@@ -57,24 +59,14 @@
 
     /* Hero Section */
     .hero {
-      padding: 60px 20px; /* natural spacing, no full height */
+      padding: 60px 20px;
       text-align: center;
-      background-color: #e3f2fd; /* very light blue background */
+      background-color: #e3f2fd;
       color: #0d47a1;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    .hero p { font-size: 1.1rem; margin-bottom: 30px; max-width: 600px; margin: 0 auto; }
 
     .hero .cta {
       background-color: #0d47a1;
@@ -85,21 +77,11 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-
-    .hero .cta:hover {
-      background-color: #1565c0;
-    }
+    .hero .cta:hover { background-color: #1565c0; }
 
     /* Sections */
-    section {
-      padding: 40px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #0d47a1;
-    }
+    section { padding: 40px; }
+    h2 { text-align: center; margin-bottom: 30px; color: #0d47a1; }
 
     /* Grid Layout */
     .grid {
@@ -111,47 +93,21 @@
     /* Card Styling */
     .card {
       background-color: #bbdefb;
-      color: #000000;
+      color: #000;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     /* Status Labels */
-    .status {
-      font-size: 0.9rem;
-      margin-top: 10px;
-      padding: 4px 8px;
-      border-radius: 4px;
-      display: inline-block;
-    }
-
-    .status.in-progress {
-      background-color: #e0e0e0;
-      color: #333;
-    }
-
-    .status.completed {
-      background-color: #c8e6c9;
-      color: #2e7d32;
-    }
-
-    .status.available {
-      background-color: #90caf9;
-      color: #0d47a1;
-    }
+    .status { font-size: 0.9rem; margin-top: 10px; padding: 4px 8px; border-radius: 4px; display: inline-block; }
+    .status.in-progress { background-color: #e0e0e0; color: #333; }
+    .status.completed { background-color: #c8e6c9; color: #2e7d32; }
+    .status.available { background-color: #90caf9; color: #0d47a1; }
 
     /* Contact Links */
-    #contact a {
-      color: #0d47a1;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    #contact a:hover {
-      color: #1565c0;
-      text-decoration: underline;
-    }
+    #contact a { color: #0d47a1; font-weight: bold; text-decoration: none; }
+    #contact a:hover { color: #1565c0; text-decoration: underline; }
 
     /* Footer */
     footer {
@@ -165,21 +121,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-      .menu-toggle {
-        display: block;
-      }
-      .mobile-nav.show {
-        display: flex;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+      nav { display: none; }
+      .menu-toggle { display: block; }
+      .mobile-nav.show { display: flex; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -208,14 +154,14 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="hero" data-aos="fade-up">
+  <section class="hero">
     <h1>Hi, I'm Bhavin Garg</h1>
     <p>A Computer Science Engineering student passionate about building practical projects, clean UI/UX, and recruiter‑friendly portfolios.</p>
     <a href="#projects" class="cta">View My Projects</a>
   </section>
 
   <!-- About Section -->
-  <section id="about" data-aos="fade-right">
+  <section id="about">
     <h2>About Me</h2>
     <div class="card">
       <p>Computer Science Engineering student passionate about building practical projects and clean portfolio designs.</p>
@@ -223,7 +169,7 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" data-aos="fade-left">
+  <section id="skills">
     <h2>Skills</h2>
     <div class="card">
       <ul>
@@ -236,7 +182,7 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" data-aos="zoom-in">
+  <section id="projects">
     <h2>Projects</h2>
     <div class="grid">
       <div class="card">
@@ -262,7 +208,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" data-aos="fade-up">
+  <section id="contact">
     <h2>Contact</h2>
     <div class="card">
       <p>Email: <a href="mailto:bhavingarg121@gmail.com">bhavingarg121@gmail.com</a></p>
@@ -271,26 +217,21 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center py-6" data-aos="fade-up">
+  <footer>
     <p>&copy; 2026 Bhavin Garg. All rights reserved.</p>
     <p>
-      <a href="#about" class="hover:underline">About</a> |
-      <a href="#projects" class="hover:underline">Projects</a> |
-      <a href="#resume" class="hover:underline">Resume</a> |
-      <a href="#contact" class="hover:underline">Contact</a>
+      <a href="#about">About</a> |
+      <a href="#projects">Projects</a> |
+      <a href="#resume">Resume</a> |
+      <a href="#contact">Contact</a>
     </p>
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+    function toggleMenu() {
+      document.getElementById("mobileNav").classList.toggle("show");
+    }
   </script>
 </body>
 </html>
-
