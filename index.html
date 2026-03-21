@@ -14,67 +14,83 @@
 <body class="font-sans text-gray-800">
 
   <!-- Navbar -->
-  <ul class="hidden md:flex space-x-6" id="navbar">
-  <li><a href="#about" class="hover:text-gray-300">About</a></li>
-  <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
-  <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
-  <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
-</ul>
-  <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
-  <ul class="flex flex-col space-y-4">
-    <li><a href="#about" class="hover:text-gray-300">About</a></li>
-    <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
-    <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
-    <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
-  </ul>
-</div>
+  <nav class="fixed top-0 left-0 w-full bg-blue-900 text-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-xl font-bold">BHAVIN GARG</h1>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-6" id="navbar">
+        <li><a href="#about" class="hover:text-gray-300">About</a></li>
+        <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
+        <li><a href="#achievements" class="hover:text-gray-300">Achievements</a></li>
+        <li><a href="#skills" class="hover:text-gray-300">Skills</a></li>
+        <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden focus:outline-none">☰</button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-blue-800 px-6 pb-4 md:hidden">
+      <ul class="flex flex-col space-y-4">
+        <li><a href="#about" class="hover:text-gray-300">About</a></li>
+        <li><a href="#projects" class="hover:text-gray-300">Projects</a></li>
+        <li><a href="#resume" class="hover:text-gray-300">Resume</a></li>
+        <li><a href="#achievements" class="hover:text-gray-300">Achievements</a></li>
+        <li><a href="#skills" class="hover:text-gray-300">Skills</a></li>
+        <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
   <header class="bg-blue-900 text-white text-center py-32 mt-20" data-aos="fade-up">
     <h1 class="text-4xl font-bold">Hi, I'm Bhavin</h1>
-    <p class="mt-4 text-lg">Building scalable solutions with code</p>
+    <p class="mt-4 text-lg">Driven by Curiosity, Powered by Code</p>
     <div class="mt-6 space-x-4">
-      <a href="projects.html" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded transition">View Projects</a>
+      <a href="#projects" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded transition">View Projects</a>
       <a href="Resume.docx" download class="bg-white text-blue-900 hover:bg-gray-200 px-6 py-2 rounded transition">
         Download Resume
       </a>
     </div>
   </header>
 
+  <!-- About Section -->
+  <section id="about" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-right">
+    <h2 class="text-2xl font-bold mb-6 text-center text-blue-900">About Me</h2>
+    <p class="text-center text-lg leading-relaxed">
+      I’m Bhavin Garg, a Computer Science Engineering student passionate about building scalable solutions, 
+      solving real-world problems, and designing recruiter-friendly portfolios. 
+      My journey is driven by curiosity and powered by code.
+    </p>
+  </section>
 
   <!-- Projects Section -->
-<section id="projects" class="py-16 px-6 bg-gray-100">
-  <h2 class="text-2xl font-bold mb-8 text-center text-blue-900" data-aos="zoom-in">Projects</h2>
-
-  <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-    
-    <!-- Scheme Sathi Project -->
-    <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up">
-      <div class="flex items-center justify-between mb-2">
-        <h3 class="text-xl font-semibold">Scheme Sathi</h3>
-        <!-- Yellow Badge -->
-        <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
-          🚧 Under Development – Coming Soon
-        </span>
+  <section id="projects" class="py-16 px-6 bg-gray-100">
+    <h2 class="text-2xl font-bold mb-8 text-center text-blue-900" data-aos="zoom-in">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <!-- Scheme Sathi Project -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xl font-semibold">Scheme Sathi</h3>
+          <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
+            🚧 Under Development – Coming Soon
+          </span>
+        </div>
+        <p class="mb-2">
+          <strong>Scheme Sathi</strong> is a project designed to make government schemes more accessible to the public.  
+          It collects, organizes, and presents information about various welfare programs in a simple, user-friendly interface.
+        </p>
+        <p class="text-sm text-gray-600"><em>Tech stack:</em> Python, HTML, CSS</p>
       </div>
-      <p class="mb-2">
-        <strong>Scheme Sathi</strong> is a project designed to make government schemes more accessible to the public. 
-        It collects, organizes, and presents information about various welfare programs in a simple, user-friendly interface.
-      </p>
-      <p class="text-sm text-gray-600">
-        <em>Tech stack:</em> Python, HTML, CSS
-      </p>
+      <!-- Portfolio Website Project -->
+      <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
+        <p class="mb-2">Personal portfolio showcasing my projects and skills.</p>
+        <p class="text-sm text-gray-600"><em>Tech stack:</em> HTML, CSS, JavaScript</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Portfolio Website Project -->
-    <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
-      <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
-      <p class="mb-2">Personal portfolio showcasing my projects and skills.</p>
-      <p class="text-sm text-gray-600"><em>Tech stack:</em> HTML, CSS, JavaScript</p>
-    </div>
-
-  </div>
-</section>
   <!-- Resume Section -->
   <section id="resume" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-left">
     <h2 class="text-2xl font-bold mb-6">Resume</h2>
@@ -86,59 +102,56 @@
         <p><strong>Skills:</strong> Python, C, DSA</p>
       </div>
     </div>
-    <!-- Achievements -->
+  </section>
+
   <!-- Achievements Section -->
-<section id="achievements" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-  <h2 class="text-2xl font-bold mb-6 text-center text-blue-900">Achievements</h2>
-  <ul class="space-y-4">
-    <li class="bg-blue-100 border-l-4 border-blue-600 p-3 rounded shadow-sm">
-      🏆 <strong>Student of the Year</strong> – Awarded in 7th class for academic excellence and overall performance.
-    </li>
-    <li class="bg-green-100 border-l-4 border-green-600 p-3 rounded shadow-sm">
-      🌍 <strong>SOF Olympiad Representation</strong> – Represented Samba district in the Science Olympiad Foundation during 5th class.
-    </li>
-    <li class="bg-yellow-100 border-l-4 border-yellow-600 p-3 rounded shadow-sm">
-      🧪 <strong>Chemistry in Action</strong> – Won 2nd prize in college (1st year) for presenting the Blue Bottle Experiment on oxidation–reduction reactions.
-    </li>
-    <li class="bg-purple-100 border-l-4 border-purple-600 p-3 rounded shadow-sm">
-      💻 <strong>Scheme Sathi Project</strong> – Initiated a Python‑based project to make government schemes accessible; currently under development.
-    </li>
-  </ul>
-</section>
-<!-- Skills Section -->
-<section id="skills" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-  <h2 class="text-2xl font-bold mb-6 text-center text-blue-900">Skills</h2>
-  
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-    <div class="bg-blue-100 p-4 rounded shadow-sm hover:shadow-md transition">
-       <p class="font-semibold">Python</p>
-    </div>
-    <div class="bg-green-100 p-4 rounded shadow-sm hover:shadow-md transition">
-       <p class="font-semibold">C Programming</p>
-    </div>
-    <div class="bg-yellow-100 p-4 rounded shadow-sm hover:shadow-md transition">
-       <p class="font-semibold">Data Structures & Algorithms</p>
-    </div>
-    <div class="bg-purple-100 p-4 rounded shadow-sm hover:shadow-md transition">
-       <p class="font-semibold">Web Development (HTML, CSS, TailwindCSS)</p>
-    </div>
-    <div class="bg-pink-100 p-4 rounded shadow-sm hover:shadow-md transition">
-       <p class="font-semibold">UI/UX & Responsive Design</p>
-    </div>
-    <div class="bg-gray-100 p-4 rounded shadow-sm hover:shadow-md transition">
-       <p class="font-semibold">Git & Version Control</p>
-    </div>
-  </div>
-</section>
+  <section id="achievements" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-2xl font-bold mb-6 text-center text-blue-900">Achievements</h2>
+    <ul class="space-y-4">
+      <li class="bg-blue-100 border-l-4 border-blue-600 p-3 rounded shadow-sm">🏆 Student of the Year – Awarded in 7th class.</li>
+      <li class="bg-green-100 border-l-4 border-green-600 p-3 rounded shadow-sm">🌍 SOF Olympiad Representation – Represented Samba district in 5th class.</li>
+      <li class="bg-yellow-100 border-l-4 border-yellow-600 p-3 rounded shadow-sm">🧪 Chemistry in Action – Won 2nd prize for Blue Bottle Experiment.</li>
+      <li class="bg-purple-100 border-l-4 border-purple-600 p-3 rounded shadow-sm">💻 Scheme Sathi Project – Initiated Python-based project.</li>
+    </ul>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+    <h2 class="text-2xl font-bold mb-6 text-center text-blue-900">Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+      <div class="bg-blue-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">Python</p></div>
+      <div class="bg-green-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">C Programming</p></div>
+      <div class="bg-yellow-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">Data Structures & Algorithms</p></div>
+      <div class="bg-purple-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">Web Development (HTML, CSS, TailwindCSS)</p></div>
+      <div class="bg-pink-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold
+
   <!-- Contact Section -->
   <section id="contact" class="py-16 px-6 bg-gray-100 text-center" data-aos="zoom-in">
     <h2 class="text-2xl font-bold mb-4">Contact</h2>
     <p>Email: <a href="mailto:bhavingarg121@gmail.com" class="text-blue-600 hover:underline">bhavingarg121@gmail.com</a></p>
   </section>
+        <!-- Email Card -->
+    <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold mb-2">Email</h3>
+      <p>
+        <a href="mailto:bhavingarg121@gmail.com" class="text-blue-600 hover:underline">
+          bhavingarg121@gmail.com
+        </a>
+      </p>
+    </div>
+    <!-- Location Card -->
+    <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
+      <h3 class="text-lg font-semibold mb-2">Location</h3>
+      <p>Nagpur, Maharashtra</p>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- Footer -->
   <footer class="bg-blue-900 text-white text-center py-6" data-aos="fade-up">
-    <p>© 2026 Bhavin Garg</p>
+    <p>© 2026 Bhavin Garg — Driven by Curiosity, Powered by Code</p>
   </footer>
 
   <!-- AOS JS -->
@@ -149,6 +162,7 @@
     const mobileMenu = document.getElementById("mobile-menu");
     menuBtn.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
+
     });
   </script>
 </body>
