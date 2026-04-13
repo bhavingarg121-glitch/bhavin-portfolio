@@ -23,11 +23,24 @@
 
 body{
   font-family:'Poppins',sans-serif;
-  background:#0a0a0a;
-  color:#ffffff;
-  overflow-x:hidden;
+  background:#ffffff;
+  color:#222;
+  font-size:18px;
+  line-height:1.7;
 }
 
+/* Headings Bigger */
+h1{
+  font-size:3.2rem;
+}
+
+h2{
+  font-size:2rem;
+}
+
+h3{
+  font-size:1.3rem;
+}
 html{
   scroll-behavior:smooth;
 }
@@ -45,35 +58,23 @@ html{
   z-index:-2;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 nav{
   position:fixed;
   top:0;
   width:100%;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(12px);
+  background:#0d6efd; /* blue */
   padding:15px;
   z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-nav ul{
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  list-style:none;
-  flex-wrap:wrap;
 }
 
 nav a{
-  color:#aaaaaa;
-  text-decoration:none;
+  color:#ffffff;
   font-weight:500;
-  transition:0.3s;
 }
 
 nav a:hover{
-  color:#9b59b6;
+  color:#dbeafe;
 }
 
 /* ===== HERO ===== */
@@ -275,14 +276,13 @@ h2{
   color:#cccccc;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   text-align:center;
   padding:25px;
-  color:#aaaaaa;
-  border-top:1px solid rgba(255,255,255,0.05);
+  background:#0d6efd;
+  color:#ffffff;
 }
-
 /* ===== MOBILE ===== */
 @media(max-width:768px){
 
@@ -351,7 +351,7 @@ I design and build impactful digital platforms that simplify access to governmen
 </div>
 
 <div class="hero-right">
-<img src="profile1.jpg" alt="Bhavin Garg">
+<img src="profile1.jpeg" alt="Bhavin Garg">
 </div>
 
 </section>
@@ -363,19 +363,37 @@ I design and build impactful digital platforms that simplify access to governmen
 
 <div class="resume-glass">
 
-<div class="resume-img">
-<img src="profile1.jpeg">
-</div>
+  <!-- IMAGE -->
+  <div class="resume-img">
+    <img src="profile1.jpeg" alt="Bhavin Garg">
+  </div>
 
-<div>
-<h3>Bhavin Garg</h3>
+  <!-- CONTENT -->
+  <div class="resume-content">
 
-<p><strong>Education:</strong> B.Tech CSE</p>
-<p><strong>College:</strong> Priyadarshini College of Engineering</p>
-<p><strong>Year:</strong> 2029</p>
+    <h3 class="resume-name">Bhavin Garg</h3>
 
-<a href="resume.pdf" class="btn">Download Resume</a>
-</div>
+    <p class="resume-role">Aspiring Software Developer</p>
+
+    <div class="resume-details">
+
+      <p><strong>🎓 Education:</strong> Bachelor of Technology in Computer Science Engineering</p>
+
+      <p><strong>🏫 College:</strong> Priyadarshini College of Engineering, Nagpur</p>
+
+      <p><strong>📅 Graduation:</strong> Expected 2029</p>
+
+      <p><strong>🎯 Focus:</strong> Data Structures, Algorithms, and Full Stack Web Development</p>
+
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="resume-actions">
+      <a href="resume.pdf" class="btn primary">Download Resume</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+    </div>
+
+  </div>
 
 </div>
 
@@ -422,9 +440,25 @@ I design and build impactful digital platforms that simplify access to governmen
 
 <ul class="achievements">
 
-<li>🏆 Student of the Year</li>
-<li>🌍 SOF Participation</li>
-<li>🧪 Chemistry Project Winner</li>
+<li>
+<strong>Student of the Year</strong><br>
+Recognized for consistent academic excellence, leadership skills, and outstanding performance across multiple disciplines during school years.
+</li>
+
+<li>
+ <strong>Science Olympiad Foundation (SOF)</strong><br>
+Represented district level, demonstrating strong analytical thinking and problem-solving abilities at an early stage.
+</li>
+
+<li>
+ <strong>Chemistry Project – Blue Bottle Experiment</strong><br>
+Secured 2nd prize in first year of engineering for presenting an innovative and engaging scientific experiment with practical application.
+</li>
+
+<li>
+ <strong>Google Play Listing Certification</strong><br>
+Completed certification focused on app publishing, store optimization, and digital product deployment strategies.
+</li>
 
 </ul>
 
