@@ -2,149 +2,355 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bhavin Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- SEO Meta Tags -->
+  <title>Bhavin Garg | Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Bhavin Garg, aspiring developer and problem solver. Showcasing projects, skills in Python, C, Web Development, UI/UX, and achievements like Student of the Year and SOF Olympiad representation.">
+  <meta name="keywords" content="Bhavin Garg, Developer Portfolio, Web Development, Python, C Programming, Data Structures, UI/UX, Git, TailwindCSS, Nagpur, Priyadarshini College of Engineering">
+  <meta name="author" content="Bhavin Garg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bhavin Garg | Developer Portfolio">
+  <meta property="og:description" content="Explore Bhavin Garg's projects, skills, and achievements. Passionate about building impactful digital experiences.">
+  <meta property="og:image" content="profile1.jpeg">
+  <meta property="og:url" content="https://bhavingarg121-glitch.github.io/bhavin-portfolio/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bhavin Garg | Developer Portfolio">
+  <meta name="twitter:description" content="Aspiring developer & problem solver. Projects, skills, and achievements showcased.">
+  <meta name="twitter:image" content="profile1.jpeg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="profile1.jpeg" type="image/jpeg">
+
   <style>
+    body {
+      background-color: #0a0a0a;
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
     html { scroll-behavior: smooth; }
-    .active-link { border-bottom: 2px solid #fff; }
+
+    nav {
+      background: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: #9b59b6;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #9b59b6;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after { width: 100%; }
+
+    .btn {
+      background: #9b59b6;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0 transparent;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #6c5ce7;
+      box-shadow: 0 0 15px #6c5ce7;
+      transform: translateY(-3px);
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero h1 span { color: #9b59b6; }
+    .hero-img img {
+      width: 200px;
+      border-radius: 50%;
+      border: 4px solid #9b59b6;
+      margin-top: 20px;
+    }
+    .hero .download-resume { margin-top: 20px; }
+
+    section {
+      padding: 60px 20px;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+    }
+    section.visible { opacity: 1; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .resume-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(155, 89, 182, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .resume-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(155, 89, 182, 0.5);
+    }
+    .resume-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #9b59b6;
+    }
+    .resume-info h3 { margin-bottom: 10px; color: #9b59b6; }
+
+    .achievements {
+      margin-top: 30px;
+      text-align: left;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
+    }
+    .achievements h3 { color: #9b59b6; margin-bottom: 15px; }
+    .achievements ul { list-style: none; padding: 0; }
+    .achievements li {
+      margin-bottom: 10px;
+      color: #f5f5f5;
+      position: relative;
+      padding-left: 25px;
+    }
+    .achievements li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #9b59b6;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .skill-card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(155, 89, 182, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .skill-card:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 0 25px rgba(155, 89, 182, 0.6);
+      animation: pulse 1s infinite alternate;
+    }
+    .skill-card p {
+      color: #f5f5f5;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    @keyframes pulse {
+      from { transform: scale(1.05) rotate(-2deg); }
+      to { transform: scale(1.1) rotate(2deg); }
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(155, 89, 182, 0.4);
+    }
+    .project-img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #9b59b6;
+    }
+
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; }
+      .resume-card { flex-direction: column; text-align: center; }
+      .resume-info { text-align: center; }
+    }
   </style>
 </head>
-<body class="font-sans text-gray-800">
-
-<!-- Navbar -->
-<nav class="fixed top-0 left-0 w-full bg-blue-900 text-white shadow-md z-50">
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
-    <h1 class="font-bold text-lg">Bhavin</h1>
-    <ul class="hidden md:flex space-x-6" id="navbar">
-      <li><a href="about.html" class="hover:text-gray-300">About</a></li>
-      <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
-      <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
-      <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button id="menu-btn" class="md:hidden focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-blue-800 px-6 pb-4">
-    <ul class="flex flex-col space-y-4">
-      <li><a href="about.html" class="hover:text-gray-300">About</a></li>
-      <li><a href="projects.html" class="hover:text-gray-300">Projects</a></li>
-      <li><a href="resume.html" class="hover:text-gray-300">Resume</a></li>
-      <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  </nav>
 
 <!-- Hero Section -->
-<header class="bg-blue-900 text-white text-center py-32 mt-20" data-aos="fade-up">
-  <h1 class="text-4xl font-bold">Hi, I'm Bhavin</h1>
-  <p class="mt-4 text-lg">Building scalable solutions with code</p>
-  <div class="mt-6 space-x-4">
-    <a href="projects.html" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded transition">View Projects</a>
-    <a href="Resume.pdf" download class="bg-white text-blue-900 hover:bg-gray-200 px-6 py-2 rounded transition">Download Resume</a>
-  </div>
-</header>
-  <section id="portfolio" class="py-16 px-6 bg-gray-50">
-  <div class="max-w-6xl mx-auto space-y-16">
-
-    <!-- Achievements -->
-    <div data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6 text-center text-blue-900">Achievements</h2>
-      <ul class="space-y-4">
-        <li class="bg-blue-100 border-l-4 border-blue-600 p-3 rounded shadow-sm">
-          🏆 <strong>Student of the Year</strong> – Awarded in 7th class for academic excellence and overall performance.
-        </li>
-        <li class="bg-green-100 border-l-4 border-green-600 p-3 rounded shadow-sm">
-          🌍 <strong>SOF Olympiad Representation</strong> – Represented Samba district in the Science Olympiad Foundation during 5th class.
-        </li>
-        <li class="bg-yellow-100 border-l-4 border-yellow-600 p-3 rounded shadow-sm">
-          🧪 <strong>Chemistry in Action</strong> – Won 2nd prize in college (1st year) for presenting the Blue Bottle Experiment.
-        </li>
-        <li class="bg-purple-100 border-l-4 border-purple-600 p-3 rounded shadow-sm">
-          💻 <strong>Scheme Sathi Project</strong> – Initiated a Python‑based project to make government schemes accessible; currently under development.
-        </li>
-      </ul>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Hello, I'm <span>Bhavin Garg</span></h1>
+    <p>Aspiring Developer & Problem Solver</p>
+    <p>I build digital experiences that are clean, impactful, and user-focused.</p>
+    <div class="download-resume">
+      <a href="resume.pdf" class="btn">Download Resume</a>
     </div>
+  </div>
+  <div class="hero-img">
+    <img src="profile1.jpeg" alt="Portrait of Bhavin Garg">
+  </div>
+</section>
 
-    <!-- Projects -->
-    <div data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-8 text-center text-blue-900">Projects</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
-          <div class="flex items-center justify-between mb-2">
-            <h3 class="text-xl font-semibold">Scheme Sathi</h3>
-            <span class="bg-yellow-200 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">🚧 In Progress</span>
-          </div>
-          <p class="mb-2">A project designed to make government schemes more accessible by collecting and presenting welfare program info in a simple interface.</p>
-          <p class="text-sm text-gray-600"><em>Tech stack:</em> Python, HTML, CSS</p>
-        </div>
-
-        <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition transform hover:-translate-y-2">
-          <div class="flex items-center justify-between mb-2">
-            <h3 class="text-xl font-semibold">Portfolio Website</h3>
-            <span class="bg-green-200 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">✔ Completed</span>
-          </div>
-          <p class="mb-2">Personal portfolio showcasing my projects and skills.</p>
-          <p class="text-sm text-gray-600"><em>Tech stack:</em> HTML, CSS, JavaScript</p>
-        </div>
-
-        
-    <section id="resume" class="py-16 px-6 max-w-4xl mx-auto" data-aos="fade-left">
-  <h2 class="text-3xl font-bold mb-6 text-center text-blue-900">Resume</h2>
-  
-  <div class="flex items-center space-x-6 justify-center">
-    <!-- Square Photo -->
-    <img src="profile1.jpeg" 
-     alt="Bhavin Garg" 
-     class="w-40 h-40 object-cover rounded-md shadow-md border border-gray-300 mx-auto">
-
-    
-    <!-- Short Resume Info -->
-    <div class="text-gray-800">
-      <p><strong>Name:</strong> Bhavin Garg</p>
-      <p><strong>Education:</strong> B.Tech in Computer Science Engineering (Expected 2029)</p>
-      <p><strong>College:</strong> Priyadarshini College of Engineering, Nagpur</p>
+<!-- Resume Section -->
+<section id="resume" class="resume">
+  <h2>Resume Snapshot</h2>
+  <div class="resume-card">
+    <img src="profile1.jpeg" alt="Bhavin Garg" class="resume-photo">
+    <div class="resume-info">
+      <h3>Bhavin Garg</h3>
+      <p><strong>Education:</strong> B.Tech in Computer Science Engineering</p>
+      <p><strong>College:</strong> Priyadarshini College of Engineering, Nagpur (Expected: 2029)</p>
       <p><strong>Location:</strong> Nagpur, Maharashtra</p>
     </div>
   </div>
+
+
+      <!-- Achievements -->
+<div class="achievements">
+  <h3>Achievements</h3>
+  <ul>
+    <li>🏆 Student of the Year – Awarded in School for academic excellence and overall performance.</li>
+    <li>🌍 SOF Olympiad Representation – Represented Samba district in the Science Olympiad Foundation during 5th class.</li>
+    <li>🧪 Chemistry in Action – Won 2nd prize in college (1st year) for presenting the Blue Bottle Experiment.</li>
+    <li>📱 Google Play Listing Certificate – Successfully passed during 2nd semester, validating app publishing and listing expertise.</li>
+  </ul>
+</div>
+    
 </section>
 
-    <!-- Skills -->
-    <div data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6 text-center text-blue-900">Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-        <div class="bg-blue-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">Python</p></div>
-        <div class="bg-green-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">C Programming</p></div>
-        <div class="bg-yellow-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">Data Structures & Algorithms</p></div>
-        <div class="bg-purple-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">Web Development (HTML, CSS, TailwindCSS)</p></div>
-        <div class="bg-pink-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">UI/UX & Responsive Design</p></div>
-        <div class="bg-gray-100 p-4 rounded shadow-sm hover:shadow-md transition"><p class="font-semibold">Git & Version Control</p></div>
-      </div>
-    </div>
-
+<!-- Skills Section -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><p>Python</p></div>
+    <div class="skill-card"><p>C Programming</p></div>
+    <div class="skill-card"><p> Data Structures & Algorithms</p></div>
+    <div class="skill-card"><p> Web Development (HTML, CSS, TailwindCSS)</p></div>
+    <div class="skill-card"><p> UI/UX & Responsive Design</p></div>
+   
   </div>
 </section>
 
+<!-- Projects Section -->
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <div class="project-card">
+    <img src="assets/images/schemesathi.png" alt="Screenshot of SchemeSathi portal" class="project-img">
+    <h3>Digital Government Scheme Portal</h3>
+    <p>A platform that helps users discover and understand government schemes easily.</p>
+    <a href="https://github.com/bhavingarg121-glitch/schemesathi" class="btn">View on GitHub</a>
+    <a href="https://schemesathi-demo.netlify.app" class="btn">Live Demo</a>
+  </div>
+  <div class="project-card">
+    <img src="assets/images/aischeme.png" alt="Screenshot of AI Scheme Finder" class="project-img">
+    <h3>AI Scheme Finder</h3>
+    <p>Uses AI to match users with relevant government schemes based on their profile.</p>
+    <a href="https://github.com/bhavingarg121-glitch/ai-scheme-finder" class="btn">View on GitHub</a>
+  </div>
+  <p><em>🚧 Projects are under progress but will be deployed soon.</em></p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Let's Connect!</h2>
+  <p>Email: bhavingarg121@gmail.com</p>
+  <p>LinkedIn: www.linkedin.com/in/bhavin-garg-614429384</p>
+</section>
+
 <!-- Footer -->
-<footer class="bg-blue-900 text-white text-center py-6" data-aos="fade-up">
-  <p>© 2026 Bhavin Garg</p>
+<footer>
+  <p>© 2024 Bhavin Garg. Built with ❤️ and Code.</p>
 </footer>
 
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Scripts -->
 <script>
-  AOS.init({ duration: 1000, once: true });
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+  // Reveal sections on scroll
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop < triggerBottom) {
+        section.classList.add('visible');
+      }
+    });
+  });
+
+  // Smooth scroll for navigation links
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Button hover animation feedback
+  const buttons = document.querySelectorAll('.btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      btn.style.transform = 'scale(1.05)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'scale(1)';
+    });
   });
 </script>
 </body>
 </html>
+      
