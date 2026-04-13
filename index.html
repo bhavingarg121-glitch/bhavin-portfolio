@@ -108,7 +108,37 @@ section.show {
   opacity: 1;
   transform: translateY(0);
 }
+.resume-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
+.resume-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px; /* square with slight rounding */
+  border: 3px solid #9b59b6;
+  box-shadow: 0 0 20px rgba(155,89,182,0.5);
+  transition: 0.3s;
+}
+
+.resume-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(155,89,182,0.8);
+}
+
+.resume-info {
+  flex: 1;
+}
+  @media(max-width:768px){
+  .resume-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 /* ===== CARDS ===== */
 .card {
   background: rgba(255,255,255,0.05);
@@ -185,26 +215,33 @@ footer {
 <!-- NAV -->
 <nav>
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#resume">Resume</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#achievements">Achievements</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="index.html">Home</a></li>
+<li><a href="resume.html">Resume</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
-
-<!-- HERO -->
+<!--Hero-->
 <section id="home" class="hero show">
-<h1>Hello, I'm <span>Bhavin Garg</span></h1>
-<p>Aspiring Software Developer passionate about building impactful digital solutions.</p>
-<a href="#projects" class="btn">Explore My Work</a>
-</section>
 
+  <div class="hero-img">
+    <img src="profile1.jpeg" alt="Bhavin Garg">
+  </div>
+
+  <h1>Hello, I'm <span>Bhavin Garg</span></h1>
+  <p>Aspiring Software Developer passionate about building impactful digital solutions.</p>
+
+  <a href="#projects" class="btn">Explore My Work</a>
+
+</section>
+  
 <!-- RESUME -->
 <section id="resume">
 <h2>Resume</h2>
-<div class="card">
+<div class="resume-glass">
+    </div>
+<div class="resume-info">
 <h3>Bhavin Garg</h3>
 <p><strong>Education:</strong> Bachelor of Technology in Computer Science Engineering</p>
 <p><strong>College:</strong> Priyadarshini College of Engineering, Nagpur</p>
