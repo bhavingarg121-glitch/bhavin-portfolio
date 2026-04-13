@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -10,40 +11,52 @@
 <meta name="description" content="Bhavin Garg - Aspiring Software Developer skilled in Python, C Programming, Web Development, UI/UX, and Data Structures.">
 <meta name="keywords" content="Bhavin Garg, Developer Portfolio, Python, Web Developer, Nagpur">
 <meta name="author" content="Bhavin Garg">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
 body{
-  font-family:Poppins,sans-serif;
+  font-family:'Poppins',sans-serif;
   background:#0a0a0a;
-  color:#fff;
+  color:#ffffff;
   overflow-x:hidden;
 }
-html{scroll-behavior:smooth}
 
-/* BACKGROUND GLOW */
+html{
+  scroll-behavior:smooth;
+}
+
+/* ===== BACKGROUND GLOW ===== */
 .bg-light{
   position:fixed;
   width:100%;
   height:100%;
+  top:0;
+  left:0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(155,89,182,0.2), transparent),
-    radial-gradient(circle at 80% 70%, rgba(0,206,201,0.2), transparent);
+    radial-gradient(circle at 20% 30%, rgba(155,89,182,0.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(0,206,201,0.25), transparent 40%);
   z-index:-2;
 }
 
-/* NAV */
+/* ===== NAVBAR ===== */
 nav{
   position:fixed;
-  width:100%;
   top:0;
+  width:100%;
   background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
   padding:15px;
   z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.05);
 }
+
 nav ul{
   display:flex;
   justify-content:center;
@@ -51,14 +64,19 @@ nav ul{
   list-style:none;
   flex-wrap:wrap;
 }
+
 nav a{
-  color:#aaa;
+  color:#aaaaaa;
   text-decoration:none;
+  font-weight:500;
   transition:0.3s;
 }
-nav a:hover{color:#9b59b6}
 
-/* HERO */
+nav a:hover{
+  color:#9b59b6;
+}
+
+/* ===== HERO ===== */
 .hero{
   display:flex;
   align-items:center;
@@ -66,150 +84,264 @@ nav a:hover{color:#9b59b6}
   gap:60px;
   min-height:100vh;
   padding:100px 10%;
-  position:relative;
 }
 
 .hero-left{
   background:rgba(255,255,255,0.05);
-  padding:30px;
+  padding:35px;
   border-radius:20px;
-  backdrop-filter:blur(15px);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s;
 }
 
-.hero-left h1{font-size:3rem;}
-.hero-left span{color:#9b59b6;}
+.hero-left:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 40px rgba(155,89,182,0.2);
+}
 
-.hero-left p{margin-top:15px;color:#aaa;}
+.hero-left h1{
+  font-size:3rem;
+  font-weight:600;
+}
 
+.hero-left span{
+  background:linear-gradient(90deg,#9b59b6,#6c5ce7);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero-left p{
+  margin-top:15px;
+  color:#aaaaaa;
+  line-height:1.6;
+  max-width:500px;
+}
+
+/* ===== HERO IMAGE ===== */
 .hero-right img{
   width:140px;
   height:140px;
   object-fit:cover;
   border-radius:15px;
-  box-shadow:0 0 20px rgba(155,89,182,0.6);
+  border:2px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 25px rgba(155,89,182,0.6);
+  transition:0.4s;
 }
 
-/* BUTTON */
+.hero-right img:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 40px rgba(155,89,182,0.9);
+}
+
+/* ===== BUTTON ===== */
 .btn{
   display:inline-block;
-  margin-top:15px;
-  padding:12px 25px;
+  margin-top:20px;
+  margin-right:10px;
+  padding:12px 28px;
   border-radius:30px;
-  background:linear-gradient(90deg,#9b59b6,#6c5ce7);
-  color:#fff;
+  background:linear-gradient(135deg,#9b59b6,#6c5ce7);
+  color:#ffffff;
   text-decoration:none;
-  transition:0.3s;
-}
-.btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px #9b59b6;
+  font-weight:500;
+  letter-spacing:0.5px;
+  position:relative;
+  overflow:hidden;
+  transition:all 0.3s ease;
 }
 
-/* SECTION GLASS */
+.btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 30px rgba(155,89,182,0.6);
+}
+
+.btn:active{
+  transform:scale(0.96);
+}
+
+/* SHINE */
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition:0.5s;
+}
+
+.btn:hover::before{
+  left:100%;
+}
+
+/* ===== SECTIONS ===== */
 section{
   margin:40px auto;
   padding:70px 10%;
   max-width:1100px;
   background:rgba(255,255,255,0.04);
   border-radius:20px;
-  backdrop-filter:blur(15px);
+  backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,0.08);
   opacity:0;
   transform:translateY(40px);
   transition:0.8s;
 }
+
 section.show{
   opacity:1;
   transform:translateY(0);
 }
 
-/* SKILLS */
+section:hover{
+  box-shadow:0 10px 40px rgba(155,89,182,0.15);
+}
+
+h2{
+  margin-bottom:20px;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+/* ===== RESUME ===== */
+.resume-glass{
+  display:flex;
+  gap:25px;
+  padding:25px;
+  align-items:flex-start;
+}
+
+.resume-img img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* ===== SKILLS ===== */
 .skills{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
 }
+
 .skill{
   padding:20px;
   border-radius:15px;
   background:rgba(255,255,255,0.05);
   transition:0.3s;
+  border:1px solid rgba(255,255,255,0.05);
 }
+
 .skill:hover{
-  transform:scale(1.05);
+  transform:translateY(-5px) scale(1.05);
   background:linear-gradient(135deg,#9b59b6,#6c5ce7);
 }
 
-/* PROJECT */
+/* ===== PROJECTS ===== */
 .project{
   margin-top:20px;
   padding:20px;
   border-radius:15px;
   background:rgba(255,255,255,0.05);
   transition:0.3s;
-}
-.project:hover{
-  transform:translateY(-10px);
-}
-.project img{
-  width:100%;
-  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
-/* ACHIEVEMENTS */
+.project:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 10px 30px rgba(155,89,182,0.3);
+}
+
+/* ===== ACHIEVEMENTS ===== */
 .achievements li{
   margin:15px 0;
   padding:15px;
   border-left:3px solid #9b59b6;
   background:rgba(255,255,255,0.05);
+  border-radius:6px;
+  transition:0.3s;
 }
 
-/* CONTACT */
-.contact p{margin:10px 0;}
+.achievements li:hover{
+  transform:translateX(5px);
+}
 
-/* FOOTER */
+/* ===== CONTACT ===== */
+.contact p{
+  margin:10px 0;
+  color:#cccccc;
+}
+
+/* ===== FOOTER ===== */
 footer{
   text-align:center;
-  padding:20px;
-  color:#aaa;
+  padding:25px;
+  color:#aaaaaa;
+  border-top:1px solid rgba(255,255,255,0.05);
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
-  .hero{flex-direction:column;text-align:center;}
+
+.hero{
+  flex-direction:column;
+  text-align:center;
+  gap:30px;
 }
 
-</style>
-</head>
+.hero-left{
+  padding:25px;
+}
 
-<body>
+.hero-right img{
+  width:110px;
+  height:110px;
+}
+
+.resume-glass{
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+}
 
 <!-- NAV -->
 <nav>
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="resume.html">Resume</a></li>
-<li><a href="about.html">About Me</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="achievements.html">Achievements</a></li>
-<li><a href="contact.html">Contact</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 
-<!-- HERO -->
 <section id="home" class="hero">
-
+<!--Hero-->
 <div class="hero-left">
-<h1>Hi, I'm <span>Bhavin Garg</span></h1>
 
-<p>
-I build digital platforms that simplify access to government schemes and create meaningful real-world impact using technology and user-focused design.
+<h1 class="hero-title">
+Hi, I'm <span>Bhavin Garg</span>
+</h1>
+
+<h2 class="hero-subtitle">
+Aspiring Software Developer
+</h2>
+
+<p class="hero-desc">
+I design and build impactful digital platforms that simplify access to government services and solve real-world problems through technology and user-focused design.
 </p>
 
 <div class="hero-buttons">
-<a href="#projects" class="btn">View Work</a>
-<a href="#contact" class="btn">Contact</a>
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="resume.pdf" class="btn secondary">Download Resume</a>
 </div>
+
 </div>
 
 <div class="hero-right">
@@ -220,6 +352,7 @@ I build digital platforms that simplify access to government schemes and create 
 
 <!-- RESUME -->
 <section id="resume">
+
 <h2>Resume</h2>
 
 <div class="resume-glass">
@@ -231,15 +364,9 @@ I build digital platforms that simplify access to government schemes and create 
 <div>
 <h3>Bhavin Garg</h3>
 
-<p><strong>Education:</strong> Bachelor of Technology in Computer Science Engineering</p>
-
-<p><strong>College:</strong> Priyadarshini College of Engineering, Nagpur</p>
-
-<p><strong>Expected Graduation:</strong> 2029</p>
-
-<p><strong>Focus:</strong> Building strong foundations in Data Structures, Algorithms, and Web Development while working on real-world impactful projects.</p>
-
-<p><strong>Goal:</strong> To create scalable digital solutions that simplify complex systems and improve accessibility to public services.</p>
+<p><strong>Education:</strong> B.Tech CSE</p>
+<p><strong>College:</strong> Priyadarshini College of Engineering</p>
+<p><strong>Year:</strong> 2029</p>
 
 <a href="resume.pdf" class="btn">Download Resume</a>
 </div>
@@ -250,34 +377,16 @@ I build digital platforms that simplify access to government schemes and create 
 
 <!-- SKILLS -->
 <section id="skills">
+
 <h2>Skills</h2>
 
 <div class="skills">
 
-<div class="skill">
-<strong>Python Programming</strong><br>
-Writing efficient, scalable, and clean code to solve logical and real-world problems.
-</div>
-
-<div class="skill">
-<strong>C Programming</strong><br>
-Strong understanding of programming fundamentals, memory management, and problem-solving techniques.
-</div>
-
-<div class="skill">
-<strong>Data Structures and Algorithms</strong><br>
-Learning core concepts such as arrays, linked lists, and optimization strategies to improve performance.
-</div>
-
-<div class="skill">
-<strong>Web Development</strong><br>
-Building responsive and user-friendly websites using HTML, CSS, and modern UI design principles.
-</div>
-
-<div class="skill">
-<strong>User Interface & User Experience Design</strong><br>
-Designing clean, intuitive, and visually appealing digital experiences focused on usability.
-</div>
+<div class="skill">Python Programming</div>
+<div class="skill">C Programming</div>
+<div class="skill">Data Structures</div>
+<div class="skill">Web Development</div>
+<div class="skill">UI/UX Design</div>
 
 </div>
 
@@ -285,45 +394,31 @@ Designing clean, intuitive, and visually appealing digital experiences focused o
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2>Featured Projects</h2>
+
+<h2>Projects</h2>
 
 <div class="project">
-<h3>Schemesathi – Digital Government Scheme Portal</h3>
-<p>A platform designed to help users easily discover, understand, and access government schemes in a simplified way.</p>
+<h3>Schemesathi</h3>
+<p>Platform for accessing government schemes.</p>
 </div>
 
 <div class="project">
 <h3>AI Scheme Finder</h3>
-<p>An intelligent system that matches users with relevant government schemes based on their personal profile and needs.</p>
+<p>AI-based scheme matching system.</p>
 </div>
 
 </section>
 
 <!-- ACHIEVEMENTS -->
 <section id="achievements">
+
 <h2>Achievements</h2>
 
 <ul class="achievements">
 
-<li>
-🏆 <strong>Student of the Year</strong><br>
-Awarded for consistent academic excellence, leadership qualities, and outstanding overall performance during school years.
-</li>
-
-<li>
-🌍 <strong>Science Olympiad Foundation (SOF)</strong><br>
-Represented Samba district, demonstrating strong analytical thinking and problem-solving abilities at an early stage.
-</li>
-
-<li>
-🧪 <strong>Chemistry Project – Blue Bottle Experiment</strong><br>
-Secured 2nd prize in first year of college for presenting a practical and engaging scientific demonstration.
-</li>
-
-<li>
-📱 <strong>Google Play Listing Certification</strong><br>
-Successfully completed certification validating knowledge of app publishing, listing, and digital product deployment.
-</li>
+<li>🏆 Student of the Year</li>
+<li>🌍 SOF Participation</li>
+<li>🧪 Chemistry Project Winner</li>
 
 </ul>
 
@@ -331,112 +426,89 @@ Successfully completed certification validating knowledge of app publishing, lis
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
+
 <h2>Contact</h2>
+
 <p>Email: bhavingarg121@gmail.com</p>
 <p>LinkedIn: linkedin.com/in/bhavin-garg</p>
+
 </section>
 
+<!-- FOOTER -->
 <footer>
-<p> © 2026 Bhavin Garg  | All Rights Reserved </p>
+
+<p>© 2026 Bhavin Garg | All Rights Reserved</p>
+
 </footer>
 
 <script>
 
-/* ================================
-   SMOOTH SCROLL REVEAL (INTERSECTION OBSERVER)
-================================ */
+/* SCROLL REVEAL */
 const sections = document.querySelectorAll("section");
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
+const observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
     if(entry.isIntersecting){
       entry.target.classList.add("show");
     }
   });
-},{
-  threshold: 0.15
 });
 
-sections.forEach(sec => {
-  observer.observe(sec);
+sections.forEach(function(section){
+  observer.observe(section);
 });
 
-
-/* ================================
-   HERO PARALLAX (APPLE FEEL)
-================================ */
-const heroLeft = document.querySelector(".hero-left");
-const heroRight = document.querySelector(".hero-right");
-
-window.addEventListener("scroll", ()=>{
-  const scrollY = window.scrollY;
-
-  if(heroLeft && heroRight){
-    heroLeft.style.transform = `translateY(${scrollY * 0.15}px)`;
-    heroRight.style.transform = `translateY(${scrollY * 0.25}px)`;
-  }
-});
-
-
-/* ================================
-   NAV ACTIVE LINK HIGHLIGHT
-================================ */
+/* NAV ACTIVE */
 const navLinks = document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", ()=>{
-  let current = "";
+window.addEventListener("scroll", function(){
 
-  sections.forEach(section=>{
+  let current = "";
+  const scrollY = window.scrollY;
+
+  sections.forEach(function(section){
     const sectionTop = section.offsetTop - 100;
+
     if(scrollY >= sectionTop){
       current = section.getAttribute("id");
     }
   });
 
-  navLinks.forEach(link=>{
+  navLinks.forEach(function(link){
     link.style.color = "#aaa";
+
     if(link.getAttribute("href") === "#" + current){
       link.style.color = "#9b59b6";
     }
   });
+
 });
 
-
-/* ================================
-   BUTTON HOVER RIPPLE EFFECT
-================================ */
-const buttons = document.querySelectorAll(".btn");
-
-buttons.forEach(btn=>{
-  btn.addEventListener("mouseenter", ()=>{
-    btn.style.transform = "scale(1.08)";
-  });
-
-  btn.addEventListener("mouseleave", ()=>{
-    btn.style.transform = "scale(1)";
-  });
-});
-
-
-/* ================================
-   SCROLL PROGRESS BAR (OPTIONAL PREMIUM)
-================================ */
+/* PROGRESS BAR */
 const progressBar = document.createElement("div");
+
 progressBar.style.position = "fixed";
 progressBar.style.top = "0";
 progressBar.style.left = "0";
 progressBar.style.height = "3px";
 progressBar.style.background = "linear-gradient(90deg,#9b59b6,#6c5ce7)";
-progressBar.style.zIndex = "9999";
 progressBar.style.width = "0%";
+progressBar.style.zIndex = "9999";
 
 document.body.appendChild(progressBar);
 
-window.addEventListener("scroll", ()=>{
+window.addEventListener("scroll", function(){
+
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
+
   const progress = (scrollTop / docHeight) * 100;
+
   progressBar.style.width = progress + "%";
+
 });
 
 </script>
+
+</body>
+</html>
