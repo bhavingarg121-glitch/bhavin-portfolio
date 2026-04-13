@@ -7,204 +7,180 @@
 
 <title>Bhavin Garg | Software Developer Portfolio</title>
 
-<!-- SEO -->
 <meta name="description" content="Bhavin Garg - Aspiring Software Developer skilled in Python, C Programming, Web Development, UI/UX, and Data Structures.">
 <meta name="keywords" content="Bhavin Garg, Developer Portfolio, Python, Web Developer, Nagpur">
 <meta name="author" content="Bhavin Garg">
-<meta name="robots" content="index, follow">
 
 <style>
 
 /* ===== RESET ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* ===== BODY ===== */
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #0a0a0a;
-  color: #fff;
-  line-height: 1.7;
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Poppins, sans-serif;
+  background:#0a0a0a;
+  color:#fff;
 }
-
-html { scroll-behavior: smooth; }
-
-/* ===== TYPOGRAPHY ===== */
-h1 { font-size: 3.5rem; }
-h2 { font-size: 2.2rem; margin-bottom: 20px; }
-h3 { font-size: 1.3rem; }
-p { font-size: 1.05rem; color: #ccc; }
+html{scroll-behavior:smooth}
 
 /* ===== NAV ===== */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-  padding: 15px;
-  z-index: 1000;
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  padding:15px;
+  z-index:1000;
 }
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  list-style: none;
-  flex-wrap: wrap;
+nav ul{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  list-style:none;
+  flex-wrap:wrap;
 }
-
-nav a {
-  color: #aaa;
-  text-decoration: none;
-  font-size: 1rem;
+nav a{
+  color:#aaa;
+  text-decoration:none;
 }
-
-nav a:hover { color: #9b59b6; }
+nav a:hover{color:#9b59b6}
 
 /* ===== HERO ===== */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  text-align: center;
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:100vh;
+  padding:100px 10%;
+  gap:50px;
+}
+.hero-left{flex:1}
+.hero-left h1{font-size:3rem;}
+.hero-left span{
+  background:linear-gradient(90deg,#9b59b6,#6c5ce7);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hero-left h2{
+  margin-top:10px;
+  color:#9b59b6;
+}
+.hero-left p{
+  margin-top:15px;
+  color:#aaa;
 }
 
-.hero span {
-  background: linear-gradient(90deg, #9b59b6, #6c5ce7);
-  -webkit-background-clip: text;
-  color: transparent;
+.hero-buttons{margin-top:20px;}
+
+.btn{
+  padding:12px 25px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#9b59b6,#6c5ce7);
+  color:#fff;
+  text-decoration:none;
+  margin-right:10px;
+  transition:0.3s;
+}
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px #9b59b6;
 }
 
-/* ===== BUTTON ===== */
-.btn {
-  margin-top: 25px;
-  padding: 14px 28px;
-  border-radius: 30px;
-  background: linear-gradient(90deg, #9b59b6, #6c5ce7);
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
+.hero-right img{
+  width:260px;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(155,89,182,0.6);
 }
 
-.btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 20px #9b59b6;
+/* ===== SECTION ===== */
+section{
+  padding:80px 10%;
+  max-width:1100px;
+  margin:auto;
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s;
+}
+section.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-/* ===== SECTIONS ===== */
-section {
-  padding: 90px 20px;
-  max-width: 1100px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+/* ===== RESUME GLASS ===== */
+.resume-glass{
+  display:flex;
+  gap:30px;
+  padding:30px;
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.4s;
+}
+.resume-glass:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 40px rgba(155,89,182,0.6);
 }
 
-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-.resume-card {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.resume-img img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px; /* square with slight rounding */
-  border: 3px solid #9b59b6;
-  box-shadow: 0 0 20px rgba(155,89,182,0.5);
-  transition: 0.3s;
-}
-
-.resume-img img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(155,89,182,0.8);
-}
-
-.resume-info {
-  flex: 1;
-}
-  @media(max-width:768px){
-  .resume-card {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-/* ===== CARDS ===== */
-.card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 15px;
-  padding: 25px;
-  margin-top: 20px;
+.resume-img img{
+  width:160px;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
 }
 
 /* ===== SKILLS ===== */
-.skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  gap: 20px;
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
-
-.skill {
-  text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  background: #111;
-  transition: 0.3s;
+.skill{
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
 }
-
-.skill:hover {
-  background: #9b59b6;
-  transform: scale(1.08);
+.skill:hover{
+  background:#9b59b6;
+  transform:scale(1.05);
 }
 
 /* ===== PROJECTS ===== */
-.project img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.project{
+  margin-top:20px;
+}
+.project img{
+  width:100%;
+  border-radius:10px;
 }
 
-/* ===== ACHIEVEMENTS PREMIUM ===== */
-.achievements-card ul {
-  list-style: none;
-}
-
-.achievements-card li {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-left: 3px solid #9b59b6;
-  background: rgba(255,255,255,0.03);
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.achievements-card li:hover {
-  transform: translateX(8px);
-  background: rgba(155,89,182,0.1);
+/* ===== ACHIEVEMENTS ===== */
+.achievements-card li{
+  margin-bottom:15px;
+  padding:15px;
+  border-left:3px solid #9b59b6;
+  background:rgba(255,255,255,0.03);
+  border-radius:6px;
 }
 
 /* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #aaa;
+footer{
+  text-align:center;
+  padding:20px;
+  color:#aaa;
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-  p { font-size: 0.95rem; }
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-right img{
+    width:200px;
+  }
+  h1{font-size:2.2rem;}
 }
 
 </style>
@@ -215,68 +191,116 @@ footer {
 <!-- NAV -->
 <nav>
 <ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="resume.html">Resume</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
-<!--Hero-->
-<section id="home" class="hero show">
 
-  <div class="hero-img">
-    <img src="profile1.jpeg" alt="Bhavin Garg">
-  </div>
+<!-- HERO -->
+<section id="home" class="hero">
 
-  <h1>Hello, I'm <span>Bhavin Garg</span></h1>
-  <p>Aspiring Software Developer passionate about building impactful digital solutions.</p>
+<div class="hero-left">
+<h1>Hi, I'm <span>Bhavin Garg</span></h1>
+<h2 id="typing"></h2>
+<p>
+I build digital platforms that simplify access to government schemes and create meaningful real-world impact using technology and user-focused design.
+</p>
 
-  <a href="#projects" class="btn">Explore My Work</a>
+<div class="hero-buttons">
+<a href="#projects" class="btn">View Work</a>
+<a href="#contact" class="btn">Contact</a>
+</div>
+</div>
+
+<div class="hero-right">
+<img src="assets/profile.jpg" alt="Bhavin Garg">
+</div>
 
 </section>
-  
+
 <!-- RESUME -->
 <section id="resume">
 <h2>Resume</h2>
+
 <div class="resume-glass">
-    </div>
-<div class="resume-info">
+
+<div class="resume-img">
+<img src="assets/profile.jpg">
+</div>
+
+<div>
 <h3>Bhavin Garg</h3>
+
 <p><strong>Education:</strong> Bachelor of Technology in Computer Science Engineering</p>
+
 <p><strong>College:</strong> Priyadarshini College of Engineering, Nagpur</p>
+
 <p><strong>Expected Graduation:</strong> 2029</p>
-<p><strong>Location:</strong> Nagpur, Maharashtra</p>
+
+<p><strong>Focus:</strong> Building strong foundations in Data Structures, Algorithms, and Web Development while working on real-world impactful projects.</p>
+
+<p><strong>Goal:</strong> To create scalable digital solutions that simplify complex systems and improve accessibility to public services.</p>
+
 <a href="resume.pdf" class="btn">Download Resume</a>
 </div>
+
+</div>
+
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
 <h2>Skills</h2>
+
 <div class="skills">
-<div class="skill">Python Programming</div>
-<div class="skill">C Programming</div>
-<div class="skill">Data Structures and Algorithms</div>
-<div class="skill">Web Development (HTML, CSS, Tailwind CSS)</div>
-<div class="skill">User Interface and User Experience Design</div>
+
+<div class="skill">
+<strong>Python Programming</strong><br>
+Writing efficient, scalable, and clean code to solve logical and real-world problems.
 </div>
+
+<div class="skill">
+<strong>C Programming</strong><br>
+Strong understanding of programming fundamentals, memory management, and problem-solving techniques.
+</div>
+
+<div class="skill">
+<strong>Data Structures and Algorithms</strong><br>
+Learning core concepts such as arrays, linked lists, and optimization strategies to improve performance.
+</div>
+
+<div class="skill">
+<strong>Web Development</strong><br>
+Building responsive and user-friendly websites using HTML, CSS, and modern UI design principles.
+</div>
+
+<div class="skill">
+<strong>User Interface & User Experience Design</strong><br>
+Designing clean, intuitive, and visually appealing digital experiences focused on usability.
+</div>
+
+</div>
+
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
 <h2>Projects</h2>
 
-<div class="card project">
+<div class="project">
 <img src="assets/images/schemesathi.png">
 <h3>Schemesathi – Digital Government Scheme Portal</h3>
-<p>A platform that helps users discover and understand government schemes easily.</p>
+<p>A platform designed to help users easily discover, understand, and access government schemes in a simplified way.</p>
 </div>
 
-<div class="card project">
+<div class="project">
 <img src="assets/images/aischeme.png">
 <h3>AI Scheme Finder</h3>
-<p>Uses artificial intelligence to match users with relevant schemes based on profile.</p>
+<p>An intelligent system that matches users with relevant government schemes based on their personal profile and needs.</p>
 </div>
 
 </section>
@@ -285,21 +309,29 @@ footer {
 <section id="achievements">
 <h2>Achievements</h2>
 
-<div class="card achievements-card">
-<ul>
-<li>🏆 <strong>Student of the Year</strong><br>
-Awarded for academic excellence and outstanding overall performance.</li>
+<ul class="achievements-card">
 
-<li>🌍 <strong>Science Olympiad Foundation</strong><br>
-Represented district during early academic years.</li>
+<li>
+🏆 <strong>Student of the Year</strong><br>
+Awarded for consistent academic excellence, leadership qualities, and outstanding overall performance during school years.
+</li>
 
-<li>🧪 <strong>Chemistry Project – Blue Bottle Experiment</strong><br>
-Secured 2nd prize in first year of college.</li>
+<li>
+🌍 <strong>Science Olympiad Foundation (SOF)</strong><br>
+Represented Samba district, demonstrating strong analytical thinking and problem-solving abilities at an early stage.
+</li>
 
-<li>📱 <strong>Google Play Listing Certification</strong><br>
-Completed certification validating app publishing skills.</li>
+<li>
+🧪 <strong>Chemistry Project – Blue Bottle Experiment</strong><br>
+Secured 2nd prize in first year of college for presenting a practical and engaging scientific demonstration.
+</li>
+
+<li>
+📱 <strong>Google Play Listing Certification</strong><br>
+Successfully completed certification validating knowledge of app publishing, listing, and digital product deployment.
+</li>
+
 </ul>
-</div>
 
 </section>
 
@@ -310,25 +342,35 @@ Completed certification validating app publishing skills.</li>
 <p>LinkedIn: linkedin.com/in/bhavin-garg</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
-<p>© 2026 Bhavin Garg</p>
+© 2026 Bhavin Garg
 </footer>
 
 <!-- SCRIPT -->
 <script>
-const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
-  const trigger = window.innerHeight * 0.85;
+// typing animation
+const text="Building impactful digital experiences 🚀";
+let i=0;
+function type(){
+ if(i<text.length){
+  document.getElementById("typing").innerHTML+=text.charAt(i);
+  i++;
+  setTimeout(type,40);
+ }
+}
+type();
 
-  sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < trigger) {
-      section.classList.add("show");
-    }
-  });
+// scroll animation
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+ sections.forEach(sec=>{
+  if(sec.getBoundingClientRect().top<window.innerHeight-100){
+    sec.classList.add("show");
+  }
+ });
 });
+
 </script>
 
 </body>
