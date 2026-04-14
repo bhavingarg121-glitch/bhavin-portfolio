@@ -256,11 +256,60 @@
     </div>
   </section>
 
+  
   <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>My Skills</h2>
-    <div class="skill">
-      <div class="skill-name">C Programming</div>
-      <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
-    </div>
-    <div class="
+<section id="skills" class="skills">
+  <h2>My Skills</h2>
+
+  <div class="skill">
+    <div class="skill-name">C Programming</div>
+    <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Python</div>
+    <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Web Development (HTML, CSS, JS)</div>
+    <div class="progress-bar"><div class="progress" style="width:90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">UI/UX Design</div>
+    <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Data Structures & Algorithms</div>
+    <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+  </div>
+</section>
+<!-- Footer -->
+  <footer>
+    <p>© 2024 Bhavin Garg. All rights reserved. Built with ❤️ and Code.</p>
+    <p>Email: bhavin@example.com | LinkedIn: linkedin.com/in/bhavin-garg | GitHub: github.com/bhavingarg121-glitch</p>
+  </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+
+</body>
+</html>
+
