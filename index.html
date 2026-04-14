@@ -3,205 +3,328 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhavin Garg | Software Developer Portfolio</title>
+<title>Bhavin Garg | Portfolio</title>
 
-<!-- 🔍 Advanced SEO -->
-<meta name="description" content="Bhavin Garg - Aspiring Software Developer skilled in Web Development, Data Structures, and problem solving. Explore projects, skills, and resume.">
-<meta name="keywords" content="Bhavin Garg, software developer, portfolio, web developer, student developer, projects, GATE aspirant">
-<meta name="author" content="Bhavin Garg">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://yourdomain.com">
-
-<!-- Open Graph (Social Sharing) -->
-<meta property="og:title" content="Bhavin Garg | Portfolio">
-<meta property="og:description" content="Explore my projects, skills, and journey as a developer.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yourdomain.com">
-<meta property="og:image" content="https://via.placeholder.com/600">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bhavin Garg Portfolio">
-<meta name="twitter:description" content="Explore my projects and skills">
-<meta name="twitter:image" content="https://via.placeholder.com/600">
-
-<!-- Performance -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- Structured Data (Schema.org) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Bhavin Garg",
-  "url": "https://yourdomain.com",
-  "sameAs": [
-    "https://github.com/yourusername",
-    "https://linkedin.com/in/yourprofile"
-  ],
-  "jobTitle": "Aspiring Software Developer"
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#f8fafc;color:#0f172a}
-html{scroll-behavior:smooth}
-
-nav{
-position:fixed;width:100%;top:0;
-background:#ffffffdd;backdrop-filter:blur(10px);
-display:flex;justify-content:space-between;
-padding:15px 40px;border-bottom:1px solid #eee;z-index:1000
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-nav ul{display:flex;gap:20px;list-style:none}
-nav a{text-decoration:none;color:#0f172a;font-weight:500}
-nav a:hover{color:#6366f1}
+body{
+  background:#f5f7fb;
+  color:#0f172a;
+}
 
-.menu{display:none;font-size:22px;cursor:pointer}
+html{
+  scroll-behavior:smooth;
+}
 
-section{padding:100px 10%;opacity:0;transform:translateY(40px);transition:0.6s}
-section.show{opacity:1;transform:translateY(0)}
+/* 🔥 CONTAINER FIX */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+}
 
-.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center}
-.hero h1{font-size:48px}
-.hero span{color:#6366f1}
-.hero p{margin:15px 0;color:#555}
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  z-index:1000;
+}
 
-.btn{background:#6366f1;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;margin:5px;display:inline-block}
+nav h2{color:#2563eb;}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+nav ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
 
-.card{background:#fff;padding:20px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.08);transition:0.3s}
-.card:hover{transform:translateY(-10px)}
+nav a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
 
-.project-img{width:100%;border-radius:15px;margin-bottom:10px;transition:0.3s}
-.card:hover .project-img{transform:scale(1.05)}
+/* BUTTON */
+.btn{
+  background:#2563eb;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  display:inline-block;
+}
 
-.counter{font-size:28px;font-weight:bold}
+/* SECTIONS */
+section{
+  padding:100px 0;
+}
 
-footer{text-align:center;padding:20px;color:#555}
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+}
 
-img{max-width:100%;height:auto}
+.hero-content{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+}
 
+.hero-text h1{
+  font-size:48px;
+}
+
+.hero-text span{
+  color:#2563eb;
+}
+
+.hero-text p{
+  margin:15px 0;
+  color:#555;
+}
+
+.hero-img img{
+  width:300px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* STATS */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.stat{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* ABOUT */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about img{
+  width:100%;
+  border-radius:20px;
+}
+
+/* PROJECTS */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.project{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.project:hover{
+  transform:translateY(-8px);
+}
+
+.project img{
+  width:100%;
+}
+
+.project-content{
+  padding:15px;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.contact-card{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  background:#0f172a;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
 @media(max-width:768px){
-nav ul{display:none;flex-direction:column;position:absolute;top:60px;right:20px;background:#fff;padding:20px;border-radius:10px}
-nav ul.active{display:flex}
-.menu{display:block}
-.hero h1{font-size:32px}
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
-
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXX');
-</script>
-
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-<h3>Bhavin</h3>
-<div class="menu" onclick="toggleMenu()">☰</div>
-<ul id="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#resume">Resume</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+  <h2>BG</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#" class="btn">Resume</a>
 </nav>
 
-<section id="home" class="hero">
-<div>
-<h1>Hi, I'm <span>Bhavin Garg</span></h1>
-<p>Aspiring Developer building impactful web solutions.</p>
+<!-- HERO -->
+<section class="hero reveal">
+<div class="container hero-content">
+
+<div class="hero-text">
+<h1>Hello, I'm <span>Bhavin Garg</span></h1>
+<p>Aspiring Developer & Problem Solver</p>
 <a href="#projects" class="btn">View Projects</a>
-<a href="#resume" class="btn">Download Resume</a>
+</div>
+
+<div class="hero-img">
+<img src="your-photo.jpg">
+</div>
+
 </div>
 </section>
 
-<section id="about">
+<!-- STATS -->
+<section class="reveal">
+<div class="container stats-grid">
+<div class="stat"><h2>3+</h2><p>Projects</p></div>
+<div class="stat"><h2>100+</h2><p>Hours</p></div>
+<div class="stat"><h2>5+</h2><p>Skills</p></div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about reveal">
+<div class="container about-grid">
+
+<div>
 <h2>About Me</h2>
-<p>I am a Computer Science student passionate about solving real-world problems and preparing for GATE.</p>
+<p>I am a Computer Science student passionate about solving real-world problems.</p>
+</div>
+
+<div>
+<img src="your-photo2.jpg">
+</div>
+
+</div>
 </section>
 
-<section id="projects">
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+<div class="container">
 <h2>Projects</h2>
-<div class="grid">
-<div class="card">
-<img src="https://via.placeholder.com/400" class="project-img" alt="Scheme Portal Project">
-<h3>Scheme Portal</h3>
-<p>Helps users discover government schemes easily.</p>
+
+<div class="project-grid">
+
+<div class="project">
+<img src="project1.jpg">
+<div class="project-content">
+<h3>SchemeSathi</h3>
+<p>Helps users discover schemes.</p>
 </div>
-<div class="card">
-<img src="https://via.placeholder.com/400" class="project-img" alt="Portfolio Website">
-<h3>Portfolio Website</h3>
-<p>Modern personal portfolio showcasing skills.</p>
 </div>
+
+<div class="project">
+<img src="project2.jpg">
+<div class="project-content">
+<h3>AI Finder</h3>
+<p>AI-based suggestion system.</p>
+</div>
+</div>
+
+</div>
+
 </div>
 </section>
 
-<section>
-<h2>Stats</h2>
-<div class="grid">
-<div class="card"><div class="counter" data-target="5">0</div><p>Projects</p></div>
-<div class="card"><div class="counter" data-target="10">0</div><p>Skills</p></div>
-<div class="card"><div class="counter" data-target="300">0</div><p>Hours</p></div>
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+<div class="container contact-grid">
+
+<div class="contact-card">
+<h3>Email</h3>
+<p>your@email.com</p>
+</div>
+
+<div class="contact-card">
+<h3>GitHub</h3>
+<p>github.com/your</p>
+</div>
+
 </div>
 </section>
 
-<section id="resume">
-<h2>Resume</h2>
-<a href="#" class="btn">Download Resume</a>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: your@email.com</p>
-</section>
-
-<footer>© 2026 Bhavin Garg. All rights reserved.</footer>
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Bhavin Garg. All rights reserved.</p>
+</footer>
 
 <script>
-function toggleMenu(){
-document.getElementById('nav-links').classList.toggle('active');
-}
+const reveals=document.querySelectorAll('.reveal');
 
-const sections=document.querySelectorAll("section");
-window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-if(sec.getBoundingClientRect().top<window.innerHeight-100){
-sec.classList.add("show");
-}
-})
-});
-
-let started=false;
 window.addEventListener('scroll',()=>{
-const trigger=document.querySelector('.counter');
-if(!started && trigger.getBoundingClientRect().top<window.innerHeight){
-started=true;
-document.querySelectorAll('.counter').forEach(counter=>{
-let count=0;
-const target=+counter.dataset.target;
-const update=()=>{
-count+=Math.ceil(target/50);
-if(count<target){counter.innerText=count;requestAnimationFrame(update)}
-else{counter.innerText=target}
-};
-update();
-});
-}
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add('active');
+    }
+  });
 });
 </script>
 
