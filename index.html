@@ -7,78 +7,57 @@
 <title>Bhavin Garg Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* ================= ROOT ================= */
+/* ===== ROOT ===== */
 :root{
   --blue:#4f6ef7;
   --blue2:#6ea8ff;
-  --light:#f5f7ff;
-  --text:#111827;
+  --bg:#f6f8ff;
+  --text:#0f172a;
   --muted:#6b7280;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-body{background:var(--light);color:var(--text);}
+body{background:var(--bg);color:var(--text);overflow-x:hidden;}
 
-/* ================= CONTAINER ================= */
 .container{
-  width:1150px;
+  max-width:1200px;
   margin:auto;
-  position:relative;
+  padding:0 24px;
 }
 
-/* ================= NAV ================= */
+/* ===== NAV ===== */
 .nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:28px 0;
 }
-
-.logo{
-  font-size:18px;
-  font-weight:700;
-}
-.logo span{
-  color:var(--blue);
-  font-weight:800;
-}
-
-.nav-links{
-  display:flex;
-  gap:30px;
-  align-items:center;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:#444;
-  font-size:14px;
-}
-
+.logo{font-weight:700;font-size:18px;}
+.logo span{color:var(--blue);}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{font-size:14px;color:#444;text-decoration:none;}
 .resume{
   background:var(--blue);
   color:#fff;
   padding:10px 18px;
   border-radius:8px;
-  display:flex;
-  gap:6px;
-  align-items:center;
+  display:flex;gap:6px;align-items:center;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero{
-  display:flex;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
   align-items:center;
-  padding:70px 0 40px;
-  gap:60px;
+  padding:64px 0;
 }
-
-.hero-text{width:50%;}
 
 .badge{
   background:#e9efff;
@@ -93,193 +72,118 @@ body{background:var(--light);color:var(--text);}
   margin-top:12px;
   line-height:1.2;
 }
-.hero h1 span{color:var(--blue);}
+.hero span{color:var(--blue);}
 
 .hero p{
-  margin-top:12px;
+  margin-top:16px;
   color:var(--muted);
-  font-size:14px;
+  font-size:15px;
 }
 
-.buttons{
-  margin-top:20px;
-  display:flex;
-  gap:12px;
-}
-
+.buttons{margin-top:24px;display:flex;gap:12px;}
 .btn{
-  padding:12px 18px;
+  padding:12px 20px;
   border-radius:8px;
-  font-size:14px;
   cursor:pointer;
   transition:0.3s;
 }
-
-.primary{
-  background:var(--blue);
-  color:#fff;
-}
+.primary{background:var(--blue);color:#fff;}
 .primary:hover{transform:translateY(-3px)}
+.outline{border:1px solid var(--blue);color:var(--blue);}
 
-.outline{
-  border:1px solid var(--blue);
-  color:var(--blue);
-}
+.socials{margin-top:20px;display:flex;gap:16px;font-size:18px;}
 
-.socials{
-  margin-top:18px;
-  display:flex;
-  gap:15px;
-  font-size:18px;
-}
-
-/* ================= HERO IMAGE ================= */
-.hero-img{
-  width:45%;
-  position:relative;
-}
-
+/* ===== HERO IMAGE ===== */
+.hero-img{position:relative;}
 .hero-img img{
   width:100%;
   border-radius:20px;
-  position:relative;
   z-index:2;
+  position:relative;
 }
 
 /* BLOBS */
 .blob{
   position:absolute;
   border-radius:50%;
-  filter:blur(90px);
+  filter:blur(100px);
   z-index:1;
 }
-
 .blob1{
-  width:300px;
-  height:300px;
+  width:320px;height:320px;
   background:var(--blue);
-  top:0;
-  right:0;
+  top:0;right:0;
   opacity:0.35;
 }
-
 .blob2{
-  width:220px;
-  height:220px;
+  width:220px;height:220px;
   background:var(--blue2);
-  bottom:10px;
-  left:20px;
+  bottom:0;left:20px;
   opacity:0.35;
 }
 
-/* FLOATING ICONS */
+/* FLOAT ICONS */
 .float{
   position:absolute;
   background:#fff;
   padding:12px;
   border-radius:12px;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  animation:float 4s ease-in-out infinite;
+  animation:float 4s infinite ease-in-out;
 }
-
-.f1{top:25%;left:-25px;}
-.f2{top:50%;right:-25px;}
-.f3{bottom:10%;left:45%;}
-
+.f1{top:20%;left:-20px;}
+.f2{top:50%;right:-20px;}
+.f3{bottom:10%;left:40%;}
 @keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
+  50%{transform:translateY(-12px);}
 }
 
-/* ================= STATS ================= */
+/* ===== STATS ===== */
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:22px;
-  margin-top:45px;
+  gap:24px;
+  margin-top:-40px;
 }
-
 .stat{
   background:#fff;
-  padding:22px;
+  padding:20px;
   border-radius:14px;
-  display:flex;
-  align-items:center;
-  gap:14px;
   box-shadow:0 20px 40px rgba(0,0,0,0.08);
+  display:flex;
+  gap:12px;
+  align-items:center;
   transition:0.3s;
 }
-.stat:hover{
-  transform:translateY(-10px);
-}
+.stat:hover{transform:translateY(-10px);}
 
-.stat i{
-  padding:12px;
-  border-radius:10px;
-  background:#eef2ff;
-  color:var(--blue);
-}
-
-/* ================= ABOUT + SKILLS ================= */
+/* ===== ABOUT ===== */
 .about{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  margin-top:80px;
-  align-items:center;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:48px;
+  margin-top:64px;
 }
+.about-text h2{font-size:28px;}
+.about-text p{margin-top:10px;color:var(--muted);font-size:14px;}
+.about-img img{width:100%;border-radius:18px;}
 
-.about-left h2{
-  font-size:28px;
-}
-
-.about-left p{
-  margin-top:10px;
-  font-size:14px;
-  color:var(--muted);
-}
-
-.about-right img{
-  width:100%;
-  border-radius:18px;
-}
-
-/* SKILLS */
-.skills{margin-top:20px;}
-
+/* ===== SKILLS ===== */
+.skills h3{font-size:12px;color:var(--muted);}
+.skills h2{margin:6px 0;font-size:20px;}
 .skill{margin-top:16px;}
+.skill-head{display:flex;justify-content:space-between;font-size:14px;}
+.bar{height:8px;background:#e5e7eb;border-radius:10px;margin-top:6px;}
+.fill{height:100%;background:var(--blue);border-radius:10px;}
 
-.skill-head{
-  display:flex;
-  justify-content:space-between;
-  font-size:14px;
-}
-
-.bar{
-  height:8px;
-  background:#e5e7eb;
-  border-radius:10px;
-  margin-top:6px;
-}
-
-.fill{
-  height:100%;
-  background:var(--blue);
-  border-radius:10px;
-}
-
-/* ================= PROJECTS ================= */
-.projects{
-  margin-top:80px;
-}
-
+/* ===== PROJECTS ===== */
+.projects{margin-top:64px;}
 .cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
-  margin-top:28px;
+  gap:24px;
+  margin-top:24px;
 }
-
 .card{
   background:#fff;
   border-radius:14px;
@@ -287,16 +191,21 @@ body{background:var(--light);color:var(--text);}
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
   transition:0.3s;
 }
-.card:hover{
-  transform:translateY(-8px);
-}
-
+.card:hover{transform:translateY(-8px);}
 .card img{width:100%;}
 .card-body{padding:16px;}
+.tags span{
+  background:#eef2ff;
+  color:var(--blue);
+  padding:4px 8px;
+  border-radius:6px;
+  font-size:12px;
+  margin-right:6px;
+}
 
-/* ================= CTA ================= */
+/* ===== CTA ===== */
 .cta{
-  margin-top:60px;
+  margin-top:64px;
   background:linear-gradient(135deg,var(--blue),var(--blue2));
   color:#fff;
   padding:28px;
@@ -306,52 +215,51 @@ body{background:var(--light);color:var(--text);}
   align-items:center;
 }
 
-/* ================= CONTACT ================= */
-.contact{
-  margin-top:70px;
-}
-
+/* ===== CONTACT ===== */
+.contact{margin-top:64px;}
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
-  margin-top:22px;
+  gap:24px;
+  margin-top:24px;
 }
-
 .box{
   background:#fff;
-  padding:22px;
+  padding:20px;
   border-radius:12px;
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.06);
   transition:0.3s;
 }
-.box:hover{
-  transform:translateY(-8px);
-}
+.box:hover{transform:translateY(-8px);}
 
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 footer{
-  margin-top:50px;
+  margin-top:48px;
   background:#0f172a;
   color:#fff;
-  padding:22px;
+  padding:20px;
   text-align:center;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ===== SCROLL ANIMATION ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== MOBILE ===== */
 @media(max-width:900px){
-
-.container{width:90%}
-
-.hero{flex-direction:column}
-.hero-text,.hero-img{width:100%}
-
-.stats{grid-template-columns:1fr 1fr}
+.hero{grid-template-columns:1fr}
 .about{grid-template-columns:1fr}
+.stats{grid-template-columns:1fr 1fr}
 .cards{grid-template-columns:1fr}
 .contact-grid{grid-template-columns:1fr}
-
 }
 
 </style>
@@ -361,136 +269,66 @@ footer{
 
 <div class="container">
 
-<!-- NAV -->
-<div class="nav">
-  <div class="logo"><span>BG</span> Bhavin Garg</div>
-
-  <div class="nav-links">
-    <a>Home</a>
-    <a>About</a>
-    <a>Projects</a>
-    <a>Skills</a>
-    <a>Achievements</a>
-    <div class="resume"><i class="fas fa-download"></i> Download Resume</div>
-  </div>
-</div>
-
 <!-- HERO -->
-<div class="hero">
-
-  <div class="hero-text">
+<div class="hero reveal">
+  <div>
     <div class="badge">Aspiring Developer | Problem Solver</div>
-
     <h1>Hello, I'm <br><span>Bhavin Garg</span></h1>
-
     <p>I build clean impactful digital experiences and love turning ideas into reality.</p>
 
     <div class="buttons">
       <div class="btn primary">View Projects</div>
       <div class="btn outline">Let's Connect</div>
     </div>
-
-    <div class="socials">
-      <i class="fab fa-github"></i>
-      <i class="fab fa-linkedin"></i>
-      <i class="fas fa-envelope"></i>
-    </div>
   </div>
 
   <div class="hero-img">
     <img src="images/profile.jpg">
-
     <div class="blob blob1"></div>
     <div class="blob blob2"></div>
-
     <div class="float f1"><i class="fas fa-code"></i></div>
     <div class="float f2"><i class="fas fa-laptop"></i></div>
     <div class="float f3"><i class="fas fa-brackets-curly"></i></div>
   </div>
-
 </div>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat"><i class="fas fa-rocket"></i>3+ Projects</div>
-  <div class="stat"><i class="fas fa-clock"></i>100+ Hours</div>
-  <div class="stat"><i class="fas fa-trophy"></i>3 Achievements</div>
-  <div class="stat"><i class="fas fa-code"></i>5+ Skills</div>
-</div>
-
-<!-- ABOUT + SKILLS -->
-<div class="about">
-
-  <div class="about-left">
-    <h2>Building Solutions & Growing Every Day</h2>
-
-    <p>I am a Computer Science student passionate about solving real-world problems.</p>
-    <p>I enjoy Web Development, Problem Solving and exploring technologies.</p>
-    <p>I believe in continuous learning and growth.</p>
-
-    <div class="skills">
-
-      <div class="skill">
-        <div class="skill-head"><span>C Programming</span><span>85%</span></div>
-        <div class="bar"><div class="fill" style="width:85%"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-head"><span>Python</span><span>80%</span></div>
-        <div class="bar"><div class="fill" style="width:80%"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-head"><span>Web Development</span><span>75%</span></div>
-        <div class="bar"><div class="fill" style="width:75%"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-head"><span>UI/UX Design</span><span>70%</span></div>
-        <div class="bar"><div class="fill" style="width:70%"></div></div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="about-right">
-    <img src="images/profile.jpg">
-  </div>
-
-</div>
-
-<!-- PROJECTS -->
-<div class="projects">
+<!-- PROJECT CARD SAMPLE -->
+<div class="projects reveal">
   <h2>Things I've Built</h2>
 
   <div class="cards">
-    <div class="card"><img src="https://via.placeholder.com/400"><div class="card-body">SchemeSathi</div></div>
-    <div class="card"><img src="https://via.placeholder.com/400"><div class="card-body">Portfolio</div></div>
-    <div class="card"><img src="https://via.placeholder.com/400"><div class="card-body">Calculator</div></div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta">
-  <div>Want to know more about my journey?</div>
-  <div class="btn primary"><i class="fas fa-download"></i> Download Resume</div>
-</div>
-
-<!-- CONTACT -->
-<div class="contact">
-  <h2>Let's Connect</h2>
-
-  <div class="contact-grid">
-    <div class="box"><i class="fas fa-envelope"></i><p>Email</p></div>
-    <div class="box"><i class="fab fa-linkedin"></i><p>LinkedIn</p></div>
-    <div class="box"><i class="fab fa-github"></i><p>GitHub</p></div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400">
+      <div class="card-body">
+        <h3>SchemeSathi</h3>
+        <p>A platform to discover government schemes.</p>
+        <div class="tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <footer>© 2026 Bhavin Garg. All rights reserved.</footer>
 
 </div>
+
+<script>
+
+/* SCROLL ANIMATION */
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+});
+
+</script>
 
 </body>
 </html>
