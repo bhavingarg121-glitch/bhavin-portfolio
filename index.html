@@ -4,262 +4,184 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bhavin Garg Portfolio</title>
+<title>Bhavin Garg</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* ===== ROOT ===== */
+/* ===== SYSTEM ===== */
 :root{
   --blue:#4f6ef7;
-  --blue2:#6ea8ff;
-  --bg:#f6f8ff;
+  --blue2:#7aa6ff;
+  --bg:#f7f9ff;
   --text:#0f172a;
   --muted:#6b7280;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-body{background:var(--bg);color:var(--text);overflow-x:hidden;}
-
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:0 24px;
-}
+body{background:var(--bg);color:var(--text);}
+.container{max-width:1200px;margin:auto;padding:0 24px;}
 
 /* ===== NAV ===== */
 .nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:28px 0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:32px 0;
 }
-.logo{font-weight:700;font-size:18px;}
+.logo{font-weight:700;}
 .logo span{color:var(--blue);}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-size:14px;color:#444;text-decoration:none;}
-.resume{
+.nav-links{display:flex;gap:32px;align-items:center;}
+.resume{background:var(--blue);color:#fff;padding:10px 18px;border-radius:8px;}
+
+/* ===== HERO ===== */
+.hero{
+  display:grid;grid-template-columns:1.1fr 0.9fr;
+  gap:72px;align-items:center;padding:72px 0;
+}
+
+.hero h1{
+  font-size:46px;
+  line-height:1.15;
+}
+
+.hero p{
+  margin-top:18px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+.buttons{margin-top:26px;display:flex;gap:14px;}
+.btn{padding:12px 22px;border-radius:8px;cursor:pointer;}
+.primary{background:var(--blue);color:#fff;}
+.outline{border:1px solid var(--blue);color:var(--blue);}
+
+.socials{
+  margin-top:18px;
+  display:flex;
+  gap:18px;
+  font-size:18px;
+}
+
+/* ===== IMAGE ===== */
+.hero-img{position:relative;}
+.hero-img img{width:100%;border-radius:24px;z-index:2;position:relative;}
+
+.blob{
+  position:absolute;border-radius:50%;filter:blur(120px);
+}
+.blob1{width:320px;height:320px;background:var(--blue);top:-20px;right:-20px;opacity:.35;}
+.blob2{width:240px;height:240px;background:var(--blue2);bottom:-20px;left:20px;opacity:.35;}
+
+.float{
+  position:absolute;background:#fff;padding:12px;border-radius:12px;
+  box-shadow:0 12px 25px rgba(0,0,0,0.1);
+}
+.f1{top:25%;left:-25px;}
+.f2{top:55%;right:-25px;}
+.f3{bottom:12%;left:45%;}
+
+/* ===== STATS ===== */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:24px;margin-top:-48px;
+}
+.stat{
+  background:#fff;padding:22px;border-radius:14px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+  display:flex;gap:10px;align-items:center;
+}
+
+/* ===== ABOUT ===== */
+.about{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;margin-top:72px;
+}
+
+.about h2{font-size:28px;}
+.about p{margin-top:10px;color:var(--muted);font-size:14px;}
+
+.achievements{
+  margin-top:18px;
+  font-size:14px;
+}
+
+.resume-btn{
+  margin-top:20px;
   background:var(--blue);
   color:#fff;
   padding:10px 18px;
   border-radius:8px;
-  display:flex;gap:6px;align-items:center;
-}
-
-/* ===== HERO ===== */
-.hero{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:64px;
+  display:inline-flex;
+  gap:8px;
   align-items:center;
-  padding:64px 0;
 }
-
-.badge{
-  background:#e9efff;
-  color:var(--blue);
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:12px;
-}
-
-.hero h1{
-  font-size:48px;
-  margin-top:12px;
-  line-height:1.2;
-}
-.hero span{color:var(--blue);}
-
-.hero p{
-  margin-top:16px;
-  color:var(--muted);
-  font-size:15px;
-}
-
-.buttons{margin-top:24px;display:flex;gap:12px;}
-.btn{
-  padding:12px 20px;
-  border-radius:8px;
-  cursor:pointer;
-  transition:0.3s;
-}
-.primary{background:var(--blue);color:#fff;}
-.primary:hover{transform:translateY(-3px)}
-.outline{border:1px solid var(--blue);color:var(--blue);}
-
-.socials{margin-top:20px;display:flex;gap:16px;font-size:18px;}
-
-/* ===== HERO IMAGE ===== */
-.hero-img{position:relative;}
-.hero-img img{
-  width:100%;
-  border-radius:20px;
-  z-index:2;
-  position:relative;
-}
-
-/* BLOBS */
-.blob{
-  position:absolute;
-  border-radius:50%;
-  filter:blur(100px);
-  z-index:1;
-}
-.blob1{
-  width:320px;height:320px;
-  background:var(--blue);
-  top:0;right:0;
-  opacity:0.35;
-}
-.blob2{
-  width:220px;height:220px;
-  background:var(--blue2);
-  bottom:0;left:20px;
-  opacity:0.35;
-}
-
-/* FLOAT ICONS */
-.float{
-  position:absolute;
-  background:#fff;
-  padding:12px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  animation:float 4s infinite ease-in-out;
-}
-.f1{top:20%;left:-20px;}
-.f2{top:50%;right:-20px;}
-.f3{bottom:10%;left:40%;}
-@keyframes float{
-  50%{transform:translateY(-12px);}
-}
-
-/* ===== STATS ===== */
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
-  margin-top:-40px;
-}
-.stat{
-  background:#fff;
-  padding:20px;
-  border-radius:14px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
-  display:flex;
-  gap:12px;
-  align-items:center;
-  transition:0.3s;
-}
-.stat:hover{transform:translateY(-10px);}
-
-/* ===== ABOUT ===== */
-.about{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:48px;
-  margin-top:64px;
-}
-.about-text h2{font-size:28px;}
-.about-text p{margin-top:10px;color:var(--muted);font-size:14px;}
-.about-img img{width:100%;border-radius:18px;}
 
 /* ===== SKILLS ===== */
 .skills h3{font-size:12px;color:var(--muted);}
 .skills h2{margin:6px 0;font-size:20px;}
+
 .skill{margin-top:16px;}
 .skill-head{display:flex;justify-content:space-between;font-size:14px;}
 .bar{height:8px;background:#e5e7eb;border-radius:10px;margin-top:6px;}
 .fill{height:100%;background:var(--blue);border-radius:10px;}
 
 /* ===== PROJECTS ===== */
-.projects{margin-top:64px;}
+.projects{margin-top:72px;}
 .cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:24px;
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:24px;margin-top:24px;
 }
 .card{
-  background:#fff;
-  border-radius:14px;
-  overflow:hidden;
+  background:#fff;border-radius:16px;padding:20px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
-  transition:0.3s;
 }
-.card:hover{transform:translateY(-8px);}
-.card img{width:100%;}
-.card-body{padding:16px;}
 .tags span{
-  background:#eef2ff;
-  color:var(--blue);
-  padding:4px 8px;
-  border-radius:6px;
-  font-size:12px;
-  margin-right:6px;
+  background:#eef2ff;color:var(--blue);
+  padding:4px 8px;border-radius:6px;font-size:12px;margin-right:6px;
+}
+.git{
+  margin-top:10px;
+  display:inline-flex;
+  gap:6px;
+  align-items:center;
 }
 
 /* ===== CTA ===== */
 .cta{
-  margin-top:64px;
+  margin-top:72px;
   background:linear-gradient(135deg,var(--blue),var(--blue2));
   color:#fff;
-  padding:28px;
-  border-radius:14px;
+  padding:32px;
+  border-radius:16px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
 /* ===== CONTACT ===== */
-.contact{margin-top:64px;}
+.contact{
+  margin-top:72px;
+}
 .contact-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+  display:grid;grid-template-columns:repeat(3,1fr);
   gap:24px;
-  margin-top:24px;
 }
 .box{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
+  background:#fff;padding:24px;border-radius:14px;text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  transition:0.3s;
 }
-.box:hover{transform:translateY(-8px);}
 
 /* ===== FOOTER ===== */
 footer{
-  margin-top:48px;
-  background:#0f172a;
-  color:#fff;
-  padding:20px;
-  text-align:center;
+  margin-top:56px;background:#0f172a;color:#fff;
+  padding:20px;text-align:center;
 }
 
-/* ===== SCROLL ANIMATION ===== */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.8s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ===== MOBILE ===== */
 @media(max-width:900px){
-.hero{grid-template-columns:1fr}
-.about{grid-template-columns:1fr}
+.hero,.about{grid-template-columns:1fr}
 .stats{grid-template-columns:1fr 1fr}
-.cards{grid-template-columns:1fr}
-.contact-grid{grid-template-columns:1fr}
+.cards,.contact-grid{grid-template-columns:1fr}
 }
 
 </style>
@@ -269,16 +191,30 @@ footer{
 
 <div class="container">
 
+<!-- NAV -->
+<div class="nav">
+  <div class="logo"><span>BG</span> Bhavin Garg</div>
+  <div class="nav-links">
+    <a>Home</a><a>About</a><a>Projects</a><a>Skills</a>
+    <div class="resume"><i class="fas fa-download"></i> Resume</div>
+  </div>
+</div>
+
 <!-- HERO -->
-<div class="hero reveal">
+<div class="hero">
   <div>
-    <div class="badge">Aspiring Developer | Problem Solver</div>
-    <h1>Hello, I'm <br><span>Bhavin Garg</span></h1>
+    <h1>Hello, I'm <br><span style="color:#4f6ef7;">Bhavin Garg</span></h1>
     <p>I build clean impactful digital experiences and love turning ideas into reality.</p>
 
     <div class="buttons">
       <div class="btn primary">View Projects</div>
       <div class="btn outline">Let's Connect</div>
+    </div>
+
+    <div class="socials">
+      <i class="fab fa-github"></i>
+      <i class="fab fa-linkedin"></i>
+      <i class="fas fa-envelope"></i>
     </div>
   </div>
 
@@ -286,49 +222,102 @@ footer{
     <img src="images/profile.jpg">
     <div class="blob blob1"></div>
     <div class="blob blob2"></div>
-    <div class="float f1"><i class="fas fa-code"></i></div>
-    <div class="float f2"><i class="fas fa-laptop"></i></div>
-    <div class="float f3"><i class="fas fa-brackets-curly"></i></div>
   </div>
 </div>
 
-<!-- PROJECT CARD SAMPLE -->
-<div class="projects reveal">
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><i class="fas fa-code"></i> 3+ Projects</div>
+  <div class="stat"><i class="fas fa-clock"></i> 100+ Hours</div>
+  <div class="stat"><i class="fas fa-trophy"></i> Achievements</div>
+  <div class="stat"><i class="fas fa-laptop"></i> Skills</div>
+</div>
+
+<!-- ABOUT -->
+<div class="about">
+
+  <div>
+    <h2>Building Solutions & Growing Every Day</h2>
+    <p>I am a passionate developer focused on creating clean and efficient digital experiences.</p>
+    <p>I enjoy solving real-world problems and continuously improving my skills.</p>
+
+    <div class="achievements">
+      🏆 Student of the Year<br>
+      🌍 SOF Olympiad Participant<br>
+      🧪 Chemistry in Action - 2nd Prize
+    </div>
+
+    <div class="resume-btn">
+      <i class="fas fa-download"></i> Download Resume
+    </div>
+  </div>
+
+  <div class="skills">
+    <h3>MY SKILLS</h3>
+    <h2>Technologies I work with</h2>
+
+    <div class="skill">
+      <div class="skill-head"><span>C Programming</span><span>85%</span></div>
+      <div class="bar"><div class="fill" style="width:85%"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-head"><span>Python</span><span>80%</span></div>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-head"><span>Web Development</span><span>75%</span></div>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PROJECTS -->
+<div class="projects">
   <h2>Things I've Built</h2>
 
   <div class="cards">
+
     <div class="card">
-      <img src="https://via.placeholder.com/400">
-      <div class="card-body">
-        <h3>SchemeSathi</h3>
-        <p>A platform to discover government schemes.</p>
-        <div class="tags">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span>
-        </div>
-      </div>
+      <h3>SchemeSathi</h3>
+      <p>A platform to explore government schemes easily.</p>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+      <div class="git"><i class="fab fa-github"></i> GitHub</div>
     </div>
+
+    <div class="card">
+      <h3>Portfolio</h3>
+      <p>Personal portfolio showcasing my work.</p>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>Python</span></div>
+      <div class="git"><i class="fab fa-github"></i> GitHub</div>
+    </div>
+
   </div>
 </div>
 
-<footer>© 2026 Bhavin Garg. All rights reserved.</footer>
-
+<!-- CTA -->
+<div class="cta">
+  <div>Want to know more about my journey?</div>
+  <div class="btn primary"><i class="fas fa-download"></i> Download Resume</div>
 </div>
 
-<script>
+<!-- CONTACT -->
+<div class="contact">
+  <h2>Let's Connect</h2>
 
-/* SCROLL ANIMATION */
-const reveals = document.querySelectorAll(".reveal");
+  <div class="contact-grid">
+    <div class="box"><i class="fas fa-envelope"></i><br>Email</div>
+    <div class="box"><i class="fab fa-linkedin"></i><br>LinkedIn</div>
+    <div class="box"><i class="fab fa-github"></i><br>GitHub</div>
+  </div>
+</div>
 
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add("active");
-    }
-  });
-});
+<footer>© 2026 Bhavin Garg</footer>
 
-</script>
+</div>
 
 </body>
 </html>
