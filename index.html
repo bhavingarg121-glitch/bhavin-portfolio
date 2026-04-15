@@ -1,114 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Bhavin Garg | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
 :root{
---primary:#4f6ef7;
---gradient:linear-gradient(135deg,#4f6ef7,#6ea8ff);
+  --primary:#4f6ef7;
+  --gradient:linear-gradient(135deg,#4f6ef7,#6ea8ff);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#f6f8fc;color:#111;}
-.container{width:90%;max-width:1200px;margin:auto;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f6f8fc;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
 
 /* NAV */
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
-.logo{font-size:20px;font-weight:800;color:#000;}
-.logo span{margin-left:8px;font-weight:800;}
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px 0;
+}
 
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-size:15px;color:#333;text-decoration:none;font-weight:500;}
+.logo{
+  font-weight:800;
+  font-size:18px;
+}
+
+.nav-links{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
 
 .btn{
-background:var(--gradient);
-color:#fff;
-padding:11px 20px;
-border-radius:10px;
-text-decoration:none;
-font-weight:600;
-display:flex;
-align-items:center;
-gap:8px;
+  background:var(--gradient);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  display:flex;
+  gap:8px;
+  align-items:center;
 }
-.btn i{font-size:18px;font-weight:bold;}
 
 /* HERO */
-.hero{display:flex;justify-content:space-between;align-items:center;padding:70px 0;}
-.hero-text h1{font-size:42px;font-weight:700;}
-.hero-text span{color:var(--primary);} 
-.hero-text p{margin-top:14px;font-size:15px;color:#555;max-width:420px;}
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:60px;
+  padding:80px 0;
+}
 
-.hero-buttons{display:flex;gap:14px;margin-top:22px;}
-.secondary-btn{border:1px solid var(--primary);padding:11px 20px;border-radius:10px;color:var(--primary);text-decoration:none;}
+.hero h1{
+  font-size:42px;
+  font-weight:700;
+}
 
-.hero img{width:320px;border-radius:20px;}
+.hero span{
+  color:var(--primary);
+}
+
+.hero p{
+  margin-top:12px;
+  font-size:15px;
+  color:#555;
+}
+
+.hero-buttons{
+  margin-top:20px;
+  display:flex;
+  gap:15px;
+}
+
+.secondary-btn{
+  border:1px solid var(--primary);
+  padding:10px 18px;
+  border-radius:10px;
+  color:var(--primary);
+  text-decoration:none;
+}
+
+.hero img{
+  width:320px;
+  border-radius:20px;
+}
 
 /* STATS */
-.stats{display:flex;gap:20px;margin:40px 0;}
-.stat-card{flex:1;background:#fff;padding:22px;border-radius:14px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,0.05);}
-.stat-card i{font-size:22px;margin-bottom:8px;color:var(--primary);} 
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin:40px 0;
+}
+
+.stat-card{
+  background:#fff;
+  padding:20px;
+  text-align:center;
+  border-radius:12px;
+}
+
+.stat-card i{
+  color:var(--primary);
+  margin-bottom:8px;
+}
 
 /* ABOUT */
-.about{display:flex;gap:50px;margin:80px 0;}
-.about-left{flex:1;}
-.about-left h2{font-size:26px;margin-bottom:10px;}
-.about-left p{font-size:14px;color:#555;margin-bottom:10px;}
-
-.achievements{margin-top:15px;font-size:14px;}
-
-.about-right{flex:1;}
-.about-right h4{font-size:14px;margin-bottom:10px;color:#666;}
-.tech-line{margin:10px 0;font-size:14px;color:#555;}
-.tech-tags{display:flex;flex-wrap:wrap;gap:10px;}
-.tech-tags span{background:#fff;padding:6px 10px;border-radius:8px;font-size:13px;box-shadow:0 4px 10px rgba(0,0,0,0.05);} 
-
-
-/* BACKGROUND BLOBS */
-body::before, body::after{
-content:"";
-position:fixed;
-z-index:-1;
-width:400px;
-height:400px;
-background:var(--gradient);
-border-radius:50%;
-filter:blur(120px);
-opacity:0.4;
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  margin:80px 0;
 }
 
-body::before{
-top:-100px;
-left:-100px;
+.about-left h2{
+  font-size:24px;
 }
 
-body::after{
-bottom:-120px;
-right:-100px;
+.about-left p{
+  font-size:14px;
+  margin:8px 0;
+  color:#555;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-width:300px;
-height:300px;
-background:var(--gradient);
-border-radius:50%;
-filter:blur(100px);
-opacity:0.3;
-right:80px;
-top:50px;
-z-index:-1;
+.about-right h4{
+  font-size:13px;
+  color:#777;
 }
 
-.hero{
-position:relative;
+.tech-tags{
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tech-tags span{
+  background:#fff;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:13px;
+}
+
+/* PROJECTS */
+.section-title-small{
+  font-size:13px;
+  color:#777;
+}
+
+.section-title{
+  font-size:26px;
+  font-weight:700;
+}
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+  margin-top:20px;
+}
+
+.project{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+}
+
+.project h4{
+  margin-bottom:8px;
+}
+
+.project p{
+  font-size:14px;
+  color:#555;
+}
+
+/* CTA */
+.cta{
+  margin:60px 0;
+  background:var(--gradient);
+  color:#fff;
+  padding:25px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* CONTACT */
+.contact{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin:60px 0;
+}
+
+.contact-box{
+  background:#fff;
+  padding:20px;
+  text-align:center;
+  border-radius:12px;
+}
+
+.contact-box i{
+  font-size:20px;
+  color:var(--primary);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  font-size:13px;
+  padding:20px;
+  color:#777;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+
+  .project-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact{
+    grid-template-columns:1fr;
+  }
 }
 
 </style>
@@ -117,139 +272,123 @@ position:relative;
 <body>
 <div class="container">
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="navbar">
-<div class="logo">BG <span>Bhavin Garg</span></div>
-<div class="nav-links">
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Projects</a>
-<a href="#">Skills</a>
-<a href="#">Achievement</a>
-<a href="#" class="btn"><i class="fas fa-download"></i> Download Resume</a>
-</div>
+  <div class="logo">BG Bhavin Garg</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Skills</a>
+    <a href="#">Achievement</a>
+    <a href="#" class="btn"><i class="fas fa-download"></i> Download Resume</a>
+  </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-text">
-<h1>Hello, I'm <br><span>Bhavin Garg</span></h1>
-<p>I build clean impactful digital experiences and love turning ideas into reality.</p>
+  <div>
+    <h1>Hello, I'm <br><span>Bhavin Garg</span></h1>
+    <p>I build clean impactful digital experiences and love turning ideas into reality.</p>
 
-<div class="hero-buttons">
-<a href="#" class="btn">View Projects</a>
-<a href="#" class="secondary-btn">Let's Connect</a>
-</div>
-</div>
-<img src="images/profile.jpg">
+    <div class="hero-buttons">
+      <a href="#" class="btn">View Projects</a>
+      <a href="#" class="secondary-btn">Let's Connect</a>
+    </div>
+  </div>
+
+  <img src="images/profile.jpg">
 </section>
 
 <!-- STATS -->
 <div class="stats">
-<div class="stat-card"><i class="fas fa-code"></i><p>3+ Projects</p></div>
-<div class="stat-card"><i class="fas fa-clock"></i><p>100+ Hours</p></div>
-<div class="stat-card"><i class="fas fa-trophy"></i><p>3 Achievements</p></div>
-<div class="stat-card"><i class="fas fa-brain"></i><p>5+ Skills</p></div>
+  <div class="stat-card"><i class="fas fa-code"></i><p>3+ Projects</p></div>
+  <div class="stat-card"><i class="fas fa-clock"></i><p>100+ Hours</p></div>
+  <div class="stat-card"><i class="fas fa-trophy"></i><p>3 Achievements</p></div>
+  <div class="stat-card"><i class="fas fa-brain"></i><p>5+ Skills</p></div>
 </div>
 
 <!-- ABOUT -->
 <section class="about">
-<div class="about-left">
-<h2>Building Solutions and Growing every day</h2>
-<p>I am a passionate developer focused on solving real-world problems.</p>
-<p>I continuously learn and improve my technical and creative skills.</p>
-<p>I enjoy building impactful and user-friendly digital solutions.</p>
+  <div class="about-left">
+    <h2>Building Solutions and Growing every day</h2>
+    <p>I am a passionate developer focused on solving real-world problems.</p>
+    <p>I continuously learn and improve my skills.</p>
+    <p>I enjoy building impactful solutions.</p>
 
-<div class="achievements">
-<p>🏆 Student of the Year - for academic excellence</p>
-<p>🥇 SOF Olympiad - represented Samba District</p>
-<p>🥈 Chemistry in Action - 2nd Prize (Blue Bottle Experiment)</p>
-</div>
-</div>
+    <p>🏆 Student of the Year - Academic Excellence</p>
+    <p>🥇 SOF Olympiad - Represented Samba District</p>
+    <p>🥈 Chemistry in Action - 2nd Prize</p>
+  </div>
 
-<div class="about-right">
-<h4>My Skills</h4>
-<div class="tech-line">Technologies I work with — always learning. Always improving.</div>
-<div class="tech-tags">
-<span>C Programming</span>
-<span>Python</span>
-<span>Web Development</span>
-<span>UI/UX Design</span>
-<span>Data Structures & Algorithms</span>
-</div>
-</div>
+  <div class="about-right">
+    <h4>My Skills</h4>
+    <p>Technologies I work with — always learning. Always improving.</p>
+
+    <div class="tech-tags">
+      <span>C Programming</span>
+      <span>Python</span>
+      <span>Web Development</span>
+      <span>UI/UX Design</span>
+      <span>DSA</span>
+    </div>
+  </div>
 </section>
 
-</div>
-
-
-<!-- FEATURED PROJECTS -->
-<section style="margin-top:80px;">
-<p style="font-size:13px;color:#666;">Featured Projects</p>
-<h2 style="font-size:28px;font-weight:700;">Things I've built</h2>
-<p style="font-size:14px;color:#555;margin-bottom:20px;">A showcase of my work and learning journey</p>
+<!-- PROJECTS -->
+<p class="section-title-small">Featured Projects</p>
+<h2 class="section-title">Things I've built</h2>
+<p>A showcase of my work and learning journey</p>
 
 <div class="project-grid">
+  <div class="project">
+    <h4>SchemeSathi</h4>
+    <p>Platform to discover government schemes.</p>
+    <p>HTML • CSS • JavaScript</p>
+  </div>
 
-<div class="project">
-<div class="project-content">
-<h4>SchemeSathi</h4>
-<p>A platform to help users easily discover government schemes and benefits.</p>
-<p style="font-size:13px;color:#777;">HTML • CSS • JavaScript</p>
-<a href="#" class="secondary-btn"><i class="fab fa-github"></i> GitHub</a>
-</div>
-</div>
-
-<div class="project">
-<div class="project-content">
-<h4>Portfolio</h4>
-<p>My personal portfolio showcasing skills, projects, and achievements.</p>
-<p style="font-size:13px;color:#777;">HTML • CSS • Python</p>
-<a href="#" class="secondary-btn"><i class="fab fa-github"></i> GitHub</a>
-</div>
+  <div class="project">
+    <h4>Portfolio</h4>
+    <p>My personal portfolio website.</p>
+    <p>HTML • CSS • Python</p>
+  </div>
 </div>
 
+<!-- CTA -->
+<div class="cta">
+  <div>
+    <p>Want to know more about my journey?</p>
+    <small>Download my resume to see my complete profile.</small>
+  </div>
+  <a href="#" class="btn"><i class="fas fa-download"></i> Download Resume</a>
 </div>
-</section>
-
-<!-- RESUME CTA -->
-<section class="cta" style="margin-top:60px;">
-<div>
-<p style="font-size:14px;">Want to know more about my journey?</p>
-<p style="font-size:13px;">Download my resume to see my complete profile, skills, achievements.</p>
-</div>
-<a href="#" class="btn"><i class="fas fa-download"></i> Download Resume</a>
-</section>
 
 <!-- CONTACT -->
-<section style="margin-top:70px;">
-<p style="font-size:13px;color:#666;">Get in touch</p>
-<h2 style="font-size:28px;font-weight:700;">Lets Connect</h2>
-<p style="font-size:14px;color:#555;margin-bottom:20px;">I'm always open to discussing new opportunities, collaboration, or just having a chat about technology.</p>
+<p class="section-title-small">Get in touch</p>
+<h2 class="section-title">Lets Connect</h2>
+<p>I'm always open to opportunities and collaboration.</p>
 
 <div class="contact">
-<div class="contact-box">
-<i class="fas fa-envelope"></i>
-<p><a href="mailto:bhavin@example.com">bhavin@example.com</a></p>
-</div>
+  <div class="contact-box">
+    <i class="fas fa-envelope"></i>
+    <p><a href="mailto:bhavin@example.com">Email</a></p>
+  </div>
 
-<div class="contact-box">
-<i class="fab fa-linkedin"></i>
-<p><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
-</div>
+  <div class="contact-box">
+    <i class="fab fa-linkedin"></i>
+    <p><a href="#">LinkedIn</a></p>
+  </div>
 
-<div class="contact-box">
-<i class="fab fa-github"></i>
-<p><a href="https://github.com/yourprofile" target="_blank">GitHub</a></p>
+  <div class="contact-box">
+    <i class="fab fa-github"></i>
+    <p><a href="#">GitHub</a></p>
+  </div>
 </div>
-</div>
-</section>
 
 <footer>
-<p>© 2026 Bhavin Garg. All rights reserved.</p>
+  © 2026 Bhavin Garg. All rights reserved.
 </footer>
 
+</div>
 </body>
 </html>
-
-
