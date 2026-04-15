@@ -1,315 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bhavin Garg | Portfolio</title>
-  <style>
-    body {
-      background-color: #ffffff;
-      color: #333333;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    html { scroll-behavior: smooth; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bhavin Garg | Portfolio</title>
 
-    /* Navbar */
-    nav {
-      background: #0056b3;
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-    }
-    nav ul {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: #e0e0e0; }
+<meta name="description" content="Bhavin Garg - Aspiring Developer & Problem Solver. Explore projects, skills, achievements, and portfolio." />
+<meta name="keywords" content="Bhavin Garg, Developer Portfolio, Web Developer India, Python Developer, C Programming, Projects" />
+<meta name="author" content="Bhavin Garg" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://yourdomain.com/" />
 
-    /* Buttons */
-    .btn {
-      background: #0056b3;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    .btn:hover {
-      background: #003d80;
-      transform: translateY(-3px);
-    }
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bhavin Garg | Portfolio" />
+<meta property="og:description" content="Check out my projects, skills, and developer journey." />
+<meta property="og:image" content="https://yourdomain.com/preview.jpg" />
+<meta property="og:url" content="https://yourdomain.com/" />
 
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-    .hero.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .hero h1 span { color: #0056b3; }
-    .hero .download-resume { margin-top: 20px; }
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bhavin Garg | Portfolio" />
+<meta name="twitter:description" content="Explore my portfolio, projects, and skills." />
+<meta name="twitter:image" content="https://yourdomain.com/preview.jpg" />
 
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      text-align: center;
-      color: #0056b3;
-      margin-bottom: 20px;
-    }
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" />
 
-    /* Achievements */
-    .achievements {
-      background: #e6f7ff;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 900px;
-      margin: 40px auto;
-    }
-    .achievements h3 { color: #0056b3; margin-bottom: 15px; text-align: center; }
-    .achievements ul { list-style: none; padding: 0; }
-    .achievements li {
-      margin-bottom: 10px;
-      padding-left: 25px;
-      position: relative;
-    }
-    .achievements li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #0056b3;
-    }
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bhavin Garg",
+  "url": "https://yourdomain.com",
+  "sameAs": [
+    "https://linkedin.com/in/yourprofile",
+    "https://github.com/yourprofile"
+  ],
+  "jobTitle": "Software Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Self-Employed"
+  }
+}
+</script>
 
-    /* Resume Snapshot (Glass Morphism) */
-    .resume-card {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      max-width: 900px;
-      margin: 40px auto;
-    }
-    .resume-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 8px;
-      border: 2px solid #0056b3;
-      object-fit: cover;
-    }
-    .resume-info h3 { color: #0056b3; margin-bottom: 10px; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    /* Projects */
-    .projects {
-      background: #fffbe6;
-      border-radius: 10px;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 40px auto;
-    }
-    .project-card {
-      background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 15px 0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .project-status {
-      font-weight: 600;
-      color: #0056b3;
-    }
+<style>
+:root{
+--primary:#4f6ef7;
+--gradient:linear-gradient(135deg,#4f6ef7,#6ea8ff);
+}
 
-    /* Skills */
-    .skills {
-      background: #f9f9f9;
-      border-radius: 10px;
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: 40px auto;
-    }
-    .skill {
-      margin-bottom: 20px;
-    }
-    .skill-name {
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    .progress-bar {
-      background: #ddd;
-      border-radius: 6px;
-      overflow: hidden;
-      height: 10px;
-    }
-    .progress {
-      height: 10px;
-      background: #0056b3;
-      transition: width 1s ease;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f6f8fc;color:#111;}
+.container{width:90%;max-width:1200px;margin:auto;}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0056b3;
-      color: #ffffff;
-      margin-top: 40px;
-    }
+/* NAV */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+.logo{font-size:22px;font-weight:700;color:var(--primary);} 
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{font-size:15px;color:#333;text-decoration:none;transition:.3s;}
+.nav-links a:hover{color:var(--primary);} 
 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .resume-card { flex-direction: column; text-align: center; }
-      .skills ul { flex-direction: column; }
-    }
-  </style>
+.btn{
+background:var(--gradient);
+color:#fff;
+padding:11px 20px;
+border-radius:10px;
+text-decoration:none;
+transition:.3s;
+box-shadow:0 8px 20px rgba(79,110,247,0.25);
+}
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 25px rgba(79,110,247,0.35);
+}
+
+/* HERO */
+.hero{display:flex;justify-content:space-between;align-items:center;padding:70px 0;}
+.hero-text h1{
+font-size:42px; /* exact refined */
+font-weight:700;
+line-height:1.2;
+}
+.hero-text span{color:var(--primary);} 
+.hero-text p{margin-top:14px;font-size:15px;color:#555;}
+
+.hero-buttons{display:flex;gap:14px;margin-top:22px;}
+.secondary-btn{
+border:1px solid var(--primary);
+padding:11px 20px;
+border-radius:10px;
+color:var(--primary);
+text-decoration:none;
+transition:.3s;
+}
+.secondary-btn:hover{
+background:var(--primary);
+color:#fff;
+}
+
+.socials{margin-top:20px;display:flex;gap:16px;font-size:18px;}
+.socials i{cursor:pointer;transition:.3s;}
+.socials i:hover{color:var(--primary);transform:scale(1.2);} 
+
+.hero img{
+width:320px;
+border-radius:20px;
+transition:.4s;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+.hero img:hover{transform:scale(1.05);} 
+
+/* STATS */
+.stats{display:flex;gap:20px;margin:40px 0;}
+.stat-card{
+flex:1;
+background:#fff;
+padding:22px;
+border-radius:14px;
+text-align:center;
+transition:.3s;
+box-shadow:0 6px 20px rgba(0,0,0,0.05);
+}
+.stat-card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ABOUT */
+.about{display:flex;gap:50px;margin:80px 0;align-items:center;}
+.about h2{font-size:26px;margin-bottom:10px;}
+.about p{font-size:15px;color:#555;}
+
+/* SKILLS */
+.skill p{font-size:14px;margin-bottom:6px;}
+.bar{height:8px;background:#e0e0e0;border-radius:10px;}
+.fill{height:100%;background:var(--gradient);} 
+
+/* PROJECTS */
+.projects{margin:80px 0;}
+.projects h2{font-size:24px;margin-bottom:20px;}
+.project-grid{display:flex;gap:20px;}
+.project{
+flex:1;
+background:#fff;
+border-radius:14px;
+overflow:hidden;
+transition:.35s;
+box-shadow:0 6px 20px rgba(0,0,0,0.05);
+}
+.project:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+.project img{width:100%;}
+.project-content{padding:15px;}
+.project-content h4{font-size:16px;margin-bottom:6px;}
+.project-content p{font-size:14px;color:#555;}
+
+/* CTA */
+.cta{
+background:var(--gradient);
+color:#fff;
+padding:30px;
+border-radius:14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* CONTACT */
+.contact{display:flex;gap:20px;margin:60px 0;}
+.contact-box{
+flex:1;
+background:#fff;
+padding:22px;
+border-radius:14px;
+text-align:center;
+transition:.3s;
+box-shadow:0 6px 20px rgba(0,0,0,0.05);
+}
+.contact-box:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+footer{text-align:center;padding:20px;color:#777;font-size:13px;}
+
+@media(max-width:900px){
+.hero,.stats,.project-grid,.about,.contact{flex-direction:column;}
+.hero img{margin-top:20px;}
+}
+</style>
 </head>
+
 <body>
+<div class="container">
 
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="about.html">About Me </a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<div class="navbar">
+<div class="logo">BG</div>
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Projects</a>
+<a href="#">Skills</a>
+<a href="#">Contact</a>
+<a href="#" class="btn">Resume</a>
+</div>
+</div>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <h1>Hello, I'm <span>Bhavin Garg</span></h1>
-    <p>I build clean, impactful digital experiences and love turning ideas into reality.</p>
-    <a href="resume.pdf" class="btn">Download Resume</a>
-  </section>
+<section class="hero">
+<div class="hero-text">
+<h1>Hello, I'm <br><span>Bhavin Garg</span></h1>
+<p>I build clean, impactful digital experiences.</p>
 
-  <!-- Achievements Section -->
-  <section id="achievements" class="achievements">
-    <h3>Achievements</h3>
-    <ul>
-      <li>🏆 Student of the Year – Awarded for academic excellence and overall performance.</li>
-      <li>🌍 SOF Olympiad – Represented Samba District in the Science Olympiad Foundation.</li>
-      <li>🧪 Chemistry in Action – Won 2nd prize for presenting the Blue Bottle Experiment.</li>
-    </ul>
-  </section>
+<div class="hero-buttons">
+<a href="#" class="btn">View Projects</a>
+<a href="#" class="secondary-btn">Let's Connect</a>
+</div>
 
-  <!-- Resume Snapshot -->
-  <section id="resume">
-    <h2>Resume Snapshot</h2>
-    <div class="resume-card">
-      <img src="profile1.jpeg" alt="Bhavin Garg" class="resume-photo">
-      <div class="resume-info">
-        <h3>Bhavin Garg</h3>
-        <p><strong>Education:</strong> B.Tech in Computer Science Engineering</p>
-        <p><strong>College:</strong> Priyadarshini College of Engineering, Nagpur</p>
-        <p><strong>Expected:</strong> 2029</p>
-      </div>
-    </div>
-  </section>
+<div class="socials">
+<i class="fab fa-github"></i>
+<i class="fab fa-linkedin"></i>
+<i class="fas fa-envelope"></i>
+</div>
+</div>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2>Featured Projects</h2>
-    <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p class="project-status">✅ Completed</p>
-      <p>A responsive and visually polished personal portfolio showcasing achievements, skills, and projects.</p>
-    </div>
-    <div class="project-card">
-      <h3>AI Scheme Finder</h3>
-      <p class="project-status">🚧 Under Development — Display Soon</p>
-      <p>An intelligent platform that helps users discover government schemes relevant to their profiles.</p>
-    </div>
-  </section>
-
-  
-  <!-- Skills Section -->
-<section id="skills" class="skills">
-  <h2>My Skills</h2>
-
-  <div class="skill">
-    <div class="skill-name">C Programming</div>
-    <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
-  </div>
-
-  <div class="skill">
-    <div class="skill-name">Python</div>
-    <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
-  </div>
-
-  <div class="skill">
-    <div class="skill-name">Web Development (HTML, CSS, JS)</div>
-    <div class="progress-bar"><div class="progress" style="width:90%"></div></div>
-  </div>
-
-  <div class="skill">
-    <div class="skill-name">UI/UX Design</div>
-    <div class="progress-bar"><div class="progress" style="width:70%"></div></div>
-  </div>
-
-  <div class="skill">
-    <div class="skill-name">Data Structures & Algorithms</div>
-    <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
-  </div>
+<img src="https://via.placeholder.com/320">
 </section>
-<!-- Footer -->
-  <footer>
-    <p>© 2024 Bhavin Garg. All rights reserved. Built with ❤️ and Code.</p>
-    <p>Email: bhavingarg121@gmail.com | LinkedIn: linkedin.com/in/bhavin-garg | GitHub: github.com/bhavingarg121-glitch</p>
-  </footer>
 
-  <!-- Scroll Reveal Script -->
-  <script>
-    const sections = document.querySelectorAll("section");
+<div class="stats">
+<div class="stat-card">3+ Projects</div>
+<div class="stat-card">100+ Hours</div>
+<div class="stat-card">3 Achievements</div>
+<div class="stat-card">5+ Skills</div>
+</div>
 
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
-          section.classList.add("visible");
-        }
-      });
-    };
+<section class="projects">
+<h2>Things I've Built</h2>
+<div class="project-grid">
 
-    window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("load", revealOnScroll);
-  </script>
+<div class="project">
+<img src="https://via.placeholder.com/400">
+<div class="project-content">
+<h4>SchemeSathi</h4>
+<p>Platform to discover schemes.</p>
+</div>
+</div>
 
+<div class="project">
+<img src="https://via.placeholder.com/400">
+<div class="project-content">
+<h4>AI Finder</h4>
+<p>AI suggestions tool.</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://via.placeholder.com/400">
+<div class="project-content">
+<h4>Calculator</h4>
+<p>Clean UI calculator.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="cta">
+<p>Want to know more about my journey?</p>
+<a href="#" class="btn">Download Resume</a>
+</div>
+
+<section class="contact">
+<div class="contact-box"><i class="fas fa-envelope"></i><p>Email</p></div>
+<div class="contact-box"><i class="fab fa-linkedin"></i><p>LinkedIn</p></div>
+<div class="contact-box"><i class="fab fa-github"></i><p>GitHub</p></div>
+</section>
+
+<footer>
+<p>© 2026 Bhavin Garg. All rights reserved.</p>
+</footer>
+
+</div>
 </body>
 </html>
+
 
