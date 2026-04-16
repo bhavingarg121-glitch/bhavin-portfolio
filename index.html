@@ -23,7 +23,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Poppins;
+  font-family:Poppins, sans-serif;
 }
 
 body{
@@ -34,8 +34,9 @@ body{
 
 .container{
   max-width:1200px;
+  width:100%;
   margin:auto;
-  padding:0 16px;
+  padding:0 24px;
 }
 
 /* ===== NAV ===== */
@@ -46,13 +47,8 @@ body{
   padding:20px 0;
 }
 
-.logo{
-  font-weight:700;
-}
-
-.logo span{
-  color:var(--blue);
-}
+.logo{font-weight:700;}
+.logo span{color:var(--blue);}
 
 .nav-links{
   display:flex;
@@ -78,18 +74,21 @@ body{
   display:grid;
   grid-template-columns:1fr;
   gap:40px;
-  padding:40px 0;
+  padding:60px 0;
+  align-items:center;
 }
 
 .hero h1{
   font-size:32px;
   line-height:1.2;
+  animation:slideUp 1s ease forwards;
 }
 
 .hero p{
   margin-top:12px;
   font-size:14px;
   color:var(--muted);
+  animation:slideUp 1.2s ease forwards;
 }
 
 .buttons{
@@ -97,24 +96,17 @@ body{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
+  animation:slideUp 1.4s ease forwards;
 }
 
 .btn{
   padding:10px 16px;
   border-radius:8px;
   cursor:pointer;
-  font-size:14px;
 }
 
-.primary{
-  background:var(--blue);
-  color:#fff;
-}
-
-.outline{
-  border:1px solid var(--blue);
-  color:var(--blue);
-}
+.primary{background:var(--blue);color:#fff;}
+.outline{border:1px solid var(--blue);color:var(--blue);}
 
 .socials{
   margin-top:14px;
@@ -123,10 +115,16 @@ body{
   font-size:18px;
 }
 
+.socials i:hover{
+  transform:scale(1.2);
+  color:var(--blue);
+}
+
 /* ===== HERO IMAGE ===== */
 .hero-img img{
   width:100%;
   border-radius:18px;
+  animation:float 4s ease-in-out infinite;
 }
 
 /* ===== STATS ===== */
@@ -142,10 +140,9 @@ body{
   padding:16px;
   border-radius:12px;
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  display:flex;
-  gap:10px;
-  align-items:center;
+  transition:0.3s;
 }
+.stat:hover{transform:translateY(-8px);}
 
 /* ===== ABOUT ===== */
 .about{
@@ -155,70 +152,8 @@ body{
   margin-top:60px;
 }
 
-.about h2{
-  font-size:24px;
-}
-
-.about p{
-  color:var(--muted);
-  font-size:14px;
-  margin-top:8px;
-}
-
-.achievements{
-  margin-top:14px;
-  font-size:14px;
-}
-
-.resume-btn{
-  margin-top:16px;
-  background:var(--blue);
-  color:#fff;
-  padding:10px 14px;
-  border-radius:8px;
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-}
-
-/* ===== SKILLS ===== */
-.skills h3{
-  font-size:12px;
-  color:var(--muted);
-}
-
-.skills h2{
-  font-size:18px;
-  margin:6px 0;
-}
-
-.skill{
-  margin-top:14px;
-}
-
-.skill-head{
-  display:flex;
-  justify-content:space-between;
-  font-size:14px;
-}
-
-.bar{
-  height:8px;
-  background:#e5e7eb;
-  border-radius:10px;
-  margin-top:6px;
-}
-
-.fill{
-  height:100%;
-  background:var(--blue);
-  border-radius:10px;
-}
-
 /* ===== PROJECTS ===== */
-.projects{
-  margin-top:60px;
-}
+.projects{margin-top:60px;}
 
 .cards{
   display:grid;
@@ -232,50 +167,50 @@ body{
   border-radius:14px;
   padding:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  transition:0.3s;
 }
-
-.tags span{
-  background:#eef2ff;
-  color:var(--blue);
-  padding:4px 8px;
-  border-radius:6px;
-  font-size:12px;
-  margin-right:6px;
-}
-
-.git{
-  margin-top:10px;
-  display:inline-flex;
-  gap:6px;
-  align-items:center;
-}
+.card:hover{transform:translateY(-8px);}
 
 /* ===== CTA ===== */
 .cta{
-  margin-top:60px;
-  background:linear-gradient(135deg,var(--blue),var(--blue2));
+  margin-top:70px;
+  padding:40px 30px;
+  border-radius:18px;
+  text-align:center;
   color:#fff;
-  padding:24px;
-  border-radius:14px;
+  background:linear-gradient(135deg,var(--blue),var(--blue2));
+  box-shadow:0 12px 35px rgba(0,0,0,0.25);
 }
+
+/* Button */
+.download-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+  padding:12px 28px;
+  background:#fff;
+  color:var(--blue);
+  border-radius:40px;
+  text-decoration:none;
+  transition:0.3s;
+}
+.download-btn:hover{transform:translateY(-4px);}
 
 /* ===== CONTACT ===== */
-.contact{
-  margin-top:60px;
-}
-
 .contact-grid{
   display:grid;
   grid-template-columns:1fr;
   gap:16px;
+  margin-top:20px;
 }
 
 .box{
   background:#fff;
-  padding:20px;
-  border-radius:14px;
+  padding:18px;
+  border-radius:12px;
   text-align:center;
-  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
 /* ===== FOOTER ===== */
@@ -287,46 +222,42 @@ footer{
   padding:18px;
 }
 
-/* ===== TABLET ===== */
-@media(min-width:768px){
-
-  .nav{
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:center;
-  }
-
-  .hero{
-    grid-template-columns:1.1fr 0.9fr;
-  }
-
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .about{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .cards{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .contact-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
+/* ===== ANIMATIONS ===== */
+.fade-up{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+.fade-up.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-/* ===== DESKTOP ===== */
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(min-width:768px){
+  .nav{flex-direction:row;justify-content:space-between;}
+  .hero{grid-template-columns:1.2fr 0.8fr;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .about{grid-template-columns:1fr 1fr;}
+  .cards{grid-template-columns:repeat(2,1fr);}
+  .contact-grid{grid-template-columns:repeat(3,1fr);}
+}
+
 @media(min-width:1024px){
-
-  .hero h1{
-    font-size:46px;
-  }
-
-  .stats{
-    grid-template-columns:repeat(4,1fr);
-  }
+  .hero h1{font-size:46px;}
+  .stats{grid-template-columns:repeat(4,1fr);}
+  .cards{grid-template-columns:repeat(3,1fr);}
 }
 
 </style>
@@ -340,11 +271,11 @@ footer{
 <div class="nav">
   <div class="logo"><span>BG</span> Bhavin Garg</div>
   <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-     <a href="contact.html">Contact</a>
-    <div class="resume"><i class="fas fa-download"></i>Download Resume</div>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+    <div class="resume"><i class="fas fa-download"></i> Download Resume</div>
   </div>
 </div>
 
@@ -353,17 +284,6 @@ footer{
   <div>
     <h1>Hello, I'm <br><span style="color:#4f6ef7;">Bhavin Garg</span></h1>
     <p>I build clean impactful digital experiences and love turning ideas into reality.</p>
-
-    <div class="buttons">
-      <div class="btn primary">View Projects</div>
-      <div class="btn outline">Let's Connect</div>
-    </div>
-
-    <div class="socials">
-      <i class="fab fa-github"></i>
-      <i class="fab fa-linkedin"></i>
-      <i class="fas fa-envelope"></i>
-    </div>
   </div>
 
   <div class="hero-img">
@@ -372,7 +292,24 @@ footer{
 </div>
 
 <!-- STATS -->
-<div class="stats">
+<div class="stats fade-up">
+  <div class="stat">3+ Projects</div>
+  <div class="stat">100+ Hours</div>
+  <div class="stat">Achievements</div>
+  <div class="stat">Skills</div>
+</div>
+
+<!-- ABOUT -->
+<div class="about fade-up">
+  <div>
+    <h2>Building Solutions & Growing Every Day</h2>
+    <p>I am a passionate developer focused on creating clean and efficient digital experiences.</p>
+  </div>
+</div>
+<!-- ONLY SHOWING IMPORTANT FIXED PARTS YOU MUST REPLACE -->
+
+<!-- STATS -->
+<div class="stats fade-up">
   <div class="stat"><i class="fas fa-code"></i> 3+ Projects</div>
   <div class="stat"><i class="fas fa-clock"></i> 100+ Hours</div>
   <div class="stat"><i class="fas fa-trophy"></i> Achievements</div>
@@ -380,7 +317,7 @@ footer{
 </div>
 
 <!-- ABOUT -->
-<div class="about">
+<div class="about fade-up">
 
   <div>
     <h2>Building Solutions & Growing Every Day</h2>
@@ -431,7 +368,7 @@ footer{
 </div>
 
 <!-- PROJECTS -->
-<div class="projects">
+<div class="projects fade-up">
   <h2>Things I've Built</h2>
 
   <div class="cards">
@@ -454,13 +391,17 @@ footer{
 </div>
 
 <!-- CTA -->
-<div class="cta">
+<div class="cta fade-up">
   <h3>Want to know more?</h3>
   <p>Download my resume to see full profile.</p>
+
+  <a href="resume.pdf" download class="download-btn">
+    <span class="icon">⬇</span> Download Resume
+  </a>
 </div>
 
 <!-- CONTACT -->
-<div class="contact">
+<div class="contact fade-up">
   <h2>Let's Connect</h2>
 
   <div class="contact-grid">
@@ -470,9 +411,24 @@ footer{
   </div>
 </div>
 
+
+
 <footer>© 2026 Bhavin Garg</footer>
 
 </div>
+
+<script>
+const elements=document.querySelectorAll('.fade-up');
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.2});
+
+elements.forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
