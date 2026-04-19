@@ -419,37 +419,32 @@ footer{
 <!-- NAV -->
 <div class="nav">
   <div class="container nav-inner">
-
     <div class="logo"><span>BG</span> Bhavin Garg</div>
 
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-      <a href="Resume.pdf" download class="resume">
-        <i class="fas fa-download"></i> Download Resume
-      </a>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+      <a href="Resume.pdf" class="resume">Download Resume</a>
     </div>
-
   </div>
 </div>
+
 
 <!-- HERO -->
-  <div class="container">
-<div class="hero">
-  <div>
-    <h1>Hello, I'm <br><span style="color:#4f6ef7;">Bhavin Garg</span></h1>
-    <p>I build clean impactful digital experiences and love turning ideas into reality.</p>
-  </div>
+ <div class="container">
+  <div class="hero">
+    <div>
+      <h1>Hello, I'm <br><span style="color:#4f6ef7;">Bhavin Garg</span></h1>
+      <p>I build clean impactful digital experiences.</p>
+    </div>
 
-  <div class="hero-img">
-    <img src="profile1.jpeg" alt="profile">
+    <div class="hero-img">
+      <img src="profile1.jpeg">
+    </div>
   </div>
 </div>
-
-
-
 <!-- STATS -->
 <div class="stats fade-up">
   <div class="stat"><i class="fas fa-code"></i> 3+ Projects</div>
@@ -459,9 +454,8 @@ footer{
 </div>
 
 <!-- ABOUT -->
-<div class="about fade-up">
 <div class="container">
-  <div class="about">
+  <div class="about fade-up">
   <div>
     <h2>Building Solutions & Growing Every Day</h2>
     <p>I am a passionate developer focused on creating clean and efficient digital experiences.</p>
@@ -512,15 +506,13 @@ footer{
 
 <!-- PROJECTS -->
   <div class="container">
-<div class="projects">
-  <h2>Things I've Built</h2>
+  <div class="projects">
+    <h2>Things I've Built</h2>
 
- 
-
+    <div class="cards">
     <!-- Project 1 -->
 <div class="cards">
-
-      <div class="card">
+<div class="card-top">
         <h3>SchemeSathi</h3>
         <span class="status live">● Live</span>
       </div>
@@ -605,7 +597,7 @@ footer{
   </div>
 </footer>
 
-</body>
+
     
 
 
@@ -645,3 +637,5 @@ const fadeObserver = new IntersectionObserver((entries)=>{
 
 elements.forEach(el=>fadeObserver.observe(el));
 </script>
+</body>
+</html>
