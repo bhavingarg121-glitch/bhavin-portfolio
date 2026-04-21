@@ -1,103 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SchemeSathi</title>
+<title>SchemeSathi Document</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== GLOBAL ===== */
-*{margin:0;padding:0;box-sizing:border-box;}
-
+/* ===== PAGE BACKGROUND ===== */
 body{
-  font-family:'Poppins',sans-serif;
-  background:#f8fafc;
-  color:#0f172a;
+  margin:0;
+  background:#e5e7eb; /* grey outer area like Word */
+  font-family: "Times New Roman", serif;
 }
 
-.container{
-  width:90%;
-  max-width:1100px;
-  margin:auto;
-  padding:60px 0;
+/* ===== DOCUMENT PAGE ===== */
+.page{
+  width: 210mm;
+  min-height: 100vh;
+  background:white;
+  margin:40px auto;
+  padding:60px 50px;
+  box-shadow:0 0 20px rgba(0,0,0,0.15);
 }
 
-/* ===== TYPOGRAPHY ===== */
-h1{font-size:48px;}
-h2{font-size:28px;margin-bottom:20px;}
-h3{font-size:20px;margin-bottom:10px;}
+/* ===== HEADINGS ===== */
+h1{
+  text-align:center;
+  font-size:28px;
+  margin-bottom:5px;
+}
 
+.subtitle{
+  text-align:center;
+  font-size:14px;
+  margin-bottom:25px;
+  color:#444;
+}
+
+h2{
+  font-size:18px;
+  margin-top:25px;
+  margin-bottom:10px;
+  border-bottom:1px solid #000;
+  padding-bottom:3px;
+}
+
+/* ===== TEXT ===== */
 p{
-  color:#475569;
-  line-height:1.7;
+  font-size:14px;
+  line-height:1.8;
+  text-align:justify;
   margin-bottom:10px;
 }
 
-/* ===== HERO ===== */
-.hero{
-  text-align:center;
-  padding:100px 20px;
-  background:#ffffff;
-}
-
-/* ===== SECTION ===== */
-.section{
-  margin-bottom:70px;
-}
-
-/* ===== CARD ===== */
-.card{
-  background:#ffffff;
-  padding:25px;
-  border-radius:14px;
-  margin:20px 0;
-  border:1px solid #e2e8f0;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
-}
-
 /* ===== LIST ===== */
-ul{padding-left:20px;}
-li{margin-bottom:10px;color:#475569;}
+ul{
+  margin-left:20px;
+}
 
-/* ===== FADE + STAGGER ===== */
+li{
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+/* ===== HIGHLIGHT (WORD STYLE) ===== */
+.highlight{
+  background:yellow;
+}
+
+/* ===== SIMPLE FADE ===== */
 .fade{
   opacity:0;
-  transform:translateY(60px) scale(0.98);
-  transition:opacity 0.8s ease, transform 0.8s ease;
-  transition-delay: var(--delay, 0s);
+  transform:translateY(15px);
+  transition:0.5s;
 }
 
 .fade.show{
   opacity:1;
-  transform:translateY(0) scale(1);
-}
-
-.fade.hide{
-  opacity:0.15;
-  transform:translateY(30px);
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  h1{font-size:34px;}
-}
-
-/* ===== FOOTER ===== */
-.footer{
-  text-align:center;
-  padding:40px;
-  color:#64748b;
+  transform:translateY(0);
 }
 
 </style>
@@ -307,42 +291,17 @@ li{margin-bottom:10px;color:#475569;}
 
 <!-- JS -->
 <script>
-const sections = document.querySelectorAll('.section, .container, .hero, .footer');
+const elements = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry => {
-
-    const items = entry.target.querySelectorAll('.fade');
-
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
-
-      items.forEach((el, index) => {
-
-        if(el.classList.contains('show')) return;
-
-        el.style.setProperty('--delay', `${index * 0.12}s`);
-
-        requestAnimationFrame(()=>{
-          el.classList.add('show');
-          el.classList.remove('hide');
-        });
-
-      });
-
-    } else {
-      items.forEach(el => {
-        el.classList.remove('show');
-        el.classList.add('hide');
-      });
+      entry.target.classList.add('show');
     }
-
   });
-},{
-  threshold:0.25,
-  rootMargin:"0px 0px -12% 0px"
 });
 
-sections.forEach(section => observer.observe(section));
+elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
