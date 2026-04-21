@@ -246,84 +246,57 @@ section{
   border-radius:10px;
   transition:width 1.5s ease;
 }
-
-/* ===== INSIGHT SECTION (PERFECT RECTANGLE CARDS) ===== */
+/* ===== INSIGHT SECTION (STACKED RECTANGLE CARDS) ===== */
 .insight-section{
   margin-top:100px;
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:20px;
-  align-items:stretch;
-}
-
-/* CARD FIXED RECTANGLE */
-.insight-card{
-  background:#fff;
-  padding:20px;
-  border-radius:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
-  transition:0.25s ease;
-
-  /* KEY FIX */
-  height:220px;          /* keeps all cards equal */
   display:flex;
   flex-direction:column;
-  overflow:hidden;
+  gap:20px;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* RECTANGLE CARD */
+.insight-card{
+  background:#fff;
+  padding:22px 26px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  transition:0.3s ease;
+
+  /* PERFECT RECTANGLE LOOK */
+  width:100%;
 }
 
 /* HOVER */
 .insight-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 14px 30px rgba(0,0,0,0.12);
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.12);
 }
 
 /* TITLE */
 .insight-card h2{
-  font-size:16px;
-  margin-bottom:10px;
+  font-size:18px;
+  margin-bottom:12px;
+  border-left:4px solid var(--blue);
   padding-left:10px;
-  border-left:3px solid var(--blue);
-  flex-shrink:0;
 }
 
-/* TEXT AREA */
+/* TEXT */
 .insight-card p{
-  font-size:13.5px;
+  font-size:14px;
   color:var(--muted);
-  line-height:1.6;
-
-  /* IMPORTANT: prevents height growth */
-  overflow:hidden;
-  display:-webkit-box;
-  -webkit-line-clamp:4;   /* limits text lines */
-  -webkit-box-orient:vertical;
+  line-height:1.7;
+  margin-bottom:10px;
 }
 
-/* LIST FIX */
+/* LIST */
 .insight-card ul{
   padding-left:18px;
-  font-size:13px;
   color:var(--muted);
-  margin-top:6px;
+  font-size:14px;
 }
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  .insight-section{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:768px){
-  .insight-section{
-    grid-template-columns:1fr;
-  }
-
-  .insight-card{
-    height:auto;
-  }
-}
-
 /* ===== PROJECTS ===== */
 .projects{
   margin-top:100px;
@@ -439,14 +412,7 @@ section{
   color:var(--blue2);
   transform:scale(1.1);
 }
-/* ===== FOOTER ===== */
-footer{
-  margin-top:100px;
-  background:#0f172a;
-  color:#fff;
-  text-align:center;
-  padding:25px;
-}
+
 
 /* ===== ANIMATIONS ===== */
 .fade-up{
@@ -496,6 +462,15 @@ footer{
     gap:10px;
   }
 
+}
+  footer{
+  margin-top:100px;
+  background:#0f172a;
+  color:#94a3b8;
+  text-align:center;
+  padding:20px;
+  font-size:13px;
+  border-top:1px solid #1e293b;
 }
   </style>
 </head>
