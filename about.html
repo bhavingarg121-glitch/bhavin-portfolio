@@ -7,7 +7,7 @@
 <title>About Bhavin Garg</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
 <style>
 
@@ -99,7 +99,13 @@ nav{
   transform:translateY(50px) scale(0.95);
   transition:all 0.8s ease;
 }
+.timeline-item{
+  opacity:0.3;
+}
 
+.timeline-item.show{
+  opacity:1;
+}
 /* visible state */
 .timeline-item.show{
   opacity:1;
@@ -158,7 +164,10 @@ nav{
   color:#475569;
   line-height:1.7;
 }
-  
+  /*Scroll*/
+ html{
+  scroll-behavior:smooth;
+} 
 /* QUOTE HIGHLIGHT */
 .quote-box{
   background:linear-gradient(135deg,#4f6ef7,#7c3aed);
@@ -323,9 +332,6 @@ footer{
 <footer>
   <p>© 2026 Bhavin Garg. All rights reserved.</p>
 </footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
 <script>
 const items = document.querySelectorAll('.timeline-item');
 
@@ -342,7 +348,7 @@ const observer = new IntersectionObserver((entries)=>{
 
 items.forEach(item => observer.observe(item));
 </script>
-</script>
+
 
 </body>
 </html>
