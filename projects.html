@@ -11,11 +11,18 @@
 <style>
 
 /* ===== GLOBAL ===== */
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
-  font-family:Poppins,sans-serif;
+  font-family:'Poppins',sans-serif;
   background:#f5f7ff;
   color:#1e293b;
+
+  scroll-snap-type:y mandatory;
+  overflow-y:scroll;
 }
 
 .container{
@@ -24,9 +31,21 @@ body{
   margin:auto;
 }
 
+/* ===== PROGRESS BAR ===== */
+.progress-bar{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  width:0%;
+  background:linear-gradient(90deg,#4f6ef7,#7aa6ff);
+  z-index:2000;
+  transition:width 0.2s ease;
+}
+
 /* ===== HERO ===== */
 .hero{
-  height:70vh;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -34,6 +53,8 @@ body{
   text-align:center;
   background:linear-gradient(135deg,#4f6ef7,#7aa6ff);
   color:#fff;
+
+  scroll-snap-align:start;
 }
 
 .hero h1{
@@ -47,7 +68,13 @@ body{
 
 /* ===== SECTION ===== */
 .section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   margin-top:80px;
+
+  scroll-snap-align:start;
 }
 
 .section h2{
@@ -60,15 +87,21 @@ body{
   line-height:1.7;
 }
 
-/* ===== IMAGE BLOCK ===== */
+/* ===== IMAGE ANIMATION ===== */
 .image{
-  margin-top:20px;
+  margin-top:25px;
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  transform:scale(0.95);
+
+  transform:translateY(40px) scale(0.95);
   opacity:0;
-  transition:0.6s;
+  transition:all 0.8s ease;
+}
+
+.image.show{
+  transform:translateY(0) scale(1);
+  opacity:1;
 }
 
 .image img{
@@ -96,23 +129,28 @@ body{
   transform:translateY(-5px);
 }
 
-/* ===== STICKY HIGHLIGHT ===== */
+/* ===== HIGHLIGHT SECTION ===== */
 .highlight{
-  margin-top:80px;
+  min-height:100vh;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:40px;
+  align-items:center;
+
+  scroll-snap-align:start;
 }
 
+/* ===== STICKY PANEL ===== */
 .sticky{
   position:sticky;
-  top:100px;
+  top:120px;
   background:#fff;
   padding:30px;
   border-radius:12px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
+/* ===== STEPS ===== */
 .steps{
   display:flex;
   flex-direction:column;
@@ -120,12 +158,16 @@ body{
 }
 
 .step{
-  opacity:0.4;
+  opacity:0.3;
+  transform:translateY(20px);
   transition:0.4s;
 }
 
 .step.active{
   opacity:1;
+  transform:translateY(0);
+  font-weight:600;
+  color:#4f6ef7;
 }
 
 /* ===== FOOTER ===== */
@@ -137,19 +179,30 @@ footer{
   padding:20px;
 }
 
-/* ===== ANIMATION ===== */
-.show{
-  transform:scale(1);
-  opacity:1;
-}
-
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
+
+  body{
+    scroll-snap-type:none;
+  }
+
+  .hero,
+  .section,
+  .highlight{
+    min-height:auto;
+    padding:60px 0;
+  }
+
   .highlight{
     grid-template-columns:1fr;
   }
-}
 
+  .sticky{
+    position:relative;
+    top:0;
+  }
+
+}
 </style>
 </head>
 
