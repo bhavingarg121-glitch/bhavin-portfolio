@@ -178,6 +178,46 @@ li{
 
 }
 
+/* =========================
+   🌈 PREMIUM GRADIENT CARDS
+   ========================= */
+
+.card{
+  color:#1a1a1a;
+  border:1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(6px);
+}
+
+/* BLUE GRADIENT */
+.card-blue{
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+}
+
+/* RED GRADIENT */
+.card-red{
+  background: linear-gradient(135deg, #ffe4e6, #fff1f2);
+}
+
+/* GREEN GRADIENT */
+.card-green{
+  background: linear-gradient(135deg, #dcfce7, #f0fdf4);
+}
+
+/* PURPLE GRADIENT */
+.card-purple{
+  background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+}
+
+/* ORANGE GRADIENT */
+.card-orange{
+  background: linear-gradient(135deg, #ffedd5, #fff7ed);
+}
+
+/* smooth hover upgrade */
+.card:hover{
+  transform:translateY(-5px) scale(1.01);
+  box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
 </style>
 </head>
 
@@ -384,6 +424,22 @@ li{
 </div>
 
 <script>
+const cards = document.querySelectorAll('.card');
+
+const colors = [
+  "card-blue",
+  "card-red",
+  "card-green",
+  "card-purple",
+  "card-orange"
+];
+
+cards.forEach((card, index) => {
+  const colorClass = colors[index % colors.length];
+  card.classList.add(colorClass);
+});
+
+/* fade animation */
 const elements = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver((entries)=>{
