@@ -174,7 +174,28 @@ body{
   background:linear-gradient(90deg,var(--blue),var(--blue2));
   border-radius:10px;
 }
+.btn{
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
 
+.primary{
+  background:var(--blue);
+  color:#fff;
+}
+
+.secondary{
+  border:1px solid var(--blue);
+  color:var(--blue);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 /* ===== PROJECTS ===== */
 .projects{
   margin-top:80px;
@@ -243,7 +264,11 @@ body{
   color:var(--blue);
   font-weight:600;
 }
-
+.active{
+  color:var(--blue);
+  font-weight:600;
+  border-bottom:2px solid var(--blue);
+}
 /* ===== CONTACT ===== */
 .contact{
   margin-top:80px;
@@ -423,26 +448,26 @@ footer{
 
     <div class="skill">
       <div class="skill-head"><span>C Programming</span><span>85%</span></div>
-      <div class="bar"><div class="fill" data-width=85%"></div>
+      <div class="bar"><div class="fill" data-width="85%"></div>
     </div>
 
     <div class="skill">
       <div class="skill-head"><span>Python</span><span>80%</span></div>
-      <div class="bar"><div class="fill" data-width=80%"></div><
+      <div class="bar"><div class="fill" data-width="80%"></div><
     </div>
 
     <div class="skill">
       <div class="skill-head"><span>Web Development</span><span>91%</span></div>
-      <div class="bar"><div class="fill" data-width=91%"></div>
+      <div class="bar"><div class="fill" data-width="91%"></div>
 
     <div class="skill">
       <div class="skill-head"><span>UI/UX Design</span><span>85%</span></div>
-      <div class="bar"><div class="fill" data-width=85%"></div>
+      <div class="bar"><div class="fill" data-width="85%"></div>
     </div>
 
     <div class="skill">
       <div class="skill-head"><span>DSA</span><span>65%</span></div>
-      <div class="bar"><div class="fill" data-width=65%"></div>
+      <div class="bar"><div class="fill" data-width="65%"></div>
     </div>
 
   </div>
@@ -544,6 +569,7 @@ const skillObserver = new IntersectionObserver(entries=>{
     if(entry.isIntersecting){
       const width = entry.target.dataset.width;
       entry.target.style.width = width;
+      skillObserver.unobserve(entry.target);
     }
   });
 },{threshold:0.5});
