@@ -10,14 +10,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
 /* ===== ROOT ===== */
 :root{
   --blue:#4f6ef7;
   --blue2:#7aa6ff;
-  --bg:#f7f9ff;
+  --bg:#f8fafc;
   --text:#0f172a;
-  --muted:#6b7280;
+  --muted:#64748b;
 }
 
 /* ===== RESET ===== */
@@ -31,13 +30,31 @@
 body{
   background:var(--bg);
   color:var(--text);
+  line-height:1.7;
 }
 
 /* ===== CONTAINER ===== */
 .container{
-  width:95%;
-  max-width:1400px;
+  width:90%;
+  max-width:1200px;
   margin:auto;
+}
+
+/* ===== GLOBAL SECTION SYSTEM ===== */
+section{
+  margin-top:100px;
+}
+
+.section-title{
+  font-size:30px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.section-sub{
+  color:var(--muted);
+  margin-bottom:35px;
+  max-width:600px;
 }
 
 /* ===== NAV ===== */
@@ -60,6 +77,7 @@ body{
   font-weight:700;
   font-size:22px;
 }
+
 .logo span{color:var(--blue);}
 
 .nav-links{
@@ -71,6 +89,12 @@ body{
 .nav-links a{
   text-decoration:none;
   color:var(--text);
+  font-size:14px;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--blue);
 }
 
 .resume{
@@ -83,102 +107,51 @@ body{
 /* ===== HERO ===== */
 .hero{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-  align-items:center;        /* ✅ vertical alignment fix */
-  gap:50px;
-  padding:80px 0;            /* ✅ adds breathing space */
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  align-items:center;
+  gap:60px;
+  padding:100px 0 60px;
+}
+
+.hero-text{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
 }
 
 .hero-text h1{
-  font-size:clamp(32px,5vw,60px);
+  font-size:clamp(34px,5vw,58px);
+  line-height:1.2;
 }
 
-.hero-text h1 span{
+.hero-text span{
   color:var(--blue);
 }
 
 .tagline{
-  margin-top:10px;
   font-size:18px;
   color:var(--muted);
 }
 
 .subtext{
-  margin-top:10px;
-  color:var(--muted);
   font-size:15px;
-}
-
-.hero-img img{
-  width:100%;
-  height:auto;
-  max-width:420px;
-  border-radius:20px;        /* ✅ looks more premium */
-}
-
-/* ===== STATS ===== */
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:20px;
-}
-
-.stat{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  text-align:center;
-}
-
-/* ===== ABOUT ===== */
-.about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  margin-top:80px;
-}
-
-.about p{
-  margin-top:10px;
   color:var(--muted);
+  max-width:500px;
 }
 
-.resume-btn{
-  margin-top:15px;
-  display:inline-block;
-  background:var(--blue);
-  color:#fff;
-  padding:10px 14px;
-  border-radius:8px;
-}
-
-/* ===== SKILLS ===== */
-.skill{
-  margin-top:15px;
-}
-
-.skill-head{
+.hero-btns{
   display:flex;
-  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:10px;
 }
 
-.bar{
-  height:8px;
-  background:#ddd;
-  border-radius:10px;
-  margin-top:5px;
-}
-
-.fill{
-  height:100%;
-  background:linear-gradient(90deg,var(--blue),var(--blue2));
-  border-radius:10px;
-}
+/* ===== BUTTONS ===== */
 .btn{
-  padding:10px 16px;
+  padding:10px 18px;
   border-radius:8px;
   text-decoration:none;
-  font-weight:600;
+  font-weight:500;
   transition:0.3s;
 }
 
@@ -194,24 +167,116 @@ body{
 
 .btn:hover{
   transform:translateY(-2px);
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
+
+/* ===== HERO IMAGE ===== */
+.hero-img img{
+  width:100%;
+  max-width:420px;
+  border-radius:18px;
+}
+
+/* ===== STATS ===== */
+.stats{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:20px;
+}
+
+.stat{
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.stat:hover{
+  transform:translateY(-5px);
+}
+
+.stat i{
+  font-size:26px;
+  color:var(--blue);
+  margin-bottom:8px;
+  display:block;
+}
+
+/* ===== ABOUT ===== */
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:start;
+}
+
+.about p{
+  color:var(--muted);
+}
+
+.achievements{
+  margin-top:20px;
+  line-height:1.8;
+  color:var(--muted);
+}
+
+.about h3{
+  font-size:14px;
+  color:var(--blue);
+}
+
+.about h2{
+  margin-bottom:15px;
+}
+
+/* ===== SKILLS ===== */
+.skill{
+  margin-top:18px;
+}
+
+.skill-head{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+}
+
+.bar{
+  height:8px;
+  background:#e2e8f0;
+  border-radius:10px;
+  margin-top:6px;
+}
+
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),var(--blue2));
+  border-radius:10px;
+  transition:width 1.5s ease;
+}
+
 /* ===== PROJECTS ===== */
 .projects{
-  margin-top:80px;
+  margin-top:100px;
 }
 
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-  margin-top:20px;
+  gap:25px;
 }
 
 .card{
   background:#fff;
-  padding:20px;
-  border-radius:12px;
+  padding:22px;
+  border-radius:14px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
 .card-top{
@@ -230,7 +295,7 @@ body{
 .status.dev{background:#f59e0b;}
 
 .desc{
-  margin:10px 0;
+  margin:12px 0;
   color:var(--muted);
 }
 
@@ -244,7 +309,7 @@ body{
 .tags{
   display:flex;
   gap:6px;
-  margin:10px 0;
+  margin:12px 0;
 }
 
 .tags span{
@@ -262,41 +327,44 @@ body{
 .actions a{
   text-decoration:none;
   color:var(--blue);
-  font-weight:600;
+  font-weight:500;
 }
-.active{
-  color:var(--blue);
-  font-weight:600;
-  border-bottom:2px solid var(--blue);
-}
+
 /* ===== CONTACT ===== */
 .contact{
-  margin-top:80px;
+  text-align:center;
+}
+
+.contact p{
+  max-width:600px;
+  margin:10px auto 20px;
+  color:var(--muted);
 }
 
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:20px;
-  margin-top:20px;
+  margin-top:40px;
 }
 
 .box{
   background:#fff;
   padding:20px;
+  border-radius:12px;
   text-align:center;
-  border-radius:10px;
 }
 
 /* ===== FOOTER ===== */
 footer{
-  margin-top:80px;
+  margin-top:100px;
   background:#0f172a;
   color:#fff;
   text-align:center;
-  padding:20px;
+  padding:25px;
 }
-  /*=======ANIMATIONS=======*/
+
+/* ===== ANIMATIONS ===== */
 .fade-up{
   opacity:0;
   transform:translateY(40px);
@@ -307,31 +375,26 @@ footer{
   opacity:1;
   transform:translateY(0);
 }
-  .fill{
-  transition: width 1.5s ease;
-}
-  .stat i{
-  font-size:28px;
-  color:var(--blue);
-  margin-bottom:8px;
-  display:block;
-}
-
-.stat{
-  background:#fff;
-  padding:20px;
-  border-radius:10px;
-  text-align:center;
-  transition:0.3s;
-}
-
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
 
+  section{
+    margin-top:70px;
+  }
+
   .hero{
     grid-template-columns:1fr;
     text-align:center;
+    gap:40px;
+  }
+
+  .hero-text{
+    align-items:center;
+  }
+
+  .hero-img img{
+    margin:auto;
   }
 
   .about{
@@ -370,27 +433,27 @@ footer{
 <!-- HERO -->
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-text">
+<div class="hero-text">
 
-    <h1>
-      Hello, I'm <br>
-      <span>Bhavin Garg</span>
-    </h1>
+  <h1>
+    I build solutions that solve <br>
+    <span>real-world problems</span>
+  </h1>
 
-    <p class="tagline">
-      I build modern, responsive web applications that solve real-world problems.
-    </p>
+  <p class="tagline">
+    Computer Science Student | Developer | Problem Solver
+  </p>
 
-    <p class="subtext">
-      Passionate about development, problem solving, and creating user-friendly digital experiences.
-    </p>
+  <p class="subtext">
+    Focused on development, problem-solving, and creating meaningful impact through technology.
+  </p>
 
-    <div class="hero-btns">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="Resume.pdf" download class="btn secondary">Download Resume</a>
-    </div>
-
+  <div class="hero-btns">
+    <a href="#projects" class="btn primary">View Projects</a>
+    <a href="about.html" class="btn secondary">Read My Story</a>
   </div>
+
+</div>
 
   <div class="hero-img">
     <img src="profile1.png" alt="Bhavin Garg Profile Photo">
@@ -426,10 +489,14 @@ footer{
 
   <div>
     <h2>Building Solutions & Growing Every Day</h2>
+<p>
+My journey into technology started with curiosity — understanding how systems work 
+and how simple ideas can turn into impactful solutions.  
 
-    <p>I am a passionate developer focused on creating clean and efficient digital experiences.</p>
-    <p>I enjoy solving real-world problems and continuously improving my skills.</p>
-
+Today, I focus on building strong fundamentals in programming and developing 
+projects that solve real-world problems.
+</p>
+<a href="about.html">Read Full Story →</a>
     <div class="achievements">
        Student of the Year<br>
        SOF Olympiad Participant<br>
@@ -509,7 +576,9 @@ footer{
       </div>
 
       <p class="desc">
-        AI-powered platform to discover government schemes.
+      
+A project focused on solving the lack of awareness about government schemes 
+by making information simple, accessible, and easy to understand.
       </p>
 
       <div class="features">
@@ -536,8 +605,10 @@ footer{
       </div>
 
       <p class="desc">
-        Responsive portfolio with modern UI.
-      </p>
+      
+Designed and developed a responsive personal portfolio to showcase projects, 
+skills, and achievements with a focus on clean UI and user experience.
+</p>
 
       <div class="tags">
         <span>HTML</span><span>CSS</span>
@@ -551,10 +622,30 @@ footer{
 
   </div>
 </div>
+  <!--How I Think---->
+<section class="fade-up">
+  <h2 class="section-title">How I Think</h2>
+  <p class="section-sub">
+    My approach to problem-solving and development.
+  </p>
 
+  <p style="max-width:700px; line-height:1.8;">
+    I believe in understanding problems deeply before jumping into solutions.  
+    For me, development is not just about writing code — it’s about creating 
+    something that actually helps people.
+  </p>
+</section>
 <!-- CONTACT -->
 <div class="contact fade-up">
-  <h2>Contact Me</h2>
+  <h2>Let’s Build Something Meaningful</h2>
+
+<p>
+I’m always open to learning, collaborating, and working on ideas 
+that create real impact.
+</p>
+
+<a href="contact.html" class="btn">Contact Me</a>
+  
 
   <div class="contact-grid">
     <div class="box">
