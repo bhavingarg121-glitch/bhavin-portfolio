@@ -35,7 +35,8 @@ body{
 
 /* ===== CONTAINER ===== */
 .container{
-  width:min(92%,1200px);
+  width:95%;
+  max-width:1400px;
   margin:auto;
 }
 
@@ -82,10 +83,8 @@ body{
 /* ===== HERO ===== */
 .hero{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
   gap:50px;
-  align-items:center;
-  padding:80px 0;
 }
 
 .hero h1{
@@ -95,12 +94,10 @@ body{
 .hero p{
   margin-top:10px;
   color:var(--muted);
-}
-
 .hero-img img{
   width:100%;
+  height:auto;
   max-width:420px;
-  border-radius:20px;
 }
 
 /* ===== STATS ===== */
@@ -270,7 +267,7 @@ footer{
   transform:translateY(0);
 }
 /* ===== RESPONSIVE ===== */
-@media(max-width:900px){
+@media(max-width:768px){
 
   .hero{
     grid-template-columns:1fr;
