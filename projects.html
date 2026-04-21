@@ -3,38 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SchemeSathi </title>
+<title>SchemeSathi</title>
 
 <style>
 
-/* ===== GLOBAL ===== */
+/* ================= GLOBAL ================= */
 body{
   margin:0;
-  font-family: "Times New Roman", serif;
+  font-family:"Times New Roman", serif;
   background:#e9ecef;
   color:#111;
 }
 
-/* ===== CONTAINER ===== */
+/* ================= CONTAINER ================= */
 .container{
   max-width:950px;
   margin:auto;
   padding:50px 20px;
 }
 
-/* ===== HEADER ===== */
-.header{
+/* ================= HERO ================= */
+.hero{
   text-align:center;
   margin-bottom:40px;
 }
 
-.header h1{
+.hero h1{
   font-size:42px;
   margin-bottom:10px;
 }
 
-.header p{
+.hero p{
   font-size:16px;
   color:#555;
   max-width:700px;
@@ -42,30 +41,30 @@ body{
   line-height:1.7;
 }
 
-/* ===== SECTION CARD ===== */
+/* ================= HEADINGS ================= */
+h2{
+  font-size:20px;
+  margin:25px 0 12px;
+  border-left:4px solid #111;
+  padding-left:10px;
+}
+
+/* ================= CARD ================= */
 .card{
   background:#fff;
   border-radius:14px;
-  padding:25px 28px;
+  padding:25px;
   margin-bottom:20px;
   box-shadow:0 6px 18px rgba(0,0,0,0.06);
   transition:0.3s ease;
 }
 
 .card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.10);
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.12);
 }
 
-/* ===== TITLES ===== */
-h2{
-  font-size:20px;
-  margin-bottom:12px;
-  border-left:4px solid #111;
-  padding-left:10px;
-}
-
-/* ===== TEXT ===== */
+/* ================= TEXT ================= */
 p{
   font-size:15px;
   line-height:1.8;
@@ -73,35 +72,18 @@ p{
   margin:10px 0;
 }
 
-/* ===== LIST ===== */
 ul{
   padding-left:20px;
 }
 
 li{
-  font-size:15px;
   margin-bottom:8px;
 }
 
-/* ===== TAGS ===== */
-.tags{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-
-.tag{
-  background:#e8f0ff;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:13px;
-}
-
-/* ===== FADE ANIMATION ===== */
+/* ================= FADE ================= */
 .fade{
   opacity:0;
-  transform:translateY(12px);
+  transform:translateY(15px);
   transition:0.6s ease;
 }
 
@@ -110,121 +92,28 @@ li{
   transform:translateY(0);
 }
 
-/* ===== FOOTER ===== */
-.footer{
-  text-align:center;
-  margin-top:40px;
-  font-size:14px;
-  color:#666;
+/* ================= GRADIENT CARDS ================= */
+.card-blue{ background:linear-gradient(135deg,#dbeafe,#eff6ff); }
+.card-red{ background:linear-gradient(135deg,#ffe4e6,#fff1f2); }
+.card-green{ background:linear-gradient(135deg,#dcfce7,#f0fdf4); }
+.card-purple{ background:linear-gradient(135deg,#ede9fe,#f5f3ff); }
+.card-orange{ background:linear-gradient(135deg,#ffedd5,#fff7ed); }
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .hero h1{font-size:30px;}
+  .card{padding:18px;}
+  p,li{font-size:14px;}
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width:768px){
-
-  .header h1{
-    font-size:32px;
-  }
-
-  .card{
-    padding:18px;
-  }
-
-  h2{
-    font-size:18px;
-  }
-
-  p, li{
-    font-size:14px;
-  }
-}
-/* =========================
-   💻 TABLET / SMALL LAPTOP
-   ========================= */
-@media (min-width:601px) and (max-width:1024px){
-
-  body{
-    padding:30px 25px;
-  }
-
-  .container{
-    max-width:750px;
-  }
-
-  h1{
-    font-size:30px;
-  }
-
-  h2{
-    font-size:19px;
-  }
-
-  p, li{
-    font-size:14.5px;
-  }
-}
-
-/* =========================
-   🖥️ LARGE LAPTOP / DESKTOP
-   ========================= */
-@media (min-width:1025px){
-
-  .container{
-    max-width:900px;
-  }
-
-  body{
-    padding:50px 40px;
-  }
-
-}
-
-/* =========================
-   🌈 PREMIUM GRADIENT CARDS
-   ========================= */
-
-.card{
-  color:#1a1a1a;
-  border:1px solid rgba(255,255,255,0.4);
-  backdrop-filter: blur(6px);
-}
-
-/* BLUE GRADIENT */
-.card-blue{
-  background: linear-gradient(135deg, #dbeafe, #eff6ff);
-}
-
-/* RED GRADIENT */
-.card-red{
-  background: linear-gradient(135deg, #ffe4e6, #fff1f2);
-}
-
-/* GREEN GRADIENT */
-.card-green{
-  background: linear-gradient(135deg, #dcfce7, #f0fdf4);
-}
-
-/* PURPLE GRADIENT */
-.card-purple{
-  background: linear-gradient(135deg, #ede9fe, #f5f3ff);
-}
-
-/* ORANGE GRADIENT */
-.card-orange{
-  background: linear-gradient(135deg, #ffedd5, #fff7ed);
-}
-
-/* smooth hover upgrade */
-.card:hover{
-  transform:translateY(-5px) scale(1.01);
-  box-shadow:0 15px 35px rgba(0,0,0,0.12);
-}
 </style>
 </head>
 
 <body>
-<!-- HERO -->
+
 <div class="container">
 
+  <!-- HERO -->
   <div class="hero fade">
     <h1>SchemeSathi</h1>
     <p>
@@ -232,148 +121,117 @@ li{
     </p>
   </div>
 
-  <!-- CONTEXT -->
-  <div class="section">
-    <h2 class="fade">Project Title & Context</h2>
-    <div class="card fade">
-      <p>
-        SchemeSathi is a platform built to connect people with government schemes in a simple and accessible way.
-        Many individuals, especially in rural and semi-urban areas, miss out on important benefits simply because
-        they are unaware of them or find the information too complex to understand.
-      </p>
-      <p>
-        This project was created to solve that problem by making scheme-related information centralized,
-        easy to understand, and accessible to everyone.
-      </p>
-    </div>
+  <!-- PROJECT CONTEXT -->
+  <h2 class="fade">Project Title & Context</h2>
+  <div class="card fade">
+    <p>
+      SchemeSathi is a platform built to connect people with government schemes in a simple and accessible way.
+      Many individuals, especially in rural and semi-urban areas, miss out on important benefits simply because
+      they are unaware of them or find the information too complex to understand.
+    </p>
+    <p>
+      This project was created to solve that problem by making scheme-related information centralized,
+      easy to understand, and accessible to everyone.
+    </p>
   </div>
 
   <!-- WHY -->
-  <div class="section">
-    <h2 class="fade">Why I Made This</h2>
-    <div class="card fade">
-      <p>Many people miss out on government benefits simply because they lack awareness.</p>
-      <p>Even when information exists, it is often scattered across multiple sources and written in complex language.</p>
-      <p>I wanted to create a platform that removes this confusion and makes schemes simple, clear, and accessible.</p>
-    </div>
+  <h2 class="fade">Why I Made This</h2>
+  <div class="card fade">
+    <p>Many people miss government benefits due to lack of awareness.</p>
+    <p>Information is scattered and difficult to understand.</p>
+    <p>I wanted to create a simple and accessible solution.</p>
   </div>
 
   <!-- IDEA -->
-  <div class="section">
-    <h2 class="fade">How I Got the Idea</h2>
-    <div class="card fade">
-      <p>
-        The idea for SchemeSathi came from observing real-life situations around me.
-        Many people were not taking advantage of schemes they were eligible for.
-      </p>
-      <p>
-        The issue was not availability, but lack of awareness and understanding.
-      </p>
-      <p>
-        SchemeSathi was built to act as a bridge between government and citizens.
-      </p>
-    </div>
-  </div>
-
-  <!-- WHAT -->
-  <div class="section">
-    <h2 class="fade">What It Does</h2>
-    <div class="card fade">
-      <ul>
-        <li>Provides a centralized platform for government schemes</li>
-        <li>Helps users identify schemes based on eligibility</li>
-        <li>Simplifies complex scheme information</li>
-        <li>Saves time by avoiding multiple sources</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- PROBLEM -->
-  <div class="section">
-    <h2 class="fade">Problem Statement</h2>
-    <div class="card fade">
-      <p>
-        Government schemes are scattered across different sources and often written in complex formats,
-        making them difficult to understand and access.
-      </p>
-      <p>
-        This creates a major gap between the government and the people who need these benefits the most.
-      </p>
-    </div>
-  </div>
-
-  <!-- TECH -->
+  <h2 class="fade">How I Got the Idea</h2>
   <div class="card fade">
-    <h3>Technologies Used</h3>
+    <p>
+      I observed that many people around me were eligible for government schemes but never applied.
+    </p>
+    <p>
+      The main issue was lack of awareness and clarity.
+    </p>
+    <p>
+      This inspired me to build SchemeSathi.
+    </p>
+  </div>
+
+  <!-- WHAT IT DOES -->
+  <h2 class="fade">What It Does</h2>
+  <div class="card fade">
     <ul>
-      <li>HTML – Structure</li>
-      <li>CSS – Styling</li>
-      <li>JavaScript – Interactivity</li>
+      <li>Centralized government scheme information</li>
+      <li>Eligibility-based awareness</li>
+      <li>Simple explanations of complex schemes</li>
+      <li>Easy access for all users</li>
     </ul>
   </div>
 
-</div>
-  
-/* =========================
-   ROLE
-   ========================= */
-<div class="section">
-  <h2 class="fade">Your Role</h2>
+  <!-- PROBLEM -->
+  <h2 class="fade">Problem Statement</h2>
+  <div class="card fade">
+    <p>
+      Government schemes are scattered across different sources and often written in complex formats,
+      making them difficult to understand and access.
+    </p>
+    <p>
+      This creates a major gap between the government and the people who need these benefits the most.
+    </p>
+  </div>
+
+  <!-- TECHNOLOGIES -->
+  <h2 class="fade">Technologies Used</h2>
+  <div class="card fade">
+    <ul>
+      <li>HTML – Structure of the website</li>
+      <li>CSS – Styling, layout, and responsiveness</li>
+      <li>JavaScript – Interactivity and animations</li>
+    </ul>
+  </div>
+
+  <!-- ROLE -->
+  <h2 class="fade">My Role</h2>
   <div class="card fade">
     <p>
       I independently designed and developed the entire SchemeSathi project.
     </p>
     <p>
       My responsibilities included UI/UX design, structuring content, building responsive layouts,
-      and ensuring a clean and user-friendly experience.
+      and ensuring a clean user-friendly experience.
     </p>
     <p>
-      I focused on making complex government scheme information simple, readable, and accessible.
+      I focused on simplifying complex government scheme data into understandable content.
     </p>
   </div>
-</div>
 
-
-/* =========================
-   FEATURES
-   ========================= */
-<div class="section">
+  <!-- FEATURES -->
   <h2 class="fade">Features & Functionality</h2>
   <div class="card fade">
     <ul>
-      <li>Clean and responsive UI across devices</li>
-      <li>Structured and centralized scheme information</li>
-      <li>Easy navigation between sections</li>
-      <li>User-friendly and minimal design approach</li>
-      <li>Fast and lightweight interface</li>
+      <li>Clean and responsive UI</li>
+      <li>Structured scheme information</li>
+      <li>Easy navigation</li>
+      <li>Fast and lightweight design</li>
+      <li>User-friendly interface</li>
     </ul>
   </div>
-</div>
 
-
-/* =========================
-   CHALLENGES
-   ========================= */
-<div class="section">
+  <!-- CHALLENGES -->
   <h2 class="fade">Challenges</h2>
   <div class="card fade">
     <p>
-      One of the biggest challenges was simplifying complex government scheme data into easy-to-understand content.
+      One of the biggest challenges was simplifying complex government scheme data into easy language.
     </p>
     <p>
-      Another challenge was maintaining a clean layout while handling large amounts of information.
+      Another challenge was maintaining clarity while handling large amounts of information.
     </p>
     <p>
-      I solved this by structuring content into sections and focusing on readability and spacing.
+      I solved this by structuring everything into clean sections.
     </p>
   </div>
-</div>
 
-
-/* =========================
-   IMPACT
-   ========================= */
-<div class="section">
+  <!-- IMPACT -->
   <h2 class="fade">Impact</h2>
   <div class="card fade">
     <p>
@@ -383,38 +241,42 @@ li{
       It improved my skills in frontend development, UI design, and problem-solving.
     </p>
     <p>
-      It also helped me understand how to design systems that focus on real user needs.
+      It also helped me understand real user needs.
     </p>
   </div>
-</div>
 
-
-/* =========================
-   FUTURE
-   ========================= */
-<div class="section">
+  <!-- FUTURE -->
   <h2 class="fade">Future Improvements</h2>
   <div class="card fade">
-    <p>
-      Currently, SchemeSathi is a foundational version focused on accessibility of information.
-    </p>
-    <p>
-      Future improvements include AI-based scheme recommendations, multilingual support,
-      and real-time government updates.
-    </p>
-    <p>
-      The long-term vision is to make it a fully intelligent platform that connects every citizen
-      with the benefits they are eligible for.
-    </p>
+    <p>AI-based scheme recommendations</p>
+    <p>Multilingual support</p>
+    <p>Real-time government updates</p>
+    <p>Smarter user personalization</p>
   </div>
+
 </div>
 
 <!-- FOOTER -->
-<div class="footer fade">
-  © 2026 Bhavin Garg 🚀
+<div style="text-align:center;padding:30px;color:#666;">
+  © 2026 SchemeSathi
 </div>
 
 <script>
+
+// fade animation
+const elements = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+
+// auto gradient colors
 const cards = document.querySelectorAll('.card');
 
 const colors = [
@@ -425,23 +287,10 @@ const colors = [
   "card-orange"
 ];
 
-cards.forEach((card, index) => {
-  const colorClass = colors[index % colors.length];
-  card.classList.add(colorClass);
+cards.forEach((card, i)=>{
+  card.classList.add(colors[i % colors.length]);
 });
 
-/* fade animation */
-const elements = document.querySelectorAll('.fade');
-
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-});
-
-elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
