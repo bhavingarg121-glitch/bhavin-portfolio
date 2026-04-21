@@ -271,6 +271,22 @@ footer{
   .fill{
   transition: width 1.5s ease;
 }
+  .stat i{
+  font-size:28px;
+  color:var(--blue);
+  margin-bottom:8px;
+  display:block;
+}
+
+.stat{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  text-align:center;
+  transition:0.3s;
+}
+
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
 
@@ -326,10 +342,27 @@ footer{
 
 <!-- STATS -->
 <div class="stats fade-up">
-  <div class="stat">3+ Projects</div>
-  <div class="stat">100+ Hours</div>
-  <div class="stat">Achievements</div>
-  <div class="stat">Skills</div>
+
+  <div class="stat">
+    <i class="fas fa-rocket"></i>
+    <div>3+ Projects</div>
+  </div>
+
+  <div class="stat">
+    <i class="fas fa-clock"></i>
+    <div>100+ Hours</div>
+  </div>
+
+  <div class="stat">
+    <i class="fas fa-trophy"></i>
+    <div>Achievements</div>
+  </div>
+
+  <div class="stat">
+    <i class="fas fa-code"></i>
+    <div>Skills</div>
+  </div>
+
 </div>
 
 <!-- ABOUT + SKILLS -->
