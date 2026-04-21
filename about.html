@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +6,7 @@
 
 <title>About Bhavin Garg</title>
 
-<!-- SEO -->
-<meta name="description" content="About Bhavin Garg - Developer and CSE student building impactful solutions.">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- AOS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
@@ -21,14 +14,14 @@
 /* ===== GLOBAL ===== */
 body{
   font-family:'Poppins',sans-serif;
-  background:#f7f9ff;
   margin:0;
+  background:#f8fafc;
   color:#0f172a;
 }
 
 .container{
   width:90%;
-  max-width:1100px; /* ✅ better for laptop */
+  max-width:1100px;
   margin:auto;
 }
 
@@ -39,7 +32,7 @@ nav{
   width:100%;
   background:#0f172a;
   color:#fff;
-  padding:15px 0;
+  padding:16px 0;
   z-index:1000;
 }
 
@@ -52,54 +45,122 @@ nav{
 .nav-links a{
   color:#fff;
   text-decoration:none;
-  margin-left:20px;
+  margin-left:22px;
   font-size:14px;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (IDENTITY) ===== */
 .hero{
   text-align:center;
-  padding:120px 20px 40px;
+  padding:140px 20px 60px;
 }
 
 .hero h1{
-  font-size:clamp(28px,5vw,44px);
+  font-size:clamp(30px,5vw,48px);
+  font-weight:700;
 }
 
 .hero p{
-  color:#6b7280;
-  margin-top:10px;
+  margin-top:15px;
+  font-size:16px;
+  color:#64748b;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.7;
 }
 
-/* ===== STORY ===== */
-.story{
-  margin:40px 0;
+/* ===== TIMELINE ===== */
+.timeline{
+  position:relative;
+  margin:60px auto;
+  width:90%;
+  max-width:1000px;
 }
 
-.story-box{
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  width:3px;
+  height:100%;
+  background:#e2e8f0;
+  transform:translateX(-50%);
+}
+
+.timeline-item{
+  width:50%;
+  padding:20px 30px;
+  position:relative;
+}
+
+.timeline-item:nth-child(odd){
+  left:0;
+  text-align:right;
+}
+
+.timeline-item:nth-child(even){
+  left:50%;
+}
+
+.timeline-content{
   background:#fff;
-  padding:25px;
+  padding:22px;
   border-radius:14px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.07);
-  margin-bottom:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
   transition:0.3s;
 }
 
-.story-box:hover{
+.timeline-content:hover{
   transform:translateY(-5px);
-  box-shadow:0 15px 35px rgba(79,110,247,0.15);
+  box-shadow:0 20px 40px rgba(79,110,247,0.15);
 }
 
-.story-box h3{
-  margin-bottom:10px;
+.timeline-content h3{
   color:#4f6ef7;
-  font-size:18px;
+  margin-bottom:8px;
 }
 
-.story-box p{
-  color:#6b7280;
-  line-height:1.8;
-  font-size:15px;
+.timeline-content p{
+  font-size:14px;
+  color:#475569;
+  line-height:1.7;
+}
+
+/* DOT */
+.timeline-item::after{
+  content:'';
+  position:absolute;
+  top:28px;
+  right:-8px;
+  width:16px;
+  height:16px;
+  background:#4f6ef7;
+  border-radius:50%;
+}
+
+.timeline-item:nth-child(even)::after{
+  left:-8px;
+}
+
+/* QUOTE HIGHLIGHT */
+.quote-box{
+  background:linear-gradient(135deg,#4f6ef7,#7c3aed);
+  color:#fff;
+  text-align:center;
+}
+
+.quote-box p{
+  color:#fff;
+  font-size:16px;
+  font-weight:500;
+}
+
+.quote-box span{
+  display:block;
+  margin-top:10px;
+  font-size:12px;
+  opacity:0.8;
 }
 
 /* ===== FOOTER ===== */
@@ -107,30 +168,26 @@ footer{
   background:#0f172a;
   color:#fff;
   text-align:center;
-  padding:20px;
-  margin-top:60px;
+  padding:25px;
+  margin-top:80px;
 }
 
-/* ===== MOBILE IMPROVEMENT ===== */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
 
-  .nav-inner{
-    flex-direction:column;
-    gap:10px;
+  .timeline::before{
+    left:10px;
   }
 
-  .nav-links{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+  .timeline-item{
+    width:100%;
+    left:0;
+    padding-left:40px;
+    text-align:left;
   }
 
-  .hero{
-    padding-top:140px;
-  }
-
-  .story-box{
-    padding:20px;
+  .timeline-item::after{
+    left:2px;
   }
 
 }
@@ -146,7 +203,7 @@ footer{
     <h2>Bhavin</h2>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="#">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -154,94 +211,104 @@ footer{
 </nav>
 
 <!-- HERO -->
-<div class="hero" data-aos="fade-up">
+<section class="hero" data-aos="fade-up">
   <h1>About Me</h1>
-  <p>My journey, experiences, and what shaped me into a developer</p>
-</div>
+  <p>
+    I am Bhavin Garg, a Computer Science student and aspiring developer focused on solving real-world problems.  
+    My journey is driven by curiosity, consistency, and a strong belief that technology should create meaningful impact — not just functionality.
+  </p>
+</section>
 
-<div class="container">
+<!-- TIMELINE -->
+<section class="timeline">
 
-<div class="story">
-
-  <div class="story-box" data-aos="fade-up">
-    <h3>Childhood & School</h3>
-    <p>
-      I grew up in Samba, J&K and studied at Kushan Public School. 
-      During my school years, I was awarded <strong>Student of the Year</strong> 
-      and represented my district in the <strong>SOF Olympiad</strong>.  
-      These experiences built my confidence and curiosity early on.
-    </p>
+  <div class="timeline-item" data-aos="fade-right">
+    <div class="timeline-content">
+      <h3>Early Years</h3>
+      <p>
+        I grew up in Samba, J&K, where I developed confidence and curiosity through academics and competitions.  
+        Being recognized as Student of the Year and participating in Olympiads shaped my mindset early.
+      </p>
+    </div>
   </div>
 
-  <div class="story-box" data-aos="fade-up">
-    <h3>Discovering Technology</h3>
-    <p>
-      As an introvert, I found my interest in computers.  
-      I spent hours exploring how websites work, how apps take input, 
-      and how systems respond.  
-      That curiosity led me to learn <strong>HTML</strong>, 
-      which became my first step into the world of development.
-    </p>
+  <div class="timeline-item" data-aos="fade-left">
+    <div class="timeline-content">
+      <h3>Discovering Technology</h3>
+      <p>
+        As an introvert, I found comfort and curiosity in computers.  
+        Understanding how websites and systems work became my starting point into development.
+      </p>
+    </div>
   </div>
 
-  <div class="story-box" data-aos="fade-up">
-    <h3>A Moment That Changed My Thinking</h3>
-    <p>
-      One evening during a walk, I met a person who told me he had missed a scholarship 
-      simply because he didn’t know about it — he didn’t even know what it was or whether he was eligible.  
-      <br><br>
-      That moment made me realize how lack of awareness can cost people life-changing opportunities.
-    </p>
+  <div class="timeline-item" data-aos="fade-right">
+    <div class="timeline-content">
+      <h3>A Turning Point</h3>
+      <p>
+        A simple real-life incident — someone missing a scholarship due to lack of awareness — 
+        changed how I see problems.  
+        It made me realize that awareness and access can change lives.
+      </p>
+    </div>
   </div>
 
-  <div class="story-box" data-aos="fade-up">
-    <h3>Life Lesson</h3>
-    <p>
-      My father always told me:  
-      <strong>"Mistakes happen from everyone, but only a few improve from them."</strong>  
-      <br><br>
-      This mindset has shaped how I approach learning, challenges, and growth.
-    </p>
+  <div class="timeline-item" data-aos="fade-left">
+    <div class="timeline-content quote-box">
+      <p>
+        “Mistakes happen to everyone, but only a few improve from them.”
+      </p>
+      <span>— My Father</span>
+    </div>
   </div>
 
-  <div class="story-box" data-aos="fade-up">
-    <h3>Engineering Journey</h3>
-    <p>
-      I was selected for the <strong>PMSSS scholarship</strong> and joined 
-      Priyadarshini College of Engineering, Nagpur.  
-      I achieved <strong>8.67 SGPA in my first semester</strong> and also won 
-      <strong>2nd prize in Chemistry in Action</strong>.
-    </p>
+  <div class="timeline-item" data-aos="fade-right">
+    <div class="timeline-content">
+      <h3>Engineering Journey</h3>
+      <p>
+        Selected under PMSSS, I joined Priyadarshini College of Engineering, Nagpur.  
+        I achieved 8.67 SGPA and actively participated in competitions, winning 2nd prize in Chemistry in Action.
+      </p>
+    </div>
   </div>
 
-  <div class="story-box" data-aos="fade-up">
-    <h3>What I’m Doing Now</h3>
-    <p>
-      Currently, I am focused on building strong fundamentals in 
-      <strong>C, Python, and Data Structures & Algorithms</strong>.  
-      I am also working on <strong>Scheme Sathi</strong>, 
-      a project aimed at making government schemes accessible and easy to understand.
-    </p>
+  <div class="timeline-item" data-aos="fade-left">
+    <div class="timeline-content">
+      <h3>What I'm Doing Now</h3>
+      <p>
+        I am currently focused on strengthening my fundamentals in C, Python, and Data Structures & Algorithms.  
+        I am also building Scheme Sathi — a project aimed at simplifying access to government schemes.
+      </p>
+    </div>
   </div>
 
-  <div class="story-box" data-aos="fade-up">
-    <h3>Future Vision</h3>
-    <p>
-      My goal is to become a skilled developer who creates meaningful solutions.  
-      I want to build products that solve real-world problems and positively impact people’s lives.
-    </p>
+  <div class="timeline-item" data-aos="fade-right">
+    <div class="timeline-content">
+      <h3>What Makes Me Different</h3>
+      <p>
+        I focus on solving meaningful problems, not just writing code.  
+        My approach is to understand real-world issues deeply and build solutions that create actual impact.
+      </p>
+    </div>
   </div>
 
-</div>
+  <div class="timeline-item" data-aos="fade-left">
+    <div class="timeline-content">
+      <h3>Future Vision</h3>
+      <p>
+        My goal is to become a developer who builds impactful digital products 
+        that improve lives and bridge gaps in access to opportunities.
+      </p>
+    </div>
+  </div>
 
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Bhavin Garg. All rights reserved.</p>
 </footer>
 
-<!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init({
