@@ -5,18 +5,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SchemeSathi | Case Study</title>
+<title>SchemeSathi Project </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* ===== GLOBAL ===== */
-body{
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
   font-family:'Poppins',sans-serif;
-  background:#0f172a;
-  color:#fff;
+  background:#f8fafc;
+  color:#0f172a;
+  scroll-behavior:smooth;
 }
 
 .container{
@@ -26,23 +32,33 @@ body{
   padding:60px 0;
 }
 
-h1,h2,h3{
-  margin-bottom:15px;
+/* ===== TYPOGRAPHY ===== */
+h1{
+  font-size:48px;
+  font-weight:700;
+}
+
+h2{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+h3{
+  font-size:20px;
+  margin-bottom:10px;
 }
 
 p{
-  color:#cbd5e1;
-  line-height:1.6;
+  color:#475569;
+  line-height:1.7;
+  margin-bottom:10px;
 }
 
 /* ===== HERO ===== */
 .hero{
   text-align:center;
   padding:100px 20px;
-}
-
-.hero h1{
-  font-size:48px;
+  background:#ffffff;
 }
 
 .hero p{
@@ -50,35 +66,25 @@ p{
   margin:auto;
 }
 
+/* ===== SECTION ===== */
+.section{
+  margin-bottom:70px;
+}
+
 /* ===== CARDS ===== */
 .card{
-  background:#1e293b;
+  background:#ffffff;
   padding:25px;
-  border-radius:12px;
-  margin:30px 0;
-  transition:0.3s;
+  border-radius:14px;
+  margin:20px 0;
+  border:1px solid #e2e8f0;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:all 0.3s ease;
 }
 
 .card:hover{
-  transform:translateY(-5px);
-}
-
-/* ===== FADE ANIMATION ===== */
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.8s ease;
-}
-
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* slight fade-out feeling */
-.fade.hide{
-  opacity:0.2;
-  transform:translateY(20px);
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 
 /* ===== LIST ===== */
@@ -88,29 +94,76 @@ ul{
 
 li{
   margin-bottom:10px;
+  color:#475569;
+}
+
+/* ===== ADVANCED FADE + STAGGER ===== */
+.fade{
+  opacity:0;
+  transform:translateY(60px) scale(0.98);
+  transition:opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+  transition-delay: var(--delay, 0s);
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+.fade.hide{
+  opacity:0.15;
+  transform:translateY(30px);
+}
+
+/* ===== RESPONSIVE ANIMATION ===== */
+
+/* Mobile */
+@media(max-width:480px){
+  h1{
+    font-size:34px;
+  }
+
+  .fade{
+    transform:translateY(40px);
+    transition:all 0.6s ease;
+  }
+}
+
+/* Tablet */
+@media(min-width:481px) and (max-width:1024px){
+  .fade{
+    transform:translateY(50px);
+    transition:all 0.7s ease;
+  }
+}
+
+/* Desktop */
+@media(min-width:1025px){
+  .fade{
+    transform:translateY(70px) scale(0.97);
+    transition:all 1s ease;
+  }
 }
 
 /* ===== FOOTER ===== */
 .footer{
   text-align:center;
   padding:40px;
-  color:#94a3b8;
+  color:#64748b;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  .hero h1{
-    font-size:34px;
-  }
+/* ===== SCROLLBAR (optional premium) ===== */
+::-webkit-scrollbar{
+  width:8px;
 }
 
-</style>
-</head>
-
-<body>
-
-<body>
-
+::-webkit-scrollbar-thumb{
+  background:#cbd5e1;
+  border-radius:10px;
+}
+  </style>
+  <body>
 <!-- HERO -->
 <div class="hero fade">
   <h1>SchemeSathi</h1>
@@ -305,28 +358,46 @@ li{
 <!-- ===== JAVASCRIPT ===== -->
 <script>
 
-const faders = document.querySelectorAll('.fade');
+// Select all sections (groups for stagger)
+const sections = document.querySelectorAll('.section, .container, .hero, .footer');
 
-const appearOptions = {
-  threshold: 0.3
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries){
+// Create observer
+const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry => {
 
+    const items = entry.target.querySelectorAll('.fade');
+
     if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      entry.target.classList.remove('hide');
+
+      // Stagger animation
+      items.forEach((el, index) => {
+        el.style.setProperty('--delay', `${index * 0.15}s`);
+        
+        // Small timeout ensures smooth triggering
+        setTimeout(()=>{
+          el.classList.add('show');
+          el.classList.remove('hide');
+        }, index * 80);
+      });
+
     } else {
-      entry.target.classList.add('hide');
+
+      // Fade out when leaving viewport
+      items.forEach(el => {
+        el.classList.remove('show');
+        el.classList.add('hide');
+      });
+
     }
 
   });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
+},{
+  threshold: 0.2,
+  rootMargin: "0px 0px -10% 0px"
 });
+
+// Observe all sections
+sections.forEach(section => observer.observe(section));
 
 </script>
 
