@@ -248,6 +248,7 @@ section{
 }
 
 /* ===== INSIGHT SECTION (FIXED + CLEAN) ===== */
+/* ===== INSIGHT SECTION (RECTANGULAR + PERFECT ALIGNMENT) ===== */
 .insight-section{
   margin-top:100px;
   display:grid;
@@ -256,27 +257,37 @@ section{
   align-items:stretch;
 }
 
+/* CARD */
 .insight-card{
   background:#fff;
-  padding:25px;
+  padding:28px 25px;
   border-radius:14px;
   box-shadow:0 6px 18px rgba(0,0,0,0.06);
   transition:0.3s ease;
-  height:100%;
+
+  /* KEY FIX FOR RECTANGLE ALIGNMENT */
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  min-height:260px;
 }
 
+/* HOVER */
 .insight-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 30px rgba(0,0,0,0.12);
+  transform:translateY(-6px);
+  box-shadow:0 18px 35px rgba(0,0,0,0.12);
 }
 
+/* TITLE */
 .insight-card h2{
   font-size:18px;
   margin-bottom:12px;
+  padding-left:12px;
   border-left:4px solid var(--blue);
-  padding-left:10px;
+  line-height:1.3;
 }
 
+/* TEXT */
 .insight-card p{
   font-size:14px;
   color:var(--muted);
@@ -284,12 +295,30 @@ section{
   margin-bottom:10px;
 }
 
+/* LIST */
 .insight-card ul{
   padding-left:18px;
   color:var(--muted);
   font-size:14px;
+  margin-top:8px;
 }
 
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .insight-section{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+  .insight-section{
+    grid-template-columns:1fr;
+  }
+
+  .insight-card{
+    min-height:auto;
+  }
+}
 /* ===== PROJECTS ===== */
 .projects{
   margin-top:100px;
@@ -717,42 +746,39 @@ skills, and achievements with a focus on clean UI and user experience.
 
   </div>
 </div>
-  
-<!-- CONTACT -->
+ <!-- CONTACT -->
 <div class="contact fade-up">
   <h2>Let’s Build Something Meaningful</h2>
 
-<p>
-I’m always open to learning, collaborating, and working on ideas 
-that create real impact.
-</p>
+  <p>
+    I’m always open to learning, collaborating, and working on ideas 
+    that create real impact.
+  </p>
 
-<a href="contact.html" class="btn">Contact Me</a>
-  
+  <a href="contact.html" class="btn">Contact Me</a>
 
- <div class="contact-grid">
-
-  <div class="box">
+  <!-- CONTACT GRID (FIXED) -->
   <div class="contact-grid">
 
-  <!-- EMAIL -->
-  <a href="mailto:bhavingarg121@gmail.com" class="box">
-    <i class="fas fa-envelope"></i>
-    <p>Email Me</p>
-  </a>
+    <!-- EMAIL -->
+    <a href="mailto:bhavingarg121@gmail.com" class="box">
+      <i class="fas fa-envelope"></i>
+      <p>Email Me</p>
+    </a>
 
-  <!-- LINKEDIN -->
-  <a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank" class="box">
-    <i class="fab fa-linkedin"></i>
-    <p>LinkedIn</p>
-  </a>
+    <!-- LINKEDIN -->
+    <a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank" class="box">
+      <i class="fab fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
 
-  <!-- GITHUB -->
-  <a href="https://github.com/bhavingarg121-glitch" target="_blank" class="box">
-    <i class="fab fa-github"></i>
-    <p>GitHub</p>
-  </a>
+    <!-- GITHUB -->
+    <a href="https://github.com/bhavingarg121-glitch" target="_blank" class="box">
+      <i class="fab fa-github"></i>
+      <p>GitHub</p>
+    </a>
 
+  </div>
 </div>
 
 <footer>
