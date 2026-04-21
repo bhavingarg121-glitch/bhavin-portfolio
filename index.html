@@ -31,6 +31,7 @@ body{
   background:var(--bg);
   color:var(--text);
   line-height:1.7;
+  padding-bottom:80px;
 }
 
 /* ===== CONTAINER ===== */
@@ -464,13 +465,30 @@ section{
 
 }
   footer{
-  margin-top:100px;
+  position:fixed;
+  bottom:-80px; /* hidden initially */
+  left:0;
+  width:100%;
   background:#0f172a;
   color:#94a3b8;
   text-align:center;
-  padding:20px;
+  padding:16px 0;
   font-size:13px;
-  border-top:1px solid #1e293b;
+  letter-spacing:0.5px;
+
+  transition:all 0.4s ease;
+  z-index:999;
+}
+
+/* When visible */
+footer.show-footer{
+  bottom:0;
+}
+
+/* subtle glow on hover */
+footer:hover{
+  color:#fff;
+  box-shadow:0 -5px 20px rgba(79,110,247,0.3);
 }
   </style>
 </head>
@@ -839,6 +857,18 @@ navLinks.forEach(link => {
     navLinks.forEach(l => l.classList.remove("active"));
     link.classList.add("active");
   });
+});
+  const footer = document.getElementById("footer");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.innerHeight + window.scrollY;
+  const height = document.body.offsetHeight;
+
+  if (scrollY >= height - 80) {
+    footer.classList.add("show-footer");
+  } else {
+    footer.classList.remove("show-footer");
+  }
 });
 </script>
 
