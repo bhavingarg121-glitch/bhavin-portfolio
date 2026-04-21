@@ -159,24 +159,31 @@ nav{
 
 /* ===== QUOTE ===== */
 .quote-box{
-  background:linear-gradient(135deg,#4f6ef7,#7c3aed);
-  color:#fff;
-  text-align:center;
-}
+  background:rgba(79,110,247,0.08); /* light transparent tint */
+  backdrop-filter:blur(10px);       /* glass effect */
+  -webkit-backdrop-filter:blur(10px);
 
+  border:1px solid rgba(79,110,247,0.2);
+  border-left:4px solid #4f6ef7;
+
+  color:#0f172a;
+  text-align:center;
+
+  box-shadow:0 10px 30px rgba(79,110,247,0.08);
+}
 .quote-box p{
-  color:#fff;
   font-size:16px;
   font-weight:500;
+  color:#1e293b;
+  font-style:italic;
 }
 
 .quote-box span{
   display:block;
   margin-top:10px;
   font-size:12px;
-  opacity:0.8;
+  color:#64748b;
 }
-
 /* ===== FOOTER ===== */
 footer{
   background:#0f172a;
