@@ -40,7 +40,7 @@ body{
   margin:auto;
 }
 
-/* ===== GLOBAL SECTION SYSTEM ===== */
+/* ===== GLOBAL SECTION ===== */
 section{
   margin-top:100px;
 }
@@ -222,15 +222,6 @@ section{
   color:var(--muted);
 }
 
-.about h3{
-  font-size:14px;
-  color:var(--blue);
-}
-
-.about h2{
-  margin-bottom:15px;
-}
-
 /* ===== SKILLS ===== */
 .skill{
   margin-top:18px;
@@ -254,6 +245,49 @@ section{
   background:linear-gradient(90deg,var(--blue),var(--blue2));
   border-radius:10px;
   transition:width 1.5s ease;
+}
+
+/* ===== INSIGHT SECTION (FIXED + CLEAN) ===== */
+.insight-section{
+  margin-top:100px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  align-items:stretch;
+}
+
+.insight-card{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  transition:0.3s ease;
+  height:100%;
+}
+
+.insight-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.12);
+}
+
+.insight-card h2{
+  font-size:18px;
+  margin-bottom:12px;
+  border-left:4px solid var(--blue);
+  padding-left:10px;
+}
+
+.insight-card p{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:10px;
+}
+
+.insight-card ul{
+  padding-left:18px;
+  color:var(--muted);
+  font-size:14px;
 }
 
 /* ===== PROJECTS ===== */
@@ -297,13 +331,6 @@ section{
 .desc{
   margin:12px 0;
   color:var(--muted);
-}
-
-.features{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  font-size:13px;
 }
 
 .tags{
@@ -377,6 +404,12 @@ footer{
 }
 
 /* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .insight-section{
+    grid-template-columns:1fr;
+  }
+}
+
 @media(max-width:768px){
 
   section{
@@ -407,8 +440,7 @@ footer{
   }
 
 }
-
-</style>
+  </style>
 </head>
 
 <body>
@@ -562,6 +594,46 @@ projects that solve real-world problems.
   </div>
 
 </div>
+  <!-- INSIGHT SECTION -->
+<section class="insight-section fade-up">
+
+  <div class="insight-card">
+    <h2>How I Think</h2>
+    <p>
+      I believe in understanding problems deeply before jumping into solutions.
+      For me, development is not just coding — it is about solving real problems.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h2>How I Am Different</h2>
+    <p>
+      Most beginners copy tutorials. I focus on real-world problems.
+    </p>
+    <p>
+      SchemeSathi is built from observing real gaps in society.
+    </p>
+    <p>
+      I focus on usability, clarity, and real impact instead of just design.
+    </p>
+  </div>
+
+  <div class="insight-card">
+    <h2>Why Choose Me</h2>
+    <p>
+      I build simple and practical solutions instead of just fancy UI.
+    </p>
+    <p>
+      I ensure both design and usability are balanced.
+    </p>
+    <ul>
+      <li>Problem-solving mindset</li>
+      <li>Independent project builder</li>
+      <li>User-focused development</li>
+    </ul>
+  </div>
+
+</section>
 
 <!-- PROJECTS -->
 <div class="projects fade-up">
@@ -622,52 +694,7 @@ skills, and achievements with a focus on clean UI and user experience.
 
   </div>
 </div>
-  <!--How I Think---->
-<section class="fade-up">
-  <h2 class="section-title">How I Think</h2>
-  <p class="section-sub">
-    My approach to problem-solving and development.
-  </p>
-  <p style="max-width:700px; line-height:1.8;">
-    I believe in understanding problems deeply before jumping into solutions.  
-    For me, development is not just about writing code — it’s about creating 
-    something that actually helps people.
-  </p>
-</section>
-  <!---How I am Different---->
-  <h2 class="fade">How I Am Different</h2>
-
-<p class="fade">
-Most beginners focus on copying tutorials and building basic UI projects.
-I focus on solving real-world problems through my projects.
-</p>
-
-<p class="fade">
-SchemeSathi is not just a college project — it is designed after observing real gaps between government schemes and people who actually need them.
-</p>
-
-<p class="fade">
-Instead of just building “design-based websites”, I focus on usability, clarity, and real impact.
-My goal is to make technology simple enough for everyone to use.
-</p>
-  <!------Why Choose Me---->
-  <h2 class="fade">Why Choose Me</h2>
-
-<p class="fade">
-I focus on building solutions that are simple, practical, and user-friendly rather than just visually appealing.
-</p>
-<p class="fade">
-I pay attention to both design and usability, making sure the end product is easy for anyone to understand and use.
-</p>
-
-<ul class="fade">
-  <li>Strong focus on real-world problem solving</li>
-  <li>Independent project building mindset</li>
-</ul>
-
-<p class="fade">
-My goal is not just to build projects, but to build useful systems that actually help people.
-</p>
+  
 <!-- CONTACT -->
 <div class="contact fade-up">
   <h2>Let’s Build Something Meaningful</h2>
