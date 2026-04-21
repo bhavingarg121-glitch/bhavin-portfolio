@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Scheme Sathi Story</title>
+<title>SchemeSathi | Case Study</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,90 +15,92 @@
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:#f5f7ff;
-  color:#1e293b;
+  background:#0f172a;
+  color:#fff;
 }
 
-/* ===== PROGRESS BAR ===== */
-.progress-bar{
-  position:fixed;
-  top:0;
-  left:0;
-  height:4px;
-  width:0%;
-  background:linear-gradient(90deg,#4f6ef7,#7aa6ff);
-  z-index:2000;
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+  padding:60px 0;
 }
 
-/* ===== SECTION (STORY BLOCK) ===== */
-.section{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px 20px;
-
-  opacity:0;
-  transform:translateY(60px);
-  transition:0.8s ease;
+h1,h2,h3{
+  margin-bottom:15px;
 }
 
-.section.active{
-  opacity:1;
-  transform:translateY(0);
+p{
+  color:#cbd5e1;
+  line-height:1.6;
 }
 
 /* ===== HERO ===== */
 .hero{
-  background:linear-gradient(135deg,#4f6ef7,#7aa6ff);
-  color:#fff;
+  text-align:center;
+  padding:100px 20px;
 }
 
 .hero h1{
-  font-size:clamp(30px,5vw,50px);
+  font-size:48px;
 }
 
 .hero p{
-  margin-top:10px;
-  opacity:0.9;
+  max-width:700px;
+  margin:auto;
 }
 
-/* ===== CONTENT BOX ===== */
-.content{
-  max-width:650px;
+/* ===== CARDS ===== */
+.card{
+  background:#1e293b;
+  padding:25px;
+  border-radius:12px;
+  margin:30px 0;
+  transition:0.3s;
 }
 
-.content h2{
-  font-size:28px;
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* ===== FADE ANIMATION ===== */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* slight fade-out feeling */
+.fade.hide{
+  opacity:0.2;
+  transform:translateY(20px);
+}
+
+/* ===== LIST ===== */
+ul{
+  padding-left:20px;
+}
+
+li{
   margin-bottom:10px;
 }
 
-.content p{
-  font-size:16px;
-  line-height:1.8;
-  color:#475569;
-}
-
-/* ===== HIGHLIGHT TEXT ===== */
-.highlight{
-  color:#4f6ef7;
-  font-weight:600;
-}
-
 /* ===== FOOTER ===== */
-footer{
-  background:#0f172a;
-  color:#fff;
+.footer{
   text-align:center;
-  padding:20px;
+  padding:40px;
+  color:#94a3b8;
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  .section{
-    min-height:auto;
-    padding:80px 20px;
+  .hero h1{
+    font-size:34px;
   }
 }
 
@@ -106,119 +109,121 @@ footer{
 
 <body>
 
-<div class="progress-bar"></div>
-
 <!-- HERO -->
-<section class="section hero">
-  <div class="content">
-    <h1>Scheme Sathi</h1>
-    <p>Bridging the gap between government schemes and people</p>
-  </div>
-</section>
+<div class="hero fade">
+  <h1>SchemeSathi</h1>
+  <p>
+    A platform designed to bridge the gap between government schemes and people who are unaware of them.
+  </p>
+</div>
 
-<!-- STORY -->
-<section class="section">
-  <div class="content">
-    <h2>The Problem</h2>
+<div class="container">
+
+  <!-- CONTEXT -->
+  <div class="card fade">
+    <h3>Project Title & Context</h3>
     <p>
-      Every year, thousands of people miss opportunities — not because they are not eligible,
-      but because <span class="highlight">they simply don’t know</span>.
+      SchemeSathi is built to connect people with government schemes in a simple and accessible way.
+      The idea came from observing that many people miss benefits due to lack of awareness or complex information.
     </p>
   </div>
-</section>
 
-<section class="section">
-  <div class="content">
+  <!-- PROBLEM -->
+  <div class="card fade">
+    <h3>Objective / Problem Statement</h3>
     <p>
-      A student misses a scholarship.  
-      A farmer misses a subsidy.  
-      A worker misses support.
+      Government schemes are scattered and difficult to understand, especially for rural users.
+      This creates a gap between the government and the people who need support.
     </p>
   </div>
-</section>
 
-<section class="section">
-  <div class="content">
+  <!-- TECH -->
+  <div class="card fade">
+    <h3>Tools & Technologies Used</h3>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+    </ul>
+  </div>
+
+  <!-- ROLE -->
+  <div class="card fade">
+    <h3>Your Role & Contributions</h3>
     <p>
-      This is not a technology problem.  
-      It is an <span class="highlight">awareness problem</span>.
+      I designed and developed the entire project, focusing on UI/UX, responsive design,
+      and simplifying complex information into an easy format.
     </p>
   </div>
-</section>
 
-<section class="section">
-  <div class="content">
-    <h2>The Idea</h2>
+  <!-- FEATURES -->
+  <div class="card fade">
+    <h3>Features & Functionality</h3>
+    <ul>
+      <li>Centralized scheme information</li>
+      <li>Simple and clean UI</li>
+      <li>Responsive design</li>
+      <li>Easy navigation</li>
+    </ul>
+  </div>
+
+  <!-- CHALLENGES -->
+  <div class="card fade">
+    <h3>Challenges & Solutions</h3>
     <p>
-      What if all government schemes were available in one place —  
-      simple, clear, and easy to understand?
+      Simplifying complex data was challenging. I solved this by restructuring content
+      and focusing on clarity and readability.
     </p>
   </div>
-</section>
 
-<section class="section">
-  <div class="content">
+  <!-- IMPACT -->
+  <div class="card fade">
+    <h3>Impact / Results</h3>
     <p>
-      That’s where <span class="highlight">Scheme Sathi</span> comes in.
+      This project demonstrates how technology can bridge real-world gaps and improve accessibility of information.
     </p>
   </div>
-</section>
 
-<section class="section">
-  <div class="content">
-    <h2>The Solution</h2>
+  <!-- FUTURE -->
+  <div class="card fade">
+    <h3>Future Improvements</h3>
     <p>
-      A platform where users can filter schemes, understand eligibility,
-      and take action without confusion.
+      Currently, SchemeSathi is a basic product that helps people access scheme information.
+      With better response and development, it has the potential to become a highly successful and impactful platform.
     </p>
   </div>
-</section>
 
-<section class="section">
-  <div class="content">
-    <p>
-      Not just information —  
-      but <span class="highlight">clarity and accessibility</span>.
-    </p>
-  </div>
-</section>
+</div>
 
-<section class="section">
-  <div class="content">
-    <h2>Impact</h2>
-    <p>
-      Because one right piece of information  
-      can <span class="highlight">change someone’s life</span>.
-    </p>
-  </div>
-</section>
+<!-- FOOTER -->
+<div class="footer fade">
+  © 2026 Bhavin Garg 🚀
+</div>
 
-<footer>
-  © 2026 Bhavin Garg
-</footer>
-
+<!-- ===== JAVASCRIPT ===== -->
 <script>
 
-/* ===== SECTION ANIMATION ===== */
-const sections = document.querySelectorAll('.section');
+const faders = document.querySelectorAll('.fade');
 
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
+const appearOptions = {
+  threshold: 0.3
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries){
+  entries.forEach(entry => {
+
     if(entry.isIntersecting){
-      entry.target.classList.add('active');
+      entry.target.classList.add('show');
+      entry.target.classList.remove('hide');
+    } else {
+      entry.target.classList.add('hide');
     }
+
   });
-},{threshold:0.4});
+}, appearOptions);
 
-sections.forEach(sec => observer.observe(sec));
-
-/* ===== PROGRESS BAR ===== */
-window.addEventListener("scroll", ()=>{
-  const scrollTop = document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progress = (scrollTop / height) * 100;
-
-  document.querySelector(".progress-bar").style.width = progress + "%";
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
 
 </script>
