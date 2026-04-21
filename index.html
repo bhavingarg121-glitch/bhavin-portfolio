@@ -749,36 +749,36 @@ that create real impact.
 <script>
 
 // ===== SKILL BAR ANIMATION =====
-const fills = document.querySelectorAll(".fill");
 
-const skillObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      const width = entry.target.dataset.width;
-      entry.target.style.width = width;
-      skillObserver.unobserve(entry.target);
-    }
-  });
-},{threshold:0.5});
+const cards = document.querySelectorAll('.card');
 
-fills.forEach(f=>{
-  f.style.width = "0"; // start from 0
-  skillObserver.observe(f);
+const colors = [
+  "card-blue",
+  "card-red",
+  "card-green",
+  "card-purple",
+  "card-orange"
+];
+
+cards.forEach((card, index) => {
+  const colorClass = colors[index % colors.length];
+  card.classList.add(colorClass);
 });
-// ===== FADE-IN ANIMATION =====
-const elements = document.querySelectorAll('.fade-up');
 
-const fadeObserver = new IntersectionObserver((entries)=>{
+/* fade animation */
+const elements = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
     }
   });
-},{threshold:0.2});
+});
 
-elements.forEach(el=>fadeObserver.observe(el));
-
+elements.forEach(el => observer.observe(el));
 </script>
+
 
 </body>
 </html>
