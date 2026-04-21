@@ -358,30 +358,53 @@ section{
 }
 
 /* ===== CONTACT ===== */
-.contact{
-  text-align:center;
-}
-
-.contact p{
-  max-width:600px;
-  margin:10px auto 20px;
-  color:var(--muted);
-}
-
+/* CONTACT GRID */
 .contact-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:25px;
   margin-top:40px;
 }
 
+/* CARD STYLE */
 .box{
   background:#fff;
-  padding:20px;
-  border-radius:12px;
+  padding:25px;
+  border-radius:14px;
   text-align:center;
+  text-decoration:none;
+  color:var(--text);
+  transition:0.3s ease;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  position:relative;
+  overflow:hidden;
 }
 
+/* ICON */
+.box i{
+  font-size:28px;
+  color:var(--blue);
+  margin-bottom:10px;
+  transition:0.3s;
+}
+
+/* TEXT */
+.box p{
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* HOVER GLOW EFFECT */
+.box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 20px rgba(79,110,247,0.5),
+             0 0 40px rgba(122,166,255,0.3);
+}
+
+.box:hover i{
+  color:var(--blue2);
+  transform:scale(1.1);
+}
 /* ===== FOOTER ===== */
 footer{
   margin-top:100px;
@@ -707,23 +730,29 @@ that create real impact.
 <a href="contact.html" class="btn">Contact Me</a>
   
 
+ <div class="contact-grid">
+
+  <div class="box">
   <div class="contact-grid">
-    <div class="box">
-      <i class="fas fa-envelope"></i>
-      <p>bhavingarg121@gmail.com</p>
-    </div>
 
-    <div class="box">
-      <i class="fab fa-linkedin"></i>
-      <p>www.linkedin.com/in/bhavin-garg-614429384</p>
-    </div>
+  <!-- EMAIL -->
+  <a href="mailto:bhavingarg121@gmail.com" class="box">
+    <i class="fas fa-envelope"></i>
+    <p>Email Me</p>
+  </a>
 
-    <div class="box">
-      <i class="fab fa-github"></i>
-      <p>github.com/bhavin</p>
-    </div>
-  </div>
-</div>
+  <!-- LINKEDIN -->
+  <a href="https://www.linkedin.com/in/bhavin-garg-614429384" target="_blank" class="box">
+    <i class="fab fa-linkedin"></i>
+    <p>LinkedIn</p>
+  </a>
+
+  <!-- GITHUB -->
+  <a href="https://github.com/bhavingarg121-glitch" target="_blank" class="box">
+    <i class="fab fa-github"></i>
+    <p>GitHub</p>
+  </a>
+
 </div>
 
 <footer>
