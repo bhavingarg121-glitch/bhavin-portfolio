@@ -84,22 +84,36 @@ body{
 .hero{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  align-items:center;        /* ✅ vertical alignment fix */
   gap:50px;
+  padding:80px 0;            /* ✅ adds breathing space */
 }
 
-.hero h1{
+.hero-text h1{
   font-size:clamp(32px,5vw,60px);
 }
 
-.hero p{
+.hero-text h1 span{
+  color:var(--blue);
+}
+
+.tagline{
+  margin-top:10px;
+  font-size:18px;
+  color:var(--muted);
+}
+
+.subtext{
   margin-top:10px;
   color:var(--muted);
+  font-size:15px;
 }
 
 .hero-img img{
   width:100%;
   height:auto;
   max-width:420px;
+  border-radius:20px;        /* ✅ looks more premium */
 }
 
 /* ===== STATS ===== */
