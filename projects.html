@@ -1,67 +1,81 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SchemeSathi | Bhavin Garg</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>SchemeSathi | Bhavin Garg</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
+/* ===== GLOBAL ===== */
 body{
   margin:0;
-  font-family: 'Poppins', sans-serif;
-  background:#000;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#020617,#0f172a);
   color:#fff;
-}
-
-/* FULL SCREEN SECTIONS */
-.section{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px;
+  overflow-x:hidden;
 }
 
 .container{
-  max-width:700px;
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+  text-align:center;
 }
 
-/* TYPOGRAPHY */
+/* ===== SECTIONS ===== */
+.section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 20px;
+  position:relative;
+}
+
+/* glass card */
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(14px);
+  border-radius:18px;
+  padding:40px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 80px rgba(79,110,247,0.3);
+}
+
+/* ===== TYPOGRAPHY ===== */
 h1{
   font-size:clamp(40px,6vw,70px);
+  background:linear-gradient(90deg,#4f6ef7,#7aa6ff);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 h2{
-  font-size:clamp(28px,4vw,40px);
-  margin-bottom:20px;
+  font-size:clamp(26px,4vw,36px);
+  margin-bottom:15px;
 }
 
 p{
-  font-size:18px;
-  opacity:0.85;
-  line-height:1.6;
+  font-size:17px;
+  color:#cbd5e1;
+  line-height:1.7;
 }
 
-/* BACKGROUNDS */
-.hero{
-  background:linear-gradient(135deg,#0ea5e9,#22c55e);
-}
-
-.dark{
-  background:#020617;
-}
-
-.alt{
-  background:#0f172a;
-}
-
-/* BUTTONS */
+/* ===== BUTTONS ===== */
 .btn{
   display:inline-block;
   margin:10px;
-  padding:12px 20px;
+  padding:12px 22px;
   border-radius:8px;
   text-decoration:none;
   font-weight:500;
@@ -80,12 +94,24 @@ p{
 
 .btn:hover{
   transform:scale(1.05);
+  box-shadow:0 10px 30px rgba(79,110,247,0.4);
 }
 
-/* ANIMATION */
+/* ===== SCROLL INDICATOR ===== */
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:4px;
+  width:0%;
+  background:linear-gradient(90deg,#4f6ef7,#7aa6ff);
+  z-index:999;
+}
+
+/* ===== FADE ANIMATION ===== */
 .fade{
   opacity:0;
-  transform:translateY(50px);
+  transform:translateY(60px);
   transition:1s ease;
 }
 
@@ -93,80 +119,104 @@ p{
   opacity:1;
   transform:translateY(0);
 }
+
 </style>
 </head>
 
 <body>
 
+<div class="progress" id="progress"></div>
+
 <!-- HERO -->
-<section class="section hero">
+<section class="section">
   <div class="container fade">
-    <h1>SchemeSathi</h1>
-    <p>A smarter way to discover government schemes</p>
+    <div class="card">
+      <h1>SchemeSathi</h1>
+      <p>A real-world problem solving platform by Bhavin Garg</p>
+    </div>
   </div>
 </section>
 
 <!-- PROBLEM -->
-<section class="section dark">
+<section class="section">
   <div class="container fade">
-    <h2>The Problem</h2>
-    <p>
-      Government schemes exist — but people struggle to find them.
-      Information is scattered, complex, and not user-friendly.
-    </p>
+    <div class="card">
+      <h2>The Problem</h2>
+      <p>
+        Government schemes exist, but most people are unaware of them.
+        Information is scattered, complex, and difficult to access.
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- QUESTION -->
-<section class="section alt">
+<!-- IDEA -->
+<section class="section">
   <div class="container fade">
-    <h2>The Question</h2>
-    <p>
-      What if there was one simple platform where anyone
-      could easily discover schemes?
-    </p>
+    <div class="card">
+      <h2>The Idea</h2>
+      <p>
+        What if there was one simple platform where anyone
+        could easily discover all schemes in one place?
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- SOLUTION -->
-<section class="section dark">
+<section class="section">
   <div class="container fade">
-    <h2>The Solution</h2>
-    <p>
-      SchemeSathi simplifies access to government schemes
-      with clean UI, filtering, and fast search.
-    </p>
+    <div class="card">
+      <h2>The Solution</h2>
+      <p>
+        SchemeSathi simplifies access to schemes using
+        filtering, clean UI, and fast search.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="section alt">
+<section class="section">
   <div class="container fade">
-    <h2>What It Does</h2>
-    <p>
-      Search. Filter. Discover.<br>
-      Fast performance with simple user experience.
-    </p>
+    <div class="card">
+      <h2>What It Does</h2>
+      <p>
+        Search. Filter. Discover.<br>
+        Designed for simplicity and speed.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- IMPACT -->
-<section class="section dark">
+<section class="section">
   <div class="container fade">
-    <h2>The Impact</h2>
-    <p>
-      Helping people access the benefits they deserve —
-      quickly and easily.
-    </p>
+    <div class="card">
+      <h2>The Impact</h2>
+      <p>
+        Helping people access benefits easily and
+        improving awareness at scale.
+      </p>
 
-    <br>
+      <br>
 
-    <a href="#" class="btn live">View Live</a>
-    <a href="#" class="btn github">GitHub</a>
+      <a href="#" class="btn live">View Live</a>
+      <a href="#" class="btn github">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="section">
+  <div class="container fade">
+    <p>© 2026 Bhavin Garg</p>
   </div>
 </section>
 
 <script>
+
+/* ===== FADE ANIMATION ===== */
 const fades = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver(entries=>{
@@ -175,13 +225,21 @@ const observer = new IntersectionObserver(entries=>{
       entry.target.classList.add('show');
     }
   });
-},{threshold:0.4});
+},{threshold:0.3});
 
 fades.forEach(el=>observer.observe(el));
+
+
+/* ===== SCROLL PROGRESS ===== */
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const height = document.body.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / height) * 100;
+
+  document.getElementById("progress").style.width = progress + "%";
+});
+
 </script>
 
 </body>
 </html>
-```
-
-
