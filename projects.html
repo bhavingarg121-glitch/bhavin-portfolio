@@ -1,167 +1,187 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SchemeSathi Story | Bhavin Garg</title>
+<title>SchemeSathi | Bhavin Garg</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
-body {
-  margin: 0;
+body{
+  margin:0;
   font-family: 'Poppins', sans-serif;
-  background: #0f172a;
-  color: #fff;
-  scroll-behavior: smooth;
+  background:#000;
+  color:#fff;
 }
 
-section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+/* FULL SCREEN SECTIONS */
+.section{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
 }
 
-.container {
-  max-width: 700px;
+.container{
+  max-width:700px;
 }
 
-h1 {
-  font-size: 60px;
+/* TYPOGRAPHY */
+h1{
+  font-size:clamp(40px,6vw,70px);
 }
 
-h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
+h2{
+  font-size:clamp(28px,4vw,40px);
+  margin-bottom:20px;
 }
 
-p {
-  font-size: 18px;
-  opacity: 0.9;
+p{
+  font-size:18px;
+  opacity:0.85;
+  line-height:1.6;
 }
 
-/* Background variations */
-.s1 { background: linear-gradient(135deg, #0ea5e9, #22c55e); }
-.s2 { background: #0f172a; }
-.s3 { background: #020617; }
-.s4 { background: #0f172a; }
-.s5 { background: #020617; }
-.s6 { background: #0f172a; }
-
-/* Animation */
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s ease;
+/* BACKGROUNDS */
+.hero{
+  background:linear-gradient(135deg,#0ea5e9,#22c55e);
 }
 
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+.dark{
+  background:#020617;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
+.alt{
+  background:#0f172a;
 }
 
-.live { background: #22c55e; color: white; }
-.github { background: #64748b; color: white; }
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
 
+.live{
+  background:#22c55e;
+  color:#fff;
+}
+
+.github{
+  background:#64748b;
+  color:#fff;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s ease;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
 </style>
 </head>
 
 <body>
 
 <!-- HERO -->
-<section class="s1">
+<section class="section hero">
   <div class="container fade">
     <h1>SchemeSathi</h1>
-    <p>A story of solving a real-world problem</p>
+    <p>A smarter way to discover government schemes</p>
   </div>
 </section>
 
 <!-- PROBLEM -->
-<section class="s2">
+<section class="section dark">
   <div class="container fade">
-    <h2>It Started With a Problem</h2>
+    <h2>The Problem</h2>
     <p>
-      Many people are unaware of government schemes.  
-      Not because they don’t exist… but because they are hard to find.
+      Government schemes exist — but people struggle to find them.
+      Information is scattered, complex, and not user-friendly.
     </p>
   </div>
 </section>
 
 <!-- QUESTION -->
-<section class="s3">
+<section class="section alt">
   <div class="container fade">
-    <h2>A Simple Question</h2>
+    <h2>The Question</h2>
     <p>
-      “Why isn’t there one simple place to find everything?”
+      What if there was one simple platform where anyone
+      could easily discover schemes?
     </p>
   </div>
 </section>
 
 <!-- SOLUTION -->
-<section class="s4">
+<section class="section dark">
   <div class="container fade">
-    <h2>Building the Solution</h2>
+    <h2>The Solution</h2>
     <p>
-      That idea became SchemeSathi —  
-      a platform to simplify access to government schemes.
+      SchemeSathi simplifies access to government schemes
+      with clean UI, filtering, and fast search.
     </p>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="s5">
+<section class="section alt">
   <div class="container fade">
     <h2>What It Does</h2>
     <p>
-      Search. Filter. Discover.  
-      All in a fast, clean, and simple interface.
+      Search. Filter. Discover.<br>
+      Fast performance with simple user experience.
     </p>
   </div>
 </section>
 
 <!-- IMPACT -->
-<section class="s6">
+<section class="section dark">
   <div class="container fade">
     <h2>The Impact</h2>
     <p>
-      Making information accessible.  
-      Helping people find what they deserve.
+      Helping people access the benefits they deserve —
+      quickly and easily.
     </p>
 
-    <br><br>
+    <br>
 
-    <a href="#" class="btn live">🌐 View Live</a>
-    <a href="#" class="btn github">💻 View Code</a>
+    <a href="#" class="btn live">View Live</a>
+    <a href="#" class="btn github">GitHub</a>
   </div>
 </section>
 
 <script>
 const fades = document.querySelectorAll('.fade');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add('show');
     }
   });
-}, { threshold: 0.5 });
+},{threshold:0.4});
 
-fades.forEach(el => observer.observe(el));
+fades.forEach(el=>observer.observe(el));
 </script>
 
 </body>
+</html>
+```
+
 
