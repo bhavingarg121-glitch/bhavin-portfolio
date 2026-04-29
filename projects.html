@@ -7,25 +7,23 @@
 
 <title>SchemeSathi by Bhavin Garg</title>
 
+<meta name="description" content="SchemeSathi by Bhavin Garg — a platform to simplify access to government schemes.">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* ===== GLOBAL ===== */
-html{
-  scroll-behavior:smooth;
-}
-
+html{scroll-behavior:smooth;}
 body{
   font-family:'Poppins',sans-serif;
   margin:0;
   background:#f8fafc;
   color:#0f172a;
 }
-
 .container{
   width:90%;
-  max-width:1100px;
+  max-width:900px;
   margin:auto;
 }
 
@@ -39,17 +37,15 @@ nav{
   padding:16px 0;
   z-index:1000;
 }
-
 .nav-inner{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
-
 .nav-links a{
   color:#fff;
   text-decoration:none;
-  margin-left:22px;
+  margin-left:20px;
   font-size:14px;
 }
 
@@ -57,58 +53,63 @@ nav{
 .section{
   padding:80px 20px;
 }
+.section .box{
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+.section .box:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+.section h2{
+  margin-bottom:10px;
+}
+.section p{
+  color:#475569;
+  line-height:1.7;
+}
 
 /* ===== HERO ===== */
 .hero{
   text-align:center;
   padding-top:160px;
 }
-
 .hero h1{
-  font-size:clamp(30px,5vw,48px);
-  font-weight:700;
+  font-size:clamp(32px,5vw,50px);
 }
-
 .hero p{
-  margin-top:15px;
-  font-size:16px;
   color:#64748b;
-  max-width:700px;
-  margin:auto;
-  line-height:1.7;
 }
 
 /* ===== TIMELINE ===== */
 .timeline{
   position:relative;
   max-width:800px;
-  margin:120px auto;
+  margin:100px auto;
   padding-left:35px;
 }
-
 .timeline::before{
   content:'';
   position:absolute;
   left:12px;
-  top:0;
   width:3px;
   height:100%;
   background:#e2e8f0;
 }
-
 .timeline-item{
   position:relative;
   margin-bottom:60px;
   opacity:0;
-  transform:translateY(50px) scale(0.95);
-  transition:all 0.8s ease;
+  transform:translateY(50px);
+  transition:0.8s;
 }
-
 .timeline-item.show{
   opacity:1;
-  transform:translateY(0) scale(1);
+  transform:translateY(0);
 }
-
 .timeline-item::before{
   content:'';
   position:absolute;
@@ -120,39 +121,20 @@ nav{
   border-radius:50%;
   border:3px solid #fff;
 }
-
 .timeline-content{
   background:#fff;
   padding:24px;
   border-radius:14px;
   border-left:4px solid #4f6ef7;
   box-shadow:0 10px 30px rgba(0,0,0,0.07);
-  transition:0.3s;
 }
 
-.timeline-content:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(79,110,247,0.2);
-}
-
-.timeline-content h3{
-  color:#4f6ef7;
-  margin-bottom:6px;
-}
-
-.timeline-content p{
-  font-size:14px;
-  color:#475569;
-  line-height:1.7;
-}
-
-/* ===== FADE ===== */
+/* ===== ANIMATION ===== */
 .fade{
   opacity:0;
   transform:translateY(40px);
   transition:0.8s;
 }
-
 .fade.show{
   opacity:1;
   transform:translateY(0);
@@ -160,17 +142,13 @@ nav{
 
 /* ===== BUTTON ===== */
 .btn{
+  display:inline-block;
   padding:10px 18px;
   border-radius:8px;
   text-decoration:none;
   color:#fff;
-  background:#64748b;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  background:#4f6ef7;
+  margin-right:10px;
 }
 
 /* ===== FOOTER ===== */
@@ -178,17 +156,13 @@ footer{
   background:#0f172a;
   color:#fff;
   text-align:center;
-  padding:25px;
+  padding:20px;
 }
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
-  .hero{
-    padding-top:140px;
-  }
-  .timeline{
-    padding-left:25px;
-  }
+  .hero{padding-top:140px;}
+  .timeline{padding-left:25px;}
 }
 
 </style>
@@ -212,15 +186,15 @@ footer{
 <!-- HERO -->
 <section class="section hero">
   <div class="container fade">
-    <h1>SchemeSathi by Bhavin Garg</h1>
-    <p>A real-world problem solving platform</p>
+    <h1>SchemeSathi</h1>
+    <p>Solving the problem of scheme awareness in India</p>
   </div>
 </section>
 
 <!-- PROBLEM -->
 <section class="section">
-  <div class="container fade">
-    <h2>The Problem</h2>
+  <div class="container fade box">
+    <h2>🚨 The Problem</h2>
     <p>
       Government schemes exist, but most people are unaware of them.
       Information is scattered, complex, and difficult to access.
@@ -234,45 +208,35 @@ footer{
   <div class="timeline-item">
     <div class="timeline-content">
       <h3>Where It Started</h3>
-      <p>
-        The idea came from observing people missing opportunities due to lack of awareness.
-      </p>
+      <p>People missing benefits due to lack of awareness.</p>
     </div>
   </div>
 
   <div class="timeline-item">
     <div class="timeline-content">
       <h3>The Realization</h3>
-      <p>
-        The problem was not schemes, but accessibility and clarity.
-      </p>
+      <p>The real issue was accessibility, not availability.</p>
     </div>
   </div>
 
   <div class="timeline-item">
     <div class="timeline-content">
       <h3>The Idea</h3>
-      <p>
-        A platform where users can easily discover and understand schemes.
-      </p>
+      <p>A simple platform to discover schemes easily.</p>
     </div>
   </div>
 
   <div class="timeline-item">
     <div class="timeline-content">
       <h3>Building</h3>
-      <p>
-        Focused on usability, speed, and real-world impact.
-      </p>
+      <p>Focused on clean UI and fast search.</p>
     </div>
   </div>
 
   <div class="timeline-item">
     <div class="timeline-content">
       <h3>The Goal</h3>
-      <p>
-        Help people access opportunities easily and efficiently.
-      </p>
+      <p>Make opportunities accessible to everyone.</p>
     </div>
   </div>
 
@@ -280,20 +244,23 @@ footer{
 
 <!-- FEATURES -->
 <section class="section">
-  <div class="container fade">
-    <h2>What It Does</h2>
-    <p>Search. Filter. Discover. Fast and simple experience.</p>
+  <div class="container fade box">
+    <h2>⚙️ What It Does</h2>
+    <p>
+      Search. Filter. Discover. Simple and fast experience.
+    </p>
   </div>
 </section>
 
 <!-- IMPACT -->
 <section class="section">
-  <div class="container fade">
-    <h2>The Impact</h2>
+  <div class="container fade box">
+    <h2>📈 The Impact</h2>
     <p>
-      Making scheme access simple and improving awareness.
+      Helping people access benefits and improving awareness.
     </p>
     <br>
+    <a href="#" class="btn">Live</a>
     <a href="#" class="btn">GitHub</a>
   </div>
 </section>
@@ -307,7 +274,6 @@ footer{
 
 /* FADE ANIMATION */
 const fades = document.querySelectorAll('.fade');
-
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -315,12 +281,10 @@ const observer = new IntersectionObserver(entries=>{
     }
   });
 },{threshold:0.3});
-
 fades.forEach(el=>observer.observe(el));
 
 /* TIMELINE ANIMATION */
 const items = document.querySelectorAll('.timeline-item');
-
 const timelineObserver = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -328,8 +292,7 @@ const timelineObserver = new IntersectionObserver(entries=>{
     }
   });
 },{threshold:0.4});
-
-items.forEach(item => timelineObserver.observe(item));
+items.forEach(item=>timelineObserver.observe(item));
 
 </script>
 
