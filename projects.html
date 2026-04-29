@@ -1,118 +1,156 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SchemeSathi | Bhavin Garg</title>
+<title>SchemeSathi by Bhavin Garg</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* ===== GLOBAL ===== */
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-  margin:0;
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(180deg,#020617,#0f172a);
-  color:#fff;
-  overflow-x:hidden;
+  margin:0;
+  background:#f8fafc;
+  color:#0f172a;
 }
 
 .container{
-  max-width:900px;
+  width:90%;
+  max-width:1100px;
   margin:auto;
-  padding:40px 20px;
-  text-align:center;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#0f172a;
+  color:#fff;
+  padding:16px 0;
+  z-index:1000;
+}
+
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
 }
 
 /* ===== SECTIONS ===== */
 .section{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:60px 20px;
-  position:relative;
+  padding:80px 20px;
 }
 
-/* glass card */
-.card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(14px);
-  border-radius:18px;
-  padding:40px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.5);
-  transition:0.4s;
+/* ===== HERO ===== */
+.hero{
+  text-align:center;
+  padding-top:160px;
 }
 
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 30px 80px rgba(79,110,247,0.3);
+.hero h1{
+  font-size:clamp(30px,5vw,48px);
+  font-weight:700;
 }
 
-/* ===== TYPOGRAPHY ===== */
-h1{
-  font-size:clamp(40px,6vw,70px);
-  background:linear-gradient(90deg,#4f6ef7,#7aa6ff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-h2{
-  font-size:clamp(26px,4vw,36px);
-  margin-bottom:15px;
-}
-
-p{
-  font-size:17px;
-  color:#cbd5e1;
+.hero p{
+  margin-top:15px;
+  font-size:16px;
+  color:#64748b;
+  max-width:700px;
+  margin:auto;
   line-height:1.7;
 }
 
-/* ===== BUTTONS ===== */
-.btn{
-  display:inline-block;
-  margin:10px;
-  padding:12px 22px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:500;
+/* ===== TIMELINE ===== */
+.timeline{
+  position:relative;
+  max-width:800px;
+  margin:120px auto;
+  padding-left:35px;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:12px;
+  top:0;
+  width:3px;
+  height:100%;
+  background:#e2e8f0;
+}
+
+.timeline-item{
+  position:relative;
+  margin-bottom:60px;
+  opacity:0;
+  transform:translateY(50px) scale(0.95);
+  transition:all 0.8s ease;
+}
+
+.timeline-item.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+.timeline-item::before{
+  content:'';
+  position:absolute;
+  left:-4px;
+  top:12px;
+  width:16px;
+  height:16px;
+  background:#4f6ef7;
+  border-radius:50%;
+  border:3px solid #fff;
+}
+
+.timeline-content{
+  background:#fff;
+  padding:24px;
+  border-radius:14px;
+  border-left:4px solid #4f6ef7;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
   transition:0.3s;
 }
 
-.live{
-  background:#22c55e;
-  color:#fff;
+.timeline-content:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(79,110,247,0.2);
 }
 
-.github{
-  background:#64748b;
-  color:#fff;
+.timeline-content h3{
+  color:#4f6ef7;
+  margin-bottom:6px;
 }
 
-.btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 30px rgba(79,110,247,0.4);
+.timeline-content p{
+  font-size:14px;
+  color:#475569;
+  line-height:1.7;
 }
 
-/* ===== SCROLL INDICATOR ===== */
-.progress{
-  position:fixed;
-  top:0;
-  left:0;
-  height:4px;
-  width:0%;
-  background:linear-gradient(90deg,#4f6ef7,#7aa6ff);
-  z-index:999;
-}
-
-/* ===== FADE ANIMATION ===== */
+/* ===== FADE ===== */
 .fade{
   opacity:0;
-  transform:translateY(60px);
-  transition:1s ease;
+  transform:translateY(40px);
+  transition:0.8s;
 }
 
 .fade.show{
@@ -120,103 +158,154 @@ p{
   transform:translateY(0);
 }
 
+/* ===== BUTTON ===== */
+.btn{
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#fff;
+  background:#64748b;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#0f172a;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .hero{
+    padding-top:140px;
+  }
+  .timeline{
+    padding-left:25px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="progress" id="progress"></div>
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <h2>Bhavin</h2>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
 
 <!-- HERO -->
-<section class="section">
+<section class="section hero">
   <div class="container fade">
-    <div class="card">
-      <h1>SchemeSathi</h1>
-      <p>A real-world problem solving platform by Bhavin Garg</p>
-    </div>
+    <h1>SchemeSathi by Bhavin Garg</h1>
+    <p>A real-world problem solving platform</p>
   </div>
 </section>
 
 <!-- PROBLEM -->
 <section class="section">
   <div class="container fade">
-    <div class="card">
-      <h2>The Problem</h2>
-      <p>
-        Government schemes exist, but most people are unaware of them.
-        Information is scattered, complex, and difficult to access.
-      </p>
-    </div>
+    <h2>The Problem</h2>
+    <p>
+      Government schemes exist, but most people are unaware of them.
+      Information is scattered, complex, and difficult to access.
+    </p>
   </div>
 </section>
 
-<!-- IDEA -->
-<section class="section">
-  <div class="container fade">
-    <div class="card">
-      <h2>The Idea</h2>
-      <p>
-        What if there was one simple platform where anyone
-        could easily discover all schemes in one place?
-      </p>
-    </div>
-  </div>
-</section>
+<!-- TIMELINE -->
+<section class="timeline">
 
-<!-- SOLUTION -->
-<section class="section">
-  <div class="container fade">
-    <div class="card">
-      <h2>The Solution</h2>
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>Where It Started</h3>
       <p>
-        SchemeSathi simplifies access to schemes using
-        filtering, clean UI, and fast search.
+        The idea came from observing people missing opportunities due to lack of awareness.
       </p>
     </div>
   </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>The Realization</h3>
+      <p>
+        The problem was not schemes, but accessibility and clarity.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>The Idea</h3>
+      <p>
+        A platform where users can easily discover and understand schemes.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>Building</h3>
+      <p>
+        Focused on usability, speed, and real-world impact.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>The Goal</h3>
+      <p>
+        Help people access opportunities easily and efficiently.
+      </p>
+    </div>
+  </div>
+
 </section>
 
 <!-- FEATURES -->
 <section class="section">
   <div class="container fade">
-    <div class="card">
-      <h2>What It Does</h2>
-      <p>
-        Search. Filter. Discover.<br>
-        Designed for simplicity and speed.
-      </p>
-    </div>
+    <h2>What It Does</h2>
+    <p>Search. Filter. Discover. Fast and simple experience.</p>
   </div>
 </section>
 
 <!-- IMPACT -->
 <section class="section">
   <div class="container fade">
-    <div class="card">
-      <h2>The Impact</h2>
-      <p>
-        Helping people access benefits easily and
-        improving awareness at scale.
-      </p>
-
-      <br>
-
-      <a href="#" class="btn live">View Live</a>
-      <a href="#" class="btn github">GitHub</a>
-    </div>
+    <h2>The Impact</h2>
+    <p>
+      Making scheme access simple and improving awareness.
+    </p>
+    <br>
+    <a href="#" class="btn">GitHub</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<section class="section">
-  <div class="container fade">
-    <p>© 2026 Bhavin Garg</p>
-  </div>
-</section>
+<footer>
+  <p>© 2026 Bhavin Garg</p>
+</footer>
 
 <script>
 
-/* ===== FADE ANIMATION ===== */
+/* FADE ANIMATION */
 const fades = document.querySelectorAll('.fade');
 
 const observer = new IntersectionObserver(entries=>{
@@ -229,17 +318,22 @@ const observer = new IntersectionObserver(entries=>{
 
 fades.forEach(el=>observer.observe(el));
 
+/* TIMELINE ANIMATION */
+const items = document.querySelectorAll('.timeline-item');
 
-/* ===== SCROLL PROGRESS ===== */
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const height = document.body.scrollHeight - window.innerHeight;
-  const progress = (scrollTop / height) * 100;
+const timelineObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.4});
 
-  document.getElementById("progress").style.width = progress + "%";
-});
+items.forEach(item => timelineObserver.observe(item));
 
 </script>
 
 </body>
 </html>
+```
+
