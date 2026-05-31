@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NetScope India | Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  margin:0;
+  background:#f8fafc;
+  color:#0f172a;
+}
+
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#0f172a;
+  color:#fff;
+  padding:16px 0;
+  z-index:1000;
+}
+
+.nav-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  text-align:center;
+  padding:160px 20px 60px;
+}
+
+.hero h1{
+  font-size:clamp(30px,5vw,48px);
+  font-weight:700;
+}
+
+.hero p{
+  margin-top:15px;
+  font-size:16px;
+  color:#64748b;
+  max-width:700px;
+  margin:auto;
+  line-height:1.7;
+}
+
+/* ===== TIMELINE ===== */
+.timeline{
+  position:relative;
+  max-width:800px;
+  margin:120px auto;
+  padding-left:35px;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:12px;
+  top:0;
+  width:3px;
+  height:100%;
+  background:#e2e8f0;
+}
+
+.timeline-item{
+  position:relative;
+  margin-bottom:60px;
+  opacity:0;
+  transform:translateY(50px);
+  transition:0.8s ease;
+}
+
+.timeline-item.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.timeline-item::before{
+  content:'';
+  position:absolute;
+  left:-4px;
+  top:12px;
+  width:16px;
+  height:16px;
+  background:#4f6ef7;
+  border-radius:50%;
+  border:3px solid #fff;
+}
+
+.timeline-content{
+  background:#fff;
+  padding:24px;
+  border-radius:14px;
+  border-left:4px solid #4f6ef7;
+  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+  transition:0.3s;
+}
+
+.timeline-content:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(79,110,247,0.2);
+}
+
+.timeline-content h3{
+  color:#4f6ef7;
+  margin-bottom:6px;
+}
+
+.timeline-content p{
+  font-size:14px;
+  color:#475569;
+  line-height:1.7;
+}
+
+/* ===== QUOTE ===== */
+.quote-box{
+  background:rgba(79,110,247,0.08);
+  border-left:4px solid #4f6ef7;
+  padding:25px;
+  border-radius:14px;
+  text-align:center;
+  margin-top:60px;
+}
+
+.quote-box p{
+  font-style:italic;
+  color:#1e293b;
+  font-weight:500;
+}
+
+.quote-box span{
+  font-size:12px;
+  color:#64748b;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#0f172a;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+  margin-top:80px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .hero{
+    padding:140px 20px 40px;
+  }
+  .timeline{
+    padding-left:25px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>📡 NetScope India</h1>
+    <p>
+      A smart internet performance analysis platform built to remove confusion
+      around network speed, latency, and telecom quality in India.
+    </p>
+  </div>
+</section>
+
+<!-- STORY TIMELINE -->
+<section class="timeline container">
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>The Problem</h3>
+      <p>
+        Users constantly face slow internet, buffering, and lag but do not understand the real reason behind it.
+        Network providers show high speeds, but real-world experience is often different.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>The Confusion</h3>
+      <p>
+        People cannot easily compare Jio, Airtel, Vi, or BSNL performance.
+        Speed tests only show numbers, not real network quality or stability.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>The Idea</h3>
+      <p>
+        Create a simple tool that explains internet performance in a visual and understandable way,
+        combining speed, ping, and signal into one clear system.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>The Solution</h3>
+      <p>
+        NetScope India was built to analyze download speed, upload speed, latency, and signal strength,
+        and compare multiple telecom networks in real time.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <h3>The Impact</h3>
+      <p>
+        It helps students, gamers, and professionals understand which network works best in their area,
+        improving productivity and reducing frustration caused by poor connectivity.
+      </p>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote-box">
+    <p>
+      “NetScope India turns complex internet data into simple human understanding.”
+    </p>
+    <span>— Built by Bhavin Garg</span>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 NetScope India | Built by Bhavin Garg
+</footer>
+
+<script>
+
+/* ANIMATION ON SCROLL */
+const items = document.querySelectorAll('.timeline-item');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.3});
+
+items.forEach(item=>observer.observe(item));
+
+</script>
+
+</body>
+</html>
