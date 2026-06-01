@@ -357,10 +357,23 @@ section{
   margin-top:100px;
 }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:25px;
+.project-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* keep cards equal height look */
+.project-row .card{
+  height: 100%;
+}
+
+/* responsive fix */
+@media(max-width: 768px){
+  .project-row{
+    grid-template-columns: 1fr;
+  }
 }
 
 .card{
@@ -716,62 +729,54 @@ projects that solve real-world problems.
 </div>
  
 <!-- PROJECTS -->
-<div id = "projects" class="projects fade-up">
+<div id="projects" class="projects fade-up">
   <h2>Things I've Built</h2>
 
-  <div class="cards">
+  <div class="project-row">
 
+    <!-- LEFT: SchemeSathi -->
     <div class="card">
       <div class="card-top">
         <h3>SchemeSathi</h3>
-  
       </div>
 
       <p class="desc">
-      
-A project focused on solving the lack of awareness about government schemes 
-by making information simple, accessible, and easy to understand.
+        A project focused on solving the lack of awareness about government schemes 
+        by making information simple, accessible, and easy to understand.
       </p>
 
-     
       <div class="tags">
         <span>HTML</span><span>CSS</span><span>JS</span>
       </div>
 
       <div class="actions">
         <span class="status dev">● In Progress</span>
-
-<a href="https://github.com/bhavingarg121-glitch/--digital-gov-scheme" target="_blank">GitHub</a>
+        <a href="https://github.com/bhavingarg121-glitch/--digital-gov-scheme" target="_blank">GitHub</a>
       </div>
     </div>
 
-   
-  </div>
-</div>
- <div class="card">
-  <div class="card-top">
-    <h3>NetScope India</h3>
-  </div>
+    <!-- RIGHT: NetScope -->
+    <div class="card">
+      <div class="card-top">
+        <h3>NetScope India</h3>
+      </div>
 
-  <p class="desc">
-    Developed a telecom intelligence platform that allows users to test internet speed, 
-    WiFi performance, ping latency, and compare Jio, Airtel, Vi, and BSNL networks in real time.
-  </p>
+      <p class="desc">
+        Telecom intelligence platform to test speed, ping, WiFi performance and compare networks.
+      </p>
 
-  <div class="tags">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-   
-  </div>
-    
-    <a href="https://net-scopeindia.vercel.app" target="_blank">
-      Live Demo
-    </a>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
 
-    <a href=https://github.com/bhavingarg121-glitch/net_scope"" target="_blank">
-      GitHub
-    </a>
+      <div class="actions">
+        <a href="https://net-scopeindia.vercel.app" target="_blank">Live Demo</a>
+        <a href="https://github.com/bhavingarg121-glitch/net_scope" target="_blank">GitHub</a>
+      </div>
+    </div>
+
   </div>
 </div>
    <!-- INSIGHT SECTION -->
